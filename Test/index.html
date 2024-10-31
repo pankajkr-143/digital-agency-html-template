@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Quiz App</h1>
+    <hr>
+    <p style="text-align: center;"><b>!! Best of Luck Interns !!</b></p>
+    <hr>
+    
+    <!-- Form Start -->
+    <form id="quiz-form" onsubmit="submitQuiz(event)">
+
+      <!-- Basic Details Section -->
+      <div id="basic-details-section">
+        <h2>Basic Details</h2>
+        <label for="name"><b>Name:</b>
+        <input type="text" id="name" name="name" required placeholder="Enter your name">
+        <br>
+        <label for="email"><b>Email:</b></label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email">
+          <br>
+        <label for="number"><b>Mobile No.:</b></label>
+        <input type="number" id="number" name="number" required min="1234567890" placeholder="Enter your number">
+          <br>
+        <label for="sem"><b>Semester :</b></label>
+        <input type="number" id="sem" name="sem" required placeholder="Enter your current semester">
+        <br>
+        <label for="text"><b>College Name:</b></label>
+        <input type="text" id="text" name="text" required placeholder="Enter your college name">
+      </div>
+      <hr>
+
+      <!-- Multiple Choice Questions Section -->
+      <div id="mcq-section">
+        <h2>30 MCQ Question Related to the HTML, CSS & JavaScript</h2>
+        <!-- MCQ 1 -->
+        <div class="mcq-question">
+          <label><b>1. What does HTML stand for?</b></label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Hyper Trainer Marking Language</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> B) Hyper Text Markup Language</label>
+          <label><input type="radio" name="mcq1" value="Paris"> C) Hyper Text Marketing Language</label>
+          <label><input type="radio" name="mcq1" value="Rome"> D) Hyper Tool Markup Language</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>2. Which HTML element is used for the largest heading?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> h6 </label>
+          <label><input type="radio" name="mcq1" value="Madrid"> h3</label>
+          <label><input type="radio" name="mcq1" value="Paris"> h1</label>
+          <label><input type="radio" name="mcq1" value="Rome"> heading</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>3. What is the correct HTML element for inserting a line break?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> break</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> br</label>
+          <label><input type="radio" name="mcq1" value="Paris"> lb</label>
+          <label><input type="radio" name="mcq1" value="Rome"> ln</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>4. Which of these elements is used for italic text?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> italic</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> i</label>
+          <label><input type="radio" name="mcq1" value="Paris"> emphasis</label>
+          <label><input type="radio" name="mcq1" value="Rome"> italicize</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>5. What is the correct HTML for adding a background color?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+
+        <div class="mcq-question">
+          <label>1. What is the capital of France?</label>
+          <label><input type="radio" name="mcq1" value="Berlin"> Berlin</label>
+          <label><input type="radio" name="mcq1" value="Madrid"> Madrid</label>
+          <label><input type="radio" name="mcq1" value="Paris"> Paris</label>
+          <label><input type="radio" name="mcq1" value="Rome"> Rome</label>
+        </div>
+        
+        <!-- Repeat similar structure for 100 MCQs -->
+      </div>
+
+      <!-- Long or Short Answer Questions Section -->
+      <div id="long-section">
+        <h2>Long or Short Answer Questions</h2>
+        <!-- Long Answer Question 1 -->
+        <div class="long-answer-question">
+          <label><b>1. Describe the water cycle in brief.</b></label>
+          <textarea name="long1" rows="3" placeholder="Type your answer here..."></textarea>
+        </div>
+        
+        <!-- Repeat similar structure for 50 Long Answer Questions -->
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit">Submit Quiz</button>
+    </form>
+    <!-- Form End -->
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
