@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Interview Preparation Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .form-page {
+            display: none;
+        }
+        .form-page.active {
+            display: block;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #ffffff;
+        }
+        .container h1, .container p {
+            text-align: center;
+        }
+        .container label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        .container input, .container select, .container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateForm()">
+        <input type="hidden" name="access_key" value="da091ed8-42eb-4541-ade0-28e5cf1c5168">
+        
+        <!-- Page 1 -->
+        <div class="form-page active">
+            <h1>Free Interview Preparation Registration Form</h1>
+            <p>Thank you for your interest in Macky's Tech Free Interview Preparation Sessions! Please complete the registration form below.</p>
+            <p>Why Register?</p>
+            <ul>
+                <li>Personalized Coaching: Tailored to your specific needs.</li>
+                <li>Mock Interviews: Practice with real-world scenarios.</li>
+                <li>Expert Guidance: Get insights from industry professionals.</li>
+                <li>Flexible Scheduling: Choose online or offline sessions that fit your schedule.</li>
+            </ul>
+            <p>All fields marked with an asterisk (*) are required.</p>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+
+        <!-- Page 2 -->
+        <div class="form-page">
+            <h2>Personal Information</h2>
+            <label for="fullName">Full Name *</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="linkedin">LinkedIn Profile (Optional)</label>
+            <input type="url" id="linkedin" name="linkedin">
+
+            <label for="location">Location (City/State) *</label>
+            <input type="text" id="location" name="location" required>
+
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+
+        <!-- Page 3 -->
+        <div class="form-page">
+            <h2>Session Preferences</h2>
+            <label>Preferred Session Type *</label>
+            <select id="sessionType" name="sessionType" required>
+                <option value="Online">Online</option>
+                <option value="Offline">Offline</option>
+            </select>
+
+            <label for="sessionDate">Preferred Date for Session *</label>
+            <input type="date" id="sessionDate" name="sessionDate" required>
+
+            <label>Preferred Time Slot (For Interview) *</label>
+            <select id="interviewTime" name="interviewTime" required>
+                <option value="Morning">Morning (10 AM - 11 AM)</option>
+                <option value="Afternoon1">Afternoon (1 PM - 2 PM)</option>
+                <option value="Afternoon2">Afternoon (3 PM - 4 PM)</option>
+                <option value="Evening1">Evening (6 PM - 7 PM)</option>
+                <option value="Evening2">Evening (8 PM - 9 PM)</option>
+            </select>
+
+            <label>Preferred Time Slot (GD or Group Discussion) *</label>
+            <select id="gdTime" name="gdTime" required>
+                <option value="AfternoonGD">Afternoon (12 PM - 2 PM)</option>
+            </select>
+
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+
+        <!-- Page 4 -->
+        <div class="form-page">
+            <h2>Interview Preparation Focus</h2>
+            <label>Which type of interviews are you preparing for? *</label>
+            <select id="interviewType" name="interviewType" multiple required>
+                <option value="Verbal">Verbal</option>
+                <option value="Communication">Communication Skills</option>
+                <option value="Technical">Technical</option>
+                <option value="PublicSpeaking">Public Speaking</option>
+                <option value="GroupDiscussion">Group Discussion</option>
+                <option value="Behavioral">Behavioral</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="targetRoles">Job Roles/Positions You’re Targeting: *</label>
+            <input type="text" id="targetRoles" name="targetRoles" required>
+
+            <label>Which skills would you like to improve? *</label>
+            <select id="improveSkills" name="improveSkills" multiple required>
+                <option value="Resume">Resume Writing</option>
+                <option value="VerbalComm">Verbal Communication</option>
+                <option value="TechnicalKnowledge">Technical Knowledge</option>
+                <option value="PublicSpeaking">Public Speaking</option>
+                <option value="Confidence">Confidence Building</option>
+                <option value="Behavioral">Behavioral Questions</option>
+                <option value="All">All of these</option>
+            </select>
+
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+
+        <!-- Page 5 -->
+        <div class="form-page">
+            <h2>Education & Professional Background</h2>
+            <label>Highest Level of Education *</label>
+            <select id="educationLevel" name="educationLevel" required>
+                <option value="HighSchool">High School</option>
+                <option value="Bachelors">Bachelor's Degree</option>
+                <option value="Masters">Master's Degree</option>
+                <option value="Doctorate">Doctorate</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="jobTitle">Current Job Title/Position: *</label>
+            <input type="text" id="jobTitle" name="jobTitle" required>
+
+            <label for="collegeName">College Name *</label>
+            <input type="text" id="collegeName" name="collegeName" required>
+
+            <label>Year *</label>
+            <select id="year" name="year" required>
+                <option value="1st">1st</option>
+                <option value="2nd">2nd</option>
+                <option value="3rd">3rd</option>
+                <option value="4th">4th</option>
+                <option value="Pass-out">Pass-out</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+
+        <!-- Page 6 -->
+        <div class="form-page">
+            <h2>Additional Information</h2>
+            <label>How did you hear about this program? *</label>
+            <select id="referralSource" name="referralSource" required>
+                <option value="SocialMedia">Social Media</option>
+                <option value="Friend">Friend/Colleague</option>
+                <option value="College">College</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="questions">Any specific questions or concerns?</label>
+            <textarea id="questions" name="questions"></textarea>
+
+            <label for="passportPhoto">Upload your passport professional photo *</label>
+            <input type="file" id="passportPhoto" name="passportPhoto" accept="image/*" required>
+
+            <label for="reviewScreenshot">Please Give Review & upload Screenshot *</label>
+            <input type="file" id="reviewScreenshot" name="reviewScreenshot" accept="image/*" required>
+
+            <label>Terms & Conditions *</label>
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to the terms and conditions.</label>
+
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    let currentPage = 0;
+    const pages = document.querySelectorAll('.form-page');
+
+    function showPage(page) {
+        pages.forEach((p, index) => p.classList.toggle('active', index === page));
+    }
+
+    function nextPage() {
+        if (currentPage < pages.length - 1) {
+            currentPage++;
+            showPage(currentPage);
+        }
+    }
+
+    document.getElementById('registrationForm').addEventListener('submit', (e) => {
+        alert('Form submitted!');
+        e.preventDefault();
+    });
+</script>
+
+</body>
+</html>

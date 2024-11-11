@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macky's Developer Team Hiring Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #ffffff;
+        }
+        .container h2, .container p, .container ul, .container a {
+            text-align: left;
+        }
+        .container label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        .container input, .container select, .container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <form id="mdtHiringForm">
+
+        <h2>Macky's Developer Team Hiring For Intern</h2>
+        <p>We welcome and invite you to Macky's Developer Team.</p>
+        <h3>Purpose of MDT</h3>
+        <p>All developers will work together on live projects under the Macky's Developer Team.</p>
+        <p><strong>Duration:</strong> 1 to 3 months (Start every month from 1st to 10th)</p>
+
+        <h3>Benefits</h3>
+        <ul>
+            <li>Learn new technical and soft skills.</li>
+            <li>Work on real live projects and get an experience certificate.</li>
+            <li>Stipend for working on real projects.</li>
+            <li>Guidance from professional teams.</li>
+            <li>Receive an ID card and a t-shirt based on performance.</li>
+        </ul>
+
+        <h3>Rules (Terms & Conditions)</h3>
+        <ul>
+            <li>Always be available and complete assigned work on time.</li>
+            <li>Attend all meetings.</li>
+            <li>Only for students (not for working professionals).</li>
+        </ul>
+
+        <h3>How to Join</h3>
+        <ol>
+            <li>Confirm your interest and make a payment of Rs. 199 (hiring fee).</li>
+            <li>Upload a screenshot of the payment.</li>
+            <li>Upon confirmation, you’ll receive an offer letter via email.</li>
+        </ol>
+
+        <h3>Follow Us!</h3>
+        <p>
+            <a href="https://whatsapp.com" target="_blank">WhatsApp</a> |
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a> |
+            <a href="https://youtube.com" target="_blank">YouTube</a> |
+            <a href="https://telegram.com" target="_blank">Telegram</a> |
+            <a href="https://facebook.com" target="_blank">Facebook</a> |
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </p>
+
+        <h3>Contact Us</h3>
+        <p>Email: mackystech@gmail.com | Phone: +91 82359 10315 | <a href="https://mackystech.vercel.app" target="_blank">Website</a></p>
+
+        <!-- Form Fields -->
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="whatsapp">WhatsApp Number *</label>
+        <input type="tel" id="whatsapp" name="whatsapp" required>
+
+        <label for="fields">Interesting Fields *</label>
+        <select id="fields" name="fields" required>
+            <option>Web Developer</option>
+            <option>App Developer</option>
+            <option>Data Science</option>
+            <option>Cyber Security</option>
+            <option>Machine Learning</option>
+            <option>AI</option>
+            <option>UI/UX Designer</option>
+            <option>Other</option>
+        </select>
+
+        <div>
+            <h4>Scan & Pay</h4>
+            <img src="./img/pay.jpg" alt="" style="width: 400px; height:500px;">
+        </div>
+
+        <label for="paymentScreenshot">Upload Screenshot of Payment *</label>
+        <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept="image/*" required>
+
+        <label for="passportPhoto">Upload a Passport Photo (Professional) *</label>
+        <input type="file" id="passportPhoto" name="passportPhoto" accept="image/*" required>
+
+        <label for="resume">Upload your Resume (If available)</label>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+
+        <label for="googleReview">Please give us a Google review *</label>
+        <p><a href="https://g.page/r/CTU_Gci8w8e0EBM/review" target="_blank">Macky's Tech Google Review</a></p>
+
+        <label for="agree">I Agree *</label>
+        <select id="agree" name="agree" required>
+            <option>Yes</option>
+        </select>
+
+        <button type="submit">Submit Application</button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macky's Tech Job Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .form-page {
+            display: none;
+        }
+        .form-page.active {
+            display: block;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #ffffff;
+        }
+        .container h2, .container p {
+            text-align: center;
+        }
+        .container label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        .container input, .container select, .container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateForm()">
+        <input type="hidden" name="access_key" value="da091ed8-42eb-4541-ade0-28e5cf1c5168">
+           
+        <!-- Section 1 -->
+        <div class="form-page active">
+            <h2>Macky's Tech Job Application Form</h2>
+            <h3>Terms & Conditions</h3>
+            <ul>
+                <li>Eligibility: Candidates must ensure they meet the job description requirements.</li>
+                <li>Confidentiality: Information shared by Macky's Tech is confidential.</li>
+                <li>Fairness in Process: No discrimination in hiring.</li>
+                <li>Decision Finality: Panel's decision is final and binding.</li>
+                <li>Non-Disclosure Agreement: May require NDA before interview.</li>
+                <li>Document Verification: Selected candidates undergo verification.</li>
+                <li>Offer Validity: Offers are time-bound and must be accepted within the specified period.</li>
+                <li>Rules & Regulations: Punctuality, dress code, preparation, respectful behavior, electronic device policy, and health & safety compliance apply.</li>
+            </ul>
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="form-page">
+            <h2>Personal Information</h2>
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="linkedin">LinkedIn Profile Link *</label>
+            <input type="url" id="linkedin" name="linkedin" required>
+
+            <label for="github">GitHub Profile Link *</label>
+            <input type="url" id="github" name="github" required>
+
+            <label for="website">Website/Portfolio (Optional)</label>
+            <input type="url" id="website" name="website">
+
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="form-page">
+            <h2>Position Details</h2>
+            <label for="position">Position Applying For *</label>
+            <select id="position" name="position" required>
+                <option>Full Stack Developer</option>
+                <option>App Developer</option>
+                <option>Backend Developer</option>
+                <option>Frontend Developer</option>
+                <option>Marketing Mng/Emp</option>
+                <option>UI/UX Designer</option>
+                <option>Security Specialist</option>
+                <option>Sales Mng/Emp</option>
+                <option>Database Administrator</option>
+                <option>Other</option>
+            </select>
+
+            <label>Experience Level *</label>
+            <select id="experience" name="experience" required>
+                <option>Fresher</option>
+                <option>1-3 Years</option>
+                <option>3-5 Years</option>
+                <option>5+ Years</option>
+            </select>
+
+            <label>Availability *</label>
+            <select id="availability" name="availability" required>
+                <option>Full-time</option>
+                <option>Part-time</option>
+                <option>Internship</option>
+            </select>
+
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="form-page">
+            <h2>Skills and Expertise</h2>
+            <label>Core Skills *</label>
+            <textarea id="coreSkills" name="coreSkills" placeholder="Describe programming languages, tools, frameworks, etc." required></textarea>
+
+            <label for="certifications">Certifications (if any)</label>
+            <input type="text" id="certifications" name="certifications">
+
+            <label for="projects">Relevant Projects/Experience *</label>
+            <textarea id="projects" name="projects" required></textarea>
+
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="form-page">
+            <h2>Education</h2>
+            <label>Highest Degree *</label>
+            <select id="degree" name="degree" required>
+                <option>Graduate</option>
+                <option>Diploma</option>
+                <option>Masters</option>
+                <option>Pursuing Graduation</option>
+                <option>Other</option>
+            </select>
+
+            <label>Graduation Year *</label>
+            <select id="gradYear" name="gradYear" required>
+                <option>2020</option>
+                <option>2021</option>
+                <option>2022</option>
+                <option>2023</option>
+                <option>2024</option>
+                <option>2025</option>
+                <option>2026</option>
+                <option>2027</option>
+                <option>Other</option>
+            </select>
+
+            <label for="university">University/Institute *</label>
+            <input type="text" id="university" name="university" required>
+
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="form-page">
+            <h2>Additional Information</h2>
+            <label>Why do you want to work with Macky's Tech? *</label>
+            <textarea id="whyMackysTech" name="whyMackysTech" required></textarea>
+
+            <label for="salary">Expected Salary (Optional)</label>
+            <input type="text" id="salary" name="salary">
+
+            <label>Preferred Start Date *</label>
+            <input type="date" id="startDate" name="startDate" required>
+
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+
+        <!-- Section 7 -->
+        <div class="form-page">
+            <h2>Upload Documents</h2>
+            <label>Resume/CV *</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+
+            <label for="coverLetter">Cover Letter (Optional)</label>
+            <input type="file" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx">
+
+            <label for="additionalDocs">Additional Documents (Portfolio, Certificates, etc.) *</label>
+            <input type="file" id="additionalDocs" name="additionalDocs" accept=".pdf,.doc,.docx,.jpg,.png" required>
+
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+
+        <!-- Section 8 -->
+        <div class="form-page">
+            <h2>Submission</h2>
+            <label for="terms">
+                <input type="checkbox" id="terms" name="terms" required>
+                I agree to the terms and conditions of Macky's Tech hiring process.
+            </label>
+            <button type="submit">Submit Application</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    let currentPage = 0;
+    const pages = document.querySelectorAll('.form-page');
+
+    function showPage(page) {
+        pages.forEach((p, index) => p.classList.toggle('active', index === page));
+    }
+
+    function nextPage() {
+        if (currentPage < pages.length - 1) {
+            currentPage++;
+            showPage(currentPage);
+        }
+    }
+
+    document.getElementById('jobApplicationForm').addEventListener('submit', (e) => {
+        alert('Application submitted successfully!');
+        e.preventDefault();
+    });
+</script>
+
+</body>
+</html>

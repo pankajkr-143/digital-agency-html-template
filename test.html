@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macky's Web Development Internship Final Certification Exam 2024</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2, h3 {
+            color: #333;
+        }
+
+        /* Form Container */
+        form {
+            width: 70%;
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Labels and Inputs */
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        /* Multiple Choice Section */
+        input[type="radio"] {
+            margin-left: 10px;
+        }
+
+        input[type="radio"]:checked + label {
+            font-weight: bold;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Section Headers */
+        h2 {
+            font-size: 24px;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            color: #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            form {
+                width: 90%;
+            }
+
+            input[type="submit"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateForm()">
+        <input type="hidden" name="access_key" value="da091ed8-42eb-4541-ade0-28e5cf1c5168">
+        
+        <!-- Section 1 of 4 -->
+        <h2>Macky's Web Development Internship Final Certification Exam 2024</h2>
+        <p>Hey Students, I hope that you all are learning during the internship and may be learning well. This is the final certification exam; you all should give your best.</p>
+        <p><strong>Note:</strong> This is compulsory for everyone.</p>
+        <p>This form is automatically collecting emails from all respondents.</p>
+
+        <label for="name">NAME *</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-MAIL *</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mobile">Mobile *</label>
+        <input type="text" id="mobile" name="mobile" required>
+
+        <label for="college">College Name *</label>
+        <input type="text" id="college" name="college" required>
+
+        <label for="year-sem">Year/Sem *</label>
+        <input type="text" id="year-sem" name="year-sem" required>
+        <hr><hr>
+
+        <!-- Section 2 of 4 -->
+        <h3>30 MCQ Question Related to HTML, CSS & JavaScript</h3>
+        <hr>
+
+        <p><strong>1. What does HTML stand for?</strong></p>
+        <input type="radio" id="html1" name="html1" value="B" required>
+        <label for="html1">A) Hyper Text Markup Language</label><br>
+        
+        <input type="radio" id="html2" name="html1" value="A" required>
+        <label for="html2">B) Hyper Trainer Marking Language</label><br>
+        
+        <input type="radio" id="html3" name="html1" value="C" required>
+        <label for="html3">C) Hyper Text Marketing Language</label><br>
+        
+        <input type="radio" id="html4" name="html1" value="D" required>
+        <label for="html4">D) Hyper Tool Markup Language</label><br>
+        
+        <p><strong>2. Which HTML element is used for the largest heading?</strong></p>
+        <input type="radio" id="html5" name="html2" value="C" required>
+        <label for="html5">A) &lt;h1&gt;</label><br>
+        
+        <input type="radio" id="html6" name="html2" value="A" required>
+        <label for="html6">B) &lt;h6&gt;</label><br>
+        
+        <input type="radio" id="html7" name="html2" value="B" required>
+        <label for="html7">C) &lt;h3&gt;</label><br>
+        
+        <input type="radio" id="html8" name="html2" value="D" required>
+        <label for="html8">D) &lt;heading&gt;</label><br>
+        
+        <p><strong>3. What is the correct HTML element for inserting a line break?</strong></p>
+        <input type="radio" id="html9" name="html3" value="B" required>
+        <label for="html9">A) &lt;br&gt;</label><br>
+        
+        <input type="radio" id="html10" name="html3" value="A" required>
+        <label for="html10">B) &lt;break&gt;</label><br>
+        
+        <input type="radio" id="html11" name="html3" value="C" required>
+        <label for="html11">C) &lt;lb&gt;</label><br>
+        
+        <input type="radio" id="html12" name="html3" value="D" required>
+        <label for="html12">D) &lt;ln&gt;</label><br>
+        
+        <p><strong>4. Which of these elements is used for italic text?</strong></p>
+        <input type="radio" id="html13" name="html4" value="B" required>
+        <label for="html13">A) &lt;i&gt;</label><br>
+        
+        <input type="radio" id="html14" name="html4" value="A" required>
+        <label for="html14">B) &lt;italic&gt;</label><br>
+        
+        <input type="radio" id="html15" name="html4" value="C" required>
+        <label for="html15">C) &lt;emphasis&gt;</label><br>
+        
+        <input type="radio" id="html16" name="html4" value="D" required>
+        <label for="html16">D) &lt;italicize&gt;</label><br>
+        
+        <p><strong>5. What is the correct HTML for adding a background color?</strong></p>
+        <input type="radio" id="html17" name="html5" value="B" required>
+        <label for="html17">A) &lt;body style="background-color:yellow;"&gt;</label><br>
+        
+        <input type="radio" id="html18" name="html5" value="A" required>
+        <label for="html18">B) &lt;background&gt;yellow&lt;/background&gt;</label><br>
+        
+        <input type="radio" id="html19" name="html5" value="C" required>
+        <label for="html19">C) &lt;bg color="yellow"&gt;</label><br>
+        
+        <input type="radio" id="html20" name="html5" value="D" required>
+        <label for="html20">D) &lt;body bg="yellow"&gt;</label><br>
+        
+        <p><strong>6. How can you open a link in a new tab in HTML?</strong></p>
+        <input type="radio" id="q6a" name="q6" value="A" required>
+        <label for="q6a">A) &lt;a href="url" new&gt;</label><br>
+        <input type="radio" id="q6b" name="q6" value="B" required>
+        <label for="q6b">B) &lt;a href="url" target="_tab"&gt;</label><br>
+        <input type="radio" id="q6c" name="q6" value="C" required>
+        <label for="q6c">C) &lt;a href="url" target="_blank"&gt;</label><br>
+        <input type="radio" id="q6d" name="q6" value="D" required>
+        <label for="q6d">D) &lt;a href="url" open="_blank"&gt;</label><br>
+        
+        <p><strong>7. Which HTML element is used to define the footer of a document?</strong></p>
+        <input type="radio" id="q7a" name="q7" value="A" required>
+        <label for="q7a">A) &lt;foot&gt;</label><br>
+        <input type="radio" id="q7b" name="q7" value="B" required>
+        <label for="q7b">B) &lt;bottom&gt;</label><br>
+        <input type="radio" id="q7c" name="q7" value="C" required>
+        <label for="q7c">C) &lt;footer&gt;</label><br>
+        <input type="radio" id="q7d" name="q7" value="D" required>
+        <label for="q7d">D) &lt;section&gt;</label><br>
+
+        <p><strong>8. Which HTML attribute is used to specify the title of a document?</strong></p>
+        <input type="radio" id="q8a" name="q8" value="A" required>
+        <label for="q8a">A) title</label><br>
+        <input type="radio" id="q8b" name="q8" value="B" required>
+        <label for="q8b">B) header</label><br>
+        <input type="radio" id="q8c" name="q8" value="C" required>
+        <label for="q8c">C) name</label><br>
+        <input type="radio" id="q8d" name="q8" value="D" required>
+        <label for="q8d">D) description</label><br>
+
+        <p><strong>9. Which tag is used to define an internal style sheet?</strong></p>
+        <input type="radio" id="q9a" name="q9" value="A" required>
+        <label for="q9a">A) &lt;style&gt;</label><br>
+        <input type="radio" id="q9b" name="q9" value="B" required>
+        <label for="q9b">B) &lt;css&gt;</label><br>
+        <input type="radio" id="q9c" name="q9" value="C" required>
+        <label for="q9c">C) &lt;script&gt;</label><br>
+        <input type="radio" id="q9d" name="q9" value="D" required>
+        <label for="q9d">D) &lt;stylesheet&gt;</label><br>
+
+        <p><strong>10. Which of these elements is used for creating a hyperlink?</strong></p>
+        <input type="radio" id="q10a" name="q10" value="A" required>
+        <label for="q10a">A) &lt;a&gt;</label><br>
+        <input type="radio" id="q10b" name="q10" value="B" required>
+        <label for="q10b">B) &lt;link&gt;</label><br>
+        <input type="radio" id="q10c" name="q10" value="C" required>
+        <label for="q10c">C) &lt;hyperlink&gt;</label><br>
+        <input type="radio" id="q10d" name="q10" value="D" required>
+        <label for="q10d">D) &lt;url&gt;</label><br>
+
+        <p><strong>11. How do you define a comment in HTML?</strong></p>
+        <input type="radio" id="q11a" name="q11" value="A" required>
+        <label for="q11a">A) &lt;!-- This is a comment --&gt;</label><br>
+        <input type="radio" id="q11b" name="q11" value="B" required>
+        <label for="q11b">B) &lt;comment&gt; This is a comment &lt;/comment&gt;</label><br>
+        <input type="radio" id="q11c" name="q11" value="C" required>
+        <label for="q11c">C) &lt;# This is a comment #&gt;</label><br>
+        <input type="radio" id="q11d" name="q11" value="D" required>
+        <label for="q11d">D) &lt;comment&gt; This is a comment &lt;/comment&gt;</label><br>
+
+        <p><strong>12. What does CSS stand for?</strong></p>
+        <input type="radio" id="q12a" name="q12" value="A" required>
+        <label for="q12a">A) Color Style Sheets</label><br>
+        <input type="radio" id="q12b" name="q12" value="B" required>
+        <label for="q12b">B) Cascading Style Sheets</label><br>
+        <input type="radio" id="q12c" name="q12" value="C" required>
+        <label for="q12c">C) Computer Style Sheets</label><br>
+        <input type="radio" id="q12d" name="q12" value="D" required>
+        <label for="q12d">D) Creative Style Sheets</label><br>
+
+        <p><strong>13. Which of the following is the correct CSS syntax to change the text color to red?</strong></p>
+        <input type="radio" id="q13a" name="q13" value="A" required>
+        <label for="q13a">A) color: red;</label><br>
+        <input type="radio" id="q13b" name="q13" value="B" required>
+        <label for="q13b">B) text-color: red;</label><br>
+        <input type="radio" id="q13c" name="q13" value="C" required>
+        <label for="q13c">C) font-color: red;</label><br>
+        <input type="radio" id="q13d" name="q13" value="D" required>
+        <label for="q13d">D) text: red;</label><br>
+
+        <p><strong>14. How do you add a background color in CSS?</strong></p>
+        <input type="radio" id="q14a" name="q14" value="A" required>
+        <label for="q14a">A) background-color: yellow;</label><br>
+        <input type="radio" id="q14b" name="q14" value="B" required>
+        <label for="q14b">B) color: yellow;</label><br>
+        <input type="radio" id="q14c" name="q14" value="C" required>
+        <label for="q14c">C) background: yellow;</label><br>
+        <input type="radio" id="q14d" name="q14" value="D" required>
+        <label for="q14d">D) bg-color: yellow;</label><br>
+
+        <p><strong>15. How do you select an element with a specific class in CSS?</strong></p>
+        <input type="radio" id="q15a" name="q15" value="A" required>
+        <label for="q15a">A) .className</label><br>
+        <input type="radio" id="q15b" name="q15" value="B" required>
+        <label for="q15b">B) #className</label><br>
+        <input type="radio" id="q15c" name="q15" value="C" required>
+        <label for="q15c">C) *className</label><br>
+        <input type="radio" id="q15d" name="q15" value="D" required>
+        <label for="q15d">D) &lt;class&gt;</label><br>
+
+        <p><strong>16. What does the 'id' attribute in HTML do?</strong></p>
+        <input type="radio" id="q16a" name="q16" value="A" required>
+        <label for="q16a">A) It assigns a unique identifier to an element.</label><br>
+        <input type="radio" id="q16b" name="q16" value="B" required>
+        <label for="q16b">B) It defines the class of an element.</label><br>
+        <input type="radio" id="q16c" name="q16" value="C" required>
+        <label for="q16c">C) It changes the style of an element.</label><br>
+        <input type="radio" id="q16d" name="q16" value="D" required>
+        <label for="q16d">D) It links to another page.</label><br>
+
+        <p><strong>17. What is the correct HTML element for inserting an image?</strong></p>
+        <input type="radio" id="q17a" name="q17" value="A" required>
+        <label for="q17a">A) &lt;image&gt;</label><br>
+        <input type="radio" id="q17b" name="q17" value="B" required>
+        <label for="q17b">B) &lt;img&gt;</label><br>
+        <input type="radio" id="q17c" name="q17" value="C" required>
+        <label for="q17c">C) &lt;image src&gt;</label><br>
+        <input type="radio" id="q17d" name="q17" value="D" required>
+        <label for="q17d">D) &lt;pic&gt;</label><br>
+
+        <p><strong>18. What is the correct HTML element to define a table row?</strong></p>
+        <input type="radio" id="q18a" name="q18" value="A" required>
+        <label for="q18a">A) &lt;tr&gt;</label><br>
+        <input type="radio" id="q18b" name="q18" value="B" required>
+        <label for="q18b">B) &lt;td&gt;</label><br>
+        <input type="radio" id="q18c" name="q18" value="C" required>
+        <label for="q18c">C) &lt;th&gt;</label><br>
+        <input type="radio" id="q18d" name="q18" value="D" required>
+        <label for="q18d">D) &lt;table-row&gt;</label><br>
+
+        <p><strong>19. Which HTML element is used to define an unordered list?</strong></p>
+        <input type="radio" id="q19a" name="q19" value="A" required>
+        <label for="q19a">A) &lt;ul&gt;</label><br>
+        <input type="radio" id="q19b" name="q19" value="B" required>
+        <label for="q19b">B) &lt;ol&gt;</label><br>
+        <input type="radio" id="q19c" name="q19" value="C" required>
+        <label for="q19c">C) &lt;list&gt;</label><br>
+        <input type="radio" id="q19d" name="q19" value="D" required>
+        <label for="q19d">D) &lt;li&gt;</label><br>
+
+        <p><strong>20. How do you make a list item bold in HTML?</strong></p>
+        <input type="radio" id="q20a" name="q20" value="A" required>
+        <label for="q20a">A) &lt;b&gt;List Item&lt;/b&gt;</label><br>
+        <input type="radio" id="q20b" name="q20" value="B" required>
+        <label for="q20b">B) &lt;strong&gt;List Item&lt;/strong&gt;</label><br>
+        <input type="radio" id="q20c" name="q20" value="C" required>
+        <label for="q20c">C) &lt;li&gt;&lt;b&gt;List Item&lt;/b&gt;&lt;/li&gt;</label><br>
+        <input type="radio" id="q20d" name="q20" value="D" required>
+        <label for="q20d">D) &lt;bold&gt;List Item&lt;/bold&gt;</label><br>
+
+        <p><strong>21. Which HTML element is used to define a paragraph?</strong></p>
+        <input type="radio" id="q21a" name="q21" value="A" required>
+        <label for="q21a">A) &lt;p&gt;</label><br>
+        <input type="radio" id="q21b" name="q21" value="B" required>
+        <label for="q21b">B) &lt;para&gt;</label><br>
+        <input type="radio" id="q21c" name="q21" value="C" required>
+        <label for="q21c">C) &lt;paragraph&gt;</label><br>
+        <input type="radio" id="q21d" name="q21" value="D" required>
+        <label for="q21d">D) &lt;section&gt;</label><br>
+
+        <p><strong>22. What is the correct HTML element to define a link?</strong></p>
+        <input type="radio" id="q22a" name="q22" value="A" required>
+        <label for="q22a">A) &lt;a&gt;</label><br>
+        <input type="radio" id="q22b" name="q22" value="B" required>
+        <label for="q22b">B) &lt;link&gt;</label><br>
+        <input type="radio" id="q22c" name="q22" value="C" required>
+        <label for="q22c">C) &lt;hyperlink&gt;</label><br>
+        <input type="radio" id="q22d" name="q22" value="D" required>
+        <label for="q22d">D) &lt;url&gt;</label><br>
+
+        <p><strong>23. Which HTML element is used for a table header?</strong></p>
+        <input type="radio" id="q23a" name="q23" value="A" required>
+        <label for="q23a">A) &lt;th&gt;</label><br>
+        <input type="radio" id="q23b" name="q23" value="B" required>
+        <label for="q23b">B) &lt;td&gt;</label><br>
+        <input type="radio" id="q23c" name="q23" value="C" required>
+        <label for="q23c">C) &lt;thead&gt;</label><br>
+        <input type="radio" id="q23d" name="q23" value="D" required>
+        <label for="q23d">D) &lt;table-header&gt;</label><br>
+
+        <p><strong>24. What does the 'href' attribute specify in an HTML link?</strong></p>
+        <input type="radio" id="q24a" name="q24" value="A" required>
+        <label for="q24a">A) It specifies the destination of the link.</label><br>
+        <input type="radio" id="q24b" name="q24" value="B" required>
+        <label for="q24b">B) It specifies the title of the link.</label><br>
+        <input type="radio" id="q24c" name="q24" value="C" required>
+        <label for="q24c">C) It specifies the background color of the link.</label><br>
+        <input type="radio" id="q24d" name="q24" value="D" required>
+        <label for="q24d">D) It specifies the text color of the link.</label><br>
+
+        <p><strong>25. Which HTML tag is used for defining a form?</strong></p>
+        <input type="radio" id="q25a" name="q25" value="A" required>
+        <label for="q25a">A) &lt;form&gt;</label><br>
+        <input type="radio" id="q25b" name="q25" value="B" required>
+        <label for="q25b">B) &lt;input&gt;</label><br>
+        <input type="radio" id="q25c" name="q25" value="C" required>
+        <label for="q25c">C) &lt;field&gt;</label><br>
+        <input type="radio" id="q25d" name="q25" value="D" required>
+        <label for="q25d">D) &lt;submit&gt;</label><br>
+
+        <p><strong>26. What is the correct HTML tag for embedding a video?</strong></p>
+        <input type="radio" id="q26a" name="q26" value="A" required>
+        <label for="q26a">A) &lt;embed&gt;</label><br>
+        <input type="radio" id="q26b" name="q26" value="B" required>
+        <label for="q26b">B) &lt;video&gt;</label><br>
+        <input type="radio" id="q26c" name="q26" value="C" required>
+        <label for="q26c">C) &lt;media&gt;</label><br>
+        <input type="radio" id="q26d" name="q26" value="D" required>
+        <label for="q26d">D) &lt;mov&gt;</label><br>
+
+        <p><strong>27. Which attribute is used to specify an image source in HTML?</strong></p>
+        <input type="radio" id="q27a" name="q27" value="A" required>
+        <label for="q27a">A) src</label><br>
+        <input type="radio" id="q27b" name="q27" value="B" required>
+        <label for="q27b">B) link</label><br>
+        <input type="radio" id="q27c" name="q27" value="C" required>
+        <label for="q27c">C) href</label><br>
+        <input type="radio" id="q27d" name="q27" value="D" required>
+        <label for="q27d">D) img-source</label><br>
+
+        <p><strong>28. What is the correct HTML for defining an HTML5 doctype?</strong></p>
+        <input type="radio" id="q28a" name="q28" value="A" required>
+        <label for="q28a">A) &lt;!DOCTYPE html&gt;</label><br>
+        <input type="radio" id="q28b" name="q28" value="B" required>
+        <label for="q28b">B) &lt;DOCTYPE HTML&gt;</label><br>
+        <input type="radio" id="q28c" name="q28" value="C" required>
+        <label for="q28c">C) &lt;DOCTYPE html5&gt;</label><br>
+        <input type="radio" id="q28d" name="q28" value="D" required>
+        <label for="q28d">D) &lt;DOCTYPE&gt;</label><br>
+
+        <p><strong>29. Which HTML tag is used for defining a footer in a webpage?</strong></p>
+        <input type="radio" id="q29a" name="q29" value="A" required>
+        <label for="q29a">A) &lt;footer&gt;</label><br>
+        <input type="radio" id="q29b" name="q29" value="B" required>
+        <label for="q29b">B) &lt;bottom&gt;</label><br>
+        <input type="radio" id="q29c" name="q29" value="C" required>
+        <label for="q29c">C) &lt;foot&gt;</label><br>
+        <input type="radio" id="q29d" name="q29" value="D" required>
+        <label for="q29d">D) &lt;section&gt;</label><br>
+
+        <p><strong>30. How can you make a number a clickable link in HTML?</strong></p>
+        <input type="radio" id="q30a" name="q30" value="A" required>
+        <label for="q30a">A) &lt;a href="number"&gt;123&lt;/a&gt;</label><br>
+        <input type="radio" id="q30b" name="q30" value="B" required>
+        <label for="q30b">B) &lt;link href="number"&gt;123&lt;/link&gt;</label><br>
+        <input type="radio" id="q30c" name="q30" value="C" required>
+        <label for="q30c">C) &lt;number&gt;123&lt;/number&gt;</label><br>
+        <input type="radio" id="q30d" name="q30" value="D" required>
+        <label for="q30d">D) &lt;a number="123"&gt;123&lt;/a&gt;</label><br>
+
+
+        <!-- Section 3 of 4 -->
+         <hr><hr>
+        <h3>Short or Long Type Questions</h3>
+        <hr>
+
+        <label for="html-head-body">31. Explain the role of the &lt;head&gt; and &lt;body&gt; tags in an HTML document. Why are they both important for structuring a web page?</label>
+        <textarea id="html-head-body" name="html-head-body" required></textarea><br>
+
+        <label for="html-semantic">32. What are semantic HTML elements, and why are they important in modern web development? Give examples of a few semantic elements and their typical uses.</label>
+        <textarea id="html-semantic" name="html-semantic" required></textarea><br>
+
+        <label for="html-semantic">33. Describe the use and structure of forms in HTML. What elements and attributes are commonly used when creating forms?</label>
+        <textarea id="html-semantic" name="html-semantic" required></textarea><br>
+
+        <label for="html-meta">34. Discuss the purpose of the &lt;meta&gt; tag in HTML. What types of information can it provide to a web page, and why is this valuable?</label>
+        <textarea id="html-meta" name="html-meta" required></textarea><br>
+
+        <p><strong>35. Discuss the purpose of the &lt;meta&gt; tag in HTML. What types of information can it provide to a web page, and why is this valuable?</strong></p>
+        <textarea name="q35" rows="4" cols="50" required></textarea><br>
+
+        <p><strong>36. Explain the box model in CSS. What properties can you use to adjust elements within this model? How does the box model affect layout?</strong></p>
+        <textarea name="q34" rows="4" cols="50" required></textarea><br>
+
+        <p><strong>37. What are CSS selectors, and how do they work? Describe different types of selectors and give examples of when each might be used.</strong></p>
+        <textarea name="q33" rows="4" cols="50" required></textarea><br>
+
+        <p><strong>38. Compare and contrast the inline, block, and inline-block display properties in CSS. Provide examples of when each would be useful.</strong></p>
+        <textarea name="q32" rows="4" cols="50" required></textarea><br>
+
+        <p><strong>39. What is the purpose of media queries in responsive design? Provide examples of how media queries can adapt a website’s layout across different screen sizes.</strong></p>
+        <textarea name="q31" rows="4" cols="50" required></textarea><br>
+
+        <p><strong>40. Describe the concept of CSS Flexbox. How does it help in creating responsive layouts? What are some common properties used in Flexbox?</strong></p>
+        <textarea name="q30" rows="4" cols="50" required></textarea><br>
+
+        <p><strong>41. What is event delegation in JavaScript, and how does it work? Why is it often preferred in scenarios involving dynamically created elements?</strong></p>
+        <textarea name="q29" rows="4" cols="50" required></textarea><br>
+
+        <p><strong>42. Explain the concept of closures in JavaScript. How do closures work, and how can they be used in web development?</strong></p>
+        <textarea name="q28" rows="4" cols="50" required></textarea><br>
+
+        <p><strong>43. Discuss the Document Object Model (DOM) and how JavaScript interacts with it to manipulate elements on a web page. Why is this interaction essential for frontend development?</strong></p>
+        <textarea name="q27" rows="4" cols="50" required></textarea><br>
+
+        <p><strong>44. What are JavaScript Promises, and how do they help with asynchronous programming? Describe a scenario where using Promises is beneficial.</strong></p>
+        <textarea name="q26" rows="4" cols="50" required></textarea><br>
+
+        <p><strong>45. Explain the differences between var, let, and const in JavaScript. When should each be used, and what are the potential pitfalls of each?</strong></p>
+        <textarea name="q25" rows="4" cols="50" required></textarea><br>
+
+        <!-- Section 4 of 4 -->
+        <h3>Project: To-Do List Application</h3>
+        <p><strong>Objective:</strong> Build a functional to-do list where users can add, remove, and mark tasks as completed. This project will include responsive design and basic interactivity.</p>
+        <p><strong>Features</strong>
+            <ul>
+                <li><b>Add Tasks:</b> Users can type a task into an input box and click a button to add it to their to-do list.</li>
+                <li><b>Mark as Completed:</b> Users can click on a task to mark it as completed. Completed tasks will have a strikethrough.</li>
+                <li><b>Remove Tasks:</b> Users can delete tasks by clicking a delete icon next to each task.</li>
+                <li><b>Responsive Design:</b> The application should look good on both desktop and mobile.</li>
+            </ul>
+        </p>
+        <p><strong>File Structure</strong>
+            <ul>
+                <li>index.html: Contains the HTML structure.</li>
+                <li>style.css: Adds styling to the application.</li>
+                <li>app.js: Contains the JavaScript to add functionality.</li>
+            </ul>
+        </p>
+
+        <label for="github-link">Upload GitHub Link of this project *</label>
+        <input type="url" id="github-link" name="github-link" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

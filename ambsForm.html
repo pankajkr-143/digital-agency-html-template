@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Ambassador Program Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .container h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        .container input, .container select, .container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .radio-group, .radio-inline {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .radio-inline input[type="radio"] {
+            margin-right: 5px;
+        }
+        .container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .container button:hover {
+            background-color: #0056b3;
+        }
+        .container a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Registration Form <hr>Student Ambassador Program</h1>
+    <p>For any query reach out to us on: <a href="mailto:mackystech@gmail.com">mackystech@gmail.com</a></p>
+    <p>Follow this link to join our Telegram Group for further updates:</p>
+    <ul>
+        <li><a href="https://t.me/+joSmlR7tdU43NmU9" target="_blank">Telegram</a></li>
+        <li><a href="https://www.youtube.com/@MackysTech" target="_blank">YouTube Channel</a></li>
+        <li><a href="https://www.linkedin.com/company/macky-s-tech/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://mackystech.vercel.app/" target="_blank">Website</a></li>
+        <li><a href="https://chat.whatsapp.com/Ff2VT5dOadM2nZYv59fv8W" target="_blank">WhatsApp</a></li>
+    </ul>
+
+    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateForm()">
+        <input type="hidden" name="access_key" value="da091ed8-42eb-4541-ade0-28e5cf1c5168">
+        
+        <label for="name">Name <span>*</span></label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="dob">Date of Birth <span>*</span></label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="gender">Gender <span>*</span></label>
+        <select id="gender" name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="email">Email Id <span>*</span></label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="country_code">Country Code <span>*</span></label>
+        <input type="text" id="country_code" name="country_code" required>
+
+        <label for="whatsapp">WhatsApp Number</label>
+        <input type="tel" id="whatsapp" name="whatsapp">
+
+        <label for="address">Current Address <span>*</span></label>
+        <textarea id="address" name="address" required></textarea>
+
+        <label for="state">State <span>*</span></label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="city">City <span>*</span></label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="pin_code">Address Pin Code <span>*</span></label>
+        <input type="text" id="pin_code" name="pin_code" required>
+
+        <label for="country_name">Country Name <span>*</span></label>
+        <input type="text" id="country_name" name="country_name" required>
+
+        <label for="college_name">College Name <span>*</span></label>
+        <input type="text" id="college_name" name="college_name" required>
+
+        <label for="college_website">College website link <span>*</span></label>
+        <input type="url" id="college_website" name="college_website" required>
+
+        <label for="course">Course you are pursuing <span>*</span></label>
+        <input type="text" id="course" name="course" required>
+
+        <label for="graduation_year">Graduation Year <span>*</span></label>
+        <select id="graduation_year" name="graduation_year" required>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="current_year">Pursuing Current Year <span>*</span></label>
+        <select id="current_year" name="current_year" required>
+            <option value="1ST">1ST</option>
+            <option value="2ND">2ND</option>
+            <option value="3RD">3RD</option>
+            <option value="4TH">4TH</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label>Are you a part of any Committee? <span>*</span></label>
+        <div class="radio-group">
+            <div class="radio-inline">
+                <input type="radio" id="committee_yes" name="committee" value="Yes" required>
+                <label for="committee_yes">Yes</label>
+            </div>
+            <div class="radio-inline">
+                <input type="radio" id="committee_no" name="committee" value="No" required>
+                <label for="committee_no">No</label>
+            </div>
+        </div>
+
+        <label for="committee_name">If Yes, Name the Committee</label>
+        <input type="text" id="committee_name" name="committee_name">
+
+        <label for="instagram">Link to Instagram profile <span>*</span></label>
+        <input type="url" id="instagram" name="instagram" required>
+
+        <label for="linkedin">Link to LinkedIn profile <span>*</span></label>
+        <input type="url" id="linkedin" name="linkedin" required>
+
+        <label for="selfie_photo">Selfie Photo <span>*</span></label>
+        <input type="file" id="selfie_photo" name="selfie_photo" required>
+
+        <label for="college_id">Upload your current college ID card</label>
+        <input type="file" id="college_id" name="college_id">
+
+        <label for="tshirt_size">T-shirt size <span>*</span></label>
+        <select id="tshirt_size" name="tshirt_size" required>
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+        </select>
+
+        <label>Have you joined Macky's Tech Student ambassador program before? <span>*</span></label>
+        <div class="radio-group">
+            <div class="radio-inline">
+                <input type="radio" id="ambassador_yes" name="ambassador_program" value="Yes" required>
+                <label for="ambassador_yes">Yes</label>
+            </div>
+            <div class="radio-inline">
+                <input type="radio" id="ambassador_no" name="ambassador_program" value="No" required>
+                <label for="ambassador_no">No</label>
+            </div>
+            <div class="radio-inline">
+                <input type="radio" id="ambassador_maybe" name="ambassador_program" value="Maybe" required>
+                <label for="ambassador_maybe">Maybe</label>
+            </div>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
