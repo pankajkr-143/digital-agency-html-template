@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Profile</title>
+  <link rel="icon" href="/img/logo.png">
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <header class="header">
+      <h1>Welcome, <span id="nameHeader">User</span></h1>
+      <button id="logoutBtn" onclick="logout()">Logout</button>
+    </header>
+
+    <!-- Profile Section -->
+    <main class="profile-container">
+      <!-- Profile Picture and Basic Info -->
+      <section class="profile-header">
+        <div class="profile-pic-container">
+          <img id="profilePic" src="img/default.png" alt="Profile Picture">
+        </div>
+        <div class="basic-info">
+          <h2 id="name">User Name</h2>
+          <p><strong>Role:</strong> <span id="role">Role</span></p>
+          <p><strong>Email:</strong> <span id="email">Email</span></p>
+          <p><strong>Phone:</strong> <span id="phone">Phone</span></p>
+          <p><strong>Address:</strong> <span id="address">Address</span></p>
+        </div>
+      </section>
+
+      <!-- Team Details -->
+      <section class="team-details">
+        <h2>Team</h2>
+        <ul id="teamList"></ul>
+      </section>
+
+      <!-- Onboarding Details -->
+      <section class="onboarding-details">
+        <h2>Onboarding</h2>
+        <p><strong>Current Status:</strong> <span id="onboardingStatus">Onboarding Status</span></p>
+        <progress id="progressBar" value="0" max="100"></progress>
+        <ul></ul>
+      </section>
+      <section class="dowload">
+        <!-- Download Profile Button -->
+        <button id="downloadProfile" class="download-btn">Download Your Profile</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="profile.js"></script>
+</body>
+</html>

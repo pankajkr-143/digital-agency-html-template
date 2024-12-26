@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Login</title>
+  <link rel="icon" href="/img/logo.png">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <h1>Welcome Back</h1>
+      <p class="subtext">Please log in to access your profile</p>
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="userId">User ID</label>
+          <input type="text" id="userId" placeholder="Enter your User ID" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your Password" required>
+        </div>
+
+        <button type="submit">Login</button>
+      </form>
+      <p id="errorMessage" class="error-message"></p>
+    </div>
+  </div>
+  <script src="login.js"></script>
+</body>
+</html>
