@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Bihar Daroga MCQ Quiz</h1>
+
+    <!-- Personal Details -->
+    <div id="details-section">
+      <form id="details-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Start Quiz</button>
+      </form>
+    </div>
+
+    <!-- Quiz Section -->
+    <div id="quiz-section" style="display: none;">
+      <form id="quiz-form">
+        <!-- All 500 questions will go here -->
+        <div class="question">
+          <h2>1. भारत में सबसे अधिक विदेशी मुद्रा किस वस्तु के निर्यात से प्राप्त होती है?</h2>
+          <label><input type="radio" name="q1" value="चाय"> A. चाय</label>
+          <label><input type="radio" name="q1" value="तम्बाकू"> B. तम्बाकू</label>
+          <label><input type="radio" name="q1" value="कपड़ा"> C. कपड़ा</label>
+          <label><input type="radio" name="q1" value="आईटी सेवाएं"> D. आईटी सेवाएं</label>
+        </div>
+        
+        <!-- Question 2 -->
+        <div class="question">
+          <h2>2. सिगरेट के धुएँ में मुख्य प्रदूषक है:</h2>
+          <label><input type="radio" name="q2" value="कार्बन मोनोऑक्साइड व निकोटीन"> A. कार्बन मोनोऑक्साइड व निकोटीन</label>
+          <label><input type="radio" name="q2" value="कार्बन मोनोऑक्साइड व बेंजीन"> B. कार्बन मोनोऑक्साइड व बेंजीन</label>
+          <label><input type="radio" name="q2" value="कार्बन मोनोऑक्साइड व डाइऑक्सिन"> C. कार्बन मोनोऑक्साइड व डाइऑक्सिन</label>
+          <label><input type="radio" name="q2" value="बेंजीन व डाइऑक्सिन"> D. बेंजीन व डाइऑक्सिन</label>
+        </div>
+        
+        <!-- Question 3 -->
+        <div class="question">
+          <h2>3. 'मेक इन इंडिया' पहल का शुभारंभ किस वर्ष किया गया था?</h2>
+          <label><input type="radio" name="q3" value="2015"> A. 2015</label>
+          <label><input type="radio" name="q3" value="2016"> B. 2016</label>
+          <label><input type="radio" name="q3" value="2014"> C. 2014</label>
+          <label><input type="radio" name="q3" value="2018"> D. 2018</label>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+          <h2>4. कौन-सा द्वीप समूह 'प्रशांत महासागर' में स्थित है?</h2>
+          <label><input type="radio" name="q4" value="मेडागास्कर"> A. मेडागास्कर</label>
+          <label><input type="radio" name="q4" value="अंडमान और निकोबार"> B. अंडमान और निकोबार</label>
+          <label><input type="radio" name="q4" value="मालदीव"> C. मालदीव</label>
+          <label><input type="radio" name="q4" value="हवाई द्वीप"> D. हवाई द्वीप</label>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+          <h2>5. लैंडर विक्रम ने 23 अगस्त, 2023 के दिन 6 बजकर 4 मिनट (भारतीय समयानुसार) पर चंद्रमा के दक्षिणी ध्रुव पर सॉफ्ट लैंडिंग किया। इसी लैंडिंग के साथ निम्न में से कौन-सा देश चंद्रमा के दक्षिणी ध्रुव पर सफलतापूर्वक अंतरिक्ष यान उतारने वाला पहला देश तथा चंद्रमा पर उतरने वाला चौथा देश बन गया?</h2>
+          <label><input type="radio" name="q5" value="रूस"> A. रूस</label>
+          <label><input type="radio" name="q5" value="भारत"> B. भारत</label>
+          <label><input type="radio" name="q5" value="अमेरिका"> C. अमेरिका</label>
+          <label><input type="radio" name="q5" value="चीन"> D. चीन</label>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+          <h2>6. वर्ष 2024 तक विश्व का सबसे बड़ा सोलर पावर पार्क है:</h2>
+          <label><input type="radio" name="q6" value="भदला सोलर पार्क (भारत)"> A. भदला सोलर पार्क (भारत)</label>
+          <label><input type="radio" name="q6" value="मिडोंग सोलर पार्क (चीन)"> B. मिडोंग सोलर पार्क (चीन)</label>
+          <label><input type="radio" name="q6" value="गोंगहे तलतन सोलर पार्क (चीन)"> C. गोंगहे तलतन सोलर पार्क (चीन)</label>
+          <label><input type="radio" name="q6" value="होबक सोलर पार्क (चीन)"> D. होबक सोलर पार्क (चीन)</label>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+          <h2>7. निम्नलिखित में से किस जिमनास्ट को जोखिम भरे 'प्रोडुनोवा' वॉल्ट के लिए जानी जाती हैं, जिसे अक्सर मौत का 'वॉल्ट' कहा जाता है?</h2>
+          <label><input type="radio" name="q7" value="प्रणति नायक"> A. प्रणति नायक</label>
+          <label><input type="radio" name="q7" value="मोहिनी भारद्वाज"> B. मोहिनी भारद्वाज</label>
+          <label><input type="radio" name="q7" value="रितिका कुलश्रेष्ठ"> C. रितिका कुलश्रेष्ठ</label>
+          <label><input type="radio" name="q7" value="दीपा करमाकर"> D. दीपा करमाकर</label>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+          <h2>8. BOD और COD के बीच अंतर के संदर्भ में निम्न में से कौन सा कथन असत्य है?</h2>
+          <label><input type="radio" name="q8" value="BOD का मान COD के मान से कम होता है।"> A. BOD का मान COD के मान से कम होता है।</label>
+          <label><input type="radio" name="q8" value="BOD एक समय लेने वाला परीक्षण है जबकि COD कुछ घंटों में पूरा हो सकता है।"> B. BOD एक समय लेने वाला परीक्षण है जबकि COD कुछ घंटों में पूरा हो सकता है।</label>
+          <label><input type="radio" name="q8" value="BOD पानी में मौजूद कार्बनिक पदार्थों को तोड़ने के लिए एरोबिक सूक्ष्मजीवों द्वारा इस्तेमाल की जाने वाली ऑक्सीजन की मात्रा को मापता है, जबकि COD पानी में मौजूद कार्बनिक और अकार्बनिक प्रदूषकों को रासायनिक रूप से ऑक्सीकृत करने के लिए जरूरी ऑक्सीजन की मात्रा को मापता है।"> C. BOD पानी में मौजूद कार्बनिक पदार्थों को तोड़ने के लिए एरोबिक सूक्ष्मजीवों द्वारा इस्तेमाल की जाने वाली ऑक्सीजन की मात्रा को मापता है, जबकि COD पानी में मौजूद कार्बनिक और अकार्बनिक प्रदूषकों को रासायनिक रूप से ऑक्सीकृत करने के लिए जरूरी ऑक्सीजन की मात्रा को मापता है।</label>
+          <label><input type="radio" name="q8" value="BOD और COD पानी की मात्रा को मापने के लिए इस्तेमाल होने वाले दो रासायनिक पैरामीटर हैं।"> D. BOD और COD पानी की मात्रा को मापने के लिए इस्तेमाल होने वाले दो रासायनिक पैरामीटर हैं।</label>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+          <h2>9. 'अबुल फजल' अकबर के नौ-रत्नों में से एक के द्वारा अकबरनामा पूरा किया गया था:</h2>
+          <label><input type="radio" name="q9" value="5 वर्षों में"> A. 5 वर्षों में</label>
+          <label><input type="radio" name="q9" value="7 वर्षों में"> B. 7 वर्षों में</label>
+          <label><input type="radio" name="q9" value="9 वर्षों में"> C. 9 वर्षों में</label>
+          <label><input type="radio" name="q9" value="11 वर्षों में"> D. 11 वर्षों में</label>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+          <h2>10. जैन धर्म के अनुसार 24वें तीर्थंकर भगवान महावीर को दिव्य ज्ञान ऋजुपालिका नदी के तट पर स्थित जम्भियाग्राम में प्राप्त हुआ था। वर्तमान में 'जम्भियाग्राम' को कहा जाता है?</h2>
+          <label><input type="radio" name="q10" value="बोधगया"> A. बोधगया</label>
+          <label><input type="radio" name="q10" value="गया"> B. गया</label>
+          <label><input type="radio" name="q10" value="पटना"> C. पटना</label>
+          <label><input type="radio" name="q10" value="जमुई"> D. जमुई</label>
+        </div>
+
+        <!-- Question 11 -->
+        <div class="question">
+          <h2>11. हाल ही में चर्चा में रहा 'चौखंबा चोटी' निम्नलिखित में किस केंद्र शासित प्रदेश में स्थित है?</h2>
+          <label><input type="radio" name="q11" value="लद्दाख"> A. लद्दाख</label>
+          <label><input type="radio" name="q11" value="जम्मू-कश्मीर"> B. जम्मू-कश्मीर</label>
+          <label><input type="radio" name="q11" value="लक्षद्वीप"> C. लक्षद्वीप</label>
+          <label><input type="radio" name="q11" value="दिल्ली"> D. दिल्ली</label>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="question">
+          <h2>12. वर्ष 2011 की जनगणना के अनुसार बिहार के किस जिले में जनसंख्या घनत्व सबसे कम है?</h2>
+          <label><input type="radio" name="q12" value="बांका"> A. बांका</label>
+          <label><input type="radio" name="q12" value="रोहतास"> B. रोहतास</label>
+          <label><input type="radio" name="q12" value="कैमूर"> C. कैमूर</label>
+          <label><input type="radio" name="q12" value="शेखपुरा"> D. शेखपुरा</label>
+        </div>
+
+        <!-- Question 14 -->
+      <div class="question">
+        <h2>14. मानव इतिहास की लगभग 99% कहानी निम्न में से किस काल के दौरान हुई?</h2>
+        <label><input type="radio" name="q14" value="पुरापाषाण काल"> A. पुरापाषाण काल</label>
+        <label><input type="radio" name="q14" value="मध्यपाषाण काल"> B. मध्यपाषाण काल</label>
+        <label><input type="radio" name="q14" value="नवपाषाण काल"> C. नवपाषाण काल</label>
+        <label><input type="radio" name="q14" value="इनमें से कोई नहीं"> D. इनमें से कोई नहीं</label>
+      </div>
+
+      <!-- Question 15 -->
+      <div class="question">
+        <h2>15. वैदिक सभ्यता काल में व्यापार हेतु दूर-दूर तक जाने वाले व्यक्ति को कहा जाता था:</h2>
+        <label><input type="radio" name="q15" value="वेकानॉट"> A. वेकानॉट</label>
+        <label><input type="radio" name="q15" value="पाणि"> B. पाणि</label>
+        <label><input type="radio" name="q15" value="अमाजू"> C. अमाजू</label>
+        <label><input type="radio" name="q15" value="उपाध्याय"> D. उपाध्याय</label>
+      </div>
+
+      <!-- Question 16 -->
+      <div class="question">
+        <h2>16. सही वाक्य चुनें:</h2>
+        <label><input type="radio" name="q16" value="A"> A. A lot of books is on the table.</label>
+        <label><input type="radio" name="q16" value="B"> B. A lot of book are on the table.</label>
+        <label><input type="radio" name="q16" value="C"> C. A lots of books is on the table.</label>
+        <label><input type="radio" name="q16" value="D"> D. A lot of books are on the table.</label>
+      </div>
+
+      <!-- Question 17 -->
+      <div class="question">
+        <h2>17. निम्न में से कौन-सा अयस्क कैल्शियम से संबंधित नहीं है?</h2>
+        <label><input type="radio" name="q17" value="CaCO₃"> A. CaCO₃</label>
+        <label><input type="radio" name="q17" value="CaSO₄.2H₂O"> B. CaSO₄.2H₂O</label>
+        <label><input type="radio" name="q17" value="CaF₂"> C. CaF₂</label>
+        <label><input type="radio" name="q17" value="MgCO₃"> D. MgCO₃</label>
+      </div>
+
+      <!-- Question 18 -->
+      <div class="question">
+        <h2>18. निम्न में असत्य है:</h2>
+        <label><input type="radio" name="q18" value="F = GM₁M₂/R²"> A. F = GM₁M₂/R²</label>
+        <label><input type="radio" name="q18" value="g = GM/R²"> B. g = GM/R²</label>
+        <label><input type="radio" name="q18" value="T = 2π√(l/g)"> C. T = 2π√(l/g)</label>
+        <label><input type="radio" name="q18" value="S = ut + ½ft³"> D. S = ut + ½ft³</label>
+      </div>
+
+      <!-- Question 19 -->
+      <div class="question">
+        <h2>19. जर्मन सिल्वर एक मिश्र धातु है जिसमें रजत (Ag) नहीं होता है। इसमें Cu (60%), Zn (20%) तथा Ni (20%) होता है। जर्मन सिल्वर के अन्य नामों से जाने जाते हैं। इनमें कौन-सा नाम इसमें शामिल नहीं है?</h2>
+        <label><input type="radio" name="q19" value="निकेल सिल्वर"> A. निकेल सिल्वर</label>
+        <label><input type="radio" name="q19" value="अल्पक्का"> B. अल्पक्का</label>
+        <label><input type="radio" name="q19" value="पैकटोंग"> C. पैकटोंग</label>
+        <label><input type="radio" name="q19" value="इनमें से कोई नहीं"> D. इनमें से कोई नहीं</label>
+      </div>
+
+      <!-- Question 20 -->
+      <div class="question">
+        <h2>20. विश्व का सबसे बड़ा दुग्ध-उत्पादक है:</h2>
+        <label><input type="radio" name="q20" value="अमेरिका"> A. अमेरिका</label>
+        <label><input type="radio" name="q20" value="चीन"> B. चीन</label>
+        <label><input type="radio" name="q20" value="ब्राजील"> C. ब्राजील</label>
+        <label><input type="radio" name="q20" value="भारत"> D. भारत</label>
+      </div>
+
+        <!-- Question 21 -->
+      <div class="question">
+        <h2>21. सिडनी बुरार्ड नामक भूगर्भशास्त्री ने नदियों के आधार पर हिमालय का विभाजन किया है जिसमें से कौन-सा हिमालय सर्वाधिक लम्बा है?</h2>
+        <label><input type="radio" name="q21" value="पंजाब/कश्मीर हिमालय"> A. पंजाब/कश्मीर हिमालय</label>
+        <label><input type="radio" name="q21" value="कुमाऊँ हिमालय"> B. कुमाऊँ हिमालय</label>
+        <label><input type="radio" name="q21" value="नेपाल हिमालय"> C. नेपाल हिमालय</label>
+        <label><input type="radio" name="q21" value="असम हिमालय"> D. असम हिमालय</label>
+      </div>
+
+      <!-- Question 22 -->
+      <div class="question">
+        <h2>22. बौद्ध संघ में सम्मिलित होने के लिए न्यूनतम आयु-सीमा थी:</h2>
+        <label><input type="radio" name="q22" value="10 वर्ष"> A. 10 वर्ष</label>
+        <label><input type="radio" name="q22" value="15 वर्ष"> B. 15 वर्ष</label>
+        <label><input type="radio" name="q22" value="20 वर्ष"> C. 20 वर्ष</label>
+        <label><input type="radio" name="q22" value="25 वर्ष"> D. 25 वर्ष</label>
+      </div>
+
+      <!-- Question 23 -->
+      <div class="question">
+        <h2>23. खतोली का युद्ध 1518 ई० में किसके-किसके बीच हुई थी?</h2>
+        <label><input type="radio" name="q23" value="राणा साँगा व इब्राहिम लोदी"> A. राणा साँगा व इब्राहिम लोदी</label>
+        <label><input type="radio" name="q23" value="मुहम्मद गौरी व पृथ्वीराज चौहान"> B. मुहम्मद गौरी व पृथ्वीराज चौहान</label>
+        <label><input type="radio" name="q23" value="इब्राहिम लोदी व बाबर"> C. इब्राहिम लोदी व बाबर</label>
+        <label><input type="radio" name="q23" value="मुहम्मद गौरी व जयचंद"> D. मुहम्मद गौरी व जयचंद</label>
+      </div>
+
+      <!-- Question 24 -->
+      <div class="question">
+        <h2>24. अंग्रेजी शासन के विरुद्ध निम्न में से कौन-सा आंदोलन (विद्रोह) असम में घटित नहीं हुआ?</h2>
+        <label><input type="radio" name="q24" value="पागलपंथी विद्रोह"> A. पागलपंथी विद्रोह</label>
+        <label><input type="radio" name="q24" value="अहोम विद्रोह"> B. अहोम विद्रोह</label>
+        <label><input type="radio" name="q24" value="खासी विद्रोह"> C. खासी विद्रोह</label>
+        <label><input type="radio" name="q24" value="कोल विद्रोह"> D. कोल विद्रोह</label>
+      </div>
+
+      <!-- Question 25 -->
+      <div class="question">
+        <h2>25. मौर्य काल में मनोरंजनकर्ताओं का नियंत्रक को कहा जाता था:</h2>
+        <label><input type="radio" name="q25" value="लक्ष्मणाध्यक्ष"> A. लक्ष्मणाध्यक्ष</label>
+        <label><input type="radio" name="q25" value="सुत्ताध्यक्ष"> B. सुत्ताध्यक्ष</label>
+        <label><input type="radio" name="q25" value="गणिकाध्यक्ष"> C. गणिकाध्यक्ष</label>
+        <label><input type="radio" name="q25" value="विविताध्यक्ष"> D. विविताध्यक्ष</label>
+      </div>
+
+      <!-- Question 26 -->
+      <div class="question">
+        <h2>26. केवल 'ALLAHABAD' के अक्षरों से कितने भिन्न-भिन्न शब्द बन सकते हैं? इनमें से कितने शब्दों में स्वर सम स्थानों पर होंगे?</h2>
+        <label><input type="radio" name="q26" value="60"> A. 60</label>
+        <label><input type="radio" name="q26" value="100"> B. 100</label>
+        <label><input type="radio" name="q26" value="7560"> C. 7560</label>
+        <label><input type="radio" name="q26" value="7580"> D. 7580</label>
+      </div>
+
+      <!-- Question 27 -->
+      <div class="question">
+        <h2>27. पृथ्वी के तुरंत बाद सर्वाधिक घनत्व वाला ग्रह है:</h2>
+        <label><input type="radio" name="q27" value="बुध"> A. बुध</label>
+        <label><input type="radio" name="q27" value="मंगल"> B. मंगल</label>
+        <label><input type="radio" name="q27" value="शुक्र"> C. शुक्र</label>
+        <label><input type="radio" name="q27" value="नेप्च्यून"> D. नेप्च्यून</label>
+      </div>
+
+      <!-- Question 28 -->
+      <div class="question">
+        <h2>28. निम्न में से वह नदी जिसके तट पर यूरोप के चार देशों की राजधानी अवस्थित है?</h2>
+        <label><input type="radio" name="q28" value="नील"> A. नील</label>
+        <label><input type="radio" name="q28" value="सेंट लॉरेंस"> B. सेंट लॉरेंस</label>
+        <label><input type="radio" name="q28" value="डेन्यूब"> C. डेन्यूब</label>
+        <label><input type="radio" name="q28" value="टाइग्रिस"> D. टाइग्रिस</label>
+      </div>
+
+      <!-- Question 29 -->
+      <div class="question">
+        <h2>29. शब्द 'प्रत्युपकार' में कौन-सा उपसर्ग है?</h2>
+        <label><input type="radio" name="q29" value="प्रति"> A. प्रति</label>
+        <label><input type="radio" name="q29" value="प्र"> B. प्र</label>
+        <label><input type="radio" name="q29" value="परा"> C. परा</label>
+        <label><input type="radio" name="q29" value="परि"> D. परि</label>
+      </div>
+
+      <!-- Question 30 -->
+      <div class="question">
+        <h2>30. निम्न कथनों पर विचार कर सही कथन का चुनाव कीजिए:</h2>
+        <p>वर्ष 2024 में 33वें ग्रीष्मकालीन ओलंपिक खेलों का आयोजन पेरिस (फ्रांस) में 26 जुलाई से 11 अगस्त हुआ।</p>
+        <p>पेरिस 2024 शुभंकर फ्रांस में 'ला फ्रीज ओलम्पिक' और 'ला फ्रीज पैरालंपिक' नामों के तहत पंजीकृत ट्रेडमार्क है।</p>
+        <label><input type="radio" name="q30" value="1"> A. केवल 1</label>
+        <label><input type="radio" name="q30" value="2"> B. केवल 2</label>
+        <label><input type="radio" name="q30" value="1 और 2"> C. 1 और 2</label>
+        <label><input type="radio" name="q30" value="न तो 1 और न ही 2"> D. न तो 1 और न ही 2</label>
+      </div>
+
+      <div class="question">
+        <h2>31. 'गम्मत' है:</h2>
+        <label><input type="radio" name="q31" value="लोकनृत्य"> लोकनृत्य</label><br>
+        <label><input type="radio" name="q31" value="लोकगीत"> लोकगीत</label><br>
+        <label><input type="radio" name="q31" value="लोक चित्रकला"> लोक चित्रकला</label><br>
+        <label><input type="radio" name="q31" value="लोकनाट्य"> लोकनाट्य</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>32. एक गेंद को 50 m/s की चाल से ऊर्ध्वाधर ऊपर की ओर फेंका जाता है। गेंद को अधिकतम ऊँचाई तक पहुँचने में लगभग कितना समय लगेगा?</h2>
+        <label><input type="radio" name="q32" value="4 Sec"> 4 Sec</label><br>
+        <label><input type="radio" name="q32" value="10 Sec"> 10 Sec</label><br>
+        <label><input type="radio" name="q32" value="5 Sec"> 5 Sec</label><br>
+        <label><input type="radio" name="q32" value="2 Sec"> 2 Sec</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>33. भारत ने नवंबर 2024 में महिला एशियाई चैंपियंस ट्रॉफी जीतने के लिए किस टीम को हराया?</h2>
+        <label><input type="radio" name="q33" value="जापान"> जापान</label><br>
+        <label><input type="radio" name="q33" value="चीन"> चीन</label><br>
+        <label><input type="radio" name="q33" value="मलेशिया"> मलेशिया</label><br>
+        <label><input type="radio" name="q33" value="दक्षिण कोरिया"> दक्षिण कोरिया</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>34. निम्नलिखित में से कौन-सा देश कुष्ठ रोग को समाप्त करने वाला विश्व का पहला देश बन गया है?</h2>
+        <label><input type="radio" name="q34" value="भारत"> भारत</label><br>
+        <label><input type="radio" name="q34" value="जॉर्डन"> जॉर्डन</label><br>
+        <label><input type="radio" name="q34" value="ब्रुनेई"> ब्रुनेई</label><br>
+        <label><input type="radio" name="q34" value="चीन"> चीन</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>35. हाल ही में संयुक्त राज्य अमेरिका के डेलावेयर में 6वां क्वाड शिखर सम्मेलन आयोजित किया गया। निम्नलिखित में से कौन-सा देश क्वाड में शामिल नहीं है?</h2>
+        <label><input type="radio" name="q35" value="भारत"> भारत</label><br>
+        <label><input type="radio" name="q35" value="जापान"> जापान</label><br>
+        <label><input type="radio" name="q35" value="चीन"> चीन</label><br>
+        <label><input type="radio" name="q35" value="ऑस्ट्रेलिया"> ऑस्ट्रेलिया</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>36. चुम्बकीय क्षेत्र की SI इकाई क्या है?</h2>
+        <label><input type="radio" name="q36" value="गौस"> गौस</label><br>
+        <label><input type="radio" name="q36" value="न्यूटन"> न्यूटन</label><br>
+        <label><input type="radio" name="q36" value="एम्पियर"> एम्पियर</label><br>
+        <label><input type="radio" name="q36" value="टेस्ला"> टेस्ला</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>37. भारत का कौन-सा राज्य सबसे बड़ा मसाला उत्पादक है?</h2>
+        <label><input type="radio" name="q37" value="केरल"> केरल</label><br>
+        <label><input type="radio" name="q37" value="राजस्थान"> राजस्थान</label><br>
+        <label><input type="radio" name="q37" value="कर्नाटक"> कर्नाटक</label><br>
+        <label><input type="radio" name="q37" value="तमिलनाडु"> तमिलनाडु</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>38. चन्द्रगुप्त मौर्य का शिक्षक कौन था?</h2>
+        <label><input type="radio" name="q38" value="आर्यभट्ट"> आर्यभट्ट</label><br>
+        <label><input type="radio" name="q38" value="चाणक्य"> चाणक्य</label><br>
+        <label><input type="radio" name="q38" value="विष्णुगुप्त"> विष्णुगुप्त</label><br>
+        <label><input type="radio" name="q38" value="इनमें से कोई नहीं"> इनमें से कोई नहीं</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>39. लाल बहादुर शास्त्री का जन्म कहाँ हुआ था?</h2>
+        <label><input type="radio" name="q39" value="इलाहाबाद"> इलाहाबाद</label><br>
+        <label><input type="radio" name="q39" value="वाराणसी"> वाराणसी</label><br>
+        <label><input type="radio" name="q39" value="मुंगेर"> मुंगेर</label><br>
+        <label><input type="radio" name="q39" value="लालगंज"> लालगंज</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>40. 'सत्यशोधक समाज' की स्थापना किसने की?</h2>
+        <label><input type="radio" name="q40" value="ज्योतिबा फुले"> ज्योतिबा फुले</label><br>
+        <label><input type="radio" name="q40" value="बाल गंगाधर तिलक"> बाल गंगाधर तिलक</label><br>
+        <label><input type="radio" name="q40" value="महात्मा गाँधी"> महात्मा गाँधी</label><br>
+        <label><input type="radio" name="q40" value="सुभाष चंद्र बोस"> सुभाष चंद्र बोस</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>41. निम्न में से कौन-सी नदी 'डेल्टा' नहीं बनाती है?</h2>
+        <label><input type="radio" name="q41" value="नर्मदा"> नर्मदा</label><br>
+        <label><input type="radio" name="q41" value="गंगा"> गंगा</label><br>
+        <label><input type="radio" name="q41" value="गोदावरी"> गोदावरी</label><br>
+        <label><input type="radio" name="q41" value="कावेरी"> कावेरी</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>42. स्वतंत्रता संग्राम में 'चपड़ा' आंदोलन का संबंध किस राज्य से था?</h2>
+        <label><input type="radio" name="q42" value="बिहार"> बिहार</label><br>
+        <label><input type="radio" name="q42" value="गुजरात"> गुजरात</label><br>
+        <label><input type="radio" name="q42" value="पश्चिम बंगाल"> पश्चिम बंगाल</label><br>
+        <label><input type="radio" name="q42" value="पंजाब"> पंजाब</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>43. 'आज़ाद हिंद फ़ौज' की स्थापना किसने की थी?</h2>
+        <label><input type="radio" name="q43" value="महात्मा गाँधी"> महात्मा गाँधी</label><br>
+        <label><input type="radio" name="q43" value="सुभाष चंद्र बोस"> सुभाष चंद्र बोस</label><br>
+        <label><input type="radio" name="q43" value="लाल बहादुर शास्त्री"> लाल बहादुर शास्त्री</label><br>
+        <label><input type="radio" name="q43" value="बाल गंगाधर तिलक"> बाल गंगाधर तिलक</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>44. विश्व स्वास्थ्य संगठन (WHO) का मुख्यालय कहाँ स्थित है?</h2>
+        <label><input type="radio" name="q44" value="जिनेवा"> जिनेवा</label><br>
+        <label><input type="radio" name="q44" value="न्यूयॉर्क"> न्यूयॉर्क</label><br>
+        <label><input type="radio" name="q44" value="लंदन"> लंदन</label><br>
+        <label><input type="radio" name="q44" value="पेरिस"> पेरिस</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>45. किस वर्ष में जलियांवाला बाग हत्याकांड हुआ?</h2>
+        <label><input type="radio" name="q45" value="1917"> 1917</label><br>
+        <label><input type="radio" name="q45" value="1919"> 1919</label><br>
+        <label><input type="radio" name="q45" value="1921"> 1921</label><br>
+        <label><input type="radio" name="q45" value="1923"> 1923</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>46. भारत में प्रथम पंचवर्षीय योजना कब शुरू हुई?</h2>
+        <label><input type="radio" name="q46" value="1947-1952"> 1947-1952</label><br>
+        <label><input type="radio" name="q46" value="1951-1956"> 1951-1956</label><br>
+        <label><input type="radio" name="q46" value="1956-1961"> 1956-1961</label><br>
+        <label><input type="radio" name="q46" value="1961-1966"> 1961-1966</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>47. भारतीय संविधान में मूल अधिकारों को किस अनुच्छेद में सूचीबद्ध किया गया है?</h2>
+        <label><input type="radio" name="q47" value="अनुच्छेद 12-35"> अनुच्छेद 12-35</label><br>
+        <label><input type="radio" name="q47" value="अनुच्छेद 36-51"> अनुच्छेद 36-51</label><br>
+        <label><input type="radio" name="q47" value="अनुच्छेद 52-61"> अनुच्छेद 52-61</label><br>
+        <label><input type="radio" name="q47" value="अनुच्छेद 62-75"> अनुच्छेद 62-75</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>48. ‘पैनडेमिक’ शब्द का प्रयोग पहली बार कब किया गया?</h2>
+        <label><input type="radio" name="q48" value="1918 स्पेनिश फ्लू"> 1918 स्पेनिश फ्लू</label><br>
+        <label><input type="radio" name="q48" value="2009 स्वाइन फ्लू"> 2009 स्वाइन फ्लू</label><br>
+        <label><input type="radio" name="q48" value="2020 COVID-19"> 2020 COVID-19</label><br>
+        <label><input type="radio" name="q48" value="इनमें से कोई नहीं"> इनमें से कोई नहीं</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>49. 'सामान्य संतुलन विश्लेषण' किसने विकसित किया था?</h2>
+        <label><input type="radio" name="q49" value="एडम स्मिथ"> एडम स्मिथ</label><br>
+        <label><input type="radio" name="q49" value="रिकार्डो"> रिकार्डो</label><br>
+        <label><input type="radio" name="q49" value="मार्शल"> मार्शल</label><br>
+        <label><input type="radio" name="q49" value="वालरस"> वालरस</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>50. बेरोजगारी में वृद्धि किस प्रकार की अर्थव्यवस्था को संकेतित करता है?</h2>
+        <label><input type="radio" name="q50" value="स्वस्थ"> स्वस्थ</label><br>
+        <label><input type="radio" name="q50" value="अवनत"> अवनत</label><br>
+        <label><input type="radio" name="q50" value="स्थिर"> स्थिर</label><br>
+        <label><input type="radio" name="q50" value="विकसित"> विकसित</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>51. किसी जगह का स्थानीय समय 6:00 प्रातः है, जबकि ग्रीनविच मीन टाइम (GMT) 3:30 प्रातः है। उस जगह की देशांतर रेखा क्या होती है?</h2>
+        <label><input type="radio" name="q51" value="45° पश्चिम"> 45° पश्चिम</label><br>
+        <label><input type="radio" name="q51" value="45° पूर्व"> 45° पूर्व</label><br>
+        <label><input type="radio" name="q51" value="55° पश्चिम"> 55° पश्चिम</label><br>
+        <label><input type="radio" name="q51" value="55° पूर्व"> 55° पूर्व</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>52. पानी की एक टंकी के तल में दो छेद A तथा B हैं। केवल A छेद खोलने पर भरी हुई टंकी 60 मिनट में खाली होती है तथा केवल B छेद खोलने पर 30 मिनट में। यदि 10 मिनट तक दोनों छेद खोलकर छेद B बंद कर दिया जाए, तो भरी हुई टंकी को खाली करने में कुल समय लगेगा?</h2>
+        <label><input type="radio" name="q52" value="30 मिनट"> 30 मिनट</label><br>
+        <label><input type="radio" name="q52" value="40 मिनट"> 40 मिनट</label><br>
+        <label><input type="radio" name="q52" value="50 मिनट"> 50 मिनट</label><br>
+        <label><input type="radio" name="q52" value="20 मिनट"> 20 मिनट</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>53. होम्योपैथी के संस्थापक हैं:</h2>
+        <label><input type="radio" name="q53" value="हेन्सेन"> हेन्सेन</label><br>
+        <label><input type="radio" name="q53" value="होल्कट"> होल्कट</label><br>
+        <label><input type="radio" name="q53" value="हाइनेमैन"> हाइनेमैन</label><br>
+        <label><input type="radio" name="q53" value="हैरिसन तथा सिम्पसन"> हैरिसन तथा सिम्पसन</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>54. 'फ्रीडम इन इक्साइल' के लेखक कौन हैं?</h2>
+        <label><input type="radio" name="q54" value="दलाई लामा"> दलाई लामा</label><br>
+        <label><input type="radio" name="q54" value="मदर टेरेसा"> मदर टेरेसा</label><br>
+        <label><input type="radio" name="q54" value="अबुल कलाम आजाद"> अबुल कलाम आजाद</label><br>
+        <label><input type="radio" name="q54" value="सलमान रश्दी"> सलमान रश्दी</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>55. पारिस्थितिकी में कम्युनिटी को ______ भी कहा जाता है।</h2>
+        <label><input type="radio" name="q55" value="बायोलोजिकल कम्युनिटी"> बायोलोजिकल कम्युनिटी</label><br>
+        <label><input type="radio" name="q55" value="लेबर कम्युनिटी"> लेबर कम्युनिटी</label><br>
+        <label><input type="radio" name="q55" value="केमिकल कम्युनिटी"> केमिकल कम्युनिटी</label><br>
+        <label><input type="radio" name="q55" value="फिजिकल कम्युनिटी"> फिजिकल कम्युनिटी</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>56. भारतीय संविधान के किस अनुच्छेद के अंतर्गत संविधान में संशोधन का अधिकार है?</h2>
+        <label><input type="radio" name="q56" value="अनुच्छेद-280"> अनुच्छेद-280</label><br>
+        <label><input type="radio" name="q56" value="अनुच्छेद-370"> अनुच्छेद-370</label><br>
+        <label><input type="radio" name="q56" value="अनुच्छेद-394 (क)"> अनुच्छेद-394 (क)</label><br>
+        <label><input type="radio" name="q56" value="अनुच्छेद-368"> अनुच्छेद-368</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>57. विश्व का पहला प्रोगामेबल, इलेक्ट्रॉनिक सामान्य प्रयोजन वाला डिजिटल कंप्यूटर निम्नलिखित में से है?</h2>
+        <label><input type="radio" name="q57" value="ABC"> ABC</label><br>
+        <label><input type="radio" name="q57" value="ENIAC"> ENIAC</label><br>
+        <label><input type="radio" name="q57" value="AN/FSQ-7"> AN/FSQ-7</label><br>
+        <label><input type="radio" name="q57" value="PARAM"> PARAM</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>58. अंकों तथा अक्षरों की श्रेणी का अगला पद होगा- A26H, C24F, G20B, M14V, ?</h2>
+        <label><input type="radio" name="q58" value="U8N"> U8N</label><br>
+        <label><input type="radio" name="q58" value="U6N"> U6N</label><br>
+        <label><input type="radio" name="q58" value="V6M"> V6M</label><br>
+        <label><input type="radio" name="q58" value="V6N"> V6N</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>59. लघु उद्योगों के लिए बनी निम्न समितियों को कालानुक्रम में व्यवस्थित कीजिए और नीचे दिए गए कूटों में से सही उत्तर चुनिए:</h2>
+        <label><input type="radio" name="q59" value="3, 1, 2, 4"> 3, 1, 2, 4</label><br>
+        <label><input type="radio" name="q59" value="2, 3, 4, 1"> 2, 3, 4, 1</label><br>
+        <label><input type="radio" name="q59" value="1, 2, 4, 3"> 1, 2, 4, 3</label><br>
+        <label><input type="radio" name="q59" value="1, 2, 3, 4"> 1, 2, 3, 4</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>60. 2024 में महाराष्ट्र विधानसभा चुनाव में किस राजनीतिक गठबंधन ने बहुमत हासिल किया?</h2>
+        <label><input type="radio" name="q60" value="महायुति गठबंधन"> महायुति गठबंधन</label><br>
+        <label><input type="radio" name="q60" value="महाअघाड़ी गठबंधन"> महाअघाड़ी गठबंधन</label><br>
+        <label><input type="radio" name="q60" value="तीसरा गठबंधन"> तीसरा गठबंधन</label><br>
+        <label><input type="radio" name="q60" value="समाजवादी पार्टी"> समाजवादी पार्टी</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>61. प्रतिरोधी संक्रमणों के लिए भारत में लॉन्च किए गए पहले स्वदेशी एंटीबायोटिक का नाम क्या है?</h2>
+        <label><input type="radio" name="q61" value="एजिथ्रोमाइसिन"> एजिथ्रोमाइसिन</label><br>
+        <label><input type="radio" name="q61" value="नैफिथ्रोमाइसिन"> नैफिथ्रोमाइसिन</label><br>
+        <label><input type="radio" name="q61" value="सेफ्रिट्रएक्सोन"> सेफ्रिट्रएक्सोन</label><br>
+        <label><input type="radio" name="q61" value="(अन्य)"> (अन्य)</label><br>
+      </div>  
+      
+      <div class="question">
+        <h2>62. सड़क दुर्घटना पीड़ितों के लिए हिट एंड रन मुआवजा योजना में बिहार का स्थान है-</h2>
+        <label><input type="radio" name="q62" value="A"> A. पहला</label><br>
+        <label><input type="radio" name="q62" value="B"> B. दूसरा</label><br>
+        <label><input type="radio" name="q62" value="C"> C. तीसरा</label><br>
+        <label><input type="radio" name="q62" value="D"> D. चौथा</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>63. बिहार राजस्व भूमि सुधार विभाग ने जिलाधिकारियों (DM) को राजस्व कार्यों में अधिक रुचि और तीव्र निष्पादन सुनिश्चित करने के लिए जारी रैंकिंग में कहाँ की DM को प्रथम स्थान प्राप्त हुआ?</h2>
+        <label><input type="radio" name="q63" value="A"> A. बांका</label><br>
+        <label><input type="radio" name="q63" value="B"> B. शेखपुरा</label><br>
+        <label><input type="radio" name="q63" value="C"> C. सिवान</label><br>
+        <label><input type="radio" name="q63" value="D"> D. पटना</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>64. भारत के संविधान के किस अनुच्छेद में पुरुषों और स्त्रियों दोनों के लिए समान कार्य के लिए समान वेतन का प्रावधान है?</h2>
+        <label><input type="radio" name="q64" value="A"> A. अनुच्छेद-39 (क)</label><br>
+        <label><input type="radio" name="q64" value="B"> B. अनुच्छेद-39 (ख)</label><br>
+        <label><input type="radio" name="q64" value="C"> C. अनुच्छेद-39 (ग)</label><br>
+        <label><input type="radio" name="q64" value="D"> D. अनुच्छेद-39 (घ)</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>65. निम्न में से किस संविधान संशोधन के द्वारा महिला आरक्षण विधेयक, 2023 या नारी शक्ति वंदन अधिनियम लागू किया गया?</h2>
+        <label><input type="radio" name="q65" value="A"> A. 128वां</label><br>
+        <label><input type="radio" name="q65" value="B"> B. 129वां</label><br>
+        <label><input type="radio" name="q65" value="C"> C. 127वां</label><br>
+        <label><input type="radio" name="q65" value="D"> D. 126वां</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>66. इस प्रश्न में दो वक्तव्य है। एक को कथन (A) तथा दूसरे को कारण (R) कहा जाता है इन दोनों वक्तव्यों को सावधानीपूर्वक परीक्षण कर इस प्रश्न का उत्तर नीचे दिए हुए कूट की सहायता से चुनिए-</h2>
+        <p>कथन (A): केटामाइन एक संवेदनशील दवा है। यह एक तरल या सफेद पाउडर होता है।</p>
+        <p>कारण (R): केटामाइन का उपयोग सर्जरी से पहले मरीजों को बेहोश करने के लिए किया जाता है, यह मस्तिष्क में ग्लूटामेट नामक न्यूरोट्रांसमीटर को अवरुद्ध करती है जिससे दर्द और चेतना का स्तर कम हो जाता है।</p>
+        <label><input type="radio" name="q66" value="A"> A. (A) और (R) दोनों सही हैं और R, A का सही स्पष्टीकरण है</label><br>
+        <label><input type="radio" name="q66" value="B"> B. (A) और (R) दोनों सही हैं और R, A का सही स्पष्टीकरण नहीं है</label><br>
+        <label><input type="radio" name="q66" value="C"> C. (A) सही है, परन्तु (R) गलत है</label><br>
+        <label><input type="radio" name="q66" value="D"> D. (A) गलत है, परन्तु (R) सही है</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>67. कर्पूरी ठाकुर के पिता कौन-से कार्य में लगे थे?</h2>
+        <label><input type="radio" name="q67" value="A"> A. खेती</label><br>
+        <label><input type="radio" name="q67" value="B"> B. मछली पकड़ना</label><br>
+        <label><input type="radio" name="q67" value="C"> C. दर्जी</label><br>
+        <label><input type="radio" name="q67" value="D"> D. बुनाई</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>68. राज्य पुनर्गठन अधिनियम 1956 के तहत बिहार से अलग कर बनाए गए राज्य का नाम क्या है?</h2>
+        <label><input type="radio" name="q68" value="A"> A. झारखंड</label><br>
+        <label><input type="radio" name="q68" value="B"> B. छत्तीसगढ़</label><br>
+        <label><input type="radio" name="q68" value="C"> C. उत्तराखंड</label><br>
+        <label><input type="radio" name="q68" value="D"> D. ओडिशा</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>69. भारत में महिलाओं को पहली बार मताधिकार कब प्राप्त हुआ?</h2>
+        <label><input type="radio" name="q69" value="A"> A. 1935</label><br>
+        <label><input type="radio" name="q69" value="B"> B. 1947</label><br>
+        <label><input type="radio" name="q69" value="C"> C. 1950</label><br>
+        <label><input type="radio" name="q69" value="D"> D. 1929</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>70. बिहार का कौन-सा जिला लिच्छवी साम्राज्य का हिस्सा था?</h2>
+        <label><input type="radio" name="q70" value="A"> A. वैशाली</label><br>
+        <label><input type="radio" name="q70" value="B"> B. मुजफ्फरपुर</label><br>
+        <label><input type="radio" name="q70" value="C"> C. सारण</label><br>
+        <label><input type="radio" name="q70" value="D"> D. दरभंगा</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>71. फोर्ब्स की 2024 की सूची में दुनिया की सबसे शक्तिशाली महिला कौन थी?</h2>
+        <label><input type="radio" name="q71" value="A"> A. उर्सुला वॉन डेर लेयेन</label><br>
+        <label><input type="radio" name="q71" value="B"> B. कमला हैरिस</label><br>
+        <label><input type="radio" name="q71" value="C"> C. जैकिंडा अर्डर्न</label><br>
+        <label><input type="radio" name="q71" value="D"> D. मेलिंडा गेट्स</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>72. बिहार में किसी महिला मुख्यमंत्री का कार्यकाल कितने वर्षों तक रहा?</h2>
+        <label><input type="radio" name="q72" value="A"> A. 2</label><br>
+        <label><input type="radio" name="q72" value="B"> B. 4</label><br>
+        <label><input type="radio" name="q72" value="C"> C. 6</label><br>
+        <label><input type="radio" name="q72" value="D"> D. 8</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>73. 2011 की जनगणना के अनुसार उत्तरप्रदेश के बाद निम्नलिखित राज्यों में से किस राज्य में सर्वाधिक ग्रामीण आबादी है?</h2>
+        <label><input type="radio" name="q73" value="A"> A. मध्यप्रदेश</label><br>
+        <label><input type="radio" name="q73" value="B"> B. राजस्थान</label><br>
+        <label><input type="radio" name="q73" value="C"> C. बिहार</label><br>
+        <label><input type="radio" name="q73" value="D"> D. झारखंड</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>74. निम्नलिखित में से किसकी श्यानता कम होती है?</h2>
+        <label><input type="radio" name="q74" value="A"> A. रक्त</label><br>
+        <label><input type="radio" name="q74" value="B"> B. ग्लिसरीन</label><br>
+        <label><input type="radio" name="q74" value="C"> C. अल्कोहल</label><br>
+        <label><input type="radio" name="q74" value="D"> D. कोलतार</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>75. निम्नलिखित में से किस धातु की परमाणु त्रिज्या सबसे अधिक है?</h2>
+        <label><input type="radio" name="q75" value="A"> A. Na</label><br>
+        <label><input type="radio" name="q75" value="B"> B. Mg</label><br>
+        <label><input type="radio" name="q75" value="C"> C. Al</label><br>
+        <label><input type="radio" name="q75" value="D"> D. Si</label><br>
+      </div>
+      
+      <div class="question">
+        <h2>76. लीथियम के नाभिक में कितने प्रोटॉन होते हैं?</h2>
+        <label><input type="radio" name="q76" value="A"> A. 3</label><br>
+        <label><input type="radio" name="q76" value="B"> B. 2</label><br>
+        <label><input type="radio" name="q76" value="C"> C. 4</label><br>
+        <label><input type="radio" name="q76" value="D"> D. 5</label><br>
+      </div>
+      
+      <!-- Continue the same format for questions 77 to 99 -->
+      
+      <div class="question">
+        <h2>99. केदारनाथ यात्रा 2024 के संचालन के लिए पुलिस द्वारा कौन-सा ऑपरेशन शुरू किया गया?</h2>
+        <label><input type="radio" name="q99" value="A"> A. ऑपरेशन अजय</label><br>
+        <label><input type="radio" name="q99" value="B"> B. ऑपरेशन गंगा</label><br>
+        <label><input type="radio" name="q99" value="C"> C. ऑपरेशन मर्यादा</label><br>
+        <label><input type="radio" name="q99" value="D"> D. ऑपरेशन संभावना</label><br>
+      </div>
+      
+      
+      <div class="question">
+        <h2>100. विश्व का एकमात्र तैरता डाकघर किस झील पर स्थित है?</h2>
+        <label><input type="radio" name="q100" value="A"> A. डल झील</label><br>
+        <label><input type="radio" name="q100" value="B"> B. वुलर झील</label><br>
+        <label><input type="radio" name="q100" value="C"> C. नागिन झील</label><br>
+        <label><input type="radio" name="q100" value="D"> D. सुरिंसर झील</label><br>
+      </div>
+      
+        <!-- Submit button -->
+        <button type="submit" id="submit-btn" enabled>Submit</button>
+      </form>
+    </div>
+
+    <!-- Results Section -->
+    <div id="result-section" style="display: none;">
+      <h1>Quiz Results</h1>
+      <p id="result"></p>
+      <h5>I love you my jaan Khushi. Keep it Up!</h5>
+      <button onclick="location.reload();">Restart Quiz</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

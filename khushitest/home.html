@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+        }
+
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .content {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .box {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        .box button {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .box button:hover {
+            background-color: #0056b3;
+        }
+
+        .show-more {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            header, footer {
+                font-size: 14px;
+            }
+
+            .box {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Website</h1>
+    </header>
+
+    <div class="content">
+        <p>Welcome to our website. Here, you can explore various features and learn more about our services. Click on the buttons below to discover more.</p>
+    </div>
+
+    <div class="container" id="featureContainer">
+        <div class="box">
+            <h2>Feature 1</h2>
+            <p>Learn about Feature 1.</p>
+            <button onclick="openHTML('index.html')">Learn More</button>
+        </div>
+        <div class="box">
+            <h2>Feature 2</h2>
+            <p>Discover Feature 2 details.</p>
+            <button onclick="openHTML('feature2.html')">Learn More</button>
+        </div>
+        <div class="box">
+            <h2>Feature 3</h2>
+            <p>Explore Feature 3.</p>
+            <button onclick="openHTML('feature3.html')">Learn More</button>
+        </div>
+    </div>
+
+    <div class="show-more">
+        <button id="showMoreBtn" onclick="showMoreFeatures()">Show More</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Your Website Name. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function openHTML(fileName) {
+            window.open(fileName, '_blank');
+        }
+
+        function showMoreFeatures() {
+            const featureContainer = document.getElementById('featureContainer');
+            const additionalFeatures = `
+                <div class="box">
+                    <h2>Feature 4</h2>
+                    <p>Understand Feature 4.</p>
+                    <button onclick="openHTML('feature4.html')">Learn More</button>
+                </div>
+                <div class="box">
+                    <h2>Feature 5</h2>
+                    <p>Details about Feature 5.</p>
+                    <button onclick="openHTML('feature5.html')">Learn More</button>
+                </div>
+                <div class="box">
+                    <h2>Feature 6</h2>
+                    <p>Get insights into Feature 6.</p>
+                    <button onclick="openHTML('feature6.html')">Learn More</button>
+                </div>`;
+
+            featureContainer.innerHTML += additionalFeatures;
+            document.getElementById('showMoreBtn').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
