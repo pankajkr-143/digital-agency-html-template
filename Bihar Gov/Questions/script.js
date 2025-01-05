@@ -282,8 +282,8 @@ function showResult() {
             ${incorrectAnswers.map(item => `
                 <li>
                     <b>${item.question}</b><br>
-                    सही उत्तर : ${item.userAnswer.toUpperCase()}<br>
-                    गलत उत्तर : ${item.correctAnswer}
+                    गलत उत्तर : ${item.userAnswer.toUpperCase()}<br>
+                    सही उत्तर : ${item.correctAnswer}
                 </li>
             `).join('')}
         </ul>
