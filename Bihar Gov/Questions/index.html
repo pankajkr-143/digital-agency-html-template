@@ -12,7 +12,7 @@
         <input type="text" id="username" placeholder="Enter Username" required>
         <input type="password" id="password" placeholder="Enter Password" required>
         <button onclick="login()">Login</button>
-        <p>Don't have an account? </p>
+        <h3>अगर आपके पास id और पासवर्ड नहीं तो SignUp पर क्लिक कीजिये |</h3>
         <button onclick="redirectToSignup()" class="secondary-button">Sign Up</button>
     </div>
 
@@ -208,16 +208,6 @@
                 <label><input type="radio" name="q19" value="d"> D. इनमें से कोई नहीं</label><br>
                 <button type="button" class="show-answer-btn" onclick="showAnswer(19, 'D. इनमें से कोई नहीं')">Show Answer</button>
                 <div id="answer19" class="answer"></div>
-            </div>
-            
-            <div class="question" id="question20">
-                <h3>20. विश्व का सबसे बड़ा दुग्ध-उत्पादक है:</h3>
-                <label><input type="radio" name="q20" value="a"> A. अमेरिका</label><br>
-                <label><input type="radio" name="q20" value="b"> B. चीन</label><br>
-                <label><input type="radio" name="q20" value="c"> C. ब्राजील</label><br>
-                <label><input type="radio" name="q20" value="d"> D. भारत</label><br>
-                <button type="button" class="show-answer-btn" onclick="showAnswer(20, 'D. भारत')">Show Answer</button>
-                <div id="answer20" class="answer"></div>
             </div>
 
             <div class="question" id="question20">
@@ -1014,7 +1004,7 @@
     <div id="resultPage" style="display: none;">
         <h2>Test Result</h2>
         <div id="resultSummary"></div>
-        <button onclick="restartTest()">Restart Test</button>
+        <button onclick="restartTest()">फिर से टेस्ट शुरू करे |</button>
     </div>
 
     <script src="script.js"></script>

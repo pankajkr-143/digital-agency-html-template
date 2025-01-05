@@ -3,7 +3,7 @@ const users = [
     { username: "Khushi", password: "6205535989" }
 ];
 function redirectToSignup() {
-    window.location.href = "/SignUp/index.html";
+    window.location.href = "/Bihar Gov/SignUp/index.html";
 }
 
 // Questions and answers (option values are in lowercase, i.e., a, b, c, d)
@@ -276,14 +276,14 @@ function showResult() {
     const resultSummary = document.getElementById("resultSummary");
 
     resultSummary.innerHTML = `
-        <p>Correct Answers: ${correctAnswersCount}/${questions.length}</p>
-        <p>Incorrect Answers:</p>
+        <p><b>सही उत्तर :</b> ${correctAnswersCount}/${questions.length}</p>
+        <p><b>गलत उत्तर / व्याख्या :</b></p>
         <ul>
             ${incorrectAnswers.map(item => `
                 <li>
                     <b>${item.question}</b><br>
-                    Your answer: ${item.userAnswer.toUpperCase()}<br>
-                    Correct answer: ${item.correctAnswer}
+                    सही उत्तर : ${item.userAnswer.toUpperCase()}<br>
+                    गलत उत्तर : ${item.correctAnswer}
                 </li>
             `).join('')}
         </ul>

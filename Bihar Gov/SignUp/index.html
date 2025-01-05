@@ -9,7 +9,8 @@
 <body>
     <div class="container">
         <h1>SignUp for Test</h1>
-        <form id="contactForm">
+        <form action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateForm()">
+            <input type="hidden" name="access_key" value="3feae6ad-2dd7-488e-bbf8-74b290fe15f5">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
@@ -23,6 +24,10 @@
                 <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
+                <label for="phone">Mobile No.:(Note: मोबाइल नंबर आपका पासवर्ड रहेगा |)</label>
+                <input type="number" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
                 <label for="preparation">Preparing For:</label>
                 <select id="preparation" name="preparation" multiple required>
                     <option value="Bihar Daroga">Bihar Daroga</option>
@@ -34,20 +39,13 @@
                     <option value="Other">Other</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <label for="confirmPassword">Confirm Password:</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" required>
-            </div>
+            
             <button type="submit">Submit</button>
-            <div id="message">SignUp करने के 15 मिनट के आप लॉगिन कर सकते है |</div>
+            <div id="message">SignUp करने के 15 मिनट के आप लॉगिन कर सकते है | और आपका मोबाइल नंबर ही आपका पासवर्ड होगा |</div>
             <hr>
-            <div id="message">अगर आप अभी username और पासवर्ड लेना चाहते है तो कॉल कीजिये -  8235910315</div>
+            <div id="message">अगर आप अभी username और पासवर्ड लेना चाहते है तो कॉल कीजिये - 8235910315</div>
         </form>
-    </div>
+    </div>    
     <script src="script.js"></script>
 </body>
 </html>
