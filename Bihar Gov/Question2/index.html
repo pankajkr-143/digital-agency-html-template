@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loginPage">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Enter Username" required>
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <button onclick="login()">Login</button>
+        <h3>अगर आपके पास id और पासवर्ड नहीं तो SignUp पर क्लिक कीजिये |</h3>
+        <button onclick="redirectToSignup()" class="secondary-button">Sign Up</button>
+    </div>
+
+    <div id="testPage" style="display: none;">
+        <h2>MCQ Test</h2>
+        <form id="mcqForm">
+            <div class="question" id="question31">
+                <h3>31. 'गम्मत' है:</h3>
+                <label><input type="radio" name="q31" value="a"> A. लोकनृत्य</label><br>
+                <label><input type="radio" name="q31" value="b"> B. लोकगीत</label><br>
+                <label><input type="radio" name="q31" value="c"> C. लोक चित्रकला</label><br>
+                <label><input type="radio" name="q31" value="d"> D. लोकनाट्य</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(31, 'D. लोकनाट्य')">Show Answer</button>
+                <div id="answer31" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question32">
+                <h3>32. एक गेंद को 50 m/s की चाल से ऊर्ध्वाधर ऊपर की ओर फेंका जाता है। गेंद को अधिकतम ऊँचाई तक पहुँचने में लगभग कितना समय लगेगा?</h3>
+                <label><input type="radio" name="q32" value="a"> A. 4 Sec</label><br>
+                <label><input type="radio" name="q32" value="b"> B. 10 Sec</label><br>
+                <label><input type="radio" name="q32" value="c"> C. 5 Sec</label><br>
+                <label><input type="radio" name="q32" value="d"> D. 2 Sec</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(32, 'C. 5 Sec')">Show Answer</button>
+                <div id="answer32" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question34">
+                <h3>34. भारत ने नवंबर 2024 में महिला एशियाई चैंपियंस ट्रॉफी जीतने के लिए किस टीम को हराया?</h3>
+                <label><input type="radio" name="q34" value="a"> A. जापान</label><br>
+                <label><input type="radio" name="q34" value="b"> B. चीन</label><br>
+                <label><input type="radio" name="q34" value="c"> C. मलेशिया</label><br>
+                <label><input type="radio" name="q34" value="d"> D. दक्षिण कोरिया</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(34, 'A. जापान')">Show Answer</button> 
+                <div id="answer34" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question36">
+                <h3>36. हाल ही में संयुक्त राज्य अमेरिका के डेलावेयर में 6वां क्वाड शिखर सम्मेलन आयोजित किया गया। निम्नलिखित में से कौन-सा देश क्वाड में शामिल नहीं है?</h3>
+                <label><input type="radio" name="q36" value="a"> A. भारत</label><br>
+                <label><input type="radio" name="q36" value="b"> B. जापान</label><br>
+                <label><input type="radio" name="q36" value="c"> C. चीन</label><br>
+                <label><input type="radio" name="q36" value="d"> D. ऑस्ट्रेलिया</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(36, 'C. चीन')">Show Answer</button>
+                <div id="answer36" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question37">
+                <h3>37. द्रव यांत्रिकी में मैक संख्या 5 से अधिक है तो उस स्थिति को कहते हैं?</h3>
+                <label><input type="radio" name="q37" value="a"> A. सबसोनिक</label><br>
+                <label><input type="radio" name="q37" value="b"> B. हाइपरसोनिक</label><br>
+                <label><input type="radio" name="q37" value="c"> C. सुपरसोनिक</label><br>
+                <label><input type="radio" name="q37" value="d"> D. ध्वनि के गति के बराबर</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(37, 'B. हाइपरसोनिक')">Show Answer</button> 
+                <div id="answer37" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question38">
+                <h3>38. एलियम सीपा ______ को वैज्ञानिक नाम है।</h3>
+                <label><input type="radio" name="q38" value="a"> A. गाजर</label><br>
+                <label><input type="radio" name="q38" value="b"> B. प्याज</label><br>
+                <label><input type="radio" name="q38" value="c"> C. आलू</label><br>
+                <label><input type="radio" name="q38" value="d"> D. बैंगन</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(38, 'B. प्याज')">Show Answer</button>
+                <div id="answer38" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question39">
+                <h3>39. निम्नलिखित में से कौन-सा 'त्योहार-राज्य' युग्म सही नहीं है?</h3>
+                <label><input type="radio" name="q39" value="a"> A. उगादी - आंध्र प्रदेश</label><br>
+                <label><input type="radio" name="q39" value="b"> B. शादसुक - मेघालय</label><br>
+                <label><input type="radio" name="q39" value="c"> C. योशंग - मणिपुर</label><br> 
+                <label><input type="radio" name="q39" value="d"> D. एंथुरियम - मिजोरम</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(39, 'C. योशंग - मणिपुर')">Show Answer</button>
+                <div id="answer39" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question40">
+                <h3>40. यदि हमारे एक हाथ में माला है, तो दूसरे हाथ में भाला भी है यह किस राजनेता का कथन है?</h3>
+                <label><input type="radio" name="q40" value="a"> A. योगी आदित्यनाथ</label><br>
+                <label><input typetype="radio" name="q40" value="b"> B. बाबा बालक नाथ</label><br>
+                <label><input type="radio" name="q40" value="c"> C. प्रमोद कृष्णन</label><br>
+                <label><input type="radio" name="q40" value="d"> D. इनमें से कोई नहीं</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(40, 'A. योगी आदित्यनाथ')">Show Answer</button>
+                <div id="answer40" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question41">
+                <h3>41. आठवीं ईस्ट जोन शूटिंग चैंपियनशिप प्रतियोगिता में बिहार टीम ने कुल कितने स्वर्ण पदक जीते?</h3>
+                <label><input type="radio" name="q41" value="a"> A. 6</label><br>
+                <label><input type="radio" name="q41" value="b"> B. 7</label><br>
+                <label><input type="radio" name="q41" value="c"> C. 8</label><br>
+                <label><input type="radio" name="q41" value="d"> D. 9</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(41, 'B. 7')">Show Answer</button>
+                <div id="answer41" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question42">
+                <h3>42. बौद्ध धर्म की जातक कथाओं से संबंधित अजंता की गुफाओं का निर्माण किस वंश के काल में हुआ था?</h3>
+                <label><input type="radio" name="q42" value="a"> A. चालुक्य वंश</label><br>
+                <label><input type="radio" name="q42" value="b"> B. होयसल वंश</label><br>
+                <label><input type="radio" name="q42" value="c"> C. राष्ट्रकूट वंश</label><br>
+                <label><input type="radio" name="q42" value="d"> D. सातवाहन वंश</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(42, 'D. सातवाहन वंश')">Show Answer</button>
+                <div id="answer42" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question43">
+                <h3>43. जहाँगीर के दरबार के प्रमुख चित्रकारों में किसके नेतृत्व में आगरा में एक चित्रणशाला की स्थापना हुई?</h3>
+                <label><input type="radio" name="q43" value="a"> A. अबूल हसन</label><br>
+                <label><input type="radio" name="q43" value="b"> B. उस्ताद मंसूर</label><br>
+                <label><input type="radio" name="q43" value="c"> C. मुहम्मद नासिर</label><br>
+                <label><input type="radio" name="q43" value="d"> D. आगा रजा</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(43, 'D. आगा रजा')">Show Answer</button>
+                <div id="answer43" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question44">
+                <h3>44. यदि किसी वृत्त की त्रिज्या 4 cm है, तो उसका क्षेत्रफल क्या होगा?</h3>
+                <label><input type="radio" name="q44" value="a"> A. 16π cm²</label><br>
+                <label><input type="radio" name="q44" value="b"> B. 8π cm²</label><br>
+                <label><input type="radio" name="q44" value="c"> C. 32π cm²</label><br>
+                <label><input type="radio" name="q44" value="d"> D. 2π cm²</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(44, 'A. 16π cm²')">Show Answer</button>
+                <div id="answer44" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question45">
+                <h3>45. विश्व का सबसे बड़ा महासागर कौन सा है?</h3>
+                <label><input type="radio" name="q45" value="a"> A. हिंद महासागर</label><br>
+                <label><input type="radio" name="q45" value="b"> B. अटलांटिक महासागर</label><br>
+                <label><input type="radio" name="q45" value="c"> C. प्रशांत महासागर</label><br>
+                <label><input type="radio" name="q45" value="d"> D. आर्कटिक महासागर</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(45, 'C. प्रशांत महासागर')">Show Answer</button>
+                <div id="answer45" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question46">
+                <h3>46. किस आहार से हड्डियों में कैल्शियम की कमी होती है?</h3>
+                <label><input type="radio" name="q46" value="a"> A. दूध</label><br>
+                <label><input type="radio" name="q46" value="b"> B. अनाज</label><br>
+                <label><input type="radio" name="q46" value="c"> C. फल</label><br>
+                <label><input type="radio" name="q46" value="d"> D. अत्यधिक नमक/सोडा युक्त आहार</label><br> 
+                <button type="button" class="show-answer-btn" onclick="showAnswer(46, 'D. अत्यधिक नमक/सोडा युक्त आहार')">Show Answer</button>
+                <div id="answer46" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question47">
+                <h3>47. 20 वीं शताबदी का पहला प्रमुख महिला एथलीट कौन थीं?</h3>
+                <label><input type="radio" name="q47" value="a"> A. लिली लोरेन</label><br>
+                <label><input type="radio" name="q47" value="b"> B. हंसा वार्शी</label><br>
+                <label><input type="radio" name="q47" value="c"> C. मैरीलिन लूप</label><br>
+                <label><input type="radio" name="q47" value="d"> D. जेनेट सैंडर्स</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(47, 'A. लिली लोरेन')">Show Answer</button>
+                <div id="answer47" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question49">
+                <h3>49. 'सामान्य संतुलन विश्लेषण' किसने विकसित किया था?</h3>
+                <label><input type="radio" name="q49" value="a"> A. एडम स्मिथ</label><br>
+                <label><input type="radio" name="q49" value="b"> B. रिकार्डो</label><br>
+                <label><input type="radio" name="q49" value="c"> C. मार्शल</label><br>
+                <label><input type="radio" name="q49" value="d"> D. वालरस</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(49, 'D. वालरस')">Show Answer</button>
+                <div id="answer49" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question50">
+                <h3>50. बेरोजगारी में वृद्धि किस प्रकार की अर्थव्यवस्था को संकेतित करता है?</h3>
+                <label><input type="radio" name="q50" value="a"> A. स्वस्थ</label><br>
+                <label><input type="radio" name="q50" value="b"> B. अवनत</label><br>
+                <label><input type="radio" name="q50" value="c"> C. स्थिर</label><br>
+                <label><input type="radio" name="q50" value="d"> D. विकसित</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(50, 'B. अवनत')">Show Answer</button>
+                <div id="answer50" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question51">
+                <h3>51. किसी जगह का स्थानीय समय 6:00 प्रातः है, जबकि ग्रीनविच मीन टाइम (GMT) 3:30 प्रातः है। उस जगह की देशांतर रेखा क्या होती है?</h3>
+                <label><input type="radio" name="q51" value="a"> A. 37.5° पश्चिम</label><br>
+                <label><input type="radio" name="q51" value="b"> B. 37.5° पूर्व</label><br>
+                <label><input type="radio" name="q51" value="c"> C. 52.5° पश्चिम</label><br>
+                <label><input type="radio" name="q51" value="d"> D. 52.5° पूर्व</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(51, 'B. 37.5° पूर्व')">Show Answer</button>
+                <div id="answer51" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question52">
+                <h3>52. पानी की एक टंकी के तल में दो छेद A तथा B हैं। केवल A छेद खोलने पर भरी हुई टंकी 60 मिनट में खाली होती है तथा केवल B छेद खोलने पर 30 मिनट में। यदि 10 मिनट तक दोनों छेद खोलकर छेद B बंद कर दिया जाए, तो भरी हुई टंकी को खाली करने में कुल समय लगेगा?</h3>
+                <label><input type="radio" name="q52" value="a"> A. 30 मिनट</label><br>
+                <label><input type="radio" name="q52" value="b"> B. 40 मिनट</label><br>
+                <label><input type="radio" name="q52" value="c"> C. 50 मिनट</label><br>
+                <label><input type="radio" name="q52" value="d"> D. 20 मिनट</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(52, 'B. 40 मिनट')">Show Answer</button>
+                <div id="answer52" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question53">
+                <h3>53. होम्योपैथी के संस्थापक कौन हैं?</h3>
+                <label><input type="radio" name="q53" value="a"> A. हेन्सेन</label><br>
+                <label><input type="radio" name="q53" value="b"> B. होल्कट</label><br>
+                <label><input type="radio" name="q53" value="c"> C. सैमुअल हैनिमैन</label><br>
+                <label><input type="radio" name="q53" value="d"> D. हैरिसन तथा सिम्पसन</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(53, 'C. सैमुअल हैनिमैन')">Show Answer</button>
+                <div id="answer53" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question54">
+                <h3>54. 'फ्रीडम इन एक्साइल' के लेखक कौन हैं?</h3>
+                <label><input type="radio" name="q54" value="a"> A. दलाई लामा</label><br>
+                <label><input type="radio" name="q54" value="b"> B. मदर टेरेसा</label><br>
+                <label><input type="radio" name="q54" value="c"> C. अबुल कलाम आजाद</label><br>
+                <label><input type="radio" name="q54" value="d"> D. सलमान रश्दी</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(54, 'A. दलाई लामा')">Show Answer</button>
+                <div id="answer54" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question55">
+                <h3>55. पारिस्थितिकी में कम्युनिटी को ______ भी कहा जाता है।</h3>
+                <label><input type="radio" name="q55" value="a"> A. बायोलोजिकल कम्युनिटी</label><br>
+                <label><input type="radio" name="q55" value="b"> B. लेबर कम्युनिटी</label><br>
+                <label><input type="radio" name="q55" value="c"> C. केमिकल कम्युनिटी</label><br>
+                <label><input type="radio" name="q55" value="d"> D. फिजिकल कम्युनिटी</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(55, 'A. बायोलोजिकल कम्युनिटी')">Show Answer</button>
+                <div id="answer55" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question56">
+                <h3>56. भारतीय संविधान के किस अनुच्छेद के अंतर्गत संविधान में संशोधन का अधिकार है?</h3>
+                <label><input type="radio" name="q56" value="a"> A. अनुच्छेद-280</label><br>
+                <label><input type="radio" name="q56" value="b"> B. अनुच्छेद-370</label><br>
+                <label><input type="radio" name="q56" value="c"> C. अनुच्छेद-394 (क)</label><br>
+                <label><input type="radio" name="q56" value="d"> D. अनुच्छेद-368</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(56, 'D. अनुच्छेद-368')">Show Answer</button>
+                <div id="answer56" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question57">
+                <h3>57. विश्व का पहला प्रोगामेबल, इलेक्ट्रॉनिक सामान्य प्रयोजन वाला डिजिटल कंप्यूटर निम्नलिखित में से है?</h3>
+                <label><input type="radio" name="q57" value="a"> A. ABC</label><br>
+                <label><input type="radio" name="q57" value="b"> B. ENIAC</label><br>
+                <label><input type="radio" name="q57" value="c"> C. AN/FSQ-7</label><br>
+                <label><input type="radio" name="q57" value="d"> D. PARAM</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(57, 'B. ENIAC')">Show Answer</button>
+                <div id="answer57" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question58">
+                <h3>58. अंकों तथा अक्षरों की श्रेणी का अगला पद होगा- A26H, C24F, G20B, M14V, ?</h3>
+                <label><input type="radio" name="q58" value="a"> A. U8N</label><br>
+                <label><input type="radio" name="q58" value="b"> B. U6N</label><br>
+                <label><input type="radio" name="q58" value="c"> C. V6M</label><br>
+                <label><input type="radio" name="q58" value="d"> D. V6N</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(58, 'B. U6N')">Show Answer</button>
+                <div id="answer58" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question59">
+                <h3>59. लघु उद्योगों के लिए बनी निम्न समितियों को कालानुक्रम में व्यवस्थित कीजिए और नीचे दिए गए कूटों में से सही उत्तर चुनिए-</h3>
+                <ol type="1">
+                    <li>करवे समिति (Karve Committee)</li>
+                    <li>नाईक समिति (Naik Committee)</li>
+                    <li>आबिद हुसैन समिति (Abid Hussain Committee)</li>
+                    <li>एस. एस. कोहली समिति (S.S. Kohli Committee)</li>
+                </ol>
+                <label><input type="radio" name="q59" value="a"> A. 1, 3, 2, 4</label><br>
+                <label><input type="radio" name="q59" value="b"> B. 1, 2, 3, 4</label><br>
+                <label><input type="radio" name="q59" value="c"> C. 3, 1, 2, 4</label><br>
+                <label><input type="radio" name="q59" value="d"> D. 4, 3, 2, 1</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(59, 'A. 1, 3, 2, 4')">Show Answer</button>
+                <div id="answer59" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question60">
+                <h3>60. 2024 में महाराष्ट्र विधानसभा चुनाव में किस राजनीतिक गठबंधन ने बहुमत हासिल किया?</h3>
+                <label><input type="radio" name="q60" value="a"> A. महायुति गठबंधन</label><br>
+                <label><input type="radio" name="q60" value="b"> B. महाअघाड़ी गठबंधन</label><br>
+                <label><input type="radio" name="q60" value="c"> C. तीसरा गठबंधन</label><br>
+                <label><input type="radio" name="q60" value="d"> D. इनमें से कोई नहीं</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(60, 'A. महायुति गठबंधन')">Show Answer</button>
+                <div id="answer60" class="answer"></div>
+            </div>
+
+            
+            <button type="button" onclick="submitTest()">Submit Test</button>
+        </form>
+    </div>
+
+    <div id="resultPage" style="display: none;">
+        <h2>Test Result</h2>
+            <div id="resultSummary"></div>
+            <div id="incorrectQuestionsSummary"></div>
+            <button onclick="restartTest()">पुनः प्रयास करें</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
