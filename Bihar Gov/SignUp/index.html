@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SignUp for Test</h1>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="preparation">Preparing For:</label>
+                <select id="preparation" name="preparation" multiple required>
+                    <option value="Bihar Daroga">Bihar Daroga</option>
+                    <option value="BPSC">BPSC</option>
+                    <option value="UPSC">UPSC</option>
+                    <option value="Bihar Police">Bihar Police</option>
+                    <option value="SSC">SSC</option>
+                    <option value="Railway">Railway</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <button type="submit">Submit</button>
+            <div id="message">SignUp करने के 15 मिनट के आप लॉगिन कर सकते है |</div>
+            <hr>
+            <div id="message">अगर आप अभी username और पासवर्ड लेना चाहते है तो कॉल कीजिये -  8235910315</div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
