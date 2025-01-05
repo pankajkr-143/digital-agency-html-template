@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loginPage">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Enter Username" required>
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <button onclick="login()">Login</button>
+        <h3>अगर आपके पास id और पासवर्ड नहीं तो SignUp पर क्लिक कीजिये |</h3>
+        <button onclick="redirectToSignup()" class="secondary-button">Sign Up</button>
+    </div>
+
+    <div id="testPage" style="display: none;">
+        <h2>MCQ Test</h2>
+        <form id="mcqForm">
+            <div class="question" id="question1">
+                <h3>1. भारत में सबसे अधिक विदेशी मुद्रा किस वस्तु के निर्यात से प्राप्त होती है?</h3>
+                <label><input type="radio" name="q1" value="a"> A. चाय</label><br>
+                <label><input type="radio" name="q1" value="b"> B. तम्बाकू</label><br>
+                <label><input type="radio" name="q1" value="c"> C. कपड़ा</label><br>
+                <label><input type="radio" name="q1" value="d"> D. आईटी सेवाएं</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(1, 'D. आईटी सेवाएं')">Show Answer</button>
+                <div id="answer1" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question2">
+                <h3>2. सिगरेट के धुएँ में मुख्य प्रदूषक है:</h3>
+                <label><input type="radio" name="q2" value="a"> A. कार्बन मोनोऑक्साइड व निकोटीन</label><br>
+                <label><input type="radio" name="q2" value="b"> B. कार्बन मोनोऑक्साइड व बेंजीन</label><br>
+                <label><input type="radio" name="q2" value="c"> C. कार्बन मोनोऑक्साइड व डाइऑक्सिन</label><br>
+                <label><input type="radio" name="q2" value="d"> D. बेंजीन व डाइऑक्सिन</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(2, 'A. कार्बन मोनोऑक्साइड व निकोटीन')">Show Answer</button>
+                <div id="answer2" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question3">
+                <h3>3. 'मेक इन इंडिया' पहल का शुभारंभ किस वर्ष किया गया था?</h3>
+                <label><input type="radio" name="q3" value="a"> A. 2015</label><br>
+                <label><input type="radio" name="q3" value="b"> B. 2016</label><br>
+                <label><input type="radio" name="q3" value="c"> C. 2014</label><br>
+                <label><input type="radio" name="q3" value="d"> D. 2018</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(3, 'C. 2014')">Show Answer</button>
+                <div id="answer3" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question4">
+                <h3>4. कौन-सा द्वीप समूह 'प्रशांत महासागर' में स्थित है?</h3>
+                <label><input type="radio" name="q4" value="a"> A. मेडागास्कर</label><br>
+                <label><input type="radio" name="q4" value="b"> B. अंडमान और निकोबार</label><br>
+                <label><input type="radio" name="q4" value="c"> C. मालदीव</label><br>
+                <label><input type="radio" name="q4" value="d"> D. हवाई द्वीप</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(4, 'D. हवाई द्वीप')">Show Answer</button>
+                <div id="answer4" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question5">
+                <h3>5. चंद्रमा के दक्षिणी ध्रुव पर अंतरिक्ष यान उतारने वाला पहला देश कौन-सा है?</h3>
+                <label><input type="radio" name="q5" value="a"> A. रूस</label><br>
+                <label><input type="radio" name="q5" value="b"> B. भारत</label><br>
+                <label><input type="radio" name="q5" value="c"> C. अमेरिका</label><br>
+                <label><input type="radio" name="q5" value="d"> D. चीन</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(5, 'B. भारत')">Show Answer</button>
+                <div id="answer5" class="answer"></div>
+            </div>
+
+            <div class="question" id="question6">
+              <h3>6. वर्ष 2024 तक विश्व का सबसे बड़ा सोलर पावर पार्क कौन-सा है?</h3>
+              <label><input type="radio" name="q6" value="a"> A. भदला सोलर पार्क (भारत)</label><br>
+              <label><input type="radio" name="q6" value="b"> B. मिडोंग सोलर पार्क (चीन)</label><br>
+              <label><input type="radio" name="q6" value="c"> C. गोंगहे तलतन सोलर पार्क (चीन)</label><br>
+              <label><input type="radio" name="q6" value="d"> D. होबक सोलर पार्क (चीन)</label><br>
+              <button type="button" class="show-answer-btn" onclick="showAnswer(6, 'C. गोंगहे तलतन सोलर पार्क (चीन)')">Show Answer</button>
+              <div id="answer6" class="answer"></div>
+          </div>
+          
+          <div class="question" id="question7">
+              <h3>7. 'प्रोडुनोवा वॉल्ट' किस जिमनास्ट से जुड़ा है?</h3>
+              <label><input type="radio" name="q7" value="a"> A. प्रणति नायक</label><br>
+              <label><input type="radio" name="q7" value="b"> B. मोहिनी भारद्वाज</label><br>
+              <label><input type="radio" name="q7" value="c"> C. रितिका कुलश्रेष्ठ</label><br>
+              <label><input type="radio" name="q7" value="d"> D. दीपा करमाकर</label><br>
+              <button type="button" class="show-answer-btn" onclick="showAnswer(7, 'D. दीपा करमाकर')">Show Answer</button>
+              <div id="answer7" class="answer"></div>
+          </div>
+          
+          <div class="question" id="question8">
+              <h3>8. BOD और COD के संदर्भ में कौन-सा कथन असत्य है?</h3>
+              <label><input type="radio" name="q8" value="a"> A. BOD का मान COD से कम होता है।</label><br>
+              <label><input type="radio" name="q8" value="b"> B. BOD समय लेने वाला परीक्षण है।</label><br>
+              <label><input type="radio" name="q8" value="c"> C. BOD और COD पानी के मापदंड हैं।</label><br>
+              <label><input type="radio" name="q8" value="d"> D. COD ऑक्सीकृत करने के लिए उपयोगी है।</label><br>
+              <button type="button" class="show-answer-btn" onclick="showAnswer(8, 'D. COD ऑक्सीकृत करने के लिए उपयोगी है।')">Show Answer</button>
+              <div id="answer8" class="answer"></div>
+          </div>
+          
+          <div class="question" id="question9">
+              <h3>9. 'अकबरनामा' कितने वर्षों में पूरा हुआ?</h3>
+              <label><input type="radio" name="q9" value="a"> A. 5 वर्ष</label><br>
+              <label><input type="radio" name="q9" value="b"> B. 7 वर्ष</label><br>
+              <label><input type="radio" name="q9" value="c"> C. 9 वर्ष</label><br>
+              <label><input type="radio" name="q9" value="d"> D. 11 वर्ष</label><br>
+              <button type="button" class="show-answer-btn" onclick="showAnswer(9, 'B. 7 वर्ष')">Show Answer</button>
+              <div id="answer9" class="answer"></div>
+          </div>
+          
+          <div class="question" id="question10">
+              <h3>10. जैन धर्म में 'जम्भियाग्राम' का वर्तमान नाम क्या है?</h3>
+              <label><input type="radio" name="q10" value="a"> A. बोधगया</label><br>
+              <label><input type="radio" name="q10" value="b"> B. गया</label><br>
+              <label><input type="radio" name="q10" value="c"> C. पाटन</label><br>
+              <label><input type="radio" name="q10" value="d"> D. सोमनाथ</label><br>
+              <button type="button" class="show-answer-btn" onclick="showAnswer(10, 'B. गया')">Show Answer</button>
+              <div id="answer10" class="answer"></div>
+          </div>
+
+          <div class="question" id="question11">
+              <h3>11. 'चौखंबा चोटी' कहाँ स्थित है?</h3>
+              <label><input type="radio" name="q11" value="a"> A. लद्दाख</label><br>
+              <label><input type="radio" name="q11" value="b"> B. उत्तराखंड</label><br>
+              <label><input type="radio" name="q11" value="c"> C. लक्षद्वीप</label><br>
+              <label><input type="radio" name="q11" value="d"> D. दिल्ली</label><br>
+              <button type="button" class="show-answer-btn" onclick="showAnswer(11, 'B. उत्तराखंड')">Show Answer</button>
+              <div id="answer11" class="answer"></div>
+          </div>
+
+          <div class="question" id="question12">
+              <h3>12. वर्ष 2011 की जनगणना के अनुसार बिहार के किस जिले में जनसंख्या घनत्व सबसे कम है?</h3>
+              <label><input type="radio" name="q12" value="a"> A. बांका</label><br>
+              <label><input type="radio" name="q12" value="b"> B. रोहतास</label><br>
+              <label><input type="radio" name="q12" value="c"> C. कैमूर</label><br>
+              <label><input type="radio" name="q12" value="d"> D. शेखपुरा</label><br>
+              <button type="button" class="show-answer-btn" onclick="showAnswer(12, 'C. कैमूर')">Show Answer</button>
+              <div id="answer12" class="answer"></div>
+          </div>
+
+          <div class="question" id="question13">
+              <h3>13. निम्न में से कौन सा देश सौर ऊर्जा के उत्पादन में अग्रणी है?</h3>
+              <label><input type="radio" name="q13" value="a"> A. चीन</label><br> 
+              <label><input type="radio" name="q13" value="b"> B. अमेरिका</label><br>
+              <label><input type="radio" name="q13" value="c"> C. जर्मनी</label><br>
+              <label><input type="radio" name="q13" value="d"> D. भारत</label><br>
+              <button type="button" class="show-answer-btn" onclick="showAnswer(13, 'A. चीन')">Show Answer</button>
+              <div id="answer13" class="answer"></div>
+          </div>
+
+          <div class="question" id="question14">
+              <h3>14. मानव इतिहास की लगभग 99% कहानी निम्न में से किस काल के दौरान हुई?</h3>
+              <label><input type="radio" name="q14" value="a"> A. पुरापाषाण काल</label><br>
+              <label><input type="radio" name="q14" value="b"> B. मध्यपाषाण काल</label><br>
+              <label><input type="radio" name="q14" value="c"> C. नवपाषाण काल</label><br>
+              <label><input type="radio" name="q14" value="d"> D. इनमें से कोई नहीं</label><br>
+              <button type="button" class="show-answer-btn" onclick="showAnswer(14, 'A. पुरापाषाण काल')">Show Answer</button>
+              <div id="answer14" class="answer"></div>
+          </div>
+
+          <div class="question" id="question15">
+              <h3>15. वैदिक सभ्यता काल में व्यापार हेतु दूर-दूर तक जाने वाले व्यक्ति को कहा जाता था:</h3>
+              <label><input type="radio" name="q15" value="a"> A. वेकानॉट</label><br>
+              <label><input type="radio" name="q15" value="b"> B. पाणि</label><br>
+              <label><input type="radio" name="q15" value="c"> C. अमाजू</label><br>
+              <label><input type="radio" name="q15" value="d"> D. उपाध्याय</label><br>
+              <button type="button" class="show-answer-btn" onclick="showAnswer(15, 'B. पाणि')">Show Answer</button>
+              <div id="answer15" class="answer"></div>
+          </div>
+
+          <div class="question" id="question16">
+            <h3>16. सही वाक्य चुनें:</h3>
+            <label><input type="radio" name="q16" value="a"> A. A lot of books is on the table.</label><br>
+            <label><input type="radio" name="q16" value="b"> B. A lot of book are on the table.</label><br>
+            <label><input type="radio" name="q16" value="c"> C. A lots of books is on the table.</label><br>
+            <label><input type="radio" name="q16" value="d"> D. A lot of books are on the table.</label><br>
+            <button type="button" class="show-answer-btn" onclick="showAnswer(16, 'D. A lot of books are on the table.')">Show Answer</button>
+            <div id="answer16" class="answer"></div>
+        </div>
+
+        <div class="question" id="question17">
+            <h3>17. निम्न में से कौन-सा अयस्क कैल्शियम से संबंधित नहीं है?</h3>
+            <label><input type="radio" name="q17" value="a"> A. CaCO₃</label><br>
+            <label><input type="radio" name="q17" value="b"> B. CaSO₄.2H₂O</label><br>
+            <label><input type="radio" name="q17" value="c"> C. CaF₂</label><br>
+            <label><input type="radio" name="q17" value="d"> D. MgCO₃</label><br>
+            <button type="button" class="show-answer-btn" onclick="showAnswer(17, 'D. MgCO₃')">Show Answer</button>
+            <div id="answer17" class="answer"></div>
+        </div>
+
+        <div class="question" id="question18">
+            <h3>18. निम्न में असत्य है:</h3>
+            <label><input type="radio" name="q18" value="a"> A. F = GM₁M₂/R²</label><br>
+            <label><input type="radio" name="q18" value="b"> B. g = GM/R²</label><br>
+            <label><input type="radio" name="q18" value="c"> C. T = 2π√(l/g)</label><br>
+            <label><input type="radio" name="q18" value="d"> D. S = ut + ½ft²</label><br> 
+            <button type="button" class="show-answer-btn" onclick="showAnswer(18, 'D. S = ut + ½ft²')">Show Answer</button>
+            <div id="answer18" class="answer"></div>
+        </div>
+
+        <div class="question" id="question19">
+            <h3>19. जर्मन सिल्वर एक मिश्र धातु है जिसमें रजत (Ag) नहीं होता है। इसमें Cu (60%), Zn (20%) तथा Ni (20%) होता है। जर्मन सिल्वर के अन्य नामों से जाने जाते हैं। इनमें कौन-सा नाम इसमें शामिल नहीं है?</h3>
+            <label><input type="radio" name="q19" value="a"> A. निकेल सिल्वर</label><br>
+            <label><input type="radio" name="q19" value="b"> B. अल्पक्का</label><br>
+            <label><input type="radio" name="q19" value="c"> C. पैकटोंग</label><br>
+            <label><input type="radio" name="q19" value="d"> D. इनमें से कोई नहीं</label><br>
+            <button type="button" class="show-answer-btn" onclick="showAnswer(19, 'D. इनमें से कोई नहीं')">Show Answer</button>
+              <div id="answer19" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question20">
+                <h3>20. विश्व का सबसे बड़ा दुग्ध-उत्पादक है:</h3>
+                <label><input type="radio" name="q20" value="a"> A. अमेरिका</label><br>
+                <label><input type="radio" name="q20" value="b"> B. चीन</label><br>
+                <label><input type="radio" name="q20" value="c"> C. ब्राजील</label><br>
+                <label><input type="radio" name="q20" value="d"> D. भारत</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(20, 'D. भारत')">Show Answer</button>
+                <div id="answer20" class="answer"></div>
+            </div>
+                
+
+            <div class="question" id="question21">
+                <h3>21. सिडनी बुरार्ड नामक भूगर्भशास्त्री ने नदियों के आधार पर हिमालय का विभाजन किया है जिसमें से कौन-सा हिमालय सर्वाधिक लम्बा है?</h3>
+                <label><input type="radio" name="q21" value="a"> A. पंजाब/कश्मीर हिमालय</label><br>
+                <label><input type="radio" name="q21" value="b"> B. कुमाऊँ हिमालय</label><br>
+                <label><input type="radio" name="q21" value="c"> C. नेपाल हिमालय</label><br>
+                <label><input type="radio" name="q21" value="d"> D. असम हिमालय</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(21, 'C. नेपाल हिमालय')">Show Answer</button>
+                <div id="answer21" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question22">
+                <h3>22. बौद्ध संघ में सम्मिलित होने के लिए न्यूनतम आयु-सीमा थी:</h3>
+                <label><input type="radio" name="q22" value="a"> A. 10 वर्ष</label><br>
+                <label><input type="radio" name="q22" value="b"> B. 15 वर्ष</label><br>
+                <label><input type="radio" name="q22" value="c"> C. 20 वर्ष</label><br>
+                <label><input type="radio" name="q22" value="d"> D. 25 वर्ष</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(22, 'B. 15 वर्ष')">Show Answer</button>
+                <div id="answer22" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question23">
+                <h3>23. खतोली का युद्ध 1518 ई० में किसके-किसके बीच हुई थी?</h3>
+                <label><input type="radio" name="q23" value="a"> A. राणा साँगा व इब्राहिम लोदी</label><br>
+                <label><input type="radio" name="q23" value="b"> B. मुहम्मद गौरी व पृथ्वीराज चौहान</label><br>
+                <label><input type="radio" name="q23" value="c"> C. इब्राहिम लोदी व बाबर</label><br>
+                <label><input type="radio" name="q23" value="d"> D. मुहम्मद गौरी व जयचंद</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(23, 'A. राणा साँगा व इब्राहिम लोदी')">Show Answer</button>
+                <div id="answer23" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question24">
+                <h3>24. अंग्रेजी शासन के विरुद्ध निम्न में से कौन-सा आंदोलन (विद्रोह) असम में घटित नहीं हुआ?</h3>
+                <label><input type="radio" name="q24" value="a"> A. पागलपंथी विद्रोह</label><br>
+                <label><input type="radio" name="q24" value="b"> B. अहोम विद्रोह</label><br>
+                <label><input type="radio" name="q24" value="c"> C. खासी विद्रोह</label><br>
+                <label><input type="radio" name="q24" value="d"> D. कोल विद्रोह</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(24, 'A. पागलपंथी विद्रोह')">Show Answer</button> <--- Corrected Answer
+                <div id="answer24" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question25">
+                <h3>25. मौर्य काल में मनोरंजनकर्ताओं का नियंत्रक को कहा जाता था:</h3>
+                <label><input type="radio" name="q25" value="a"> A. लक्ष्मणाध्यक्ष</label><br>
+                <label><input type="radio" name="q25" value="b"> B. सुत्ताध्यक्ष</label><br>
+                <label><input type="radio" name="q25" value="c"> C. गणिकाध्यक्ष</label><br>
+                <label><input type="radio" name="q25" value="d"> D. विविताध्यक्ष</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(25, 'D. विविताध्यक्ष')">Show Answer</button><--- Corrected Answer
+                <div id="answer25" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question26">
+                <h3>26. केवल 'ALLAHABAD' के अक्षरों से कितने भिन्न-भिन्न शब्द बन सकते हैं? इनमें से कितने शब्दों में स्वर सम स्थानों पर होंगे?</h3>
+                <label><input type="radio" name="q26" value="a"> A. 60</label><br>
+                <label><input type="radio" name="q26" value="b"> B. 100</label><br>
+                <label><input type="radio" name="q26" value="c"> C. 7560</label><br>
+                <label><input type="radio" name="q26" value="d"> D. 7580</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(26, 'A. 60')">Show Answer</button>
+                <div id="answer26" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question27">
+                <h3>27. पृथ्वी के तुरंत बाद सर्वाधिक घनत्व वाला ग्रह है:</h3>
+                <label><input type="radio" name="q27" value="a"> A. बुध</label><br>
+                <label><input type="radio" name="q27" value="b"> B. मंगल</label><br>
+                <label><input type="radio" name="q27" value="c"> C. शुक्र</label><br>
+                <label><input type="radio" name="q27" value="d"> D. नेप्च्यून</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(27, 'A. बुध')">Show Answer</button>
+                <div id="answer27" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question28">
+                <h3>28. निम्न में से वह नदी जिसके तट पर यूरोप के चार देशों की राजधानी अवस्थित है?</h3>
+                <label><input type="radio" name="q28" value="a"> A. नील</label><br>
+                <label><input type="radio" name="q28" value="b"> B. सेंट लॉरेंस</label><br>
+                <label><input type="radio" name="q28" value="c"> C. डेन्यूब</label><br>
+                <label><input type="radio" name="q28" value="d"> D. टाइग्रिस</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(28, 'C. डेन्यूब')">Show Answer</button>
+                <div id="answer28" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question29">
+                <h3>29. शब्द 'प्रत्युपकार' में कौन-सा उपसर्ग है?</h3>
+                <label><input type="radio" name="q29" value="a"> A. प्रति</label><br>
+                <label><input type="radio" name="q29" value="b"> B. प्र</label><br>
+                <label><input type="radio" name="q29" value="c"> C. परा</label><br>
+                <label><input type="radio" name="q29" value="d"> D. परि</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(29, 'A. प्रति')">Show Answer</button>
+                <div id="answer29" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question30">
+                <h3>30. निम्न कथनों पर विचार कर सही कथन का चुनाव कीजिए:</h3>
+                <p>वर्ष 2024 में 33वें ग्रीष्मकालीन ओलंपिक खेलों का आयोजन पेरिस (फ्रांस) में 26 जुलाई से 11 अगस्त हुआ।<br>
+                    पेरिस 2024 शुभंकर फ्रांसमें 'ला फ्रीज ओलम्पिक' और 'ला फ्रीज पैरालंपिक' नामों के तहत पंजीकृत ट्रेडमार्क है।</p>
+                <label><input type="radio" name="q30" value="a"> A. केवल 1</label><br>
+                <label><input type="radio" name="q30" value="b"> B. केवल 2</label><br>
+                <label><input type="radio" name="q30" value="c"> C. 1 और 2</label><br>
+                <label><input type="radio" name="q30" value="d"> D. न तो 1 और न ही 2</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(30, 'C. 1 और 2')">Show Answer</button>
+                <div id="answer30" class="answer"></div>
+            </div>
+            
+
+            
+            <button type="button" onclick="submitTest()">Submit Test</button>
+        </form>
+    </div>
+
+    <div id="resultPage" style="display: none;">
+        <h2>Test Result</h2>
+        <div id="resultSummary"></div>
+        <button onclick="restartTest()">फिर से टेस्ट शुरू करे |</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
