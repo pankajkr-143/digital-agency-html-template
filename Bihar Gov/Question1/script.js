@@ -1,5 +1,7 @@
 const users = [
-  { username: "Khushi", password: "6205535989" }
+  { username: "Khushi", password: "6205535989" },
+  { username: "Aryan", password: "9570335451" }
+
 ];
 
 function redirectToSignup() {
