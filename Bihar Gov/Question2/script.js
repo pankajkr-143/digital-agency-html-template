@@ -5,6 +5,7 @@ const users = [
   { username: "Guru@1234", password: "7870816431" },
   { username: "Khushi", password: "9508932073" },
   { username: "@prabhakar", password: "9708597841" },
+  { username: "Rupa Yadav", password: "9263793703" },
 ];
 
 function redirectToSignup() {
