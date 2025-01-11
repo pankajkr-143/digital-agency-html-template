@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Test - 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="loginPage">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Enter Username" required>
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <button onclick="login()">Login</button>
+        <h3>अगर आपके पास id और पासवर्ड नहीं तो SignUp पर क्लिक कीजिये |</h3>
+        <button onclick="redirectToSignup()" class="secondary-button">Sign Up</button>
+    </div>
+
+    <div id="testPage" style="display: none;">
+        <h2>MCQ Test - 3</h2>
+        <form id="mcqForm">
+            <div class="question" id="question1">
+                <h3>1. 1 अगस्त, 2024 से संघ लोक सेवा आयोग (UPSC) के अध्यक्ष के रूप में किसे नियुक्त किया गया हैं?</h3>
+                <label><input type="radio" name="q1" value="a"> A. सुनीता शर्मा</label><br>
+                <label><input type="radio" name="q1" value="b"> B. अमिताभ कांत</label><br>
+                <label><input type="radio" name="q1" value="c"> C. प्रीति सूदन</label><br>
+                <label><input type="radio" name="q1" value="d"> D. डॉ० मनोज सैनी</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(1, 'D. डॉ० मनोज सैनी')">Show Answer</button>
+                <div id="answer1" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question2">
+                <h3>2. अन्तर्राष्ट्रीय व्यापार का उद्देश्य है-</h3>
+                <label><input type="radio" name="q2" value="a"> A. निर्यात को प्रोत्साहन</label><br>
+                <label><input type="radio" name="q2" value="b"> B. भुगतान में असंतुलन सही करना</label><br>
+                <label><input type="radio" name="q2" value="c"> C. अंतर्राष्ट्रीय समझ विकसित करना</label><br>
+                <label><input type="radio" name="q2" value="d"> D. राष्ट्रीय आय बढ़ाना</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(2, 'D. राष्ट्रीय आय बढ़ाना')">Show Answer</button>
+                <div id="answer2" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question3">
+                <h3>3. कुल पूर्ति की तुलना में मांग में अत्यधिक वृद्धि के परिणामस्वरूप मूल्य के सामान्य स्तर में स्थिर वृद्धि को ______ कहते हैं।</h3>
+                <label><input type="radio" name="q3" value="a"> A. संरचनात्मक स्फीति</label><br>
+                <label><input type="radio" name="q3" value="b"> B. मांग पुश स्फीति</label><br>
+                <label><input type="radio" name="q3" value="c"> C. लागत पुश स्फीति</label><br>
+                <label><input type="radio" name="q3" value="d"> D. स्फीति संबद्ध गतिरोध</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(3, 'B. मांग पुश स्फीति')">Show Answer</button>
+                <div id="answer3" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question4">
+                <h3>4. भारत में सकल घरेलू उत्पाद में योगदान की दृष्टि से दूसरा सबसे बड़ा क्षेत्र कौन-सा हैं?</h3>
+                <label><input type="radio" name="q4" value="a"> A. विनिर्माण</label><br>
+                <label><input type="radio" name="q4" value="b"> B. कच्चा माल</label><br>
+                <label><input type="radio" name="q4" value="c"> C. सेवाएं</label><br>
+                <label><input type="radio" name="q4" value="d"> D. ज्ञान</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(4, 'A. विनिर्माण')">Show Answer</button>
+                <div id="answer4" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question5">
+                <h3>5. किसी वस्तु की कीमत 6 रुपये से घटकर 4 रुपये हो जाती है। इसके परिणामस्वरूप मांग की मात्र 10 इकाइयों से बढ़कर 15 इकाइयों हो जाती है। मूल्य लोच का गुणांक ज्ञात करें?</h3>
+                <label><input type="radio" name="q5" value="a"> A. 15</label><br>
+                <label><input type="radio" name="q5" value="b"> B. 1-5</label><br>
+                <label><input type="radio" name="q5" value="c"> C. 150</label><br>
+                <label><input type="radio" name="q5" value="d"> D. 0-15</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(5, 'B. 1-5')">Show Answer</button>
+                <div id="answer5" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question6">
+                <h3>6. यदि उपभोग फलन c = 150+ 0.6y और निवेश व्यय 2000 रु० है, तो राष्ट्रीय आय का संतुलन स्तर होगा?</h3>
+                <label><input type="radio" name="q6" value="a"> A. 5375 रु०</label><br>
+                <label><input type="radio" name="q6" value="b"> B. 2000 रु०</label><br>
+                <label><input type="radio" name="q6" value="c"> C. 3375 रु०</label><br>
+                <label><input type="radio" name="q6" value="d"> D. 2150 रु०</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(6, 'A. 5375 रु०')">Show Answer</button>
+                <div id="answer6" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question7">
+                <h3>7. विजन इंडिया @2047 है:-<br>1. यह भारत की आर्थिक वृद्धि में योगदान दे सकते हैं।<br>2. स्वतंत्रता के एक सौ साल पूरे होने तक देश को 30 ट्रिलियन अमेरिकी डॉलर की अर्थव्यवस्था का निर्माण कर सकता है।<br>3. 1820 हजार अमेरिकी डॉलर की प्रति व्यक्ति आय प्राप्त कर सकता है।<br>4. भारत को विश्व में नंबर वन बना सकता है।<br>उपर्युक्त में से सही कथन हैः-</h3>
+                <label><input type="radio" name="q7" value="a"> A. केवल 1 और 2</label><br>
+                <label><input type="radio" name="q7" value="b"> B. केवल 2 और 3</label><br>
+                <label><input type="radio" name="q7" value="c"> C. केवल 1, 2 और 3</label><br>
+                <label><input type="radio" name="q7" value="d"> D. सभी 1, 2, 3, 4</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(7, 'D. सभी 1, 2, 3, 4')">Show Answer</button>
+                <div id="answer7" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question8">
+                <h3>8. भारत में बेरोजगारी के आंकड़े कौन तैयार करता हैं?</h3>
+                <label><input type="radio" name="q8" value="a"> A. ग्राम पंचायत</label><br>
+                <label><input type="radio" name="q8" value="b"> B. ग्रामीण विकास मंत्रलय</label><br>
+                <label><input type="radio" name="q8" value="c"> C. राष्ट्रीय नमूना सर्वेक्षण संगठन</label><br>
+                <label><input type="radio" name="q8" value="d"> D. वित्त मंत्रलय</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(8, 'C. राष्ट्रीय नमूना सर्वेक्षण संगठन')">Show Answer</button>
+                <div id="answer8" class="answer"></div>
+            </div>
+            <div class="question" id="question9">
+                <h3>9. 9 अगस्त से 15 अगस्त, 2024 तक चलने वाले हर घर तिरंगा अभियान का प्राथमिक उद्देश्य क्या हैं?</h3>
+                <label><input type="radio" name="q9" value="a"> A. भारत में पर्यटन को बढ़ावा देना।</label><br>
+                <label><input type="radio" name="q9" value="b"> B. भारतीय नागरिकों में देशभक्ति को मजबूत करना।</label><br>
+                <label><input type="radio" name="q9" value="c"> C. भारत में पर्वतारोहन को बढ़ावा देना।</label><br>
+                <label><input type="radio" name="q9" value="d"> D. भारत में पाइलट योजना को बढ़ावा देना।</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(9, 'B. भारतीय नागरिकों में देशभक्ति को मजबूत करना।')">Show Answer</button>
+                <div id="answer9" class="answer"></div>
+            </div>
+            <div class="question" id="question10">
+                <h3>10. 'भारतीय लघु उद्योग विकास बैंक' का मुख्यालय कहाँ स्थित हैं?</h3>
+                <label><input type="radio" name="q10" value="a"> A. नई दिल्ली</label><br>
+                <label><input type="radio" name="q10" value="b"> B. पटना</label><br>
+                <label><input type="radio" name="q10" value="c"> C. कानपुर</label><br>
+                <label><input type="radio" name="q10" value="d"> D. लखनऊ</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(10, 'D. लखनऊ')">Show Answer</button>
+                <div id="answer10" class="answer"></div>
+            </div>
+            <div class="question" id="question11">
+                <h3>11. 'वस्तु एवं सेवा कर (GST)' किस समिति के सुझाव से लागू किया गया हैं?</h3>
+                <label><input type="radio" name="q11" value="a"> A. चैलैया समिति</label><br>
+                <label><input type="radio" name="q11" value="b"> B. विजय केलकर समिति</label><br>
+                <label><input type="radio" name="q11" value="c"> C. मल्होत्र समिति</label><br>
+                <label><input type="radio" name="q11" value="d"> D. गोइपोरिया समिति</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(11, 'B. विजय केलकर समिति')">Show Answer</button>
+                <div id="answer11" class="answer"></div>
+            </div>
+            <div class="question" id="question12">
+                <h3>12. सरकार द्वारा पुरानी मुद्रा को समाप्त कर नई मुद्रा चलाना कहलाता हैं?</h3>
+                <label><input type="radio" name="q12" value="a"> A. अवमूल्यन</label><br>
+                <label><input type="radio" name="q12" value="b"> B. विमुद्रीकरण</label><br>
+                <label><input type="radio" name="q12" value="c"> C. मुद्रा स्फीति</label><br>
+                <label><input type="radio" name="q12" value="d"> D. मुद्रा संकुचन</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(12, 'B. विमुद्रीकरण')">Show Answer</button>
+                <div id="answer12" class="answer"></div>
+            </div>
+
+            <div class="question" id="question13">
+                <h3>13. 2011 की जनगणना के अनुसार बिहार में कौन-सा जिला न्यूनतम साक्षरता दर वाला जिला हैः-</h3>
+                <label><input type="radio" name="q13" value="a"> A. कैमूर</label><br>
+                <label><input type="radio" name="q13" value="b"> B. शिवहर</label><br>
+                <label><input type="radio" name="q13" value="c"> C. पूर्णिया</label><br>
+                <label><input type="radio" name="q13" value="d"> D. रोहतास</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(13, 'C. पूर्णिया')">Show Answer</button>
+                <div id="answer13" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question14">
+                <h3>14. निम्नलिखित देशों में से किसमें एकल प्रभुत्व एक प्रमाण है-</h3>
+                <label><input type="radio" name="q14" value="a"> A. मलेशिया</label><br>
+                <label><input type="radio" name="q14" value="b"> B. म्यांमार</label><br>
+                <label><input type="radio" name="q14" value="c"> C. मालीशेरा</label><br>
+                <label><input type="radio" name="q14" value="d"> D. सिंगापूर</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(14, 'D. सिंगापूर')">Show Answer</button>
+                <div id="answer14" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question15">
+                <h3>15. संघ या संघों में रहने वाले लोगों के लिए नियम का समूह था?</h3>
+                <label><input type="radio" name="q15" value="a"> A. सुसंविधि</label><br>
+                <label><input type="radio" name="q15" value="b"> B. अधिनियमित</label><br>
+                <label><input type="radio" name="q15" value="c"> C. कोई नहीं</label><br>
+                <label><input type="radio" name="q15" value="d"> D. विनायक</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(15, 'A. सुसंविधि')">Show Answer</button>
+                <div id="answer15" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question16">
+                <h3>16. अशोक ने अपने शिलालेखों में अपने समकालीन दक्षिण के किस राजवंश का उल्लेख नहीं किया था?</h3>
+                <label><input type="radio" name="q16" value="a"> A. केरलपुत्र</label><br>
+                <label><input type="radio" name="q16" value="b"> B. पल्लव</label><br>
+                <label><input type="radio" name="q16" value="c"> C. चोल</label><br>
+                <label><input type="radio" name="q16" value="d"> D. पाण्ड्य</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(16, 'B. पल्लव')">Show Answer</button>
+                <div id="answer16" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question17">
+                <h3>17. निम्नलिखित को दिल्ली पर उनके शासन के कालानुक्रम के अनुसार व्यवस्थित करे-
+                    (I) रजिया (II) बलबन (III) इल्तुतमिश (IV) नसीरुद्दीन</h3>
+                <label><input type="radio" name="q17" value="a"> A. III, I, IV, II</label><br>
+                <label><input type="radio" name="q17" value="b"> B. I, II, III, IV</label><br>
+                <label><input type="radio" name="q17" value="c"> C. IV, I, III, II</label><br>
+                <label><input type="radio" name="q17" value="d"> D. I, III, IV, II</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(17, 'A. III, I, IV, II')">Show Answer</button>
+                <div id="answer17" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question18">
+                <h3>18. तृतीय आंग्ल मराठा युद्ध में कौन-सी संधि हुई थी?</h3>
+                <label><input type="radio" name="q18" value="a"> A. मंदसौर की संधि</label><br>
+                <label><input type="radio" name="q18" value="b"> B. ग्वालियर की संधि</label><br>
+                <label><input type="radio" name="q18" value="c"> C. सूरत की संधि</label><br>
+                <label><input type="radio" name="q18" value="d"> D. मसूलीपट्टनम की संधि</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(18, 'A. मंदसौर की संधि')">Show Answer</button>
+                <div id="answer18" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question19">
+                <h3>19. किस मुगल शासक ने अपने डायरी में फूलपत्ती एवं बगीचा का वर्णन किया?</h3>
+                <label><input type="radio" name="q19" value="a"> A. औरंगजेब</label><br>
+                <label><input type="radio" name="q19" value="b"> B. बाबर</label><br>
+                <label><input type="radio" name="q19" value="c"> C. हुमायूं</label><br>
+                <label><input type="radio" name="q19" value="d"> D. जहाँगीर</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(19, 'B. बाबर')">Show Answer</button>
+                <div id="answer19" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question20">
+                <h3>20. गांधीजी का पहला सबसे बड़ा सत्याग्रह कहाँ हुआ था?</h3>
+                <label><input type="radio" name="q20" value="a"> A. गुजरात</label><br>
+                <label><input type="radio" name="q20" value="b"> B. बंगाल</label><br>
+                <label><input type="radio" name="q20" value="c"> C. बिहार</label><br>
+                <label><input type="radio" name="q20" value="d"> D. दिल्ली</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(20, 'C. बिहार')">Show Answer</button>
+                <div id="answer20" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question21">
+                <h3>21. कैबिनेट मिशन योजना (1946) के तहत तीन सदस्यीय उच्चस्तरीय शिष्टमंडल में कौन शामिल नहीं थे?</h3>
+                <label><input type="radio" name="q21" value="a"> A. पैथिक लारेंस</label><br>
+                <label><input type="radio" name="q21" value="b"> B. ए. वी. एलेक्जेंडर</label><br>
+                <label><input type="radio" name="q21" value="c"> C. लॉर्ड हार्डिंग</label><br>
+                <label><input type="radio" name="q21" value="d"> D. सर स्टैफोर्ड क्रिप्स</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(21, 'C. लॉर्ड हार्डिंग')">Show Answer</button>
+                <div id="answer21" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question22">
+                <h3>22. स्वतंत्र भारत के प्रथम भारतीय गवर्नर-जनरल तथा भारत के अंतिम गवर्नर जनरल थे?</h3>
+                <label><input type="radio" name="q22" value="a"> A. लॉर्ड कैनिंग</label><br>
+                <label><input type="radio" name="q22" value="b"> B. लॉर्ड एल्गिन प्रथम</label><br>
+                <label><input type="radio" name="q22" value="c"> C. लॉर्ड माउंटबेटन</label><br>
+                <label><input type="radio" name="q22" value="d"> D. सी. राजगोपालाचारी</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(22, 'D. सी. राजगोपालाचारी')">Show Answer</button>
+                <div id="answer22" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question23">
+                <h3>23. लॉर्ड चेम्सफोर्ड (1916-21) के शासनकाल में निम्न में से कौन सी घटना घटित नहीं हुआ था?</h3>
+                <label><input type="radio" name="q23" value="a"> A. खिलाफत आंदोलन</label><br>
+                <label><input type="radio" name="q23" value="b"> B. असहयोग आंदोलन</label><br>
+                <label><input type="radio" name="q23" value="c"> C. सविनय अवज्ञा आंदोलन</label><br>
+                <label><input type="radio" name="q23" value="d"> D. तृतीय अफगान युद्ध</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(23, 'C. सविनय अवज्ञा आंदोलन')">Show Answer</button>
+                <div id="answer23" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question24">
+                <h3>24. वर्ष 1940 में वर्धा के निकट पावनार ग्राम से शुरू हुआ व्यक्तिगत सत्याग्रह के दूसरे सत्याग्रही थे?</h3>
+                <label><input type="radio" name="q24" value="a"> A. विनोबा भावे</label><br>
+                <label><input type="radio" name="q24" value="b"> B. जवाहरलाल नेहरू</label><br>
+                <label><input type="radio" name="q24" value="c"> C. ब्रहदत्त</label><br>
+                <label><input type="radio" name="q24" value="d"> D. महात्मा गांधी</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(24, 'B. जवाहरलाल नेहरू')">Show Answer</button>
+                <div id="answer24" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question25">
+                <h3>25. बिहार में घाघरा नदी किस स्थान पर गंगा में मिलती है?</h3>
+                <label><input type="radio" name="q25" value="a"> A. समस्तीपुर के निकट</label><br>
+                <label><input type="radio" name="q25" value="b"> B. छपरा के निकट</label><br>
+                <label><input type="radio" name="q25" value="c"> C. पटना के निकट</label><br>
+                <label><input type="radio" name="q25" value="d"> D. वैशाली के निकट</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(25, 'B. छपरा के निकट')">Show Answer</button>
+                <div id="answer25" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question26">
+                <h3>26. निम्नलिखित में किन दो देशों के बीच सबसे ऊंची अंतर्राष्ट्रीय सीमा शीर्ष बिंदु फैली हुई है?</h3>
+                <label><input type="radio" name="q26" value="a"> A. भारत-नेपाल</label><br>
+                <label><input type="radio" name="q26" value="b"> B. नेपाल-चीन</label><br>
+                <label><input type="radio" name="q26" value="c"> C. कनाडा-अमेरिका</label><br>
+                <label><input type="radio" name="q26" value="d"> D. भारत-पाकिस्तान</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(26, 'B. नेपाल-चीन')">Show Answer</button>
+                <div id="answer26" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question27">
+                <h3>27. आत्यधिक प्रचण्ड चक्रवात 'तूफान' 'उष्णकटिबंधीय चक्रवात है जो पूर्व-मध्य अरब सागर में निर्मित, जिनके कारण भारत के सर्वाधिक प्रभावित तटीय क्षेत्र है?</h3>
+                <label><input type="radio" name="q27" value="a"> A. केरल तटीय क्षेत्र में</label><br>
+                <label><input type="radio" name="q27" value="b"> B. बंगाल तटीय क्षेत्र में</label><br>
+                <label><input type="radio" name="q27" value="c"> C. कोचीन तटीय क्षेत्र में</label><br>
+                <label><input type="radio" name="q27" value="d"> D. गुजरात तटीय क्षेत्र में</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(27, 'D. गुजरात तटीय क्षेत्र में')">Show Answer</button>
+                <div id="answer27" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question28">
+                <h3>28. भारतीय स्वतंत्रता संग्राम के बिहार दौरान मुजफ्फरपुर में किंग्सफोर्ड की हत्या का प्रयास कब किया गया था?</h3>
+                <label><input type="radio" name="q28" value="a"> A. 30 मार्च, 1916</label><br>
+                <label><input type="radio" name="q28" value="b"> B. 30 अप्रैल, 1911</label><br>
+                <label><input type="radio" name="q28" value="c"> C. 30 अप्रैल, 1908</label><br>
+                <label><input type="radio" name="q28" value="d"> D. 30 मार्च, 1909</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(28, 'C. 30 अप्रैल, 1908')">Show Answer</button>
+                <div id="answer28" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question29">
+                <h3>29. स्वतंत्र भारत में एक ही औद्योगिक क्षेत्रों में दो पदक जीतने वाली पहली भारतीय महिला बनीं:-</h3>
+                <label><input type="radio" name="q29" value="a"> A. मनु भाकर</label><br>
+                <label><input type="radio" name="q29" value="b"> B. मेरीकोम</label><br>
+                <label><input type="radio" name="q29" value="c"> C. पी.वी. सिंधु</label><br>
+                <label><input type="radio" name="q29" value="d"> D. साइना नेहवाल</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(29, 'B. मेरीकोम')">Show Answer</button>
+                <div id="answer29" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question30">
+                <h3>30. भारत की दूसरी सबसे लम्बी स्थलीय सीमा किन देशों के साथ लगती है?</h3>
+                <label><input type="radio" name="q30" value="a"> A. चीन</label><br>
+                <label><input type="radio" name="q30" value="b"> B. भूटान</label><br>
+                <label><input type="radio" name="q30" value="c"> C. बांग्लादेश</label><br>
+                <label><input type="radio" name="q30" value="d"> D. नेपाल</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(30, 'A. चीन')">Show Answer</button>
+                <div id="answer30" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question31">
+                <h3>31. यह सुनिश्चित नहीं है:-</h3>
+                <label><input type="radio" name="q31" value="a"> A. राइबोसोम संवेषित नहीं है।</label><br>
+                <label><input type="radio" name="q31" value="b"> B. इनकी कमी से बच्चों का मानसिक एवं शारीरिक विकास अवरुद्ध हो जाता है।</label><br>
+                <label><input type="radio" name="q31" value="c"> C. इसकी अधिकता से एक्रोमेलिया रोग हो जाता है जिसमें आँखें फूलकर सेक्रेटोर से बाहर निकल आती है।</label><br>
+                <label><input type="radio" name="q31" value="d"> D. यह पीयूष ग्रंथि से निकलने वाला हार्मोन है।</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(31, 'A. राइबोसोम संवेषित नहीं है।')">Show Answer</button>
+                <div id="answer31" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question32">
+                <h3>32. सबसे अच्छा प्रोबायोटिक्स है:-</h3>
+                <label><input type="radio" name="q32" value="a"> A. सैवाल</label><br>
+                <label><input type="radio" name="q32" value="b"> B. पनीर</label><br>
+                <label><input type="radio" name="q32" value="c"> C. दही</label><br>
+                <label><input type="radio" name="q32" value="d"> D. परजीवी</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(32, 'C. दही')">Show Answer</button>
+                <div id="answer32" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question33">
+                <h3>33. CAR-T सेल थेरेपी सम्बंधित है:-</h3>
+                <label><input type="radio" name="q33" value="a"> A. कैंसर के इलाज में प्रयोग होता है।</label><br>
+                <label><input type="radio" name="q33" value="b"> B. एचआईवी वायरस की जांच करने में प्रयोग होता है।</label><br>
+                <label><input type="radio" name="q33" value="c"> C. पक्षाघात या लकवा में प्रयोग होता है।</label><br>
+                <label><input type="radio" name="q33" value="d"> D. मानसिक रोग के इलाज में प्रयोग होता है।</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(33, 'A. कैंसर के इलाज में प्रयोग होता है।')">Show Answer</button>
+                <div id="answer33" class="answer"></div>
+            </div>
+
+            <div class="question" id="question34">
+                <h3>34. सरीसृप 'डाइनोसोर' एक मध्यजीवी या मेसोजाइक महाकल्प में थे। मध्यजीवी महाकल्प में शामिल थे?</h3>
+                <label><input type="radio" name="q34" value="a"> A. जुरैसिक कल्प</label><br>
+                <label><input type="radio" name="q34" value="b"> B. क्रिटेशियस कल्प</label><br>
+                <label><input type="radio" name="q34" value="c"> C. ट्रायसिक कल्प</label><br>
+                <label><input type="radio" name="q34" value="d"> D. इनमें से सभी</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(34, 'D. इनमें से सभी')">Show Answer</button>
+                <div id="answer34" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question35">
+                <h3>35. विश्व में गेहूँ का दूसरा सबसे बड़ा उत्पादक देश कौन सा है?</h3>
+                <label><input type="radio" name="q35" value="a"> A. चीन</label><br>
+                <label><input type="radio" name="q35" value="b"> B. रूस</label><br>
+                <label><input type="radio" name="q35" value="c"> C. U.S.A</label><br>
+                <label><input type="radio" name="q35" value="d"> D. भारत</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(35, 'D. भारत')">Show Answer</button>
+                <div id="answer35" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question36">
+                <h3>36. किस देश को 'हर्मिट किंगडम' के नाम से जाना जाता है?</h3>
+                <label><input type="radio" name="q36" value="a"> A. थाईलैण्ड</label><br>
+                <label><input type="radio" name="q36" value="b"> B. जापान</label><br>
+                <label><input type="radio" name="q36" value="c"> C. उत्तरी कोरिया</label><br>
+                <label><input type="radio" name="q36" value="d"> D. ऑस्ट्रेलिया</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(36, 'C. उत्तरी कोरिया')">Show Answer</button>
+                <div id="answer36" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question37">
+                <h3>37. वियतनाम की राजधानी हैः-</h3>
+                <label><input type="radio" name="q37" value="a"> A. पोर्ट विला</label><br>
+                <label><input type="radio" name="q37" value="b"> B. जकार्ता</label><br>
+                <label><input type="radio" name="q37" value="c"> C. हनोई</label><br>
+                <label><input type="radio" name="q37" value="d"> D. बैंकाक</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(37, 'C. हनोई')">Show Answer</button>
+                <div id="answer37" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question38">
+                <h3>38. कांगड़ा चित्रकला शैली में किस प्रकार के चित्र की प्रधानता रहती है?</h3>
+                <label><input type="radio" name="q38" value="a"> A. पशु-पक्षियों का</label><br>
+                <label><input type="radio" name="q38" value="b"> B. दैनिक क्रियाकलापों का</label><br>
+                <label><input type="radio" name="q38" value="c"> C. पौराणिक कथाओं एवं रीतिकालीन नायक-नायिकाओं का</label><br>
+                <label><input type="radio" name="q38" value="d"> D. युद्ध दृश्यों का</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(38, 'C. पौराणिक कथाओं एवं रीतिकालीन नायक-नायिकाओं का')">Show Answer</button>
+                <div id="answer38" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question39">
+                <h3>39. दुनिया के डिजिटल भुगतानों में भारत का कितना प्रतिशत हिस्सेदारी हैं?</h3>
+                <label><input type="radio" name="q39" value="a"> A. 48-5%</label><br>
+                <label><input type="radio" name="q39" value="b"> B. 60-7%</label><br>
+                <label><input type="radio" name="q39" value="c"> C. 35-2%</label><br>
+                <label><input type="radio" name="q39" value="d"> D. 52-1%</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(39, 'A. 48-5%')">Show Answer</button>
+                <div id="answer39" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question40">
+                <h3>40. 'हितोपदेश' नामक पुस्तक के लेखक कौन हैं?</h3>
+                <label><input type="radio" name="q40" value="a"> A. वात्स्यायन</label><br>
+                <label><input type="radio" name="q40" value="b"> B. विष्णु शर्मा</label><br>
+                <label><input type="radio" name="q40" value="c"> C. नारायण पंडित</label><br>
+                <label><input type="radio" name="q40" value="d"> D. नार्गाजुन</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(40, 'C. नारायण पंडित')">Show Answer</button>
+                <div id="answer40" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question41">
+                <h3>41. A Century is Not Enough किसकी रचना हैं?</h3>
+                <label><input type="radio" name="q41" value="a"> A. सचिन तेंदुलकर</label><br>
+                <label><input type="radio" name="q41" value="b"> B. टाइगर वुड्स</label><br>
+                <label><input type="radio" name="q41" value="c"> C. सौरभ गांगुली</label><br>
+                <label><input type="radio" name="q41" value="d"> D. ब्रायन लारा</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(41, 'C. सौरभ गांगुली')">Show Answer</button>
+                <div id="answer41" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question42">
+                <h3>42. Cu, Sn, Zn का मिश्रण है-</h3>
+                <label><input type="radio" name="q42" value="a"> A. जर्मन सिल्वर</label><br>
+                <label><input type="radio" name="q42" value="b"> B. स्टेनलेस स्टील</label><br>
+                <label><input type="radio" name="q42" value="c"> C. मुद्रण धातु</label><br>
+                <label><input type="radio" name="q42" value="d"> D. गन धातु</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(42, 'D. गन धातु')">Show Answer</button>
+                <div id="answer42" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question43">
+                <h3>43. निम्नलिखित तत्वों में सबसे अधिक विद्युतधनात्मक तत्व हैं?</h3>
+                <label><input type="radio" name="q43" value="a"> A. K</label><br>
+                <label><input type="radio" name="q43" value="b"> B. Cs</label><br>
+                <label><input type="radio" name="q43" value="c"> C. Mg</label><br>
+                <label><input type="radio" name="q43" value="d"> D. Ca</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(43, 'B. Cs')">Show Answer</button>
+                <div id="answer43" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question44">
+                <h3>44. अभिप्राय दृढ या निलंबन जैसे द्रव और ठोस मिश्रण के लिए निम्न पृथक्करण प्रक्रिया है-</h3>
+                <label><input type="radio" name="q44" value="a"> A. प्रभाजी आसवन</label><br>
+                <label><input type="radio" name="q44" value="b"> B. छानना</label><br>
+                <label><input type="radio" name="q44" value="c"> C. पृथक्कारी कीप के प्रयोग से</label><br>
+                <label><input type="radio" name="q44" value="d"> D. निस्तारण</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(44, 'B. छानना')">Show Answer</button>
+                <div id="answer44" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question45">
+                <h3>45. अक्रिस्टलीय ठोस के संबंध में गलत तथ्य है-</h3>
+                <label><input type="radio" name="q45" value="a"> A. इसकी ज्यामिति अवस्थित होती है</label><br>
+                <label><input type="radio" name="q45" value="b"> B. इसकी गलनांक निश्चित नहीं होती है</label><br>
+                <label><input type="radio" name="q45" value="c"> C. इसकी गलनांक निश्चित होती है</label><br>
+                <label><input type="radio" name="q45" value="d"> D. इसके ठोस समदैशिक होती है।</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(45, 'A. इसकी ज्यामिति अवस्थित होती है')">Show Answer</button>
+                <div id="answer45" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question46">
+                <h3>46. एल्युमिनियम को तनु H<sub>2</sub>SO<sub>4</sub> के साथ गर्म करने पर क्या मुक्त करता है?</h3>
+                <label><input type="radio" name="q46" value="a"> A. O<sub>2</sub></label><br>
+                <label><input type="radio" name="q46" value="b"> B. SO<sub>2</sub></label><br>
+                <label><input type="radio" name="q46" value="c"> C. H<sub>2</sub>S</label><br>
+                <label><input type="radio" name="q46" value="d"> D. H<sub>2</sub></label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(46, 'D. H<sub>2</sub>')">Show Answer</button>
+                <div id="answer46" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question47">
+                <h3>47. रक्त द्रव स्त्राव से एक अर्द्ध ठोस जेली संरचना में किस प्रक्रिया के द्वारा बदल जाती है?</h3>
+                <label><input type="radio" name="q47" value="a"> A. अधिशोषण</label><br>
+                <label><input type="radio" name="q47" value="b"> B. अपोहन</label><br>
+                <label><input type="radio" name="q47" value="c"> C. ऑस्मोसिस</label><br>
+                <label><input type="radio" name="q47" value="d"> D. स्कंदन</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(47, 'D. स्कंदन')">Show Answer</button>
+                <div id="answer47" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question48">
+                <h3>48. कथन (A) : सोडियम एक नरम धातु है जो हवा में संपर्क के आने के कुछ सेकंड बाद ही धूमिल हो जाती है। कारण (R) : सोडियम कार्बनिक यौगिकों के संश्लेषण के साथ-साथ एस्टर के निर्माण के लिए आवश्यक है।</h3>
+                <label><input type="radio" name="q48" value="a"> A. कथन (A) और कारण (R) दोनों सही है और कारण (R), कथन (A) का सही स्पष्टीकरण है।</label><br>
+                <label><input type="radio" name="q48" value="b"> B. कथन (A) और कारण (R) दोनों सही है किंतु कारण (R), कथन (A) का सही स्पष्टीकरण नहीं है।</label><br>
+                <label><input type="radio" name="q48" value="c"> C. कथन (A) सही है, परंतु कारण (R) गलत है।</label><br>
+                <label><input type="radio" name="q48" value="d"> D. कथन (A) गलत है, परंतु कारण (R) सही है।</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(48, 'C. कथन (A) सही है, परंतु कारण (R) गलत है।')">Show Answer</button>
+                <div id="answer48" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question49">
+                <h3>49. राष्ट्रपति भवन के दरबार हॉल का नया नाम है :-</h3>
+                <label><input type="radio" name="q49" value="a"> A. रिपब्लिक हॉल</label><br>
+                <label><input type="radio" name="q49" value="b"> B. अशोक मंडप</label><br>
+                <label><input type="radio" name="q49" value="c"> C. गणतंत्र मंडप</label><br>
+                <label><input type="radio" name="q49" value="d"> D. सारनाथ मंडप</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(49, 'C. गणतंत्र मंडप')">Show Answer</button>
+                <div id="answer49" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question50">
+                <h3>50. Change the following sentence into direct speech from the option given below: I say that I write a letter.</h3>
+                <label><input type="radio" name="q50" value="a"> A. I said, “I write a letter.”</label><br>
+                <label><input type="radio" name="q50" value="b"> B. I say, “I write a letter.”</label><br>
+                <label><input type="radio" name="q50" value="c"> C. I was saying, “I write a letter”</label><br>
+                <label><input type="radio" name="q50" value="d"> D. I am saying, “I write a letter”</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(50, 'B. I say, “I write a letter.”')">Show Answer</button>
+                <div id="answer50" class="answer"></div>
+            </div>
+
+            <div class="question" id="question51">
+                <h3>51. डॉसिंग अम्पायर के नाम से कौन जाना जाता है?</h3>
+                <label><input type="radio" name="q51" value="a"> A. स्टीव बकनर</label><br>
+                <label><input type="radio" name="q51" value="b"> B. डिकी बर्ड</label><br>
+                <label><input type="radio" name="q51" value="c"> C. डेविड शेफर्ड</label><br>
+                <label><input type="radio" name="q51" value="d"> D. इयान राबिन्सन</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(51, 'C. डेविड शेफर्ड')">Show Answer</button>
+                <div id="answer51" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question52">
+                <h3>52. S.I.M का विस्तृत रूप क्या है?</h3>
+                <label><input type="radio" name="q52" value="a"> A. Self Identity Machine</label><br>
+                <label><input type="radio" name="q52" value="b"> B. Self Identity Module</label><br>
+                <label><input type="radio" name="q52" value="c"> C. Subscribers Identity Module</label><br>
+                <label><input type="radio" name="q52" value="d"> D. Subscribers Identity Mechanism</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(52, 'C. Subscribers Identity Module')">Show Answer</button>
+                <div id="answer52" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question53">
+                <h3>53. विश्व जल संरक्षण दिवस मनाया जाता है-</h3>
+                <label><input type="radio" name="q53" value="a"> A. 22 मार्च को</label><br>
+                <label><input type="radio" name="q53" value="b"> B. 11 जुलाई को</label><br>
+                <label><input type="radio" name="q53" value="c"> C. 5 जून को</label><br>
+                <label><input type="radio" name="q53" value="d"> D. 28 फरवरी को</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(53, 'A. 22 मार्च को')">Show Answer</button>
+                <div id="answer53" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question54">
+                <h3>54. A thing of beauty is a joy for ever पंक्ति किसकी है?</h3>
+                <label><input type="radio" name="q54" value="a"> A. जोनाथन स्विफ्रट</label><br>
+                <label><input type="radio" name="q54" value="b"> B. जॉन कीट्स</label><br>
+                <label><input type="radio" name="q54" value="c"> C. चार्ल्स डिकेन्स</label><br>
+                <label><input type="radio" name="q54" value="d"> D. विलियम वर्ड्सवर्थ</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(54, 'B. जॉन कीट्स')">Show Answer</button>
+                <div id="answer54" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question55">
+                <h3>55. सूची-I तथा सूची-II को सुमेलित कीजिए तथा सूचियों के नीचे दिये गये कूट से सही उत्तर का चयन कीजिए-</h3>
+                <p>सूची-I (खिलाड़ी) सूची-II (उपनाम)</p>
+                <label><input type="radio" name="q55" value="a"> A. A-1 B-2 C-3 D-4</label><br>
+                <label><input type="radio" name="q55" value="b"> B. A-3 B-4 C-2 D-1</label><br>
+                <label><input type="radio" name="q55" value="c"> C. A-3 B-4 C-1 D-2</label><br>
+                <label><input type="radio" name="q55" value="d"> D. A-3 B-2 C-4 D-1</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(55, 'B. A-3 B-4 C-2 D-1')">Show Answer</button>
+                <div id="answer55" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question56">
+                <h3>56. किस ग्रुप के खेलों में प्रत्येक पक्ष में खिलाड़ियों की संख्या समान होती है?</h3>
+                <label><input type="radio" name="q56" value="a"> A. फुटबॉल और रग्बी</label><br>
+                <label><input type="radio" name="q56" value="b"> B. पोलो और वाटर पोलो</label><br>
+                <label><input type="radio" name="q56" value="c"> C. वाटर पोलो और बास्केटबॉल</label><br>
+                <label><input type="radio" name="q56" value="d"> D. बेसबॉल और खो-खो</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(56, 'D. बेसबॉल और खो-खो')">Show Answer</button>
+                <div id="answer56" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question57">
+                <h3>57. ज्ञानपीठ पुरस्कार प्राप्त करने वाला बिहार के पहले व्यक्ति रामधारी सिंह 'दिनकर' को 'उर्वशी' पुस्तक के लिए उन्हें कब पुरस्कार दिया गया।</h3>
+                <label><input type="radio" name="q57" value="a"> A. 1972</label><br>
+                <label><input type="radio" name="q57" value="b"> B. 1976</label><br>
+                <label><input type="radio" name="q57" value="c"> C. 1968</label><br>
+                <label><input type="radio" name="q57" value="d"> D. 1966</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(57, 'A. 1972')">Show Answer</button>
+                <div id="answer57" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question58">
+                <h3>58. भारत के झण्डे का निर्माण पिंग्ली वेंकैया ने किया। वे किस राज्य से संबंधित थे?</h3>
+                <label><input type="radio" name="q58" value="a"> A. राजस्थान</label><br>
+                <label><input type="radio" name="q58" value="b"> B. गुजरात</label><br>
+                <label><input type="radio" name="q58" value="c"> C. महाराष्ट्र</label><br>
+                <label><input type="radio" name="q58" value="d"> D. आंध्रप्रदेश</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(58, 'D. आंध्रप्रदेश')">Show Answer</button>
+                <div id="answer58" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question59">
+                <h3>59. यूरो-2024 फाइनल किसने जीता।</h3>
+                <label><input type="radio" name="q59" value="a"> A. स्पेन</label><br>
+                <label><input type="radio" name="q59" value="b"> B. इटली</label><br>
+                <label><input type="radio" name="q59" value="c"> C. इंग्लैंड</label><br>
+                <label><input type="radio" name="q59" value="d"> D. जर्मनी</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(59, 'B. इटली')">Show Answer</button>
+                <div id="answer59" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question60">
+                <h3>60. सेफ्रटी रेजर का आविष्कार किसने किया?</h3>
+                <label><input type="radio" name="q60" value="a"> A. जिलेट</label><br>
+                <label><input type="radio" name="q60" value="b"> B. लार्स स्ट्रोम</label><br>
+                <label><input type="radio" name="q60" value="c"> C. स्टीव चेब</label><br>
+                <label><input type="radio" name="q60" value="d"> D. स्टीव जॉब</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(60, 'A. जिलेट')">Show Answer</button>
+                <div id="answer60" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question61">
+                <h3>61. तलवार को रखने का साधन वाक्यांश के लिए एक शब्द है-</h3>
+                <label><input type="radio" name="q61" value="a"> A. तूणीर</label><br>
+                <label><input type="radio" name="q61" value="b"> B. म्यान</label><br>
+                <label><input type="radio" name="q61" value="c"> C. चैम्बर</label><br>
+                <label><input type="radio" name="q61" value="d"> D. ढोंक</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(61, 'B. म्यान')">Show Answer</button>
+                <div id="answer61" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question62">
+                <h3>62. किस समूह में सही अर्थ नहीं प्रकट करने वाले शब्द-युग्म हैं?</h3>
+                <label><input type="radio" name="q62" value="a"> A. आदि- आरंभ, आदी- अभ्यस्त</label><br>
+                <label><input type="radio" name="q62" value="b"> B. कपि-चिनी, कपि- बंदर</label><br>
+                <label><input type="radio" name="q62" value="c"> C. तरणि- नाव, तरणी- सूर्य</label><br>
+                <label><input type="radio" name="q62" value="d"> D. चिर- पुराना, चीर- कपड़ा</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(62, 'B. कपि-चिनी, कपि- बंदर')">Show Answer</button>
+                <div id="answer62" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question63">
+                <h3>63. शून्य में स्वतंत्र रूप से गिरने वाली वस्तुओं की/का-</h3>
+                <label><input type="radio" name="q63" value="a"> A. समान त्वरण होता है</label><br>
+                <label><input type="radio" name="q63" value="b"> B. समान बल होता है</label><br>
+                <label><input type="radio" name="q63" value="c"> C. समान वेग होता है</label><br>
+                <label><input type="radio" name="q63" value="d"> D. समान गति रहता है</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(63, 'A. समान त्वरण होता है')">Show Answer</button>
+                <div id="answer63" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question64">
+                <h3>64. मनुष्य वस्तु बनाने का दर्पण प्रयोग करता है?</h3>
+                <label><input type="radio" name="q64" value="a"> A. अवतल दर्पण</label><br>
+                <label><input type="radio" name="q64" value="b"> B. उत्तल दर्पण</label><br>
+                <label><input type="radio" name="q64" value="c"> C. समतल दर्पण</label><br>
+                <label><input type="radio" name="q64" value="d"> D. परवलय दर्पण</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(64, 'A. अवतल दर्पण')">Show Answer</button>
+                <div id="answer64" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question65">
+                <h3>65. 200 किग्रा. भार की एक नाव पानी पर तैरती है तो विस्थापित पानी का भार होगा?</h3>
+                <label><input type="radio" name="q65" value="a"> A. शून्य किग्रा.</label><br>
+                <label><input type="radio" name="q65" value="b"> B. 100 किग्रा.</label><br>
+                <label><input type="radio" name="q65" value="c"> C. 200 किग्रा.</label><br>
+                <label><input type="radio" name="q65" value="d"> D. 400 किग्रा.</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(65, 'C. 200 किग्रा.')">Show Answer</button>
+                <div id="answer65" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question66">
+                <h3>66. क्रोमेटोग्राफी या वर्णलेखन से संबंधी में सही है:-</h3>
+                <label><input type="radio" name="q66" value="a"> A. यह पहली बार 1900 में इटली में जर्ज वैज्ञानिक मिखाइल स्वेत द्वारा खोजा गया था।</label><br>
+                <label><input type="radio" name="q66" value="b"> B. यह रंग रसायनो के मिश्रण को पृथक करने की एक रासायनिक तकनीक है।</label><br>
+                <label><input type="radio" name="q66" value="c"> C. यह पेट्रोलियम उद्योग में तकनीक हाइड्रोकार्बन का जटिल मिश्रण का विश्लेषण करने के लिए कार्यरत है।</label><br>
+                <label><input type="radio" name="q66" value="d"> D. यह रंगीन पदार्थों के प्रभावी आसवन में प्रयोग होता है।</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(66, 'B. यह रंग रसायनो के मिश्रण को पृथक करने की एक रासायनिक तकनीक है।')">Show Answer</button>
+                <div id="answer66" class="answer"></div>
+            </div>
+
+            <div class="question" id="question67">
+                <h3>67. नीचे दिए गए वेग-समय ग्राफ का कौन-सा भाग शून्य त्वरण/मंदन को प्रदर्शित करता है?</h3>
+                <img src="graph.png" alt="Velocity-Time Graph" width="200"><label><input type="radio" name="q67" value="a"> A. AD</label><br>
+                <label><input type="radio" name="q67" value="b"> B. CD</label><br>
+                <label><input type="radio" name="q67" value="c"> C. BC</label><br>
+                <label><input type="radio" name="q67" value="d"> D. AB</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(67, 'C. BC')">Show Answer</button>
+                <div id="answer67" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question68">
+                <h3>68. एक बल्लेबाज T-20 वर्ल्ड कप 2024 में अपनी 11वीं पारी में 77 रन बनाता है, जिससे उसका औसत स्कोर 3 बढ़ जाता है। 11वीं पारी के बाद उसका औसत स्कोर होगा?</h3>
+                <label><input type="radio" name="q68" value="a"> A. 46</label><br>
+                <label><input type="radio" name="q68" value="b"> B. 47</label><br>
+                <label><input type="radio" name="q68" value="c"> C. 48</label><br>
+                <label><input type="radio" name="q68" value="d"> D. 59</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(68, 'A. 46')">Show Answer</button>
+                <div id="answer68" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question69">
+                <h3>69. वर्ष 2020 में स्थापित कोलंबो सिक्योरिटी कॉन्क्लेव (सीएएसी) का उद्देश्य क्या है?</h3>
+                <label><input type="radio" name="q69" value="a"> A. पर्यावरण संरक्षण का समर्थन करना।</label><br>
+                <label><input type="radio" name="q69" value="b"> B. सांस्कृतिक आदान-प्रदान को बढ़ावा देना।</label><br>
+                <label><input type="radio" name="q69" value="c"> C. क्षेत्रीय आर्थिक सहयोग को बढ़ावा देना।</label><br>
+                <label><input type="radio" name="q69" value="d"> D. समुद्री सहयोग का विस्तार करना।</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(69, 'D. समुद्री सहयोग का विस्तार करना।')">Show Answer</button>
+                <div id="answer69" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question70">
+                <h3>70. दो रेलगाड़ी A और B से समान समय पर चलना प्रारंभ करती है एवं 85 किमी/घंटा और 100 किमी/घंटा की गति से एक-दूसरे की ओर बढ़ती है। जब वे मिलते हैं, तो पता चलता है कि एक रेलगाड़ी ने दूसरी रेलगाड़ी से 210 किमी. अधिक यात्रा की है, तो A और B के बीच की दूरी (किमी में) कितनी है?</h3>
+                <label><input type="radio" name="q70" value="a"> A. 2590</label><br>
+                <label><input type="radio" name="q70" value="b"> B. 2650</label><br>
+                <label><input type="radio" name="q70" value="c"> C. 2480</label><br>
+                <label><input type="radio" name="q70" value="d"> D. 2500</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(70, 'A. 2590')">Show Answer</button>
+                <div id="answer70" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question71">
+                <h3>71. यदि x धनात्मक है तो श्रेणी के अनंत पदों का योग है?</h3>
+                <label><input type="radio" name="q71" value="a"> A. 1/2</label><br>
+                <label><input type="radio" name="q71" value="b"> B. 3/4</label><br>
+                <label><input type="radio" name="q71" value="c"> C. 1</label><br>
+                <label><input type="radio" name="q71" value="d"> D. शून्य</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(71, 'C. 1')">Show Answer</button>
+                <div id="answer71" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question72">
+                <h3>72. लोकसभा 2024 के एक चुनाव में दो उम्मीदवार थे, इस चुनाव में 6% मतदाताओं ने अपने मताधिकार का प्रयोग नहीं किया। विजेता कुल मतों का 49% मत प्राप्त करके 1300 मतों से जीत गया तो इस चुनाव में कुल कितने मतदाता थे?</h3>
+                <label><input type="radio" name="q72" value="a"> A. 32500</label><br>
+                <label><input type="radio" name="q72" value="b"> B. 36000</label><br>
+                <label><input type="radio" name="q72" value="c"> C. 42000</label><br>
+                <label><input type="radio" name="q72" value="d"> D. 39600</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(72, 'A. 32500')">Show Answer</button>
+                <div id="answer72" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question73">
+                <h3>73. 2 बजकर 20 मिनट पर दोनों सुइयों के बीच कोण होगा?</h3>
+                <label><input type="radio" name="q73" value="a"> A. 50°</label><br>
+                <label><input type="radio" name="q73" value="b"> B. 60°</label><br>
+                <label><input type="radio" name="q73" value="c"> C. 45°</label><br>
+                <label><input type="radio" name="q73" value="d"> D. 95°</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(73, 'A. 50°')">Show Answer</button>
+                <div id="answer73" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question74">
+                <h3>74. मोबाइल एप्लिकेशन mpassport सेवा भारत के निम्नलिखित में से किस मंत्रालय द्वारा लॉन्च किया गया है?</h3>
+                <label><input type="radio" name="q74" value="a"> A. नागरिक उड्डयन मंत्रालय</label><br>
+                <label><input type="radio" name="q74" value="b"> B. पर्यटन मंत्रालय</label><br>
+                <label><input type="radio" name="q74" value="c"> C. गृह मंत्रालय</label><br>
+                <label><input type="radio" name="q74" value="d"> D. विदेश मंत्रालय</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(74, 'D. विदेश मंत्रालय')">Show Answer</button>
+                <div id="answer74" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question75">
+                <h3>75. भारत में राष्ट्रीय बालिका दिवस किस तिथि को मनाया जाता है।</h3>
+                <label><input type="radio" name="q75" value="a"> A. 24 जनवरी</label><br>
+                <label><input type="radio" name="q75" value="b"> B. 22 जनवरी</label><br>
+                <label><input type="radio" name="q75" value="c"> C. 14 जनवरी</label><br>
+                <label><input type="radio" name="q75" value="d"> D. 26 जनवरी</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(75, 'A. 24 जनवरी')">Show Answer</button>
+                <div id="answer75" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question76">
+                <h3>76. आधुनिक ओलंपिक खेल के संदर्भ में सही नहीं है-</h3>
+                <label><input type="radio" name="q76" value="a"> A. पहले आधुनिक ओलंपिक खेल यूनान की राजधानी एथेंस में 1896 में आयोजित किए गए।</label><br>
+                <label><input type="radio" name="q76" value="b"> B. एथेंस ओलंपिक खेलों में सिर्फ 14 देशों के लोगों ने 43 मुकाबलों में हिस्सा लिया।</label><br>
+                <label><input type="radio" name="q76" value="c"> C. 1896 के बाद पेरिस ओलंपिक में नॉर्मन प्रिजार्ड ने भारत का प्रतिनिधित्व किया और उसी के साथ भारत को पहली ओलंपिक उपस्थिति बन गई।</label><br>
+                <label><input type="radio" name="q76" value="d"> D. चार्ल्स हैर्री डेकेके एक यूनानी शिक्षक और इतिहासकार थे जिन्हें आधुनिक ओलंपिक खेलों का जनक रूप में जाना जाता है।</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(76, 'C. 1896 के बाद पेरिस ओलंपिक में नॉर्मन प्रिजार्ड ने भारत का प्रतिनिधित्व किया और उसी के साथ भारत को पहली ओलंपिक उपस्थिति बन गई।')">Show Answer</button>
+                <div id="answer76" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question77">
+                <h3>77. भारतीय संविधान के किस अनुच्छेद के तहत नीति आयोग का गठन 1 जनवरी, 2015 को किया गया था?</h3>
+                <label><input type="radio" name="q77" value="a"> A. अनु. -324</label><br>
+                <label><input type="radio" name="q77" value="b"> B. अनु. -280</label><br>
+                <label><input type="radio" name="q77" value="c"> C. अनु.-286</label><br>
+                <label><input type="radio" name="q77" value="d"> D. अनुच्छेदों में कोई नहीं</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(77, 'D. अनुच्छेदों में कोई नहीं')">Show Answer</button>
+                <div id="answer77" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question78">
+                <h3>78. जम्मू-कश्मीर राज्य पुनर्गठन अधिनियम, 2019 के संदर्भ में गलत है?</h3>
+                <label><input type="radio" name="q78" value="a"> A. जम्मू-कश्मीर को अनु.-239 A के तहत विधानसभा के साथ संघ राज्य क्षेत्र बनाया गया।</label><br>
+                <label><input type="radio" name="q78" value="b"> B. लद्दाख को बिना विधानसभा के साथ राज्य क्षेत्र बनाया गया।</label><br>
+                <label><input type="radio" name="q78" value="c"> C. लद्दाख को भी विधानसभा के साथ राज्य क्षेत्र बनाया गया।</label><br>
+                <label><input type="radio" name="q78" value="d"> D. जम्मू-कश्मीर और लद्दाख के प्रथम उपराज्यपाल क्रमशः जी.सी. मुर्मू एवं आर.के. माथुर है।</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(78, 'C. लद्दाख को भी विधानसभा के साथ राज्य क्षेत्र बनाया गया।')">Show Answer</button>
+                <div id="answer78" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question79">
+                <h3>79. 2024 में बोइंग स्टारलाइनर के पहले चालक दल मिशन पर सवार होकर अंतरिक्ष में उड़ान भरने वाले पहले व्यक्ति थे?</h3>
+                <label><input type="radio" name="q79" value="a"> A. सुनिता विलियम्स और बुच विल्मोर</label><br>
+                <label><input type="radio" name="q79" value="b"> B. नील आर्मस्ट्रांग और सुनिता विलियम्स</label><br>
+                <label><input type="radio" name="q79" value="c"> C. राकेश शर्मा के उड़ान भरन</label><br>
+                <label><input type="radio" name="q79" value="d"> D. राकेश शर्मा के उड़ान भरने वाले</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(79, 'A. सुनिता विलियम्स और बुच विल्मोर')">Show Answer</button>
+                <div id="answer79" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question80">
+                <h3>80. निम्नलिखित निवारक निरोध अधिनियम को काल क्रमानुसार व्यवस्थित कीजिएः<br>1. MISA<br>2. TADA<br>3. POTA<br>4. NSA</h3>
+                <label><input type="radio" name="q80" value="a"> A. 2, 4, 1, 3</label><br>
+                <label><input type="radio" name="q80" value="b"> B. 1, 4, 2, 3</label><br>
+                <label><input type="radio" name="q80" value="c"> C. 2, 3, 4, 1</label><br>
+                <label><input type="radio" name="q80" value="d"> D. 2, 4, 3, 1</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(80, 'B. 1, 4, 2, 3')">Show Answer</button>
+                <div id="answer80" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question81">
+                <h3>81. संसद के अवकाश (सत्र नहीं चलने की स्थिति) में राष्ट्रपति को किस अनुच्छेद के तहत अध्यादेश जारी करने का अधिकार है?</h3>
+                <label><input type="radio" name="q81" value="a"> A. अनुच्छेद-124</label><br>
+                <label><input type="radio" name="q81" value="b"> B. अनुच्छेद-112</label><br>
+                <label><input type="radio" name="q81" value="c"> C. अनुच्छेद-123</label><br>
+                <label><input type="radio" name="q81" value="d"> D. अनुच्छेद-111</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(81, 'C. अनुच्छेद-123')">Show Answer</button>
+                <div id="answer81" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question82">
+                <h3>82. सदन में किसी बैठक के लिए गणपूर्ति अध्यक्ष सहित (कोरम) कितनी होती है?</h3>
+                <label><input type="radio" name="q82" value="a"> A. सदन के सदस्यों की कुल संख्या का चौथा भाग</label><br>
+                <label><input type="radio" name="q82" value="b"> B. सदन के सदस्यों की कुल संख्या का तीसरा भाग</label><br>
+                <label><input type="radio" name="q82" value="c"> C. सदन के सदस्यों की कुल संख्या का छठवां भाग</label><br>
+                <label><input type="radio" name="q82" value="d"> D. सदन के सदस्यों की कुल संख्या का दसवां भाग</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(82, 'D. सदन के सदस्यों की कुल संख्या का दसवां भाग')">Show Answer</button>
+                <div id="answer82" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question83">
+                <h3>83. निम्नलिखित में सांविधिक आयोग नहीं है।</h3>
+                <label><input type="radio" name="q83" value="a"> A. राष्ट्रीय महिला आयोग</label><br>
+                <label><input type="radio" name="q83" value="b"> B. राष्ट्रीय पिछडा वर्ग आयोग</label><br>
+                <label><input type="radio" name="q83" value="c"> C. राष्ट्रीय अल्पसंख्यक आयोग</label><br>
+                <label><input type="radio" name="q83" value="d"> D. राष्ट्रीय मानवाधिकार आयोग</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(83, 'D. राष्ट्रीय मानवाधिकार आयोग')">Show Answer</button>
+                <div id="answer83" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question84">
+                <h3>84. परिसीमन आयोग के संदर्भ में गलत है-</h3>
+                <label><input type="radio" name="q84" value="a"> A. परिसीमन आयोग के आदेशों को किसी न्यायालय में चुनौती नहीं दी जा सकती है।</label><br>
+                <label><input type="radio" name="q84" value="b"> B. परिसीमन आयोग में देश के मुख्य निर्वाचन आयुक्त सहित सभी राज्यों एवं केन्द्रशासित प्रदेशों के निर्वाचन आयुक्त इस आयोग के सदस्य है।</label><br>
+                <label><input type="radio" name="q84" value="c"> C. परिसीमन आयोग के आदेशों को लोकसभा एवं संबंधित राज्य विधानसभाओं में रखा जाता है।</label><br>
+                <label><input type="radio" name="q84" value="d"> D. परिसीमन आयोग के संबंध में अधिसूचना भारत के राष्ट्रपति द्वारा नहीं जारी किया जाता है।</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(84, 'D. परिसीमन आयोग के संबंध में अधिसूचना भारत के राष्ट्रपति द्वारा नहीं जारी किया जाता है।')">Show Answer</button>
+                <div id="answer84" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question85">
+                <h3>85. निम्नलिखित में किस संविधान संशोधन के तहत लोकसभा, राज्य विधान सभाओं और दिल्ली विधानसभा में महिलाओं के लिए एक-तिहाई सीटें आरक्षित करता है?</h3>
+                <label><input type="radio" name="q85" value="a"> A. 107 वां संविधान संशोधन</label><br>
+                <label><input type="radio" name="q85" value="b"> B. 106 वां संविधान संशोधन</label><br>
+                <label><input type="radio" name="q85" value="c"> C. 105 वां संविधान संशोधन</label><br>
+                <label><input type="radio" name="q85" value="d"> D. 104 वां संविधान संशोधन</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(85, 'B. 106 वां संविधान संशोधन')">Show Answer</button>
+                <div id="answer85" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question86">
+                <h3>86. चुनाव में किस स्थिति में प्रत्याशी या उम्मीदवार की जमानत जब्त हो जाती है?</h3>
+                <label><input type="radio" name="q86" value="a"> A. यदि चुनाव में कुल पडे वोटों को 1/3 फीसदी हासिल नहीं करता है।</label><br>
+                <label><input type="radio" name="q86" value="b"> B. यदि चुनाव में कुल पडे वोटों को 2/3 फीसदी हासिल नहीं करता है।</label><br>
+                <label><input type="radio" name="q86" value="c"> C. यदि चुनाव में कुल पडे वोटों को 1/10 फीसदी हासिल नहीं करता है।</label><br>
+                <label><input type="radio" name="q86" value="d"> D. यदि चुनाव में कुल पडे वोटों को 1/6 फीसदी हासिल नहीं करता है।</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(86, 'D. यदि चुनाव में कुल पडे वोटों को 1/6 फीसदी हासिल नहीं करता है।')">Show Answer</button>
+                <div id="answer86" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question87">
+                <h3>87. संविधान के किस भाग को भारतीय संविधान का मैग्नाकाटा कहा जाता है?</h3>
+                <label><input type="radio" name="q87" value="a"> A. भाग-2</label><br>
+                <label><input type="radio" name="q87" value="b"> B. भाग-3</label><br>
+                <label><input type="radio" name="q87" value="c"> C. भाग-4</label><br>
+                <label><input type="radio" name="q87" value="d"> D. भाग-5</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(87, 'B. भाग-3')">Show Answer</button>
+                <div id="answer87" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question88">
+                <h3>88. 103 वां संविधान संशोधन (2019) के तहत किसे आरक्षण प्रदान किया गया-</h3>
+                <label><input type="radio" name="q88" value="a"> A. सवर्ण जातियों में आर्थिक रूप से कमजोर वर्ग को</label><br>
+                <label><input type="radio" name="q88" value="b"> B. अनुसूचित जातियों में आर्थिक रूप से कमजोर वर्ग को</label><br>
+                <label><input type="radio" name="q88" value="c"> C. अतिपिछडा वर्ग में आर्थिक रूप से कमजोर वर्ग को</label><br>
+                <label><input type="radio" name="q88" value="d"> D. अनुसूचित जनजातियों में आर्थिक रूप से कमजोर वर्ग को</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(88, 'A. सवर्ण जातियों में आर्थिक रूप से कमजोर वर्ग को')">Show Answer</button>
+                <div id="answer88" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question89">
+                <h3>89. किसी हवाई अड्डे पर प्रस्ताविक परियोजना को विश्व स्तर पर अद्वितीय बनाता है:-</h3>
+                <label><input type="radio" name="q89" value="a"> A. पहला सौर ऊर्जा संचालित हवाई अड्डा</label><br>
+                <label><input type="radio" name="q89" value="b"> B. किसी हवाई अड्डे का सबसे बडा हाइड्रोजन संयंत्र</label><br>
+                <label><input type="radio" name="q89" value="c"> C. किसी हवाई अड्डे में पहले हरित हाइड्रोजन संयंत्र</label><br>
+                <label><input type="radio" name="q89" value="d"> D. किसी हवाई अड्डे में सबसे शक्तिशाली हाइड्रोजन संयंत्र</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(89, 'C. किसी हवाई अड्डे में पहले हरित हाइड्रोजन संयंत्र')">Show Answer</button>
+                <div id="answer89" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question90">
+                <h3>90. औद्योगिक विकास की गति तेज करने के लिए मेक इन इंडिया कार्यक्रम की शुरुआत वर्ष 2014 से हुई जिसका प्रतीक निम्नलिखित में कौन-सा है?</h3>
+                <label><input type="radio" name="q90" value="a"> A. स्टील से बना चीता</label><br>
+                <label><input type="radio" name="q90" value="b"> B. कपास से बना चक्र</label><br>
+                <label><input type="radio" name="q90" value="c"> C. खादी से बना बाघ</label><br>
+                <label><input type="radio" name="q90" value="d"> D. कांस्य से बने शेर</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(90, 'D. कांस्य से बने शेर')">Show Answer</button>
+                <div id="answer90" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question91">
+                <h3>91. यदि सीमांत उपयोगिता प्रवृत्ति (MPC) = 0.8 है तो सीमांत बचत प्रवृत्ति (MPS) का मान होगा-</h3>
+                <label><input type="radio" name="q91" value="a"> A. 5</label><br>
+                <label><input type="radio" name="q91" value="b"> B. 0.5</label><br>
+                <label><input type="radio" name="q91" value="c"> C. 0-2</label><br>
+                <label><input type="radio" name="q91" value="d"> D. 2</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(91, 'C. 0-2')">Show Answer</button>
+                <div id="answer91" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question92">
+                <h3>92. 'प्रधानमंत्री ग्राम सडक योजना' को कब प्रारंभ किया गया?</h3>
+                <label><input type="radio" name="q92" value="a"> A. 25 दिसंबर, 2000</label><br>
+                <label><input type="radio" name="q92" value="b"> B. 24 दिसंबर, 2001</label><br>
+                <label><input type="radio" name="q92" value="c"> C. 15 अगस्त, 2001</label><br>
+                <label><input type="radio" name="q92" value="d"> D. 23 दिसंबर, 2001</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(92, 'A. 25 दिसंबर, 2000')">Show Answer</button>
+                <div id="answer92" class="answer"></div>
+            </div>
+
+            <div class="question" id="question93">
+                <h3>93. भारत का एकमात्र सक्रिय ज्वालामुखी किस द्वीप में स्थित है?</h3>
+                <label><input type="radio" name="q93" value="a"> A. मैक्सिको की खाड़ी</label><br>
+                <label><input type="radio" name="q93" value="b"> B. बंगाल की खाड़ी</label><br>
+                <label><input type="radio" name="q93" value="c"> C. हडसन की खाड़ी</label><br>
+                <label><input type="radio" name="q93" value="d"> D. मर्लावान की खाड़ी</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(93, 'B. बंगाल की खाड़ी')">Show Answer</button>
+                <div id="answer93" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question94">
+                <h3>94. सूची-1 तथा सूची-II को सुमेलित कीजिए तथा सूचियों के नीचे दिये गये कूट से सही उत्तर का चयन कीजिए-<br>सूची-1<br>A. भरतनाट्यम<br>B. कुचिपुड़ी<br>C. कथकली<br>D. ओडिसी<br>सूची-II<br>1. ओडिशा<br>2. केरल<br>3. आन्ध्रप्रदेश<br>4. तमिलनाडु</h3>
+                <label><input type="radio" name="q94" value="a"> A. 4 3 2 1</label><br>
+                <label><input type="radio" name="q94" value="b"> B. 3 4 1 2</label><br>
+                <label><input type="radio" name="q94" value="c"> C. 2 3 4 1</label><br>
+                <label><input type="radio" name="q94" value="d"> D. 1 2 3 4</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(94, 'A. 4 3 2 1')">Show Answer</button>
+                <div id="answer94" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question95">
+                <h3>95. राष्ट्रपति द्रौपदी मुर्मू को अगस्त 2024 में अपनी यात्रा के दौरान राष्ट्रपति विलियम कैटोनीवरे ने फिजी का सर्वोच्च सम्मान प्रदान कियाः-</h3>
+                <label><input type="radio" name="q95" value="a"> A. गैंड क्रॉस ऑफ द ऑर्डर ऑफ फिजी</label><br>
+                <label><input type="radio" name="q95" value="b"> B. ऑडर ऑफ द पैसिफिक स्टार</label><br>
+                <label><input type="radio" name="q95" value="c"> C. कंपेनियन ऑफ द ऑर्डर ऑफ फिजी</label><br>
+                <label><input type="radio" name="q95" value="d"> D. ऑर्डर ऑफ द स्टार ऑफ फिजी</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(95, 'A. गैंड क्रॉस ऑफ द ऑर्डर ऑफ फिजी')">Show Answer</button>
+                <div id="answer95" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question96">
+                <h3>96. विश्व कप फुटबॉल का प्रथम विजेता देश है</h3>
+                <label><input type="radio" name="q96" value="a"> A. अर्जेण्टीना</label><br>
+                <label><input type="radio" name="q96" value="b"> B. ब्राजील</label><br>
+                <label><input type="radio" name="q96" value="c"> C. इटली</label><br>
+                <label><input type="radio" name="q96" value="d"> D. उरुग्वे</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(96, 'D. उरुग्वे')">Show Answer</button>
+                <div id="answer96" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question97">
+                <h3>97. यदि 1/(a + 1/(b+1/c)) = 9/26 है, तो a+b+c का मान होगा?</h3>
+                <label><input type="radio" name="q97" value="a"> A. 11</label><br>
+                <label><input type="radio" name="q97" value="b"> B. 15</label><br>
+                <label><input type="radio" name="q97" value="c"> C. 18</label><br>
+                <label><input type="radio" name="q97" value="d"> D. 13</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(97, 'A. 11')">Show Answer</button>
+                <div id="answer97" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question98">
+                <h3>98. विधान परिषद राज्य विधानमंडल का उच्च सदन होता है। इसकी स्थापना और समाप्ति का प्रावधान किस अनुच्छेद में दिया गया है?</h3>
+                <label><input type="radio" name="q98" value="a"> A. अनु.-167</label><br>
+                <label><input type="radio" name="q98" value="b"> B. अनु.-169</label><br>
+                <label><input type="radio" name="q98" value="c"> C. अनु.-168</label><br>
+                <label><input type="radio" name="q98" value="d"> D. अनु.-162</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(98, 'B. अनु.-169')">Show Answer</button>
+                <div id="answer98" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question99">
+                <h3>99. भारत रत्न से सम्मानित एम. एस. सुब्बुलक्ष्मी किस संगीत से संबंधित थी?</h3>
+                <label><input type="radio" name="q99" value="a"> A. हिन्दुस्तानी संगीत</label><br>
+                <label><input type="radio" name="q99" value="b"> B. कर्नाटक संगीत</label><br>
+                <label><input type="radio" name="q99" value="c"> C. उपशास्त्रीय संगीत</label><br>
+                <label><input type="radio" name="q99" value="d"> D. लोक संगीत</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(99, 'B. कर्नाटक संगीत')">Show Answer</button>
+                <div id="answer99" class="answer"></div>
+            </div>
+            
+            <div class="question" id="question100">
+                <h3>100. Choose the correct sentence.</h3>
+                <label><input type="radio" name="q100" value="a"> A. It is high time he will start earning</label><br>
+                <label><input type="radio" name="q100" value="b"> B. It is high time he started earning.</label><br>
+                <label><input type="radio" name="q100" value="c"> C. It is high time he starts earning.</label><br>
+                <label><input type="radio" name="q100" value="d"> D. It is high time he has started earning.</label><br>
+                <button type="button" class="show-answer-btn" onclick="showAnswer(100, 'B. It is high time he started earning.')">Show Answer</button>
+                <div id="answer100" class="answer"></div>
+            </div>
+
+            <button type="button" onclick="submitTest()">Submit Test</button>
+        </form>
+    </div>
+
+    <div id="resultPage" style="display: none;">
+        <h2>Test Result</h2>
+        <div id="resultSummary"></div>
+        <div id="incorrectQuestionsSummary"></div> 
+        <button onclick="restartTest()">पुनः प्रयास करें</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
