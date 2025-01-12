@@ -1,236 +1,207 @@
+// User login data
 const users = [
-  { username: "Khushi", password: "6205535989" },
-  { username: "Aryan", password: "9570335451" },
-  { username: "Khushi", password: "9508932073" },
-  { username: "Guru@1234", password: "7870816431" },
-  { username: "Khushi", password: "9508932073" },
-  { username: "@prabhakar", password: "9708597841" },
-  { username: "Rupa Yadav", password: "9263793703" },
+    { username: "Khushi", password: "6205535989" },
+    { username: "Aryan", password: "9570335451" },
+    { username: "Khushi", password: "9508932073" },
+    { username: "Guru@1234", password: "7870816431" },
+    { username: "@prabhakar", password: "9708597841" },
+    { username: "Rupa Yadav", password: "9263793703" },
 ];
 
+// Correct answers for questions
+const correctAnswers = {
+    q1: { question: "भारत के नए कैबिनेट सचिव के रूप में किसे नियुक्त किया गया है, जो 30 अगस्त, 2024 से कार्य संभालेंगे?", correctOption: "c", correctText: "C. राजीव गौबा" },
+  q2: { question: "13 अगस्त, 2014 में समाप्त हुए योजना आयोग के अंतिम उपाध्यक्ष निम्न में से कौन थे?", correctOption: "c", correctText: "C. श्री मोंटेक सिंह अहलूवालिया" },
+  q3: { question: "निम्नलिखित नारों में 'आजाद हिंद फौज' के नारों में शामिल नहीं था?", correctOption: "a", correctText: "A. इंकलाब जिंदाबाद" },
+  q4: { question: "ब्रिटिश साम्राज्य में विलय के समय पंजाब का महाराजा कौन था?", correctOption: "a", correctText: "A. महाराजा दीलीप सिंह" },
+  q5: { question: "Choose the Correct Sentence:", correctOption: "c", correctText: "C. We have to reach on time for the Play" },
+  q6: { question: "भारत का पहला और सबसे पुराना जैवमंडल आरक्षित क्षेत्र है, जिसे वर्ष 1986 में किया गया था?", correctOption: "a", correctText: "A. नीलगिरि जैवमंडल" },
+  q7: { question: "निम्नलिखित में से कौन-सा ईरान की मुद्रा का नाम है?", correctOption: "d", correctText: "D. रियाल" },
+  q8: { question: "मुद्रा के स्थैतिक कार्य क्या है?", correctOption: "d", correctText: "D. मूल्य का मापक पर प्रभाव" },
+  q9: { question: "पेरिस ओलंपिक, 2024 में किस भारतीय पहलवान को अधिक वजन के कारण 50 किग्रा फ्रीस्टाइल कुश्ती फाईनल से अयोग्य घोषित कर दिया गया था?", correctOption: "c", correctText: "C. विनेश फोगाट" },
+  q10: { question: "दो सेक्टर अर्थव्यवस्था प्रारूप में समग्र आपूर्ति होती है:", correctOption: "a", correctText: "A. C+I" },
+  q11: { question: "आजीवन\" शब्द में कौन सा समास है?", correctOption: "a", correctText: "A. अव्ययीभाव" },
+  q12: { question: "हिटलर का निम्नलिखित में से कौन-सा वैचारिक दृष्टिकोण था?", correctOption: "f", correctText: "F. A, B और C" },
+  q13: { question: "भारतीय अर्थव्यवस्था के सकल राष्ट्रीय उत्पादन में सबसे अधिक योगदान निम्नलिखित में से कौन सा क्षेत्र करता है?", correctOption: "c", correctText: "C. तृतीयक क्षेत्र" },
+  q14: { question: "राज्य विधान परिषद की सदस्य संख्या के आधार पर निम्नलिखित राज्यों में दूसरा स्थान प्राप्त है?", correctOption: "a", correctText: "A. महाराष्ट्र" },
+  q15: { question: "निम्नलिखित में से किस शहर को 'पर्वतों की रानी' कहा जाता है?", correctOption: "d", correctText: "D. मसूरी" },
+  q16: { question: "निम्नलिखित में से किस राज्य को दुनिया के दो सबसे बड़े धर्मों की उद्गम स्थल माना जाता है?", correctOption: "a", correctText: "A. उत्तरप्रदेश" },
+  q17: { question: "स्वतंत्रता आंदोलन के दौरान 15 फरवरी, 1942 को 'जलियांवाला बाग कांड' से भी बर्बर घटना बिहार के किस स्थान पर घटित हुई थी जिसमें 34 क्रांतिकारी शहीद हुए थे?", correctOption: "d", correctText: "D. तारापुर" },
+  q18: { question: "बिहार में खनिज उत्पादन के संदर्भ में निम्नलिखित स्थानों पर विचार करें:", correctOption: "d", correctText: "D. उपरोक्त तीनों" },
+  q19: { question: "पंडित जवाहर लाल नेहरू के नारों/वचनों में निम्न में से कौन शामिल नहीं है?", correctOption: "a", correctText: "A. जय जवान जय किसान" },
+  q20: { question: "किस मध्यकालीन संत का प्रसिद्ध ग्रंथ \"पंथ परीक्षा\" है?", correctOption: "a", correctText: "A. दादू" },
+  q21: { question: "एक फोटो सेल प्रकाश की ऊर्जा को बदलता है:-", correctOption: "a", correctText: "A. विद्युत ऊर्जा" },
+  q22: { question: "प्रथम विश्व युद्ध के दौरान निम्नलिखित में से कौन सा देश वर्ष 1916 के बाद मित्र देशों में शामिल हुआ था?", correctOption: "b", correctText: "B. संयुक्त राज्य अमेरिका" },
+  q23: { question: "बिहार के निम्नलिखित जिलों में से किसमें आपको न्यूनतम क्षेत्रफल में अति विरल वन मिलेंगे?", correctOption: "c", correctText: "C. शेखपुरा" },
+  q24: { question: "भारतीय संविधान की व्याख्या करने वाली अंतिम संस्था कौन-सी है?", correctOption: "b", correctText: "B. सुप्रीम कोर्ट" },
+  q25: { question: "मुँह से फुलाने वाले गुब्बारे में निम्नलिखित में से कौन-सी गैस होती है?", correctOption: "a", correctText: "A. हीलियम" },
+  q26: { question: "प्रति वर्ष चक्रवृद्धि ब्याज की किस दर पर, वार्षिक रूप से संयोजित होने पर, कोई धनराशि 2 वर्षों में 400 गुना हो जाती है?", correctOption: "d", correctText: "D. 16%" },
+  q27: { question: "प्राण एवं दैहिक स्वतंत्रता का संरक्षण से संबंधित अनुच्छेद है:", correctOption: "d", correctText: "D. 21" },
+  q28: { question: "इटली के 'एकीकरण की तलवार' निम्न में से किसे कहा जाता है?", correctOption: "d", correctText: "D. गैरीबाल्डी" },
+  q29: { question: "विश्व की सबसे ऊंची सुरंग शिंकुन ला टनल का निर्माण कहाँ किया जा रहा है?", correctOption: "d", correctText: "D. लद्दाख" },
+  q30: { question: "निम्नलिखित में से कौन-सा इलेक्ट्रॉनिक विन्याश धातु तत्वों के लिए होता है?", correctOption: "b", correctText: "B. 2, 8, 18, 2" },
+  q31: { question: "लापाज राजधानी है-", correctOption: "d", correctText: "D. बोलीविया" },
+  q32: { question: "मैंग्रोव जंगलों के विषय में, इनमें से कौन-सा कथन गलत है ?", correctOption: "d", correctText: "D. भारत के हरियाणा, पंजाब, बिहार राज्यों में यह वन पाये जाते है।" },
+  q33: { question: "अंतर्राष्ट्रीय मुद्रा कोष (IMF) के मुख्य कार्यों में सम्मिलित नहीं है?", correctOption: "d", correctText: "D. यह सदस्य देशों को दीर्घकालिक पूंजी प्रदान करती है" },
+  q34: { question: "विस्थापन-समय ग्राफ का ढलान देता है:-", correctOption: "c", correctText: "C. वेग" },
+  q35: { question: "किसके परिणामस्वरूप पांचवीं शताब्दी ई. में गुप्त साम्राज्य का पतन हुआ?", correctOption: "b", correctText: "B. हूण आक्रमण के" },
+  q36: { question: "निम्नलिखित में से कौन-सा तत्व सबसे अधिक प्रचुर मात्रा में समुद्र में पाया जाता है?", correctOption: "b", correctText: "B. क्लोरीन" },
+  q37: { question: "चुनाव आयोग ने लोकसभा चुनाव में बड़े राज्यों के प्रत्याशियों को अपने प्रचार के लिए खर्च की छूट सीमा निर्धारित की है जो निम्नलिखित में है:-", correctOption: "d", correctText: "D. 75 लाख रु" },
+  q38: { question: "टाटा मोटर्स ने वर्ष 2024 (जनवरी) में कौन-सी इलेक्ट्रिक कार लॉन्च की है?", correctOption: "d", correctText: "D. टाटा सिerrिटि" },
+  q39: { question: "वर्ष 2024 में किस टीम ने कोपा अमेरिका चैम्पियनशिप जीती?", correctOption: "c", correctText: "C. अर्जेंटीना" },
+  q40: { question: "बिजली से लगी आग यानी क्लास-डी प्रकार के आग बुझाने में प्रयुक्त होता है?", correctOption: "c", correctText: "C. सूखा पाउडर अग्निशामक" },
+  q41: { question: "गुर्दे की कार्यात्मक इकाई है:", correctOption: "d", correctText: "D. नेफ्रॉन" },
+  q42: { question: "यदि भारत के प्रधानमंत्री संसद के उच्च सदन के सदस्य हैं, तो", correctOption: "b", correctText: "B. वे अविश्वास प्रस्ताव की स्थिति में अपने पक्ष में वोट नहीं दे सकेंगे।" },
+  q43: { question: "स्वचालित वाहनों में द्रवचालित ब्रेकों का इस्तेमाल वस्तुतः किस नियम का सीधा अनुप्रयोग है?", correctOption: "b", correctText: "B. पास्कल का नियम" },
+  q44: { question: "निम्नलिखित में से किसके कारण किसी उत्पाद की मांग की मात्रा में परिवर्तन होगा?", correctOption: "a", correctText: "A. उत्पाद की घटती कीमत" },
+  q45: { question: "निम्नलिखित में से कौन-सा कथन विपक्षी नेता के संदर्भ में गलत है?", correctOption: "d", correctText: "D. उसे कम से कम छह प्रतिशत वोट हासिल हों" },
+  q46: { question: "600 मीटर की एक दौड़ में तपन, समित को 60 मीटर से हरा देता है और 500 मीटर की दौड़ में समित, मदन को 25 मीटर से हरा देता है, तो कितने मीटर से 400 मीटर की दौड़ में तपन, मदन को हरा देगा।", correctOption: "b", correctText: "B. 52 मीटर" },
+  q47: { question: "‘कैसे हो’ किस वाक्य का उदाहरण है?", correctOption: "d", correctText: "D. प्रश्नवाचक" },
+  q48: { question: "अस्थि खनिज घनत्व (Bone Mineral Density-BMD) परीक्षण की जाँच की जाती है:", correctOption: "d", correctText: "D. ऑस्टियोपोरोसिस की" },
+  q49: { question: "जुलाई 2024 में अपनी यात्रा के दौरान पीएम मोदी को प्राप्त रूस के सर्वोच्च नागरिक पुरस्कार है:", correctOption: "d", correctText: "D. सेंट एंड्रयू द एपोस्टल का आदेश" },
+  q50: { question: "उच्च न्यायालय को किसका अधीक्षण करने का अधिकार है?", correctOption: "c", correctText: "C. अधीनस्थ न्यायालय" },
+  q51: { question: "सूची-I को सूची-II के साथ सुमेलित करें तथा सूचियों के नीचे दिए गए कूट का प्रयोग करते हुए सही उत्तर का चयन करें", correctOption: "a", correctText: "A. A-1, B-2, C-3, D-4" },
+  q52: { question: "निम्नलिखित में से किसको \"White of the earth\" कहा जाता है?", correctOption: "b", correctText: "B. क्रस्ट (Crust)" },
+  q53: { question: "हार्मोन का उदाहरण है-", correctOption: "a", correctText: "A. ऑक्सीटोसिन" },
+  q54: { question: "भारत के दक्षिण पश्चिम भाग में अरब सागर से लगे सागरतट को- - कहते है।", correctOption: "d", correctText: "D. मालावार तट" },
+  q55: { question: "श्रेणी (1 + x) का प्रसार है-", correctOption: "c", correctText: "C. 1-2x+3x²-4x²" },
+  q56: { question: "इनमें से कौन राज्य के नीति निर्देशक सिद्धांतों में सम्मिलित नहीं है?", correctOption: "d", correctText: "D. सूचना का अधिकार" },
+  q57: { question: "किस अनुच्छेद के तहत भारत में वित्त आयोग का गठन किया गया है?", correctOption: "c", correctText: "C. अनुच्छेद- 280" },
+  q58: { question: "गांधी को सबसे पहले महात्मा किसने कहा था?", correctOption: "b", correctText: "B. रवींद्रनाथ टैगोर" },
+  q59: { question: "19 जुलाई, 2024 को वैश्विक तकनीकी विफलता का क्या कारण था?", correctOption: "c", correctText: "C. क्राउडस्ट्राइक के इडीआर उत्पाद का एक सॉफ्टवेयर" },
+  q60: { question: "पटना उच्च न्यायालय के मुख्य न्यायाधीश के पद पर आसीन सर्वप्रथम महिला न्यायाधीश कौन थी?", correctOption: "b", correctText: "B. सुश्री ज्ञान सुधा मिश्रा" },
+  q61: { question: "आयोडीन युक्त हार्मोन है-", correctOption: "b", correctText: "B. थायरोक्सिन" },
+  q62: { question: "'हिन्दी दिवस' मनाया जाता है:-", correctOption: "d", correctText: "D. 14 सितंबर" },
+  q63: { question: "निम्नलिखित में से किसकी नियुक्ति राष्ट्रपति द्वारा नहीं की जाती है?", correctOption: "d", correctText: "D. राज्य के विधानसभा के अध्यक्ष एवं सदस्य" },
+  q64: { question: "निम्नलिखित में सुमेलित नहीं है-", correctOption: "c", correctText: "C. क्लाद मोने-अमेरिका" },
+  q65: { question: "गर्मी के दिनों के दौरान, मिट्टी के बर्तन में रखा पानी ठंडा हो जाता है, निम्नलिखित संवृत्ति के कारण-", correctOption: "c", correctText: "C. वाष्पीकरण" },
+  q66: { question: "निम्नलिखित में से कौन 'अगस्त प्रस्ताव' का प्रस्ताव रखा था?", correctOption: "d", correctText: "D. लॉर्ड लिनलिथगो" },
+  q67: { question: "किन देशों की मुद्रा प्रायः हार्ड करेन्सी होती है?", correctOption: "c", correctText: "C. विकसित देशों की" },
+  q68: { question: "निम्न में से कौन-सी समिति बैंकिंग क्षेत्र में सुधारों से संबंधित है?", correctOption: "a", correctText: "A. नरसिंहन समिति" },
+  q69: { question: "हैदराबाद (आंध्रप्रदेश) में उद्घाटन किए गए भारत के पहले सोलर रूफ साइक्लिंग ट्रैक का नाम क्या हैं?", correctOption: "b", correctText: "B. हेल्थेव" },
+  q70: { question: "लैक्राइमल ग्रंथियाँ स्रावित करती हैः-", correctOption: "a", correctText: "A. आंसू" },
+  q71: { question: "DNA का डबल हेलिक्स मॉडल किसने दिया?", correctOption: "c", correctText: "C. वाटसन व क्रिक" },
+  q72: { question: "निम्नलिखित में से भारत की चौथी सर्वाधिक बोली जाने वाली भाषा है?", correctOption: "b", correctText: "B. तेलुगू" },
+  q73: { question: "आयुष्मान भारत राष्ट्रीय स्वास्थ्य सुरक्षा योजना के तहत कितने रुपये तक का कवरेज प्रदान करती है?", correctOption: "a", correctText: "A. प्रति वर्ष प्रति परिवार 5 लाख" },
+  q74: { question: "सूची-I (सेना) का सूची-II (आदर्श वाक्य) से सुमेलित करे तथा सूचियों के नीचे दिए गए कूट का प्रयोग करते हुए सही उत्तर का चयन करें:-<br><p><strong>सूची-I (सेना)</strong></p><p>A. वायु सेना</p><p>B. थल सेना</p><p>C. गोरखा सेना</p><p>D. नौ सेना</p><p><strong>सूची-II (आदर्श वाक्य)</strong></p><p>1. कायर की तरह जीने से मरना बेहतर है</p><p>2. सम्मान, साहस व प्रतिबद्धता</p><p>3. स्वयं से पहले सेवा</p><p>4. गौरव के साथ आकाश को छुओ</p><p><strong>कूटः-</strong></p>", correctOption: "c", correctText: "C. A-4, B-3, C-1, D-2" },
+  q75: { question: "चमगादड़ किस प्रकार की ध्वनि तरंगों के परावर्तन का उत्सर्जन और अनुसंधान करके शिकार को खोजते हैं और अंधेरी रात में उड़ते हैं?", correctOption: "c", correctText: "C. अतिध्वनिक तरंगें" },
+  q76: { question: "सबसे अधिक प्रयोग करने वाली दर्द निवारक दवा है-", correctOption: "a", correctText: "A. एसिटामिनोफेन" },
+  q77: { question: "यदि A तथा B मिलकर किसी काम को 12 दिन में तथा B तथा C उसे 15 दिन में पूरा कर सकते हैं। यदि C की तुलना में A दोगुना अच्छा कार्य करता है, तो उस कार्य को पूरा करने में अकेला B कितने दिन लेगा?", correctOption: "d", correctText: "D. 20 दिनों" },
+  q78: { question: "भारत के नियंत्रक एवं महालेखा परीक्षक द्वारा प्रस्तुत प्रतिवेदन के आधार पर कौन समिति कार्य करती है?", correctOption: "b", correctText: "B. लोक लेखा समिति" },
+  q79: { question: "जीईएम क्या है:-", correctOption: "c", correctText: "C. माल और सेवाओं की खरीद के लिए एक ऑनलाइन मंच" },
+  q80: { question: "जब एक वस्तु के मूल्य में 20% की कमी की जाती है तो उसकी बिक्री में 20% की वृद्धि होती है। राजस्व पर कुल प्रभाव क्या था?", correctOption: "a", correctText: "A. 4% कमी" },
+  q81: { question: "'पीत क्रांति का जनक' निम्न में से किसे कहा जाता है?", correctOption: "b", correctText: "B. सैम पित्रोदा" },
+  q82: { question: "गाड़ी खींचता हुआ घोड़ा किस बल के कारण आगे बढ़ता है ?", correctOption: "b", correctText: "B. घोड़े द्वारा अपने पैरों से पृथ्वी पर आरोपित बल से" },
+  q83: { question: "पूंजीवादी अर्थव्यवस्था का मुख्य लक्षण निम्न में से क्या है?", correctOption: "a", correctText: "A. निजी स्वामित्व" },
+  q84: { question: "लॉरिंज कर्व (Curve) क्या दर्शाता है?", correctOption: "a", correctText: "A. आय वितरण" },
+  q85: { question: "सिंधु नदी द्वारा निम्नलिखित में से कौन-सा दर्रा बनाया गया है?", correctOption: "d", correctText: "D. बारालाचा दर्रा" },
+  q86: { question: "निम्नलिखित में से कौन-सा कार्यक्रम गरीबी उन्मूलन और असमानता को कम करने के लिए 170 देशों में काम करती है।", correctOption: "c", correctText: "C. यूएनडीपी" },
+  q87: { question: "ग्रामीण क्षेत्र में शहरी सुविधाओं का प्रावधान (Provision of urban Amenities in Rural Area-PURA) निम्न में से किसके द्वारा चलाया गया था?", correctOption: "c", correctText: "C. डॉ. एपीजे अब्दुल कलाम" },
+  q88: { question: "O.M.R का पूर्ण रूप क्या है?", correctOption: "a", correctText: "A. Optical Mark Recognition" },
+  q89: { question: "भारत के किस जिले में पहला कार्बन-तटस्थ गाँव विकसित किया जा रहा है?", correctOption: "b", correctText: "B. बिलासपुर, छत्तीसगढ़" },
+  q90: { question: "झारखंड विभाजन (2000) के बाद बिहार के पहले मुख्यमंत्री निम्नलिखित में से कौन थे/थी?", correctOption: "d", correctText: "D. श्री नीतीश कुमार" },
+  q91: { question: "यदि किसी ठोस को दो बराबर भागों में काट दिया जाए, तो दोनों अर्द्धगोलों के सम्पूर्ण पृष्ठ का योग दिए हुए गोले के पृष्ठ का निम्नलिखित में से कौन-सा भाग होगा?", correctOption: "c", correctText: "C. 2 गुना" },
+  q92: { question: "माल और सेवाओं का उत्पादन चार प्रमुख कारकों से प्रभावित होता है। निम्नलिखित में कौन एक कारक इसमें शामिल नहीं है?", correctOption: "d", correctText: "D. संगठन" },
+  q93: { question: "घ्राण संवेदी ग्राही किस अंग से पता लगाते हैं?", correctOption: "c", correctText: "C. नाक" },
+  q94: { question: "निम्नलिखित में से कौन-सी मिट्टी कॉफी की खेती के लिए उपयोगी होती है?", correctOption: "d", correctText: "D. लैटराइट मिट्टी" },
+  q95: { question: "'ई-किसान उपज निधि' पहल का प्राथमिक उद्देश्य हैः-", correctOption: "c", correctText: "C. किसानों के भंडारण रसद को आसान बनाने के लिए" },
+  q96: { question: "Choose the Correct Passive Voice.", correctOption: "a", correctText: "A. He was being laughed at by all his friends." },
+  q97: { question: "निम्नलिखित में से कौन महासागरीय धारा अटलांटिक महासागर में नहीं पायी जाती है?", correctOption: "c", correctText: "C. पेरु धारा" },
+  q98: { question: "साबुन के बुलबुले के अन्दर का दाब-", correctOption: "a", correctText: "A. वायुमंडलीय दाब से अधिक होता है", question: "साबुन के बुलबुले के अन्दर का दाब-" }, // Kept as is, as the correct answer is missing
+  q99: { question: "महाभारत का फारसी अनुवाद पुस्तक 'रज्मनामा' निम्न में से किसकी रचना है?", correctOption: "d", correctText: "D. बदायूँनी" },
+  q100: { question: "सोडियम यौगिक का नाम बताइए जिसका उपयोग खाद्य प्रसंस्करण में किया जाता है?", correctOption: "d", correctText: "D. खाने वाला सोड़ा" }, 
+    // Add more questions here in the same format
+};
+
+// Login functionality
+function login() {
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    const user = users.find((user) => user.username === username && user.password === password);
+
+    if (user) {
+        alert("Login successful!");
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("testPage").style.display = "block";
+    } else {
+        alert("Invalid username or password. Please try again!");
+    }
+}
+
+// Redirect to signup page
 function redirectToSignup() {
-  window.location.href = "/Bihar Gov/SignUp/index.html"; // Replace with your actual path
+    window.location.href = "/Bihar Gov/SignUp/index.html"; // Update with the correct signup page URL
 }
 
-const questions = [
-    { question: "1. 1 अगस्त, 2024 से संघ लोक सेवा आयोग (UPSC) के अध्यक्ष के रूप में किसे नियुक्त किया गया हैं?", correctAnswer: "D. डॉ० मनोज सैनी" },
-    { question: "2. अन्तर्राष्ट्रीय व्यापार का उद्देश्य है-", correctAnswer: "D. राष्ट्रीय आय बढ़ाना" },
-    { question: "3. कुल पूर्ति की तुलना में मांग में अत्यधिक वृद्धि के परिणामस्वरूप मूल्य के सामान्य स्तर में स्थिर वृद्धि को ______ कहते हैं।", correctAnswer: "B. मांग पुश स्फीति" },
-    { question: "4. भारत में सकल घरेलू उत्पाद में योगदान की दृष्टि से दूसरा सबसे बड़ा क्षेत्र कौन-सा हैं?", correctAnswer: "A. विनिर्माण" },
-    { question: "5. किसी वस्तु की कीमत 6 रुपये से घटकर 4 रुपये हो जाती है। इसके परिणामस्वरूप मांग की मात्र 10 इकाइयों से बढ़कर 15 इकाइयों हो जाती है। मूल्य लोच का गुणांक ज्ञात करें?", correctAnswer: "B. 1-5" },
-    { question: "6. यदि उपभोग फलन c = 150+ 0.6y और निवेश व्यय 2000 रु० है, तो राष्ट्रीय आय का संतुलन स्तर होगा?", correctAnswer: "A. 5375 रु०" },
-    { question: "7. विजन इंडिया @2047 है:-<br>1. यह भारत की आर्थिक वृद्धि में योगदान दे सकते हैं।<br>2. स्वतंत्रता के एक सौ साल पूरे होने तक देश को 30 ट्रिलियन अमेरिकी डॉलर की अर्थव्यवस्था का निर्माण कर सकता है।<br>3. 1820 हजार अमेरिकी डॉलर की प्रति व्यक्ति आय प्राप्त कर सकता है।<br>4. भारत को विश्व में नंबर वन बना सकता है।<br>उपर्युक्त में से सही कथन हैः-", correctAnswer: "D. सभी 1, 2, 3, 4" },
-    { question: "8. भारत में बेरोजगारी के आंकड़े कौन तैयार करता हैं?", correctAnswer: "C. राष्ट्रीय नमूना सर्वेक्षण संगठन" },
-    { question: "9. 9 अगस्त से 15 अगस्त, 2024 तक चलने वाले हर घर तिरंगा अभियान का प्राथमिक उद्देश्य क्या हैं?", correctAnswer: "B. भारतीय नागरिकों में देशभक्ति को मजबूत करना।" },
-    { question: "10. 'भारतीय लघु उद्योग विकास बैंक' का मुख्यालय कहाँ स्थित हैं?", correctAnswer: "D. लखनऊ" },
-    { question: "11. 'वस्तु एवं सेवा कर (GST)' किस समिति के सुझाव से लागू किया गया हैं?", correctAnswer: "B. विजय केलकर समिति" },
-    { question: "12. सरकार द्वारा पुरानी मुद्रा को समाप्त कर नई मुद्रा चलाना कहलाता हैं?", correctAnswer: "B. विमुद्रीकरण" },
-    { question: "13. 2011 की जनगणना के अनुसार बिहार में कौन-सा जिला न्यूनतम साक्षरता दर वाला जिला हैः-", correctAnswer: "C. पूर्णिया" },
-    { question: "14. निम्नलिखित देशों में से किसमें एकल प्रभुत्व एक प्रमाण है-", correctAnswer: "D. सिंगापूर" },
-    { question: "15. संघ या संघों में रहने वाले लोगों के लिए नियम का समूह था?", correctAnswer: "A. सुसंविधि" },
-    { question: "16. अशोक ने अपने शिलालेखों में अपने समकालीन दक्षिण के किस राजवंश का उल्लेख नहीं किया था?", correctAnswer: "B. पल्लव" },
-    { question: "17. निम्नलिखित को दिल्ली पर उनके शासन के कालानुक्रम के अनुसार व्यवस्थित करे- (I) रजिया (II) बलबन (III) इल्तुतमिश (IV) नसीरुद्दीन", correctAnswer: "A. III, I, IV, II" },
-    { question: "18. तृतीय आंग्ल मराठा युद्ध में कौन-सी संधि हुई थी?", correctAnswer: "A. मंदसौर की संधि" },
-    { question: "19. किस मुगल शासक ने अपने डायरी में फूलपत्ती एवं बगीचा का वर्णन किया?", correctAnswer: "B. बाबर" },
-    { question: "20. गांधीजी का पहला सबसे बड़ा सत्याग्रह कहाँ हुआ था?", correctAnswer: "C. बिहार" },
-    { question: "21. कैबिनेट मिशन योजना (1946) के तहत तीन सदस्यीय उच्चस्तरीय शिष्टमंडल में कौन शामिल नहीं थे?", correctAnswer: "C. लॉर्ड हार्डिंग" },
-    { question: "22. स्वतंत्र भारत के प्रथम भारतीय गवर्नर-जनरल तथा भारत के अंतिम गवर्नर जनरल थे?", correctAnswer: "D. सी. राजगोपालाचारी" },
-    { question: "23. लॉर्ड चेम्सफोर्ड (1916-21) के शासनकाल में निम्न में से कौन सी घटना घटित नहीं हुआ था?", correctAnswer: "C. सविनय अवज्ञा आंदोलन" },
-    { question: "24. वर्ष 1940 में वर्धा के निकट पावनार ग्राम से शुरू हुआ व्यक्तिगत सत्याग्रह के दूसरे सत्याग्रही थे?", correctAnswer: "B. जवाहरलाल नेहरू" },
-    { question: "25. बिहार में घाघरा नदी किस स्थान पर गंगा में मिलती है?", correctAnswer: "B. छपरा के निकट" },
-    { question: "26. निम्नलिखित में किन दो देशों के बीच सबसे ऊंची अंतर्राष्ट्रीय सीमा शीर्ष बिंदु फैली हुई है?", correctAnswer: "B. नेपाल-चीन" },
-    { question: "27. आत्यधिक प्रचण्ड चक्रवात 'तूफान' 'उष्णकटिबंधीय चक्रवात है जो पूर्व-मध्य अरब सागर में निर्मित, जिनके कारण भारत के सर्वाधिक प्रभावित तटीय क्षेत्र है?", correctAnswer: "D. गुजरात तटीय क्षेत्र में" },
-    { question: "28. भारतीय स्वतंत्रता संग्राम के बिहार दौरान मुजफ्फरपुर में किंग्सफोर्ड की हत्या का प्रयास कब किया गया था?", correctAnswer: "C. 30 अप्रैल, 1908" },
-    { question: "29. स्वतंत्र भारत में एक ही औद्योगिक क्षेत्रों में दो पदक जीतने वाली पहली भारतीय महिला बनीं:-", correctAnswer: "B. मेरीकोम" },
-    { question: "30. भारत की दूसरी सबसे लम्बी स्थलीय सीमा किन देशों के साथ लगती है?", correctAnswer: "A. चीन" },
-    { question: "31. यह सुनिश्चित नहीं है:-", correctAnswer: "A. राइबोसोम संवेषित नहीं है।" },
-    { question: "32. सबसे अच्छा प्रोबायोटिक्स है:-", correctAnswer: "C. दही" },
-    { question: "33. CAR-T सेल थेरेपी सम्बंधित है:-", correctAnswer: "A. कैंसर के इलाज में प्रयोग होता है।" },
-    { question: "34. सरीसृप 'डाइनोसोर' एक मध्यजीवी या मेसोजाइक महाकल्प में थे। मध्यजीवी महाकल्प में शामिल थे?", correctAnswer: "D. इनमें से सभी" },
-    { question: "35. विश्व में गेहूँ का दूसरा सबसे बड़ा उत्पादक देश कौन सा है?", correctAnswer: "D. भारत" },
-    { question: "36. किस देश को 'हर्मिट किंगडम' के नाम से जाना जाता है?", correctAnswer: "C. उत्तरी कोरिया" },
-    { question: "37. वियतनाम की राजधानी हैः-", correctAnswer: "C. हनोई" },
-    { question: "38. कांगड़ा चित्रकला शैली में किस प्रकार के चित्र की प्रधानता रहती है?", correctAnswer: "C. पौराणिक कथाओं एवं रीतिकालीन नायक-नायिकाओं का" },
-    { question: "39. दुनिया के डिजिटल भुगतानों में भारत का कितना प्रतिशत हिस्सेदारी हैं?", correctAnswer: "A. 48-5%" },
-    { question: "40. 'हितोपदेश' नामक पुस्तक के लेखक कौन हैं?", correctAnswer: "C. नारायण पंडित" },
-    { question: "41. A Century is Not Enough किसकी रचना हैं?", correctAnswer: "C. सौरभ गांगुली" },
-    { question: "42. Cu, Sn, Zn का मिश्रण है-", correctAnswer: "D. गन धातु" },
-    { question: "43. निम्नलिखित तत्वों में सबसे अधिक विद्युतधनात्मक तत्व हैं?", correctAnswer: "B. Cs" },
-    { question: "44. अभिप्राय दृढ या निलंबन जैसे द्रव और ठोस मिश्रण के लिए निम्न पृथक्करण प्रक्रिया है-", correctAnswer: "B. छानना" },
-    { question: "45. अक्रिस्टलीय ठोस के संबंध में गलत तथ्य है-", correctAnswer: "A. इसकी ज्यामिति अवस्थित होती है" },
-    { question: "46. एल्युमिनियम को तनु H<sub>2</sub>SO<sub>4</sub> के साथ गर्म करने पर क्या मुक्त करता है?", correctAnswer: "D. H<sub>2</sub>" },
-    { question: "47. रक्त द्रव स्त्राव से एक अर्द्ध ठोस जेली संरचना में किस प्रक्रिया के द्वारा बदल जाती है?", correctAnswer: "D. स्कंदन" },
-    { question: "48. कथन (A) : सोडियम एक नरम धातु है जो हवा में संपर्क के आने के कुछ सेकंड बाद ही धूमिल हो जाती है। कारण (R) : सोडियम कार्बनिक यौगिकों के संश्लेषण के साथ-साथ एस्टर के निर्माण के लिए आवश्यक है।", correctAnswer: "C. कथन (A) सही है, परंतु कारण (R) गलत है।" },
-    { question: "49. राष्ट्रपति भवन के दरबार हॉल का नया नाम है :-", correctAnswer: "C. गणतंत्र मंडप" },
-    { question: "50. Change the following sentence into direct speech from the option given below: I say that I write a letter.", correctAnswer: "B. I say, “I write a letter.”" },
-    { question: "51. डॉसिंग अम्पायर के नाम से कौन जाना जाता है?", correctAnswer: "C. डेविड शेफर्ड" },
-    { question: "52. S.I.M का विस्तृत रूप क्या है?", correctAnswer: "C. Subscribers Identity Module" },
-    { question: "53. विश्व जल संरक्षण दिवस मनाया जाता है-", correctAnswer: "A. 22 मार्च को" },
-    { question: "54. A thing of beauty is a joy for ever पंक्ति किसकी है?", correctAnswer: "B. जॉन कीट्स" },
-    { question: "55. सूची-I तथा सूची-II को सुमेलित कीजिए तथा सूचियों के नीचे दिये गये कूट से सही उत्तर का चयन कीजिए-", correctAnswer: "B. A-3 B-4 C-2 D-1" }, //This question needs more context about the lists to be fully useful in a quiz
-    { question: "56. किस ग्रुप के खेलों में प्रत्येक पक्ष में खिलाड़ियों की संख्या समान होती है?", correctAnswer: "D. बेसबॉल और खो-खो" },
-    { question: "57. ज्ञानपीठ पुरस्कार प्राप्त करने वाला बिहार के पहले व्यक्ति रामधारी सिंह 'दिनकर' को 'उर्वशी' पुस्तक के लिए उन्हें कब पुरस्कार दिया गया।", correctAnswer: "A. 1972" },
-    { question: "58. भारत के झण्डे का निर्माण पिंग्ली वेंकैया ने किया। वे किस राज्य से संबंधित थे?", correctAnswer: "D. आंध्रप्रदेश" },
-    { question: "59. यूरो-2024 फाइनल किसने जीता।", correctAnswer: "B. इटली" },
-    { question: "60. सेफ्रटी रेजर का आविष्कार किसने किया?", correctAnswer: "A. जिलेट" },
-    { question: "61. तलवार को रखने का साधन वाक्यांश के लिए एक शब्द है-", correctAnswer: "B. म्यान" },
-    { question: "62. किस समूह में सही अर्थ नहीं प्रकट करने वाले शब्द-युग्म हैं?", correctAnswer: "B. कपि-चिनी, कपि- बंदर" },
-    { question: "63. शून्य में स्वतंत्र रूप से गिरने वाली वस्तुओं की/का-", correctAnswer: "A. समान त्वरण होता है" },
-    { question: "64. मनुष्य वस्तु बनाने का दर्पण प्रयोग करता है?", correctAnswer: "A. अवतल दर्पण" },
-    { question: "65. 200 किग्रा. भार की एक नाव पानी पर तैरती है तो विस्थापित पानी का भार होगा?", correctAnswer: "C. 200 किग्रा." },
-    { question: "66. क्रोमेटोग्राफी या वर्णलेखन से संबंधी में सही है:-", correctAnswer: "B. यह रंग रसायनो के मिश्रण को पृथक करने की एक रासायनिक तकनीक है।" },
-    { question: "67. नीचे दिए गए वेग-समय ग्राफ का कौन-सा भाग शून्य त्वरण/मंदन को प्रदर्शित करता है?", correctAnswer: "C. BC" }, // Needs the graph image to be meaningful
-    { question: "68. एक बल्लेबाज T-20 वर्ल्ड कप 2024 में अपनी 11वीं पारी में 77 रन बनाता है, जिससे उसका औसत स्कोर 3 बढ़ जाता है। 11वीं पारी के बाद उसका औसत स्कोर होगा?", correctAnswer: "A. 46" },
-    { question: "69. वर्ष 2020 में स्थापित कोलंबो सिक्योरिटी कॉन्क्लेव (सीएएसी) का उद्देश्य क्या है?", correctAnswer: "D. समुद्री सहयोग का विस्तार करना।" },
-    { question: "70. दो रेलगाड़ी A और B से समान समय पर चलना प्रारंभ करती है एवं 85 किमी/घंटा और 100 किमी/घंटा की गति से एक-दूसरे की ओर बढ़ती है। जब वे मिलते हैं, तो पता चलता है कि एक रेलगाड़ी ने दूसरी रेलगाड़ी से 210 किमी. अधिक यात्रा की है, तो A और B के बीच की दूरी (किमी में) कितनी है?", correctAnswer: "A. 2590" },
-    { question: "71. यदि x धनात्मक है तो श्रेणी के अनंत पदों का योग है?", correctAnswer: "C. 1" },
-    { question: "72. लोकसभा 2024 के एक चुनाव में दो उम्मीदवार थे, इस चुनाव में 6% मतदाताओं ने अपने मताधिकार का प्रयोग नहीं किया। विजेता कुल मतों का 49% मत प्राप्त करके 1300 मतों से जीत गया तो इस चुनाव में कुल कितने मतदाता थे?", correctAnswer: "A. 32500" },
-    { question: "73. 2 बजकर 20 मिनट पर दोनों सुइयों के बीच कोण होगा?", correctAnswer: "A. 50°" },
-    { question: "74. मोबाइल एप्लिकेशन mpassport सेवा भारत के निम्नलिखित में से किस मंत्रालय द्वारा लॉन्च किया गया है?", correctAnswer: "D. विदेश मंत्रालय" },
-    { question: "75. भारत में राष्ट्रीय बालिका दिवस किस तिथि को मनाया जाता है।", correctAnswer: "A. 24 जनवरी" },
-    { question: "76. आधुनिक ओलंपिक खेल के संदर्भ में सही नहीं है-", correctAnswer: "C. 1896 के बाद पेरिस ओलंपिक में नॉर्मन प्रिजार्ड ने भारत का प्रतिनिधित्व किया और उसी के साथ भारत को पहली ओलंपिक उपस्थिति बन गई।" },
-    { question: "77. भारतीय संविधान के किस अनुच्छेद के तहत नीति आयोग का गठन 1 जनवरी, 2015 को किया गया था?", correctAnswer: "D. अनुच्छेदों में कोई नहीं" },
-    { question: "78. जम्मू-कश्मीर राज्य पुनर्गठन अधिनियम, 2019 के संदर्भ में गलत है?", correctAnswer: "C. लद्दाख को भी विधानसभा के साथ राज्य क्षेत्र बनाया गया।" },
-    { question: "79. 2024 में बोइंग स्टारलाइनर के पहले चालक दल मिशन पर सवार होकर अंतरिक्ष में उड़ान भरने वाले पहले व्यक्ति थे?", correctAnswer: "A. सुनिता विलियम्स और बुच विल्मोर" },
-    { question: "80. निम्नलिखित निवारक निरोध अधिनियम को काल क्रमानुसार व्यवस्थित कीजिएः<br>1. MISA<br>2. TADA<br>3. POTA<br>4. NSA", correctAnswer: "B. 1, 4, 2, 3" },
-    { question: "81. संसद के अवकाश (सत्र नहीं चलने की स्थिति) में राष्ट्रपति को किस अनुच्छेद के तहत अध्यादेश जारी करने का अधिकार है?", correctAnswer: "C. अनुच्छेद-123" },
-    { question: "82. सदन में किसी बैठक के लिए गणपूर्ति अध्यक्ष सहित (कोरम) कितनी होती है?", correctAnswer: "D. सदन के सदस्यों की कुल संख्या का दसवां भाग" },
-    { question: "83. निम्नलिखित में सांविधिक आयोग नहीं है।", correctAnswer: "D. राष्ट्रीय मानवाधिकार आयोग" },
-    { question: "84. परिसीमन आयोग के संदर्भ में गलत है-", correctAnswer: "D. परिसीमन आयोग के संबंध में अधिसूचना भारत के राष्ट्रपति द्वारा नहीं जारी किया जाता है।" },
-    { question: "85. निम्नलिखित में किस संविधान संशोधन के तहत लोकसभा, राज्य विधान सभाओं और दिल्ली विधानसभा में महिलाओं के लिए एक-तिहाई सीटें आरक्षित करता है?", correctAnswer: "B. 106 वां संविधान संशोधन" },
-    { question: "86. चुनाव में किस स्थिति में प्रत्याशी या उम्मीदवार की जमानत जब्त हो जाती है?", correctAnswer: "D. यदि चुनाव में कुल पडे वोटों को 1/6 फीसदी हासिल नहीं करता है।" },
-    { question: "87. संविधान के किस भाग को भारतीय संविधान का मैग्नाकाटा कहा जाता है?", correctAnswer: "B. भाग-3" },
-    { question: "88. 103 वां संविधान संशोधन (2019) के तहत किसे आरक्षण प्रदान किया गया-", correctAnswer: "A. सवर्ण जातियों में आर्थिक रूप से कमजोर वर्ग को" },
-    { question: "89. किसी हवाई अड्डे पर प्रस्ताविक परियोजना को विश्व स्तर पर अद्वितीय बनाता है:-", correctAnswer: "C. किसी हवाई अड्डे में पहले हरित हाइड्रोजन संयंत्र" },
-    { question: "90. औद्योगिक विकास की गति तेज करने के लिए मेक इन इंडिया कार्यक्रम की शुरुआत वर्ष 2014 से हुई जिसका प्रतीक निम्नलिखित में कौन-सा है?", correctAnswer: "D. कांस्य से बने शेर" },
-    { question: "91. यदि सीमांत उपयोगिता प्रवृत्ति (MPC) = 0.8 है तो सीमांत बचत प्रवृत्ति (MPS) का मान होगा-", correctAnswer: "C. 0-2" },
-    { question: "92. 'प्रधानमंत्री ग्राम सडक योजना' को कब प्रारंभ किया गया?", correctAnswer: "A. 25 दिसंबर, 2000" },
-    { question: "93. भारत का एकमात्र सक्रिय ज्वालामुखी किस द्वीप में स्थित है?", correctAnswer: "B. बंगाल की खाड़ी" },
-    { question: "94. सूची-1 तथा सूची-II को सुमेलित कीजिए तथा सूचियों के नीचे दिये गये कूट से सही उत्तर का चयन कीजिए-<br>सूची-1<br>A. भरतनाट्यम<br>B. कुचिपुड़ी<br>C. कथकली<br>D. ओडिसी<br>सूची-II<br>1. ओडिशा<br>2. केरल<br>3. आन्ध्रप्रदेश<br>4. तमिलनाडु", correctAnswer: "A. 4 3 2 1"},
-    { question: "95. राष्ट्रपति द्रौपदी मुर्मू को अगस्त 2024 में अपनी यात्रा के दौरान राष्ट्रपति विलियम कैटोनीवरे ने फिजी का सर्वोच्च सम्मान प्रदान कियाः-", correctAnswer: "A. गैंड क्रॉस ऑफ द ऑर्डर ऑफ फिजी" },
-    { question: "96. विश्व कप फुटबॉल का प्रथम विजेता देश है", correctAnswer: "D. उरुग्वे"},
-    { question: "97. यदि 1/(a + 1/(b+1/c)) = 9/26 है, तो a+b+c का मान होगा?", correctAnswer: "A. 11"},
-    { question: "98. विधान परिषद राज्य विधानमंडल का उच्च सदन होता है। इसकी स्थापना और समाप्ति का प्रावधान किस अनुच्छेद में दिया गया है?", correctAnswer: "B. अनु.-169"},
-    { question: "99. भारत रत्न से सम्मानित एम. एस. सुब्बुलक्ष्मी किस संगीत से संबंधित थी?", correctAnswer: "B. कर्नाटक संगीत"},
-    { question: "100. Choose the correct sentence.", correctAnswer: "B. It is high time he started earning."}
-];
-
-function showAnswer(questionNumber) {
-    const questionData = questions.find(q => parseInt(q.question.split(".")[0], 10) === questionNumber);
-    if (!questionData) {
-        console.error(`Question data not found for question number ${questionNumber}`);
-        return;
-    }
-
-    const answerDiv = document.getElementById(`answer${questionNumber}`);
-    if (!answerDiv) {
-        console.error(`Answer div not found for question number ${questionNumber}`);
-        return;
-    }
-
-    answerDiv.textContent = questionData.correctAnswer;
+// Show the correct answer for a question
+function showAnswer(questionId, correctAnswerText) {
+    const answerDiv = document.getElementById(`answer${questionId}`);
+    answerDiv.innerHTML = `<p>Correct Answer: ${correctAnswerText}</p>`;
+    answerDiv.style.color = "green";
 }
 
+// Submit the test and calculate the score
 function submitTest() {
-    let correctAnswers = 0;
-    const resultSummary = document.getElementById("resultSummary");
-    const incorrectQuestionsSummary = document.getElementById("incorrectQuestionsSummary");
+    let score = 0;
+    let totalQuestions = 0;
+    const incorrectQuestions = [];
 
-    if (!resultSummary || !incorrectQuestionsSummary) {
-        console.error("Result summary या incorrect questions summary element नहीं मिला।");
-        return;
-    }
-
-    resultSummary.innerHTML = "";
-    incorrectQuestionsSummary.innerHTML = "";
-    let incorrectQuestionsHTML = "";
-
-    for (const questionData of questions) { // for...of loop का उपयोग करें
-        const questionNumber = parseInt(questionData.question.split(".")[0], 10);
-        const questionDiv = document.getElementById(`question${questionNumber}`);
-
-        if (!questionDiv) {
-            console.error(`Question div #${questionNumber} नहीं मिला`);
-            continue;
-        }
-
-        const selectedOption = questionDiv.querySelector(`input[name="q${questionNumber}"]:checked`);
-        const correctAnswerText = questionData.correctAnswer.trim();
-
-        if (selectedOption) {
-            const selectedLabel = selectedOption.parentNode;
-            if (!selectedLabel) {
-                console.error(`Selected label question #${questionNumber} नहीं मिला`);
-                continue;
-            }
-            const userAnswerText = selectedLabel.textContent.trim();
-
-            if (userAnswerText === correctAnswerText) {
-                correctAnswers++;
-                questionDiv.classList.add("correct");
-                questionDiv.classList.remove("incorrect", "unanswered");
-            } else {
-                questionDiv.classList.add("incorrect");
-                questionDiv.classList.remove("correct", "unanswered");
-                incorrectQuestionsHTML += `
-                    <div class="incorrect-question-details">
-                        <p>${questionData.question}</p>
-                        <p>आपका उत्तर: ${userAnswerText}</p>
-                        <p>सही उत्तर: ${correctAnswerText}</p>
-                    </div>
-                `;
-            }
+    // Iterate over the correct answers
+    for (const questionId in correctAnswers) {
+        totalQuestions++;
+        const userAnswer = document.querySelector(`input[name="${questionId}"]:checked`);
+        const questionData = correctAnswers[questionId];
+        
+        if (userAnswer && userAnswer.value === questionData.correctOption) {
+            score++;
         } else {
-            questionDiv.classList.add("unanswered");
-            questionDiv.classList.remove("correct", "incorrect");
+            incorrectQuestions.push({
+                question: questionData.question,
+                userAnswer: userAnswer ? userAnswer.nextSibling.textContent.trim() : "No Answer",
+                correctAnswer: questionData.correctText,
+            });
         }
     }
 
-    resultSummary.textContent = `सही उत्तर: ${correctAnswers}/${questions.length}`;
-
-    if (incorrectQuestionsHTML) {
-        incorrectQuestionsSummary.innerHTML = `
-            <h3>गलत उत्तर/व्याख्या:</h3>
-            ${incorrectQuestionsHTML}
-        `;
-    }
-
+    // Display results
     document.getElementById("testPage").style.display = "none";
     document.getElementById("resultPage").style.display = "block";
+
+    // Summary
+    const resultSummary = document.getElementById("resultSummary");
+    resultSummary.innerHTML = `<p>सही उत्तर: ${score}/${totalQuestions}</p>`;
+
+    // Incorrect Questions
+    const incorrectSummary = document.getElementById("incorrectQuestionsSummary");
+    if (incorrectQuestions.length > 0) {
+        let incorrectDetails = "<h3>गलत उत्तर/व्याख्या:</h3>";
+        incorrectQuestions.forEach((item, index) => {
+            incorrectDetails += `<p>${index + 1}. ${item.question}</p>`;
+            incorrectDetails += `<p>आपका उत्तर: ${item.userAnswer}</p>`;
+            incorrectDetails += `<p>सही उत्तर: ${item.correctAnswer}</p>`;
+            incorrectDetails += "<hr>";
+        });
+        incorrectSummary.innerHTML = incorrectDetails;
+    } else {
+        incorrectSummary.innerHTML = `<p>All answers are correct. Well done!</p>`;
+    }
 }
 
+// Restart the test
 function restartTest() {
-  document.getElementById("testPage").style.display = "block";
-  document.getElementById("resultPage").style.display = "none";
-  const questionDivs = document.querySelectorAll(".question");
-  questionDivs.forEach(div => {
-      div.classList.remove("correct", "incorrect", "unanswered", "show-correct");
-      const radios = div.querySelectorAll('input[type="radio"]');
-      radios.forEach(radio => radio.checked = false);
-      const answerDiv = div.querySelector(".answer");
-      if (answerDiv) {
-          answerDiv.textContent = "";
-      }
-  });
-}
+    document.getElementById("resultPage").style.display = "none";
+    document.getElementById("testPage").style.display = "block";
 
-function login() {
-  const usernameInput = document.getElementById("username");
-  const passwordInput = document.getElementById("password");
+    // Reset selected answers
+    const inputs = document.querySelectorAll("input[type='radio']");
+    inputs.forEach((input) => {
+        input.checked = false;
+    });
 
-  if (usernameInput && passwordInput) {
-      const username = usernameInput.value;
-      const password = passwordInput.value;
-
-      const user = users.find(u => u.username === username && u.password === password);
-
-      if (user) {
-          document.getElementById("loginPage").style.display = "none";
-          document.getElementById("testPage").style.display = "block";
-      } else {
-          alert("Invalid username or password");
-      }
-  } else {
-      console.error("Username or password input fields not found.");
-  }
+    // Clear answers shown
+    const answers = document.querySelectorAll(".answer");
+    answers.forEach((answer) => {
+        answer.innerHTML = "";
+    });
 }
