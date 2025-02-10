@@ -15,13 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
           totalLeaves: 20,
           remainingLeaves: 5,
           team: ["Kate Middleton (HR)", "Kirk Mitrohin (Manager)", "Eugene Hummel (Lead)"],
-          onboardingStatus: "In progress (84%)",
+          onboardingStatus: "In Progress (84%)",
           onboardingProgress: 84,
           onboardingChecklist: [
               { task: "Submit Documents", completed: true },
               { task: "Attend Orientation", completed: false },
-              { task: "Complete Training", completed: true }
-          ]
+              { task: "Complete Training", completed: false }
+          ],
+          certificate: "certificates/Completion Certificate.pdf",
+          idCard: "certificates/Completion Certificate.pdf"
       },
       user2: {
           name: "Jane Doe",
@@ -43,7 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
               { task: "Submit Documents", completed: true },
               { task: "Attend Orientation", completed: false },
               { task: "Complete Training", completed: false }
-          ]
+          ],
+          certificate: "certificates/user2.pdf"
       },
       user3: {
           name: "Alice Brown",
@@ -65,7 +68,9 @@ document.addEventListener("DOMContentLoaded", function () {
               { task: "Submit Documents", completed: false },
               { task: "Attend Orientation", completed: false },
               { task: "Complete Training", completed: false }
-          ]
+          ],
+          certificate: "certificates/user3.pdf",
+          idCard: "idcards/user3-idcard.pdf"
       }
   };
 
@@ -122,18 +127,35 @@ document.addEventListener("DOMContentLoaded", function () {
       teamList.appendChild(li);
   });
 
-  // Download profile as text file
+  // Download certificate
+
   document.getElementById("downloadProfile").addEventListener("click", function () {
-      const profileText = `Name: ${profileData.name}\nRole: ${profileData.role}\nEmail: ${profileData.email}\nPhone: ${profileData.phone}\nAddress: ${profileData.address}\nProject: ${profileData.project}\nProject Deadline: ${profileData.projectDeadline}\nJoined On: ${profileData.joinDate}\nWork Duration: ${profileData.workDuration}\nTotal Leaves: ${profileData.totalLeaves}\nRemaining Leaves: ${profileData.remainingLeaves}\nOnboarding Status: ${profileData.onboardingStatus}`;
-      
-      const blob = new Blob([profileText], { type: "text/plain" });
-      const a = document.createElement("a");
-      a.href = URL.createObjectURL(blob);
-      a.download = "profile.pdf";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-  });
+    if (!profileData.certificate) {
+        alert("Certificate not available for this user.");
+        return;
+    }
+
+    const a = document.createElement("a");
+    a.href = profileData.certificate; // Set the certificate file path
+    a.download = profileData.name + "_certificate.pdf"; // Set download filename
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+});
+
+// Download ID Card Button
+  document.getElementById("downloadIdCard").addEventListener("click", function () {
+    if (!profileData.idCard) {
+        alert("ID Card not available for this user.");
+        return;
+    }
+    const a = document.createElement("a");
+    a.href = profileData.idCard; // Set the ID Card file path
+    a.download = profileData.name + "_idcard.pdf"; // Set download filename
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+});
 });
 
 // Logout function
