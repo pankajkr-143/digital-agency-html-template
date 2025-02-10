@@ -82,87 +82,48 @@ body {
   font-size: 16px;
 }
 
+/* Split Content Section */
+.split-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.left-column, .right-column {
+  flex: 1;
+  background: #f8f9fa;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Team Details */
-.team-details {
+.team-details, .project-details, .time-duration, .leave-details {
   margin-bottom: 30px;
 }
 
-.team-details h2 {
+.team-details h2, .project-details h2, .time-duration h2, .leave-details h2 {
   margin-bottom: 10px;
   color: #007bff;
+  margin: 0 0 10px;
 }
 
-.team-details ul {
+.team-details ul, .project-details ul, .time-duration ul, .leave-details ul {
   padding: 0;
   list-style: none;
 }
 
-.team-details ul li {
-  margin: 5px 0;
-  font-size: 16px;
-}
-
-/* project-details */
-.project-details {
-  margin-bottom: 30px;
-}
-
-.project-details h2 {
-  margin-bottom: 10px;
-  color: #007bff;
-}
-
-.project-details ul {
-  padding: 0;
-  list-style: none;
-}
-
-.project-details ul li {
-  margin: 5px 0;
-  font-size: 16px;
-}
-
-/* time-duration */
-.time-duration {
-  margin-bottom: 30px;
-}
-
-.time-duration h2 {
-  margin-bottom: 10px;
-  color: #007bff;
-}
-
-.time-duration ul {
-  padding: 0;
-  list-style: none;
-}
-
-.time-duration ul li {
-  margin: 5px 0;
-  font-size: 16px;
-}
-
-/* leave-detail */
-.leave-details {
-  margin-bottom: 30px;
-}
-
-.leave-details h2 {
-  margin-bottom: 10px;
-  color: #007bff;
-}
-
-.leave-details ul {
-  padding: 0;
-  list-style: none;
-}
-
-.leave-details ul li {
+.team-details ul li, .project-details ul li, .time-duration ul li, .leave-details ul li {
   margin: 5px 0;
   font-size: 16px;
 }
 
 /* Onboarding Details */
+.onboarding-details {
+  margin-top: 20px;
+}
+
 .onboarding-details h2 {
   margin-bottom: 10px;
   color: #007bff;
@@ -195,24 +156,23 @@ body {
   font-size: 16px;
 }
 
-/* downloadcertificate */
+/* Download Section */
 .downloadcertificate {
-  margin-bottom: 30px;
+  margin-top: 20px;
+  text-align: center;
 }
 
-.downloadcertificate h2 {
-  margin-bottom: 10px;
-  color: #007bff;
-}
-
-.downloadcertificate ul {
-  padding: 0;
-  list-style: none;
-}
-
-.downloadcertificate ul li {
-  margin: 5px 0;
+.download-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
   font-size: 16px;
+  margin: 5px;
 }
 
-
+.download-btn:hover {
+  background-color: #0056b3;
+}
