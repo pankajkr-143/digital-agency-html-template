@@ -1,7 +1,7 @@
 // Sample user credentials and profiles
 const users = {
     user1: { 
-      userId: "user1", 
+      userId: "ceo", 
       password: "password1", 
       profile: "user1"
     },

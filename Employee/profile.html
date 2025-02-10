@@ -17,7 +17,6 @@
 
     <!-- Profile Section -->
     <main class="profile-container">
-      <!-- Profile Picture and Basic Info -->
       <section class="profile-header">
         <div class="profile-pic-container">
           <img id="profilePic" src="img/default.png" alt="Profile Picture">
@@ -37,6 +36,25 @@
         <ul id="teamList"></ul>
       </section>
 
+      <!-- Left Side Section with New Additions -->
+      <section class="left-section">
+        <div class="project-details">
+          <h2>Project Details</h2>
+          <p><strong>Current Project:</strong> <span id="projectName">Project Name</span></p>
+          <p><strong>Deadline:</strong> <span id="projectDeadline">Deadline</span></p>
+        </div>
+        <div class="time-duration">
+          <h2>Employee Time Duration</h2>
+          <p><strong>Joined On:</strong> <span id="joinDate">Joining Date</span></p>
+          <p><strong>Work Duration:</strong> <span id="workDuration">Duration</span></p>
+        </div>
+        <div class="leave-details">
+          <h2>Leave Details</h2>
+          <p><strong>Total Leaves:</strong> <span id="totalLeaves">10</span></p>
+          <p><strong>Remaining Leaves:</strong> <span id="remainingLeaves">5</span></p>
+        </div>
+      </section>
+
       <!-- Onboarding Details -->
       <section class="onboarding-details">
         <h2>Onboarding</h2>
@@ -44,8 +62,8 @@
         <progress id="progressBar" value="0" max="100"></progress>
         <ul></ul>
       </section>
-      <section class="dowload">
-        <!-- Download Profile Button -->
+      
+      <section class="download">
         <button id="downloadProfile" class="download-btn">Download Your Profile</button>
       </section>
     </main>

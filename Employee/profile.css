@@ -102,6 +102,66 @@ body {
   font-size: 16px;
 }
 
+/* project-details */
+.project-details {
+  margin-bottom: 30px;
+}
+
+.project-details h2 {
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.project-details ul {
+  padding: 0;
+  list-style: none;
+}
+
+.project-details ul li {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+/* time-duration */
+.time-duration {
+  margin-bottom: 30px;
+}
+
+.time-duration h2 {
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.time-duration ul {
+  padding: 0;
+  list-style: none;
+}
+
+.time-duration ul li {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+/* leave-detail */
+.leave-details {
+  margin-bottom: 30px;
+}
+
+.leave-details h2 {
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.leave-details ul {
+  padding: 0;
+  list-style: none;
+}
+
+.leave-details ul li {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
 /* Onboarding Details */
 .onboarding-details h2 {
   margin-bottom: 10px;
