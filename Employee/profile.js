@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { task: "Activity Tracking", completed: true },
           ],
           certificate: "certificates/Completion Certificate.pdf",
-          idCard: "certificates/Completion Certificate.pdf"
+          idCard: "idcard/Pankaj .pdf"
       },
       user2: {
           name: "Riya Tiwari",
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
           workDuration: "1 year",
           totalLeaves: 25,
           remainingLeaves: 10,
-          team: ["Michael Scott (Manager)", "Pam Beesly (HR)", "Jim Halpert (Lead)"],
+          team: ["Priya Dubey (HR Manager)", "Pam Beesly (HR)", "Jim Halpert (Lead)"],
           onboardingStatus: "In Progress",
           onboardingProgress: 60,
           onboardingChecklist: [
@@ -60,8 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 { task: "Requests Handling", completed: true },
                 { task: "Activity Tracking", completed: true },
           ],
-          certificate: "certificates/user2.pdf",
-          idCard: "certificates/Completion Certificate.pdf"
+          certificate: "certificates/.pdf",
+          idCard: "idcard/Riya.pdf"
       },
       user3: {
           name: "Priya Dubey",
@@ -91,8 +91,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 { task: "Requests Handling", completed: true },
                 { task: "Activity Tracking", completed: true },
           ],
-          certificate: "certificates/user3.pdf",
-          idCard: "certificates/Completion Certificate.pdf"
+          certificate: "certificates/.pdf",
+          idCard: "idcard/Priya .pdf"
       },
         user4: {
             name: "Naman Kumar",
@@ -122,8 +122,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 { task: "Requests Handling", completed: true },
                 { task: "Activity Tracking", completed: true },
             ],
-            certificate: "certificates/user4.pdf",
-            idCard: "certificates/Completion Certificate.pdf"
+            certificate: "certificates/.pdf",
+            idCard: "idcard/naman kumar.pdf"
         },
 
         user5: {
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 { task: "Activity Tracking", completed: true },
             ],
             certificate: "certificates/user5.pdf",
-            idCard: "certificates/Completion Certificate.pdf"
+            idCard: "idcard/Anuj rajkumar.pdf"
         },
 
         user6: {
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 { task: "Activity Tracking", completed: true },
             ],
             certificate: "certificates/user6.pdf",
-            idCard: "certificates/Completion Certificate.pdf"
+            idCard: "idcard/riyamathur.pdf"
         },
 
         user7: {
@@ -219,11 +219,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 { task: "Activity Tracking", completed: true },
             ],
             certificate: "certificates/user7.pdf",
-            idCard: "certificates/Completion Certificate.pdf"
+            idCard: "idcard/SUHAni tiwari (1).pdf"
         },
 
         user9: {
-            name: "Shalu Singh",
+            name: "Shalu Tiwari",
             role: "Designing",
             email: "shalutiwari842@gmail.com",
             phone: "+91 81039 79874",
@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 { task: "Activity Tracking", completed: true },
             ],
             certificate: "certificates/user9.pdf",
-            idCard: "certificates/Completion Certificate.pdf"
+            idCard: "idcard/shalu Tiwari tiwari.pdf"
         },
 
         user10: {
@@ -283,7 +283,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 { task: "Activity Tracking", completed: true },
             ],
             certificate: "certificates/user10.pdf",
-            idCard: "certificates/Completion Certificate.pdf"
+            idCard: "idcard/Saud Ansarirajkumar.pdf"
         },
 
         user11: {
@@ -315,7 +315,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 { task: "Activity Tracking", completed: true },
             ],
             certificate: "certificates/user11.pdf",
-            idCard: "certificates/Completion Certificate.pdf"
+            idCard: "idcard/ASIF KHAN.pdf"
         },
 
         user12: {
@@ -324,7 +324,7 @@ document.addEventListener("DOMContentLoaded", function () {
             email: "abhinavroy9625@gmail.com",
             phone: "+91 96255 08655",
             address: "Bhopal, Madhya Pradesh, 462022",
-            profilePic: "img/abhinav.png",
+            profilePic: "img/abhi.jpg",
             project: ["None"],
             projectDeadline: ["None"],
             joinDate: "25th December 2024",
@@ -347,7 +347,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 { task: "Activity Tracking", completed: true },
             ],
             certificate: "certificates/user12.pdf",
-            idCard: "certificates/Completion Certificate.pdf"   
+            idCard: "idcard/Abhinav Kumartiwari.pdf"   
         },
 
         user13: {
@@ -411,7 +411,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 { task: "Activity Tracking", completed: true },
             ],
             certificate: "certificates/user14.pdf",
-            idCard: "certificates/Completion Certificate.pdf"
+            idCard: "idcard/premchand mahto.pdf"
         },
   };
 
