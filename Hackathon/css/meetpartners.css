@@ -1,0 +1,177 @@
+.meetHero {
+  background: url("../images/meettophead.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.alleventHero {
+  background: url("../images/eventtophead.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.allhackHero {
+  background: url("../images/hacktophead.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.allhacksbanner {
+  border-radius: 10px 10px 0px 0px;
+  -webkit-border-radius: 10px 10px 0px 0px;
+  -moz-border-radius: 10px 10px 0px 0px;
+  -ms-border-radius: 10px 10px 0px 0px;
+  -o-border-radius: 10px 10px 0px 0px;
+}
+
+.allhackcard {
+  filter: drop-shadow(0px 0px 18px rgba(0, 0, 0, 0.25));
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.meetHead {
+  font-weight: 600;
+  font-size: 66px;
+  line-height: 87px;
+  color: #ffffff;
+}
+
+.meetSub {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 35px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+}
+
+.meetSubb {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+}
+
+.meetLogoSection {
+  background-color: #f9f8f8;
+}
+
+.logoName {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #5a5a5a;
+  position: absolute;
+  margin: auto;
+}
+
+.logoBox {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.13);
+  height: 6rem;
+  position: relative;
+}
+
+.logoimg {
+  position: absolute;
+  top: 0;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 3rem;
+  width: auto;
+}
+
+.bgEvent {
+  background: #fff;
+  box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.25);
+}
+
+.forWho {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 35px;
+  letter-spacing: 0.03em;
+  color: #282828;
+}
+
+.eventtopic {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.eventdate {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140.4%;
+  letter-spacing: 0.03em;
+}
+
+.eventphoto {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.eventtimings {
+  background: url("../images/eventcarddesign.svg");
+  background-position: left;
+  background-repeat: no-repeat;
+  position: relative;
+  left: -11px;
+}
+
+
+.registerevent {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 162.4%;
+  color: #1c1c1c;
+}
+
+.registerevent:hover {
+  color: #1c1c1c;
+}
+
+.allhackname {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #392d7b;
+}
+
+.allhackdeatils {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #444444;
+}
+
+.hackregisterdatehead {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 152.2%;
+  color: #00a4ef;
+}
+
+.hackresgiterdate {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 152.2%;
+  color: #5a5a5a;
+}

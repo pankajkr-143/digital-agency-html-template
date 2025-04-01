@@ -1,0 +1,84 @@
+:root {
+  --pink: #f8194f;
+  --yellow: #fed02f;
+  --green: #469e0f;
+  --blue: #00a4ef;
+}
+
+.pink-border {
+  border: 4px solid var(--pink);
+}
+
+.green-border {
+  border: 4px solid var(--green);
+}
+
+.blue-border {
+  border: 4px solid var(--blue);
+}
+.black-border {
+  border: 4px solid #000;
+}
+.yellow-border {
+  border: 4px solid var(--yellow);
+}
+
+.pink-color {
+  color: var(--pink);
+}
+.pink-color:hover {
+  color: var(--pink);
+}
+.blue-color {
+  color: var(--blue);
+}
+.blue-color:hover {
+  color: var(--blue);
+}
+
+.green-color {
+  color: var(--green);
+}
+.green-color:hover {
+  color: var(--green);
+}
+
+.yellow-color {
+  color: var(--yellow) !important;
+}
+.yellow-color:hover {
+  color: var(--yellow);
+}
+
+.pink-bg-color {
+  background-color: var(--pink);
+}
+
+.blue-bg-color {
+  background-color: var(--blue);
+}
+
+.green-bg-color {
+  background-color: var(--green);
+}
+
+.yellow-bg-color {
+  background-color: var(--yellow);
+}
+
+.white-color {
+  color: #fff;
+}
+
+.white-bg-color {
+  background-color: #fff;
+}
+
+.black-color {
+  color: #000;
+}
+
+.black-bg-color {
+  background-color: #000;
+}
+

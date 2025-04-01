@@ -60,6 +60,34 @@ const certificates = [
         serialNumber: "MTPL/PR/2024/1012",
         name: "Arpit Purwar",
         dateOfIssue: "2024-10-31"
+    },
+    {
+        serialNumber: "MTPL/PR/2024/1017",
+        name: "Naman Kumar",
+        dateOfIssue: "2025-03-31"
+    },
+    {
+        serialNumber: "MTPL/PR/2024/1018",
+        name: "Suhani Tiwari",
+        dateOfIssue: "2025-03-31"
+    },
+    {
+        serialNumber: "MTPL/PR/2024/1019",
+        name: "Shalu Tiwari",
+        dateOfIssue: "2025-03-31"
+    },
+    {
+        serialNumber: "MTPL/PR/2024/1020",
+        name: "Anuj Raj",
+        dateOfIssue: "2025-03-31"
+    },
+    {
+        serialNumber: "MTPL/PR/2024/1021",
+        name: "Saud Ansari",
+        dateOfIssue: "2025-03-31"
+    },
+    {
+
     }
 ];
 
