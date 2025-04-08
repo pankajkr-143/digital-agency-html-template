@@ -518,6 +518,23 @@
         </div>
         <!-- Team End -->
         
+        <!-- Popup Modal -->
+        <div id="popup" class="popup-container"><b>
+            <div class="popup-content animate__animated animate__fadeIn">
+                <img src="/img/trophy.png" class="trophy-left" alt="Trophy">
+                <img src="/img/trophy.png" class="trophy-right" alt="Trophy">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <h2 class="blinking-text">🚀 Registration Starting Soon...</h2>
+                <p>Macky's Technology Inc. is proud to announce the registration for the upcoming Hackathon.</p>
+                <hr><p>Organized By Macky's Technology Office Bhopal, MP</p>
+                <h1>FutureHack 2.0</h1>
+                <p>DISCOVER • INNOVATE • TRANSFORM</p>
+                <p>Registration Date: Release Soon</p>
+                <a href="/POPUP/contact/index.html" class="blink-btn" onclick="subscribe()">Subscribe Here For Updates</a><br>
+                <!-- <p>Join us for an exciting hackathon event where you can showcase your skills, collaborate with like-minded individuals, and compete for amazing prizes!</p> -->
+                <p>₹1,00,000 Prizepool • 36 Hours Multi National Level Hackathon</p>
+            </div></b>
+        </div>
 
         <!-- Footer Start -->
         <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
@@ -618,110 +635,6 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
-<!--Pop Up method start-->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automatic Popup Example</title>
-
-    <style>
-        /* Basic Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Popup Background */
-        .popup {
-            display: none; /* Hidden by default */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Popup Content Box */
-        .popup-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            width: 650px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            text-align: center;
-        }
-
-        /* Close Button */
-        .close-btn {
-            color: #aaa;
-            font-size: 24px;
-            font-weight: bold;
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            cursor: pointer;
-        }
-
-        .close-btn:hover {
-            color: #000;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- The Popup Modal -->
-    
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close-btn" id="closeBtn">&times;</span>
-            <h2>Welcome to the Macky's Tech Portal!</h2><hr>
-            <h5>Macky's Tech is an IT services technology software company.</h5>
-            <br><p>In this platform you can see lots of features and Programs like "You can apply for Jobs, Internships, ambasdor Program. You Can learn from our trainer absolutely free like interview Preparation, technical skills development etc."
-            <br><br><Strong>Note : </Strong> If you need any type of technical support then you can contact us also like Software Development(website, app), Digital Marketing, Freelancing etc.
-            </p>
-            <strong>For More Contact us!</strong><br>
-            <a href="contact.html"><b>Click Here</b></a>
-        </div>
-    </div>
-
-    
-   
-
-    <script>
-        // Wait for the DOM to fully load
-        window.onload = function() {
-            // Select the popup element
-            var popup = document.getElementById('popup');
-            
-            // Show the popup after 3 seconds (3000ms)
-            setTimeout(function() {
-                popup.style.display = 'flex';
-            }, 3000); // Change this time to delay as needed (in milliseconds)
-
-            // Close button functionality
-            var closeBtn = document.getElementById('closeBtn');
-            closeBtn.onclick = function() {
-                popup.style.display = 'none';
-            }
-
-            // Close popup if the user clicks outside the popup content
-            window.onclick = function(event) {
-                if (event.target == popup) {
-                    popup.style.display = 'none';
-                }
-            }
-        }
-    </script>
-
-</body>
-</html>
-<!--Pop Up method end-->
 
 
 </body>

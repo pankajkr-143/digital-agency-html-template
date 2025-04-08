@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FutureHack 2.0</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Times New Roman", Times, serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000; /* Optional background color */
+    }
+
+    .blink-text {
+    font-size: 1.9em;
+    color: #01ff6f;
+    font-weight: bold;
+    animation: blink 1s infinite;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px #887e23, 0 0 10px #aaa040;
+    }
+
+    @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+    }
+
+  .popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* 🔲 Blurred Background Image */
+.popup-bg-blur {
+  background: url('POPUP/image/image.png') center center/cover no-repeat;
+  filter: blur(20px) brightness(50px);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+}
+
+/* 🔳 Foreground Content */
+.popup-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 30px;
+}
+
+
+
+
+    .popup h1 {
+      font-size: 2.5em;
+      margin: 10px 0;
+    }
+
+    .popup p {
+      font-size: 1.1em;
+      margin: 5px 0;
+    }
+
+    .popup .tagline {
+      font-size: 1.2em;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .popup .sponsors {
+      margin-bottom: 15px;
+    }
+
+    .popup img.qr {
+      margin: 15px 0;
+      width: 150px;
+      height: 150px;
+    }
+
+    .popup .highlight {
+      font-size: 1.2em;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px; right: 20px;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .subscribe-btn {
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: red;
+        color: white;
+        font-weight: bold;
+        font-size: 1.1em;
+        border-radius: 30px;
+        text-decoration: none;
+        margin: 20px auto;
+        animation: blinkBtn 1s infinite;
+        box-shadow: 0 0 10px red;
+    }
+
+    @keyframes blinkBtn {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; transform: scale(1.05); }
+    100% { opacity: 1; }
+    }
+
+
+    .trophy {
+      position: absolute;
+      top: 50%;
+      width: 120px;
+      height: 120px;
+    }
+
+    .trophy.left {
+      left: 30px;
+    }
+
+    .trophy.right {
+      right: 30px;
+    }
+
+    @media (max-width: 600px) {
+      .trophy {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="popup-overlay">
+    <div class="popup">
+      <div class="popup-bg-blur"></div> <!-- Background Image Blur Layer -->
+      <div class="popup-content"> <!-- Content Layer -->
+        <button class="close-btn" onclick="closePopup()">&times;</button>
+
+        <!-- Trophy Images -->
+        <img src="image/trophy.png" alt="Trophy" class="trophy left">
+        <img src="image/trophy.png" alt="Trophy" class="trophy right">
+
+        <div class="blink-text">🚀 Registration Starting Soon...</div>
+        <p>Macky's Technology Inc. is proud to announce the registration for the upcoming Hackathon.</p>
+        <div class="sponsors">
+          <p>Organized By</p>
+          <p>Macky's Technology Office Bhopal, MP</p>
+        </div>
+        <h1>FutureHack 2.0</h1>
+        <div class="tagline">DISCOVER • INNOVATE • TRANSFORM</div>
+        <p><strong>Registration Date : Release Soon</strong></p>
+        <a href="contact/index.html" class="subscribe-btn">🔔 Subscribe Here For Updated</a>
+        <div class="highlight">₹1,00,000 Prizepool • 36 Hours Multi National Level Hackathon</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function closePopup() {
+      document.querySelector(".popup-overlay").style.display = "none";
+    }
+  </script>
+</body>
+</html>

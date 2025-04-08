@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FutureHack 2.0 Subscribe</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeInBody 2s ease-in;
+      color: #fff;
+    }
+
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .you-container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      width: 100%;
+      max-width: 500px;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      animation: slideUp 1.5s ease;
+    }
+
+    .main-container {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      padding: 40px;
+      max-width: 1200px;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      animation: slideUp 1.5s ease;
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .about-section {
+      flex: 1;
+      min-width: 300px;
+      max-width: 600px;
+      animation: slideLeft 1.5s ease;
+    }
+
+    @keyframes slideLeft {
+      from {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .about-section h2 {
+      font-size: 2em;
+      color: #ffeb3b;
+      margin-bottom: 20px;
+    }
+
+    .about-section p {
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .about-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .about-section li {
+      margin-bottom: 12px;
+      font-size: 1em;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      width: 100%;
+      max-width: 550px;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      animation: slideUp 1.5s ease;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 2em;
+      color: #a59e5a;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px 10px;
+      border: none;
+      border-bottom: 2px solid #ffeb3b;
+      background: transparent;
+      color: white;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .input-group label {
+      position: absolute;
+      left: 10px;
+      top: 12px;
+      color: #ccc;
+      font-size: 16px;
+      pointer-events: none;
+      transition: all 0.3s;
+    }
+
+    .input-group input:focus ~ label,
+    .input-group input:not(:placeholder-shown) ~ label {
+      top: -10px;
+      left: 5px;
+      font-size: 13px;
+      color: #ffeb3b;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: #ff5722;
+      color: white;
+      padding: 12px;
+      font-size: 1.1em;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
+      animation: pulse 2s infinite;
+    }
+
+    .submit-btn:hover {
+      background: #e64a19;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255,87,34, 0.5); }
+      70% { box-shadow: 0 0 0 10px rgba(255,87,34, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,87,34, 0); }
+    }
+
+    .success-message {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1em;
+      color: #4caf50;
+      display: none;
+      animation: fadeInSuccess 1s ease;
+    }
+
+    @keyframes fadeInSuccess {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 960px) {
+      .main-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="main-container">
+  <!-- About Section -->
+  <div class="about-section">
+    <h2>About</h2>
+    <p>Welcome to <strong>FutureHack 2.0 2025</strong> – the ultimate hackathon where innovation meets creativity!</p>
+    <p>🚀 FutureHack 2.0 2025 is a high-energy coding marathon designed for developers, designers, and tech enthusiasts to collaborate, build, and innovate. Whether you're a beginner or an experienced coder, this is your chance to push boundaries, solve real-world challenges, and showcase your skills.</p>
+    <p>🔥 <strong>What to Expect?</strong></p>
+    <ul>
+      <li>🌿 Exciting Problem Statements – Real-world challenges in AI, Web3, FinTech, HealthTech, and more.</li>
+      <li>🎓 Top Mentors & Industry Experts – Get guidance from professionals.</li>
+      <li>📚 Workshops & Learning Sessions – Upgrade your skills with expert-led sessions.</li>
+      <li>🏆 Amazing Prizes & Swag – Win trophy, cash, certificates, and goodies!</li>
+      <li>🤝 Networking & Collaboration – Connect with like-minded innovators.</li>
+    </ul>
+    <p>Are you ready to code, compete, and create? Join us at FutureHack 2.0 2025 and let’s build the future together!</p>
+  </div>
+
+  <!-- Registration Form -->
+  <div class="form-container">
+    <h2>Subscribe for FutureHack 2.0 2025</h2>
+    <form id="registrationForm">
+      <div class="input-group">
+        <input type="text" id="name" required placeholder=" " />
+        <label for="name">Full Name</label>
+      </div>
+
+      <div class="input-group">
+        <input type="tel" id="mobile" required pattern="[0-9]{10}" placeholder=" " />
+        <label for="mobile">Mobile Number</label>
+      </div>
+
+      <div class="input-group">
+        <input type="email" id="email" required placeholder=" " />
+        <label for="email">Email Address</label>
+      </div>
+
+      <div class="input-group">
+        <input type="text" id="college" required placeholder=" " />
+        <label for="college">College Name</label>
+      </div>
+
+      <button type="submit" class="submit-btn">Subscrire Here</button>
+      <p><b>Note : </b>After Subscribing , You will get a registration mail on your email id Soon</p>
+      <div class="success-message" id="successMessage">🎉 Registered Successfully!</div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('registrationForm');
+  const successMsg = document.getElementById('successMessage');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    successMsg.style.display = 'block';
+    form.reset();
+    setTimeout(() => {
+      successMsg.style.display = 'none';
+    }, 4000);
+  });
+</script>
+
+</body>
+</html>

@@ -92,3 +92,23 @@
     
 })(jQuery);
 
+// Show the popup when the page loads
+window.onload = function () {
+    document.getElementById("popup").style.display = "flex";
+};
+
+// Close the popup
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
+// // Subscribe button action
+// function subscribe() {
+//     alert("Thank you for subscribing!");
+//     closePopup();
+// }
+
+function openSubscribePage() {
+    window.location.href = "../POPUP/contact/index.html"; // Replace with the URL of your subscription page
+}
+
