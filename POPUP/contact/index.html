@@ -199,6 +199,67 @@
         align-items: center;
       }
     }
+
+    /* General Styles for Mobile Responsiveness */
+    @media (max-width: 960px) {
+      .main-container {
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center; /* Center align sections */
+        gap: 20px; /* Reduce gap between sections */
+        padding: 20px; /* Adjust padding for smaller screens */
+      }
+
+      .about-section,
+      .form-container {
+        max-width: 100%; /* Allow sections to take full width */
+        padding: 20px; /* Adjust padding for smaller screens */
+      }
+
+      .about-section h2,
+      .form-container h2 {
+        font-size: 1.5em; /* Reduce heading size */
+      }
+
+      .about-section p,
+      .about-section li {
+        font-size: 0.9em; /* Reduce text size */
+      }
+
+      .input-group input {
+        font-size: 14px; /* Adjust input font size */
+        padding: 10px; /* Adjust input padding */
+      }
+
+      .input-group label {
+        font-size: 14px; /* Adjust label font size */
+      }
+
+      .submit-btn {
+        font-size: 1em; /* Adjust button font size */
+        padding: 10px; /* Adjust button padding */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .main-container {
+        padding: 10px; /* Further reduce padding for very small screens */
+      }
+
+      .about-section h2,
+      .form-container h2 {
+        font-size: 1.2em; /* Further reduce heading size */
+      }
+
+      .about-section p,
+      .about-section li {
+        font-size: 0.8em; /* Further reduce text size */
+      }
+
+      .submit-btn {
+        font-size: 0.9em; /* Adjust button font size */
+        padding: 8px; /* Adjust button padding */
+      }
+    }
   </style>
 </head>
 <body>
