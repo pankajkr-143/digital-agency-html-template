@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>FutureHack 2.0 Subscribe</title>
@@ -21,8 +22,13 @@
     }
 
     @keyframes fadeInBody {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     .you-container {
@@ -63,6 +69,7 @@
         transform: translateX(-50px);
         opacity: 0;
       }
+
       to {
         transform: translateX(0);
         opacity: 1;
@@ -107,6 +114,7 @@
         transform: translateY(50px);
         opacity: 0;
       }
+
       to {
         transform: translateY(0);
         opacity: 1;
@@ -147,8 +155,8 @@
       transition: all 0.3s;
     }
 
-    .input-group input:focus ~ label,
-    .input-group input:not(:placeholder-shown) ~ label {
+    .input-group input:focus~label,
+    .input-group input:not(:placeholder-shown)~label {
       top: -10px;
       left: 5px;
       font-size: 13px;
@@ -174,9 +182,17 @@
     }
 
     @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(255,87,34, 0.5); }
-      70% { box-shadow: 0 0 0 10px rgba(255,87,34, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(255,87,34, 0); }
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.5);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(255, 87, 34, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 87, 34, 0);
+      }
     }
 
     .success-message {
@@ -189,144 +205,182 @@
     }
 
     @keyframes fadeInSuccess {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     @media (max-width: 960px) {
       .main-container {
         flex-direction: column;
+        /* Stack sections vertically */
         align-items: center;
-      }
-    }
-
-    /* General Styles for Mobile Responsiveness */
-    @media (max-width: 960px) {
-      .main-container {
-        flex-direction: column; /* Stack sections vertically */
-        align-items: center; /* Center align sections */
-        gap: 20px; /* Reduce gap between sections */
-        padding: 20px; /* Adjust padding for smaller screens */
+        /* Center align sections */
+        gap: 20px;
+        /* Reduce gap between sections */
+        padding: 20px;
+        /* Adjust padding for smaller screens */
+        overflow-y: auto;
+        /* Enable scrolling if content overflows */
       }
 
       .about-section,
       .form-container {
-        max-width: 100%; /* Allow sections to take full width */
-        padding: 20px; /* Adjust padding for smaller screens */
+        max-width: 100%;
+        /* Allow sections to take full width */
+        padding: 20px;
+        /* Adjust padding for smaller screens */
       }
 
       .about-section h2,
       .form-container h2 {
-        font-size: 1.5em; /* Reduce heading size */
+        font-size: 1.5em;
+        /* Reduce heading size */
       }
 
       .about-section p,
       .about-section li {
-        font-size: 0.9em; /* Reduce text size */
+        font-size: 0.9em;
+        /* Reduce text size */
       }
 
       .input-group input {
-        font-size: 14px; /* Adjust input font size */
-        padding: 10px; /* Adjust input padding */
+        font-size: 14px;
+        /* Adjust input font size */
+        padding: 10px;
+        /* Adjust input padding */
       }
 
       .input-group label {
-        font-size: 14px; /* Adjust label font size */
+        font-size: 14px;
+        /* Adjust label font size */
       }
 
       .submit-btn {
-        font-size: 1em; /* Adjust button font size */
-        padding: 10px; /* Adjust button padding */
+        font-size: 1em;
+        /* Adjust button font size */
+        padding: 10px;
+        /* Adjust button padding */
       }
     }
 
     @media (max-width: 600px) {
+      body {
+        height: auto;
+        /* Allow body height to adjust for content */
+        padding: 10px;
+        /* Add padding for smaller screens */
+      }
+
       .main-container {
-        padding: 10px; /* Further reduce padding for very small screens */
+        padding: 10px;
+        /* Further reduce padding for very small screens */
+        gap: 15px;
+        /* Reduce gap between sections */
       }
 
       .about-section h2,
       .form-container h2 {
-        font-size: 1.2em; /* Further reduce heading size */
+        font-size: 1.2em;
+        /* Further reduce heading size */
       }
 
       .about-section p,
       .about-section li {
-        font-size: 0.8em; /* Further reduce text size */
+        font-size: 0.8em;
+        /* Further reduce text size */
       }
 
       .submit-btn {
-        font-size: 0.9em; /* Adjust button font size */
-        padding: 8px; /* Adjust button padding */
+        font-size: 0.9em;
+        /* Adjust button font size */
+        padding: 8px;
+        /* Adjust button padding */
+      }
+
+      .you-container {
+        padding: 20px;
+        /* Reduce padding for smaller screens */
+        box-shadow: none;
+        /* Simplify shadow for smaller devices */
       }
     }
   </style>
 </head>
+
 <body>
 
-<div class="main-container">
-  <!-- About Section -->
-  <div class="about-section">
-    <h2>About</h2>
-    <p>Welcome to <strong>FutureHack 2.0 2025</strong> – the ultimate hackathon where innovation meets creativity!</p>
-    <p>🚀 FutureHack 2.0 2025 is a high-energy coding marathon designed for developers, designers, and tech enthusiasts to collaborate, build, and innovate. Whether you're a beginner or an experienced coder, this is your chance to push boundaries, solve real-world challenges, and showcase your skills.</p>
-    <p>🔥 <strong>What to Expect?</strong></p>
-    <ul>
-      <li>🌿 Exciting Problem Statements – Real-world challenges in AI, Web3, FinTech, HealthTech, and more.</li>
-      <li>🎓 Top Mentors & Industry Experts – Get guidance from professionals.</li>
-      <li>📚 Workshops & Learning Sessions – Upgrade your skills with expert-led sessions.</li>
-      <li>🏆 Amazing Prizes & Swag – Win trophy, cash, certificates, and goodies!</li>
-      <li>🤝 Networking & Collaboration – Connect with like-minded innovators.</li>
-    </ul>
-    <p>Are you ready to code, compete, and create? Join us at FutureHack 2.0 2025 and let’s build the future together!</p>
+  <div class="main-container">
+    <!-- About Section -->
+    <div class="about-section">
+      <h2>About</h2>
+      <p>Welcome to <strong>FutureHack 2.0 2025</strong> – the ultimate hackathon where innovation meets creativity!</p>
+      <p>🚀 FutureHack 2.0 2025 is a high-energy coding marathon designed for developers, designers, and tech
+        enthusiasts to collaborate, build, and innovate. Whether you're a beginner or an experienced coder, this is your
+        chance to push boundaries, solve real-world challenges, and showcase your skills.</p>
+      <p>🔥 <strong>What to Expect?</strong></p>
+      <ul>
+        <li>🌿 Exciting Problem Statements – Real-world challenges in AI, Web3, FinTech, HealthTech, and more.</li>
+        <li>🎓 Top Mentors & Industry Experts – Get guidance from professionals.</li>
+        <li>📚 Workshops & Learning Sessions – Upgrade your skills with expert-led sessions.</li>
+        <li>🏆 Amazing Prizes & Swag – Win trophy, cash, certificates, and goodies!</li>
+        <li>🤝 Networking & Collaboration – Connect with like-minded innovators.</li>
+      </ul>
+      <p>Are you ready to code, compete, and create? Join us at FutureHack 2.0 2025 and let’s build the future together!
+      </p>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="form-container">
+      <h2>Subscribe for FutureHack 2.0 2025</h2>
+      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateForm()">
+        <input type="hidden" name="access_key" value="da091ed8-42eb-4541-ade0-28e5cf1c5168">
+
+        <div class="input-group">
+          <input type="text" id="name" name="name" required placeholder=" " />
+          <label for="name">Full Name</label>
+        </div>
+
+        <div class="input-group">
+          <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}" placeholder=" " />
+          <label for="mobile">Mobile Number</label>
+        </div>
+
+        <div class="input-group">
+          <input type="email" id="email" name="email" required placeholder=" " />
+          <label for="email">Email Address</label>
+        </div>
+
+        <div class="input-group">
+          <input type="text" id="college" name="college" required placeholder=" " />
+          <label for="college">College Name</label>
+        </div>
+
+        <button type="submit" class="submit-btn">Subscribe Here</button>
+        <p><b>Note:</b> After Subscribing, you will get a registration mail on your email ID soon.</p>
+        <div class="success-message" id="successMessage">🎉 Registered Successfully!</div>
+      </form>
+    </div>
   </div>
 
-  <!-- Registration Form -->
-  <div class="form-container">
-    <h2>Subscribe for FutureHack 2.0 2025</h2>
-    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateForm()">
-      <input type="hidden" name="access_key" value="da091ed8-42eb-4541-ade0-28e5cf1c5168">
-      
-      <div class="input-group">
-        <input type="text" id="name" name="name" required placeholder=" " />
-        <label for="name">Full Name</label>
-      </div>
+  <script>
+    const form = document.getElementById('registrationForm');
+    const successMsg = document.getElementById('successMessage');
 
-      <div class="input-group">
-        <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}" placeholder=" " />
-        <label for="mobile">Mobile Number</label>
-      </div>
-
-      <div class="input-group">
-        <input type="email" id="email" name="email" required placeholder=" " />
-        <label for="email">Email Address</label>
-      </div>
-
-      <div class="input-group">
-        <input type="text" id="college" name="college" required placeholder=" " />
-        <label for="college">College Name</label>
-      </div>
-
-      <button type="submit" class="submit-btn">Subscribe Here</button>
-      <p><b>Note:</b> After Subscribing, you will get a registration mail on your email ID soon.</p>
-      <div class="success-message" id="successMessage">🎉 Registered Successfully!</div>
-    </form>
-  </div>
-</div>
-
-<script>
-  const form = document.getElementById('registrationForm');
-  const successMsg = document.getElementById('successMessage');
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    successMsg.style.display = 'block';
-    form.reset();
-    setTimeout(() => {
-      successMsg.style.display = 'none';
-    }, 4000);
-  });
-</script>
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      successMsg.style.display = 'block';
+      form.reset();
+      setTimeout(() => {
+        successMsg.style.display = 'none';
+      }, 4000);
+    });
+  </script>
 
 </body>
+
 </html>
