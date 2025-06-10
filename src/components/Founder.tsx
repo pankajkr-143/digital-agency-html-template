@@ -34,7 +34,7 @@ const Founder = () => {
           >
             <div className="relative max-w-md mx-auto">
               <img 
-                src="https://i.ibb.co/bgNVmTNc/ceo-2.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                src="https://i.ibb.co/yGCWX76/Whats-App-Image-2025-06-08-at-04-10-59-002b80d8.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 alt="Founder"
                 className="w-full h-[400px] object-cover rounded-sm neon-border-green"
               />
