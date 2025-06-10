@@ -77,7 +77,7 @@ const Hero = () => {
             className="text-4xl sm:text-6xl md:text-7xl font-vt323 mb-6 text-white text-shadow-neon-green"
           >
             NEXT-GEN
-            <span className="text-neo-green-100"> CYBER </span>
+            <span className="text-neo-green-100"> IT/CYBER/Ai </span>
             SOLUTIONS
           </motion.h1>
 
