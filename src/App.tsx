@@ -9,6 +9,7 @@ import TeamPage from './pages/TeamPage';
 import GalleryPage from './pages/GalleryPage';
 import TestimonialsPage from './pages/TestimonialsPage';
 import ServicesPage from './pages/ServicesPage';
+import ProductsPage from './pages/ProductsPage';
 import InternshipsPage from './pages/InternshipsPage';
 import JobsPage from './pages/JobsPage';
 import AmbassadorPage from './pages/AmbassadorPage';
@@ -28,6 +29,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/products" element={<ProductsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/team" element={<TeamPage />} />

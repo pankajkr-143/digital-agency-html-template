@@ -284,6 +284,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Services', href: '/services' },
+    { name: 'Products', href: '/products' },
     { name: 'Projects', href: '/projects' },
     {
       name: 'About',
@@ -291,11 +292,11 @@ const Navbar = () => {
       dropdown: [
         { name: 'About Us', href: '/about' },
         { name: 'Our Team', href: '/team' },
+        { name: 'Events', href: '/events' },
         { name: 'Gallery', href: '/gallery' },
         { name: 'Testimonials', href: '/testimonials' },
       ]
     },
-    { name: 'Events', href: '/events' },
     {
       name: 'Careers',
       href: '#',
