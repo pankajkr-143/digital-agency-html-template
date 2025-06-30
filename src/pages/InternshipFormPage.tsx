@@ -309,7 +309,7 @@ const InternshipFormPage = () => {
                 <input name="certifications" value={form.certifications} onChange={handleChange} className="form-input" />
               </div>
               <div>
-                <label className="form-label">Resume Google Drive Link</label>
+                <label className="form-label">Resume (Upload Resume on Google Drive and share the link here)</label>
                 <input type="url" name="resume" value={form.resume} onChange={handleChange} className="form-input" placeholder="https://drive.google.com/..." />
               </div>
               <div>
