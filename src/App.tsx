@@ -18,6 +18,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Terminal from './components/Terminal';
 import ScrollToTop from './components/ScrollToTop';
+import InternshipFormPage from './pages/InternshipFormPage';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="/ambassador" element={<AmbassadorPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/InternshipFormPage" element={<InternshipFormPage />} />
         </Routes>
         <Footer />
         <Terminal />

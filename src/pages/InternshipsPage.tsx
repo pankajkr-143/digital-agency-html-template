@@ -2,25 +2,87 @@ import React, { useLayoutEffect } from 'react';
 import { motion } from 'framer-motion';
 import { BookOpen, Code, Brain, Zap, Users, Award } from 'lucide-react';
 import GlitchText from '../components/effects/GlitchText';
+import { useNavigate } from 'react-router-dom';
 
 const InternshipsPage = () => {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const navigate = useNavigate();
+
   const internships = [
     {
-      title: 'Software Development Intern',
+      title: 'Backend Developer Intern (PostgreSQL)',
       department: 'Engineering',
       duration: '3-6 months',
-      description: 'Join our engineering team to develop cutting-edge software solutions using modern technologies.',
+      description: 'Work with our backend team to build scalable APIs and data-driven systems using Node.js and PostgreSQL.',
       requirements: [
-        'Currently pursuing CS or related degree',
-        'Strong programming fundamentals',
-        'Experience with React/Node.js',
-        'Passion for learning new technologies'
+        'Pursuing CS/IT or related degree',
+        'Good knowledge of Node.js or Python',
+        'Experience with PostgreSQL or any SQL database',
+        'Understanding of REST APIs and server-side logic'
       ],
-      icon: <Code className="h-6 w-6" />
+    },
+    {
+      title: 'Social Media Marketing Intern',
+      department: 'Marketing',
+      duration: '2-3 months',
+      description: 'Join our digital marketing team to manage social media platforms, run campaigns, and grow our brand online.',
+      requirements: [
+        'Basic understanding of digital marketing',
+        'Familiar with Instagram, LinkedIn, and Facebook',
+        'Creative mindset and content planning skills',
+        'Experience with Canva or basic graphic tools is a plus'
+      ],
+    },
+    {
+      title: 'Full Stack Developer Intern',
+      department: 'Engineering',
+      duration: '3-6 months',
+      description: 'Contribute to both frontend and backend projects using modern frameworks such as React and Node.js.',
+      requirements: [
+        'Strong programming knowledge in JavaScript',
+        'Hands-on experience with React and Node.js',
+        'Basic knowledge of database systems',
+        'Willingness to learn and work on complete web stack'
+      ],
+    },
+    {
+      title: 'UI/UX Designer Intern',
+      department: 'Design',
+      duration: '2-3 months',
+      description: 'Assist in designing user-friendly interfaces and enhancing user experiences across digital platforms.',
+      requirements: [
+        'Basic knowledge of UI/UX principles',
+        'Experience with Figma, Adobe XD, or similar tools',
+        'Ability to create wireframes and mockups',
+        'Attention to detail and user empathy'
+      ],
+    },
+    {
+      title: 'Cyber Security Intern',
+      department: 'Security',
+      duration: '2-4 months',
+      description: 'Work with our security team to assess, monitor, and improve the security posture of our applications.',
+      requirements: [
+        'Pursuing degree in Cyber Security/IT',
+        'Familiarity with OWASP Top 10 and basic network security',
+        'Understanding of vulnerabilities and penetration testing tools',
+        'Ethical hacking certification is a plus'
+      ],
+    },
+    {
+      title: 'Content Creator Intern',
+      department: 'Content/Marketing',
+      duration: '2-3 months',
+      description: 'Create engaging content for blogs, social media, and marketing campaigns to drive user engagement.',
+      requirements: [
+        'Strong written and verbal communication skills',
+        'Creativity in content development and storytelling',
+        'Familiarity with SEO basics and digital trends',
+        'Experience with WordPress or Medium is a plus'
+      ],
     },
     {
       title: 'AI Research Intern',
@@ -118,7 +180,9 @@ const InternshipsPage = () => {
                   </ul>
                 </div>
                 
-                <button className="w-full neon-border-green px-4 py-2 font-vt323 text-neo-green-100 hover:bg-neo-green-100 hover:bg-opacity-10 transition-all duration-300">
+                <button className="w-full neon-border-green px-4 py-2 font-vt323 text-neo-green-100 hover:bg-neo-green-100 hover:bg-opacity-10 transition-all duration-300"
+                  onClick={() => navigate('/InternshipFormPage')}
+                >
                   APPLY NOW
                 </button>
               </motion.div>

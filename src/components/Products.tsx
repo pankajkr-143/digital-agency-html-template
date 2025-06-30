@@ -23,7 +23,7 @@ const Products = () => {
       description: 'A gamified, hands-on cybersecurity platform inspired by Mr. Robot and fsociety. Built for aspiring ethical hackers to train, compete, and simulate real-world cyber attacks.',
       features: [' EchoFrame (AI-based Exploitation) ', ' fsociety Chat (Real-World Hacking Environments) ', ' Dark Army Challenges ', ' Live Operations ', ' Premium Learning Path ', ' Gamified Dashboard ', ' CTF Mode (Capture The Flag) '],
       image: 'https://i.ibb.co/4ZQkFHRk/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      link: 'https://tranquil-truffle-15401f.netlify.app'
+      link: 'https://cyberhx.com/'
     }
   ];
 
