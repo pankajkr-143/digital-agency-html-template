@@ -25,6 +25,18 @@ const InternshipsPage = () => {
       ],
     },
     {
+      title: 'Android Developer Intern',
+      department: 'Mobile Development',
+      duration: '3-6 months',
+      description: 'Join our mobile team to build and enhance Android applications using Kotlin or Java, and contribute to scalable mobile solutions.',
+      requirements: [
+        'Pursuing CS/IT or related degree',
+        'Familiarity with Android Studio and XML layouts',
+        'Basic experience in Kotlin or Java for Android',
+        'Understanding of REST APIs and mobile architecture'
+      ],
+    },
+    {
       title: 'Social Media Marketing Intern',
       department: 'Marketing',
       duration: '2-3 months',
