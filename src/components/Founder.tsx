@@ -93,6 +93,79 @@ const Founder = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Co-Founder Section */}
+        <div className="mt-20 pt-20 border-t border-gray-800">
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
+            <motion.div 
+              className="w-full lg:w-2/5"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative max-w-md mx-auto">
+                <img 
+                  src="https://i.ibb.co/NghfzrHP/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                  alt="Co-Founder"
+                  className="w-full h-[400px] object-cover rounded-sm neon-border-green"
+                />
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              className="w-full lg:w-3/5"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="font-vt323 text-3xl text-white mb-4">Ayush K Singh</h3>
+              <div className="text-neo-green-100 font-code text-lg mb-6">Co-Founder</div>
+              
+              <div className="space-y-4 font-code text-gray-400">
+                <p>
+                  With extensive experience in software architecture and technical leadership,
+                  our co-founder brings deep expertise in scalable system design and innovation.
+                </p>
+                <p>
+                  A technology visionary with a strong background in full-stack development
+                  and cloud computing, they play a crucial role in driving our technical
+                  excellence and product innovation.
+                </p>
+                <p>
+                  Their leadership in our technical initiatives has been instrumental in
+                  building robust, scalable solutions that meet the evolving needs of our
+                  clients and partners worldwide.
+                </p>
+              </div>
+              
+              <div className="mt-8 flex space-x-6">
+                <a 
+                  href="https://github.com/ayushkumar1234/" 
+                  className="text-gray-400 hover:text-neo-green-100 transition-colors duration-300"
+                  aria-label="GitHub"
+                >
+                  <Github className="h-6 w-6" />
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/ayush-kumar-singh-b36b16245/" 
+                  className="text-gray-400 hover:text-neo-green-100 transition-colors duration-300"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-6 w-6" />
+                </a>
+                <a 
+                  href="https://x.com/ayush_k_singh" 
+                  className="text-gray-400 hover:text-neo-green-100 transition-colors duration-300"
+                  aria-label="Twitter"
+                >
+                  <Twitter className="h-6 w-6" />
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
