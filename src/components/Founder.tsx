@@ -4,7 +4,7 @@ import GlitchText from './effects/GlitchText';
 
 const Founder = () => {
   return (
-    <section id="founder" className="py-20 relative bg-neo-dark overflow-hidden">
+    <section id="founder" className="py-20 relative theme-bg-secondary overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern bg-[length:30px_30px] opacity-5"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,10 +48,10 @@ const Founder = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-vt323 text-3xl text-white mb-4">Pankaj Gupta (Macky)</h3>
-            <div className="text-neo-green-100 font-code text-lg mb-6">Founder & CEO</div>
+            <h3 className="font-vt323 text-3xl theme-text-primary mb-4">Pankaj Gupta (Macky)</h3>
+            <div className="theme-accent-primary font-code text-lg mb-6">Founder & CEO</div>
             
-            <div className="space-y-4 font-code text-gray-400">
+            <div className="space-y-4 font-code theme-text-secondary">
               <p>
                 With over 8+ years of experience in software development and technology innovation,
                 Macky has led multiple successful startups and technology initiatives.
@@ -120,10 +120,10 @@ const Founder = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="font-vt323 text-3xl text-white mb-4">Ayush K Singh</h3>
-              <div className="text-neo-green-100 font-code text-lg mb-6">Co-Founder</div>
+              <h3 className="font-vt323 text-3xl theme-text-primary mb-4">Ayush K Singh</h3>
+              <div className="theme-accent-primary font-code text-lg mb-6">Co-Founder</div>
               
-              <div className="space-y-4 font-code text-gray-400">
+              <div className="space-y-4 font-code theme-text-secondary">
                 <p>
                   With extensive experience in software architecture and technical leadership,
                   our co-founder brings deep expertise in scalable system design and innovation.

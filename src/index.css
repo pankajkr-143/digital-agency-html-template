@@ -6,10 +6,82 @@
   color-scheme: dark;
 }
 
+/* Light theme variables */
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  --border-primary: #e2e8f0;
+  --border-secondary: #cbd5e1;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #1d4ed8;
+  --accent-tertiary: #dbeafe;
+  --shadow-primary: rgba(0, 0, 0, 0.1);
+  --shadow-secondary: rgba(0, 0, 0, 0.05);
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --border-primary: #374151;
+  --border-secondary: #4b5563;
+  --accent-primary: #00ff41;
+  --accent-secondary: #00cc33;
+  --accent-tertiary: rgba(0, 255, 65, 0.1);
+  --shadow-primary: rgba(0, 0, 0, 0.3);
+  --shadow-secondary: rgba(0, 0, 0, 0.2);
+}
+
 body {
-  @apply bg-neo-black text-white font-code overflow-x-hidden;
+  @apply font-code overflow-x-hidden;
   margin: 0;
   padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light theme specific styles */
+.light-theme {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.light-theme .neon-border-green {
+  box-shadow: 0 0 5px #3b82f6, 0 0 15px rgba(59, 130, 246, 0.5);
+  border: 1px solid #3b82f6;
+}
+
+.light-theme .neon-border-blue {
+  box-shadow: 0 0 5px #1d4ed8, 0 0 15px rgba(29, 78, 216, 0.5);
+  border: 1px solid #1d4ed8;
+}
+
+.light-theme .neon-border-purple {
+  box-shadow: 0 0 5px #7c3aed, 0 0 15px rgba(124, 58, 237, 0.5);
+  border: 1px solid #7c3aed;
+}
+
+.light-theme .text-shadow-neon-green {
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.7), 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.light-theme .text-shadow-neon-blue {
+  text-shadow: 0 0 10px rgba(29, 78, 216, 0.7), 0 0 20px rgba(29, 78, 216, 0.5);
+}
+
+/* Dark theme specific styles */
+.dark-theme {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 .text-shadow-neon-green {
@@ -244,4 +316,92 @@ body {
   top: 30px;
   left: 20px;
   margin-left: -5px;
+}
+
+/* Theme-aware utility classes */
+.theme-bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.theme-bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.theme-bg-tertiary {
+  background-color: var(--bg-tertiary);
+}
+
+.theme-text-primary {
+  color: var(--text-primary);
+}
+
+.theme-text-secondary {
+  color: var(--text-secondary);
+}
+
+.theme-text-tertiary {
+  color: var(--text-tertiary);
+}
+
+.theme-border-primary {
+  border-color: var(--border-primary);
+}
+
+.theme-border-secondary {
+  border-color: var(--border-secondary);
+}
+
+.theme-accent-primary {
+  color: var(--accent-primary);
+}
+
+.theme-accent-secondary {
+  color: var(--accent-secondary);
+}
+
+.theme-accent-bg {
+  background-color: var(--accent-tertiary);
+}
+
+.theme-shadow-primary {
+  box-shadow: 0 4px 6px -1px var(--shadow-primary), 0 2px 4px -1px var(--shadow-secondary);
+}
+
+.theme-shadow-secondary {
+  box-shadow: 0 1px 3px 0 var(--shadow-primary), 0 1px 2px 0 var(--shadow-secondary);
+}
+
+/* Light theme specific overrides */
+.light-theme .glitch::before {
+  text-shadow: -1px 0 #3b82f6;
+}
+
+.light-theme .glitch::after {
+  text-shadow: -1px 0 #1d4ed8;
+}
+
+.light-theme .timeline-entry::before {
+  background-color: #3b82f6;
+}
+
+.light-theme .timeline-entry::after {
+  background-color: #3b82f6;
+  box-shadow: 0 0 5px #3b82f6, 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.light-theme .cube-face {
+  background-color: rgba(248, 250, 252, 0.8);
+  border: 1px solid #3b82f6;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Override transitions for specific elements that shouldn't transition */
+.no-transition,
+.no-transition * {
+  transition: none !important;
 }

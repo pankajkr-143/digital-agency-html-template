@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { getCertificate, saveToLocalStorage, getVerificationHistory } from '../data/certificates';
 import { getCurrentUser, logout } from '../data/users';
 import LoginModal from './LoginModal';
+import ThemeToggle from './ThemeToggle';
 
 interface DropdownProps {
   items: { name: string; href: string }[];
@@ -444,6 +445,13 @@ const Navbar = () => {
                   VERIFY
                 </motion.button>
 
+                <motion.div
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <ThemeToggle size="sm" />
+                </motion.div>
+
                 <motion.Link
                   to="/contact"
                   className="neon-border-green px-4 py-1 rounded-sm font-vt323 text-neo-green-100 hover:bg-neo-green-100 hover:bg-opacity-10 transition-all duration-300"
@@ -571,6 +579,12 @@ const Navbar = () => {
                 <Search className="h-4 w-4 mr-2" />
                 VERIFY CERTIFICATE
               </button>
+              
+              <div className="flex items-center justify-center px-3 py-2 mt-4">
+                <span className="text-sm font-code text-gray-400 mr-3">Theme:</span>
+                <ThemeToggle size="sm" />
+              </div>
+              
               <Link
                 to="/contact"
                 className="block px-4 py-2 mt-4 text-center neon-border-green font-vt323 text-neo-green-100 hover:bg-neo-green-100 hover:bg-opacity-10 transition-all duration-300"
