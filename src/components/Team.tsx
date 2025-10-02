@@ -10,9 +10,9 @@ const Team = () => {
       image: 'https://i.ibb.co/zhXQ9zMX/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       bio: 'Project Manager & Full Stack Developer – A versatile professional skilled in leading projects from concept to deployment, with expertise in managing teams, building scalable applications, and delivering innovative end-to-end digital solutions.',
       social: {
-        github: 'https://github.com/Tekush1/',
+        github: 'https://github.com/Vipin840',
         linkedin: 'https://www.linkedin.com/in/vipin-kumar-408197382/',
-        email: 'kushdwivedikd@gmail.com'
+        email: 'vipinkumarbj807@gmail.com'
       }
     },
     {
@@ -55,6 +55,50 @@ const Team = () => {
         github: 'https://github.com/Tekush1/',
         linkedin: 'https://www.linkedin.com/in/kushagra-dwivedi-0342062b8/',
         email: 'kushdwivedikd@gmail.com'
+      }
+    },
+    {
+      name: 'Yash Gupta',
+      role: 'Full Stack Mern Developer',
+      image: 'https://i.ibb.co/RpJ28gJQ/Whats-App-Image-2025-10-02-at-10-22-07-8e518664.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'Full Stack MERN Developer – A skilled developer building scalable web applications, with expertise in MongoDB, Express, React, and Node.js, passionate about delivering seamless user experiences.',
+      social: {
+        github: 'https://github.com/',
+        linkedin: 'https://www.linkedin.com/in/yash-gupta-3a13662a0/',
+        email: 'yg745192@gmail.com'
+      }
+    },
+    {
+      name: 'Vishal Rajput',
+      role: 'Full Stack Java Developer',
+      image: 'https://i.ibb.co/VcLLB5hX/Whats-App-Image-2025-10-02-at-10-31-30-379cac8e.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'Full Stack Java Developer – A versatile developer crafting robust applications with Java technologies, skilled in both front-end and back-end, passionate about performance, scalability, and user-focused solutions.',
+      social: {
+        github: 'https://github.com/VishalRajput8305',
+        linkedin: 'https://www.linkedin.com/in/vishal-rajput-843811247/',
+        email: '#'
+      }
+    },
+    {
+      name: 'Chandan Kumar',
+      role: 'Database Engineer',
+      image: 'https://i.ibb.co/whhzpk9j/Whats-App-Image-2025-10-02-at-11-04-58-43b5e423.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'Database Engineer – A detail-oriented professional managing data systems and architecture, with a passion for optimization, security, and ensuring reliable access to critical organizational information.',
+      social: {
+        github: 'https://github.com/Chandankr2004',
+        linkedin: 'https://www.linkedin.com/in/chandan6205/',
+        email: '#'
+      }
+    },
+    {
+      name: 'Ishan Sen',
+      role: 'AI Engineer',
+      image: 'https://i.ibb.co/gb4Qhkkb/Whats-App-Image-2025-10-02-at-10-18-27-70e18a81.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'AI Engineer – An innovative engineer designing intelligent solutions with machine learning, deep learning, and natural language processing, passionate about advancing automation and human–AI collaboration.',
+      social: {
+        github: 'https://github.com/IshaanYK',
+        linkedin: 'https://www.linkedin.com/in/ishaan-sen-aa467a323/',
+        email: 'isen97509@gmail.com'
       }
     },
     // {
