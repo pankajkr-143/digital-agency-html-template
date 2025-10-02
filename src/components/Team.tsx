@@ -5,13 +5,13 @@ import GlitchText from './effects/GlitchText';
 const Team = () => {
   const team = [
     {
-      name: 'Kushagra Dwivedy',
-      role: 'Chief Technology Officer',
-      image: 'https://i.ibb.co/zV47yxgT/kush.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      bio: 'Cybersecurity Expert – A dedicated professional leading teams in securing digital environments, with a passion for ethical hacking and protecting networks from modern threats.',
+      name: 'Vipin K Singh',
+      role: 'Project Manager',
+      image: 'https://i.ibb.co/zhXQ9zMX/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'Project Manager & Full Stack Developer – A versatile professional skilled in leading projects from concept to deployment, with expertise in managing teams, building scalable applications, and delivering innovative end-to-end digital solutions.',
       social: {
         github: 'https://github.com/Tekush1/',
-        linkedin: 'https://www.linkedin.com/in/kushagra-dwivedi-0342062b8/',
+        linkedin: 'https://www.linkedin.com/in/vipin-kumar-408197382/',
         email: 'kushdwivedikd@gmail.com'
       }
     },
@@ -44,6 +44,17 @@ const Team = () => {
       bio: 'A versatile developer experienced in building and managing complete web solutions, focused on delivering impactful and scalable applications for businesses..',
       social: {
         linkedin: 'https://www.linkedin.com/in/riya-tiwari-48a93625b/',
+      }
+    },
+    {
+      name: 'Kushagra Dwivedy',
+      role: 'Chief Technology Officer',
+      image: 'https://i.ibb.co/zV47yxgT/kush.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'Cybersecurity Expert – A dedicated professional leading teams in securing digital environments, with a passion for ethical hacking and protecting networks from modern threats.',
+      social: {
+        github: 'https://github.com/Tekush1/',
+        linkedin: 'https://www.linkedin.com/in/kushagra-dwivedi-0342062b8/',
+        email: 'kushdwivedikd@gmail.com'
       }
     },
     // {
