@@ -286,19 +286,19 @@ const Contact = () => {
                     <div className="flex items-center group">
                       <div className="w-24 text-gray-500">General:</div>
                       <a href="mailto:info@mackystech.ai" className="text-neo-green-100 hover:underline">
-                        mackystech@gmail.com
+                        info@mackystech.in
                       </a>
                     </div>
                     <div className="flex items-center">
                       <div className="w-24 text-gray-500">Support:</div>
                       <a href="mailto:support@mackystech.ai" className="text-neo-blue-100 hover:underline">
-                        hr.mackystech@gmail.com
+                        contact@mackystech.in
                       </a>
                     </div>
                     <div className="flex items-center">
                       <div className="w-24 text-gray-500">Press:</div>
                       <a href="mailto:media@mackystech.ai" className="text-neo-purple-100 hover:underline">
-                        mdmackystech@gmail.com
+                        co.founder@mackystech
                       </a>
                     </div>
                     <div className="flex items-center">
