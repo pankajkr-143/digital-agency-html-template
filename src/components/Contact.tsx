@@ -256,9 +256,9 @@ const Contact = () => {
                 <div>
                   <h3 className="font-vt323 text-xl text-white mb-2">Global Headquarters</h3>
                   <p className="font-code text-gray-400 text-sm">
-                    1024 Quantum Drive<br />
-                    Silicon Valley, CA 94024<br />
-                    United States
+                    20B Gupta Colony<br />
+                    Anand Nagar, Bhopal, MP 462022<br />
+                    India
                   </p>
                 </div>
                 
@@ -298,7 +298,7 @@ const Contact = () => {
                     <div className="flex items-center">
                       <div className="w-24 text-gray-500">Press:</div>
                       <a href="mailto:media@mackystech.ai" className="text-neo-purple-100 hover:underline">
-                        co.founder@mackystech
+                        co.founder@mackystech.in
                       </a>
                     </div>
                     <div className="flex items-center">
