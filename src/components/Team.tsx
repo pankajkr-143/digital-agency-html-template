@@ -101,7 +101,6 @@ const Team = () => {
         email: ''
       }
     },
-    },
     {
       name: 'Rishabh Raj',
       role: 'Public/Corporative Relation',
