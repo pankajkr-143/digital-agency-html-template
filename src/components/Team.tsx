@@ -80,17 +80,6 @@ const Team = () => {
       }
     },
     {
-      name: 'Riya Mathur',
-      role: 'Junior BDA',
-      image: 'https://i.ibb.co/bMJKwhpZ/IMG-20251202-WA0020.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      bio: 'Junior BDA – An analytical professional skilled in gathering requirements, interpreting data, and supporting decision-making through clear insights, while contributing to process improvements and collaborative project execution.',
-      social: {
-        github: 'https://github.com/Riyamathur21',
-        linkedin: 'https://www.linkedin.com/in/riya-mathur-594947294?utm_source=share_via&utm_content=profile&utm_medium=member_android',
-        email: 'mathurshalini708@gmail.com'
-      }
-    },
-    {
       name: 'Zainab Khan',
       role: 'Senior BDA',
       image: 'https://i.ibb.co/21pcvk7c/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
@@ -99,6 +88,17 @@ const Team = () => {
         github: 'https://github.com/ZainabKhan90',
         linkedin: 'https://www.linkedin.com/in/zainab-imran-17580828b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         email: 'zainabkhaan41@gmail.com'
+      }
+    },
+    {
+      name: 'Riya Mathur',
+      role: 'Junior BDA',
+      image: 'https://i.ibb.co/bMJKwhpZ/IMG-20251202-WA0020.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'Junior BDA – An analytical professional skilled in gathering requirements, interpreting data, and supporting decision-making through clear insights, while contributing to process improvements and collaborative project execution.',
+      social: {
+        github: 'https://github.com/Riyamathur21',
+        linkedin: 'https://www.linkedin.com/in/riya-mathur-594947294?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+        email: 'mathurshalini708@gmail.com'
       }
     },
     {
