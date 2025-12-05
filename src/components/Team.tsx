@@ -27,50 +27,6 @@ const Team = () => {
       }
     },
     {
-      name: 'Ranjan Vishwakarma',
-      role: 'Data & AI Engineer',
-      image: 'https://i.ibb.co/hRFTh7SP/Gemini-Generated-Image-hz58ewhz58ewhz58.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      bio: 'Data & AI Engineer – A versatile professional skilled in designing and deploying data pipelines, building intelligent systems, and delivering scalable end-to-end solutions that transform data into actionable insights.',
-      social: {
-        github: '',
-        linkedin: '',
-        email: ''
-      }
-    },
-    {
-      name: 'Yash Dhakad',
-      role: 'Team Leader',
-      image: 'https://i.ibb.co/Y4rCf6tn/Gemini-Generated-Image-ec43lzec43lzec43.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      bio: 'Team Leader – Software Development – A versatile leader skilled in guiding development teams, overseeing the full software lifecycle, and delivering high-quality, scalable solutions from concept to deployment.',
-      social: {
-        github: '',
-        linkedin: '',
-        email: ''
-      }
-    },
-    {
-      name: 'Riya Mathur',
-      role: 'Junior BDA',
-      image: 'https://i.ibb.co/bMJKwhpZ/IMG-20251202-WA0020.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      bio: 'Junior BDA – An analytical professional skilled in gathering requirements, interpreting data, and supporting decision-making through clear insights, while contributing to process improvements and collaborative project execution.',
-      social: {
-        github: '',
-        linkedin: '',
-        email: ''
-      }
-    },
-    {
-      name: 'Zainab Khan',
-      role: 'Senior BDA',
-      image: 'https://i.ibb.co/21pcvk7c/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      bio: 'Senior BDA – A strategic analytical leader experienced in driving data-driven initiatives, managing complex requirements, mentoring junior analysts, and delivering high-impact insights that guide business strategy and operational excellence.',
-      social: {
-        github: 'https://github.com/',
-        linkedin: 'https://www.linkedin.com/in/',
-        email: ''
-      }
-    },
-    {
       name: 'Vipin K Singh',
       role: 'Project Manager',
       image: 'https://i.ibb.co/zhXQ9zMX/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
@@ -93,14 +49,14 @@ const Team = () => {
       }
     },
     {
-      name: 'Rishabh Raj',
-      role: 'Public/Corporative Relation',
-      image: 'https://i.ibb.co/3msbYJbn/rishu.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      bio: ' An energetic communicator skilled in managing public and corporate relations, excelling in organizing impactful events and maintaining lasting stakeholder connections.',
+      name: 'Ranjan Vishwakarma',
+      role: 'Data & AI Engineer',
+      image: 'https://i.ibb.co/hRFTh7SP/Gemini-Generated-Image-hz58ewhz58ewhz58.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'Data & AI Engineer – A versatile professional skilled in designing and deploying data pipelines, building intelligent systems, and delivering scalable end-to-end solutions that transform data into actionable insights.',
       social: {
-        github: '#',
-        linkedin: 'https://www.linkedin.com/in/rishabh-raj-949717273/',
-        email: 'rajrishabh2209@gmail.com'
+        github: 'https://github.com/ranjan-89',
+        linkedin: 'https://www.linkedin.com/in/ranjan-vishwakarma-a7300624b?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+        email: 'ranjanvishwakarma08@gmail.com'
       }
     },
     {
@@ -110,6 +66,51 @@ const Team = () => {
       bio: 'A versatile developer experienced in building and managing complete web solutions, focused on delivering impactful and scalable applications for businesses..',
       social: {
         linkedin: 'https://www.linkedin.com/in/riya-tiwari-48a93625b/',
+      }
+    },
+    {
+      name: 'Yash Dhakad',
+      role: 'Team Leader',
+      image: 'https://i.ibb.co/Y4rCf6tn/Gemini-Generated-Image-ec43lzec43lzec43.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'Team Leader – Software Development – A versatile leader skilled in guiding development teams, overseeing the full software lifecycle, and delivering high-quality, scalable solutions from concept to deployment.',
+      social: {
+        github: '',
+        linkedin: '',
+        email: ''
+      }
+    },
+    {
+      name: 'Riya Mathur',
+      role: 'Junior BDA',
+      image: 'https://i.ibb.co/bMJKwhpZ/IMG-20251202-WA0020.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'Junior BDA – An analytical professional skilled in gathering requirements, interpreting data, and supporting decision-making through clear insights, while contributing to process improvements and collaborative project execution.',
+      social: {
+        github: 'https://github.com/Riyamathur21',
+        linkedin: 'https://www.linkedin.com/in/riya-mathur-594947294?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+        email: 'mathurshalini708@gmail.com'
+      }
+    },
+    {
+      name: 'Zainab Khan',
+      role: 'Senior BDA',
+      image: 'https://i.ibb.co/21pcvk7c/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'Senior BDA – A strategic analytical leader experienced in driving data-driven initiatives, managing complex requirements, mentoring junior analysts, and delivering high-impact insights that guide business strategy and operational excellence.',
+      social: {
+        github: 'https://github.com/',
+        linkedin: 'https://www.linkedin.com/in/',
+        email: ''
+      }
+    },
+    },
+    {
+      name: 'Rishabh Raj',
+      role: 'Public/Corporative Relation',
+      image: 'https://i.ibb.co/3msbYJbn/rishu.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: ' An energetic communicator skilled in managing public and corporate relations, excelling in organizing impactful events and maintaining lasting stakeholder connections.',
+      social: {
+        github: '#',
+        linkedin: 'https://www.linkedin.com/in/rishabh-raj-949717273/',
+        email: 'rajrishabh2209@gmail.com'
       }
     },
     {
