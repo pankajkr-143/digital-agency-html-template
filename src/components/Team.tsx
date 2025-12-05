@@ -11,8 +11,8 @@ const Team = () => {
       bio: 'Cybersecurity Expert – A strategic leader proficient in overseeing security programs, coordinating cross-functional teams, and delivering comprehensive protection through proactive risk management and advanced defensive technologies.',
       social: {
         github: '',
-        linkedin: '',
-        email: ''
+        linkedin: 'https://www.linkedin.com/in/neeraj-sharma-293869363?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+        email: 'neerajkusharma7@gmail.com'
       }
     },
     {
