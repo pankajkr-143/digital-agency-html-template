@@ -21,9 +21,9 @@ const Team = () => {
       image: 'https://i.ibb.co/Zzk1FQ34/Gemini-Generated-Image-b6ynsbb6ynsbb6yn.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       bio: 'DevOps Engineer – Experienced in CI/CD automation, cloud infrastructure management, containerization, and optimizing system performance to enable rapid, secure, and consistent software delivery.',
       social: {
-        github: '',
-        linkedin: '',
-        email: ''
+        github: 'https://github.com/kapilkumarsahu',
+        linkedin: 'https://www.linkedin.com/in/kapilkumarsahu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        email: 'kapilkumarsahu2008@gmail.com'
       }
     },
     {
@@ -96,9 +96,9 @@ const Team = () => {
       image: 'https://i.ibb.co/21pcvk7c/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       bio: 'Senior BDA – A strategic analytical leader experienced in driving data-driven initiatives, managing complex requirements, mentoring junior analysts, and delivering high-impact insights that guide business strategy and operational excellence.',
       social: {
-        github: 'https://github.com/',
-        linkedin: 'https://www.linkedin.com/in/',
-        email: ''
+        github: 'https://github.com/ZainabKhan90',
+        linkedin: 'https://www.linkedin.com/in/zainab-imran-17580828b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        email: 'zainabkhaan41@gmail.com'
       }
     },
     {
