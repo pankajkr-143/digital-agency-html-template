@@ -27,20 +27,9 @@ const Team = () => {
       }
     },
     {
-      name: 'Kapil Kr Sahu',
-      role: 'DevOps Engineer',
-      image: 'https://i.ibb.co/zhXQ9zMX/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      bio: 'Project Manager & Full Stack Developer – A versatile professional skilled in leading projects from concept to deployment, with expertise in managing teams, building scalable applications, and delivering innovative end-to-end digital solutions.',
-      social: {
-        github: 'https://github.com/Vipin840',
-        linkedin: 'https://www.linkedin.com/in/vipin-kumar-408197382/',
-        email: 'vipinkumarbj807@gmail.com'
-      }
-    },
-    {
       name: 'Ranjan Vishwakarma',
       role: 'Data & AI Engineer',
-      image: 'https://i.ibb.co/zhXQ9zMX/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://i.ibb.co/hRFTh7SP/Gemini-Generated-Image-hz58ewhz58ewhz58.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       bio: 'Project Manager & Full Stack Developer – A versatile professional skilled in leading projects from concept to deployment, with expertise in managing teams, building scalable applications, and delivering innovative end-to-end digital solutions.',
       social: {
         github: 'https://github.com/Vipin840',
@@ -51,7 +40,7 @@ const Team = () => {
     {
       name: 'Yash Dhakad',
       role: 'Team Leader',
-      image: 'https://i.ibb.co/zhXQ9zMX/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://i.ibb.co/Y4rCf6tn/Gemini-Generated-Image-ec43lzec43lzec43.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       bio: 'Project Manager & Full Stack Developer – A versatile professional skilled in leading projects from concept to deployment, with expertise in managing teams, building scalable applications, and delivering innovative end-to-end digital solutions.',
       social: {
         github: 'https://github.com/Vipin840',
@@ -62,7 +51,7 @@ const Team = () => {
     {
       name: 'Riya Mathur',
       role: 'Junior BDA',
-      image: 'https://i.ibb.co/zhXQ9zMX/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://i.ibb.co/bMJKwhpZ/IMG-20251202-WA0020.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       bio: 'Project Manager & Full Stack Developer – A versatile professional skilled in leading projects from concept to deployment, with expertise in managing teams, building scalable applications, and delivering innovative end-to-end digital solutions.',
       social: {
         github: 'https://github.com/Vipin840',
@@ -73,7 +62,7 @@ const Team = () => {
     {
       name: 'Zainab Khan',
       role: 'Senior BDA',
-      image: 'https://i.ibb.co/zhXQ9zMX/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://i.ibb.co/21pcvk7c/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       bio: 'Project Manager & Full Stack Developer – A versatile professional skilled in leading projects from concept to deployment, with expertise in managing teams, building scalable applications, and delivering innovative end-to-end digital solutions.',
       social: {
         github: 'https://github.com/Vipin840',
