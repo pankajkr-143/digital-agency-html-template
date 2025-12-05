@@ -5,6 +5,17 @@ import GlitchText from './effects/GlitchText';
 const Team = () => {
   const team = [
     {
+      name: 'Yash Dhakad',
+      role: 'Team Leader',
+      image: 'https://i.ibb.co/Y4rCf6tn/Gemini-Generated-Image-ec43lzec43lzec43.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'Team Leader – Software Development – A versatile leader skilled in guiding development teams, overseeing the full software lifecycle, and delivering high-quality, scalable solutions from concept to deployment.',
+      social: {
+        github: '',
+        linkedin: '',
+        email: ''
+      }
+    },
+    {
       name: 'Neeraj Sharma',
       role: 'Cyber Security Expert',
       image: 'https://i.ibb.co/zhXQ9zMX/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
@@ -66,17 +77,6 @@ const Team = () => {
       bio: 'A versatile developer experienced in building and managing complete web solutions, focused on delivering impactful and scalable applications for businesses..',
       social: {
         linkedin: 'https://www.linkedin.com/in/riya-tiwari-48a93625b/',
-      }
-    },
-    {
-      name: 'Yash Dhakad',
-      role: 'Team Leader',
-      image: 'https://i.ibb.co/Y4rCf6tn/Gemini-Generated-Image-ec43lzec43lzec43.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      bio: 'Team Leader – Software Development – A versatile leader skilled in guiding development teams, overseeing the full software lifecycle, and delivering high-quality, scalable solutions from concept to deployment.',
-      social: {
-        github: '',
-        linkedin: '',
-        email: ''
       }
     },
     {
