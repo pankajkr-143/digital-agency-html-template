@@ -18,7 +18,7 @@ const Team = () => {
     {
       name: 'Neeraj Sharma',
       role: 'Cyber Security Expert',
-      image: 'https://i.ibb.co/zhXQ9zMX/image.pg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'https://i.ibb.co/B55V2zN6/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
       bio: 'Cybersecurity Expert – A strategic leader proficient in overseeing security programs, coordinating cross-functional teams, and delivering comprehensive protection through proactive risk management and advanced defensive technologies.',
       social: {
         github: '',
