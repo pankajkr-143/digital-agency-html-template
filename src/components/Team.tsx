@@ -149,7 +149,7 @@ const Team = () => {
 
   // Only show first 4 members if not on team page
   const isTeamPage = window.location.pathname === '/team';
-  const displayTeam = isTeamPage ? team : team.slice(0, 4);
+  const displayTeam = isTeamPage ? team : team.slice(0, 8);
 
   return (
     <section id="team" className="py-20 relative bg-neo-black overflow-hidden">
