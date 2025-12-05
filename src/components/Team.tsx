@@ -5,6 +5,83 @@ import GlitchText from './effects/GlitchText';
 const Team = () => {
   const team = [
     {
+      name: 'Neeraj Sharma',
+      role: 'Cyber Security Expert',
+      image: 'https://i.ibb.co/zhXQ9zMX/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'Project Manager & Full Stack Developer – A versatile professional skilled in leading projects from concept to deployment, with expertise in managing teams, building scalable applications, and delivering innovative end-to-end digital solutions.',
+      social: {
+        github: 'https://github.com/Vipin840',
+        linkedin: 'https://www.linkedin.com/in/vipin-kumar-408197382/',
+        email: 'vipinkumarbj807@gmail.com'
+      }
+    },
+    {
+      name: 'Kapil Kr Sahu',
+      role: 'DevOps Engineer',
+      image: 'https://i.ibb.co/Zzk1FQ34/Gemini-Generated-Image-b6ynsbb6ynsbb6yn.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'Project Manager & Full Stack Developer – A versatile professional skilled in leading projects from concept to deployment, with expertise in managing teams, building scalable applications, and delivering innovative end-to-end digital solutions.',
+      social: {
+        github: 'https://github.com/Vipin840',
+        linkedin: 'https://www.linkedin.com/in/vipin-kumar-408197382/',
+        email: 'vipinkumarbj807@gmail.com'
+      }
+    },
+    {
+      name: 'Kapil Kr Sahu',
+      role: 'DevOps Engineer',
+      image: 'https://i.ibb.co/zhXQ9zMX/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'Project Manager & Full Stack Developer – A versatile professional skilled in leading projects from concept to deployment, with expertise in managing teams, building scalable applications, and delivering innovative end-to-end digital solutions.',
+      social: {
+        github: 'https://github.com/Vipin840',
+        linkedin: 'https://www.linkedin.com/in/vipin-kumar-408197382/',
+        email: 'vipinkumarbj807@gmail.com'
+      }
+    },
+    {
+      name: 'Ranjan Vishwakarma',
+      role: 'Data & AI Engineer',
+      image: 'https://i.ibb.co/zhXQ9zMX/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'Project Manager & Full Stack Developer – A versatile professional skilled in leading projects from concept to deployment, with expertise in managing teams, building scalable applications, and delivering innovative end-to-end digital solutions.',
+      social: {
+        github: 'https://github.com/Vipin840',
+        linkedin: 'https://www.linkedin.com/in/vipin-kumar-408197382/',
+        email: 'vipinkumarbj807@gmail.com'
+      }
+    },
+    {
+      name: 'Yash Dhakad',
+      role: 'Team Leader',
+      image: 'https://i.ibb.co/zhXQ9zMX/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'Project Manager & Full Stack Developer – A versatile professional skilled in leading projects from concept to deployment, with expertise in managing teams, building scalable applications, and delivering innovative end-to-end digital solutions.',
+      social: {
+        github: 'https://github.com/Vipin840',
+        linkedin: 'https://www.linkedin.com/in/vipin-kumar-408197382/',
+        email: 'vipinkumarbj807@gmail.com'
+      }
+    },
+    {
+      name: 'Riya Mathur',
+      role: 'Junior BDA',
+      image: 'https://i.ibb.co/zhXQ9zMX/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'Project Manager & Full Stack Developer – A versatile professional skilled in leading projects from concept to deployment, with expertise in managing teams, building scalable applications, and delivering innovative end-to-end digital solutions.',
+      social: {
+        github: 'https://github.com/Vipin840',
+        linkedin: 'https://www.linkedin.com/in/vipin-kumar-408197382/',
+        email: 'vipinkumarbj807@gmail.com'
+      }
+    },
+    {
+      name: 'Zainab Khan',
+      role: 'Senior BDA',
+      image: 'https://i.ibb.co/zhXQ9zMX/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      bio: 'Project Manager & Full Stack Developer – A versatile professional skilled in leading projects from concept to deployment, with expertise in managing teams, building scalable applications, and delivering innovative end-to-end digital solutions.',
+      social: {
+        github: 'https://github.com/Vipin840',
+        linkedin: 'https://www.linkedin.com/in/vipin-kumar-408197382/',
+        email: 'vipinkumarbj807@gmail.com'
+      }
+    },
+    {
       name: 'Vipin K Singh',
       role: 'Project Manager',
       image: 'https://i.ibb.co/zhXQ9zMX/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
