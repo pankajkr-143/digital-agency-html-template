@@ -4,28 +4,28 @@ import GlitchText from './effects/GlitchText';
 
 const Team = () => {
   const team = [
-    {
-      name: 'Neeraj Sharma',
-      role: 'Cyber Security Expert',
-      image: 'https://i.ibb.co/B55V2zN6/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      bio: 'Cybersecurity Expert – A strategic leader proficient in overseeing security programs, coordinating cross-functional teams, and delivering comprehensive protection through proactive risk management and advanced defensive technologies.',
-      social: {
-        github: '',
-        linkedin: 'https://www.linkedin.com/in/neeraj-sharma-293869363?utm_source=share_via&utm_content=profile&utm_medium=member_android',
-        email: 'neerajkusharma7@gmail.com'
-      }
-    },
-    {
-      name: 'Kapil Kr Sahu',
-      role: 'DevOps Engineer',
-      image: 'https://i.ibb.co/Zzk1FQ34/Gemini-Generated-Image-b6ynsbb6ynsbb6yn.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      bio: 'DevOps Engineer – Experienced in CI/CD automation, cloud infrastructure management, containerization, and optimizing system performance to enable rapid, secure, and consistent software delivery.',
-      social: {
-        github: 'https://github.com/kapilkumarsahu',
-        linkedin: 'https://www.linkedin.com/in/kapilkumarsahu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-        email: 'kapilkumarsahu2008@gmail.com'
-      }
-    },
+    // {
+    //   name: 'Neeraj Sharma',
+    //   role: 'Cyber Security Expert',
+    //   image: 'https://i.ibb.co/B55V2zN6/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    //   bio: 'Cybersecurity Expert – A strategic leader proficient in overseeing security programs, coordinating cross-functional teams, and delivering comprehensive protection through proactive risk management and advanced defensive technologies.',
+    //   social: {
+    //     github: '',
+    //     linkedin: 'https://www.linkedin.com/in/neeraj-sharma-293869363?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+    //     email: 'neerajkusharma7@gmail.com'
+    //   }
+    // },
+    // {
+    //   name: 'Kapil Kr Sahu',
+    //   role: 'DevOps Engineer',
+    //   image: 'https://i.ibb.co/Zzk1FQ34/Gemini-Generated-Image-b6ynsbb6ynsbb6yn.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    //   bio: 'DevOps Engineer – Experienced in CI/CD automation, cloud infrastructure management, containerization, and optimizing system performance to enable rapid, secure, and consistent software delivery.',
+    //   social: {
+    //     github: 'https://github.com/kapilkumarsahu',
+    //     linkedin: 'https://www.linkedin.com/in/kapilkumarsahu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    //     email: 'kapilkumarsahu2008@gmail.com'
+    //   }
+    // },
     {
       name: 'Vipin K Singh',
       role: 'Project Manager',
@@ -59,17 +59,17 @@ const Team = () => {
         email: 'ranjanvishwakarma08@gmail.com'
       }
     },
-    {
-      name: 'Yash Dhakad',
-      role: 'Team Leader',
-      image: 'https://i.ibb.co/Y4rCf6tn/Gemini-Generated-Image-ec43lzec43lzec43.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      bio: 'Team Leader – Software Development – A versatile leader skilled in guiding development teams, overseeing the full software lifecycle, and delivering high-quality, scalable solutions from concept to deployment.',
-      social: {
-        github: '',
-        linkedin: '',
-        email: ''
-      }
-    },
+    // {
+    //   name: 'Yash Dhakad',
+    //   role: 'Team Leader',
+    //   image: 'https://i.ibb.co/Y4rCf6tn/Gemini-Generated-Image-ec43lzec43lzec43.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    //   bio: 'Team Leader – Software Development – A versatile leader skilled in guiding development teams, overseeing the full software lifecycle, and delivering high-quality, scalable solutions from concept to deployment.',
+    //   social: {
+    //     github: '',
+    //     linkedin: '',
+    //     email: ''
+    //   }
+    // },
     {
       name: 'Riya Tiwari',
       role: 'Managing Director',
@@ -79,17 +79,17 @@ const Team = () => {
         linkedin: 'https://www.linkedin.com/in/riya-tiwari-48a93625b/',
       }
     },
-    {
-      name: 'Zainab Khan',
-      role: 'Senior BDA',
-      image: 'https://i.ibb.co/21pcvk7c/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      bio: 'Senior BDA – A strategic analytical leader experienced in driving data-driven initiatives, managing complex requirements, mentoring junior analysts, and delivering high-impact insights that guide business strategy and operational excellence.',
-      social: {
-        github: 'https://github.com/ZainabKhan90',
-        linkedin: 'https://www.linkedin.com/in/zainab-imran-17580828b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-        email: 'zainabkhaan41@gmail.com'
-      }
-    },
+    // {
+    //   name: 'Zainab Khan',
+    //   role: 'Senior BDA',
+    //   image: 'https://i.ibb.co/21pcvk7c/image.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    //   bio: 'Senior BDA – A strategic analytical leader experienced in driving data-driven initiatives, managing complex requirements, mentoring junior analysts, and delivering high-impact insights that guide business strategy and operational excellence.',
+    //   social: {
+    //     github: 'https://github.com/ZainabKhan90',
+    //     linkedin: 'https://www.linkedin.com/in/zainab-imran-17580828b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    //     email: 'zainabkhaan41@gmail.com'
+    //   }
+    // },
     {
       name: 'Riya Mathur',
       role: 'Junior BDA',
@@ -112,17 +112,17 @@ const Team = () => {
         email: 'rajrishabh2209@gmail.com'
       }
     },
-    {
-      name: 'Kushagra Dwivedy',
-      role: 'Chief Technology Officer',
-      image: 'https://i.ibb.co/zV47yxgT/kush.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      bio: 'Cybersecurity Expert – A dedicated professional leading teams in securing digital environments, with a passion for ethical hacking and protecting networks from modern threats.',
-      social: {
-        github: 'https://github.com/Tekush1/',
-        linkedin: 'https://www.linkedin.com/in/kushagra-dwivedi-0342062b8/',
-        email: 'kushdwivedikd@gmail.com'
-      }
-    },
+    // {
+    //   name: 'Kushagra Dwivedy',
+    //   role: 'Chief Technology Officer',
+    //   image: 'https://i.ibb.co/zV47yxgT/kush.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    //   bio: 'Cybersecurity Expert – A dedicated professional leading teams in securing digital environments, with a passion for ethical hacking and protecting networks from modern threats.',
+    //   social: {
+    //     github: 'https://github.com/Tekush1/',
+    //     linkedin: 'https://www.linkedin.com/in/kushagra-dwivedi-0342062b8/',
+    //     email: 'kushdwivedikd@gmail.com'
+    //   }
+    // },
     {
       name: 'Yash Gupta',
       role: 'Full Stack Mern Developer',
