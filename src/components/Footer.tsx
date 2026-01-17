@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Github, Twitter, Linkedin, Youtube, Mail } from 'lucide-react';
-import GlitchText from './effects/GlitchText';
 
 const Footer = () => {
   const socialLinks = [
@@ -45,16 +44,13 @@ const Footer = () => {
           <div className="col-span-1 lg:col-span-1">
             <div className="flex items-center mb-6">
               <img 
-                src="https://i.ibb.co/ymkKpn1w/cropped-image.png"
+                src="https://i.ibb.co/mVFxZ4g1/Macky-s.png"
                 alt="Macky's Tech Logo"
-                className="h-8 w-auto"
+                className="h-16 md:h-20 w-auto"
               />
-              <span className="ml-2 text-2xl font-vt323 glow-text text-neo-green-100">
-                Macky's Tech
-              </span>
             </div>
             
-            <p className="font-code text-gray-400 text-sm mb-6">
+            <p className="text-gray-400 text-sm mb-6">
               Pioneering the future at the intersection of artificial intelligence, 
               cybersecurity, and quantum computing.
             </p>
@@ -82,15 +78,15 @@ const Footer = () => {
           </div>
           
           <div className="col-span-1 lg:col-span-1">
-            <h3 className="font-vt323 text-lg text-white mb-6">Quick Links</h3>
+            <h3 className="font-semibold text-lg text-white mb-6">Quick Links</h3>
             <ul className="space-y-3">
               {mainLinks.map((link, index) => (
                 <li key={index}>
                   <a 
                     href={link.url} 
-                    className="font-code text-sm text-gray-400 hover:text-neo-green-100 transition-colors duration-300 flex items-center"
+                    className="text-sm text-gray-400 hover:text-neo-green-100 transition-colors duration-300"
                   >
-                    <span className="text-neo-green-100 mr-2">&gt;</span> {link.name}
+                    {link.name}
                   </a>
                 </li>
               ))}
@@ -98,44 +94,44 @@ const Footer = () => {
           </div>
           
           <div className="col-span-1 lg:col-span-1">
-            <h3 className="font-vt323 text-lg text-white mb-6">Our Solutions</h3>
+            <h3 className="font-semibold text-lg text-white mb-6">Our Solutions</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="font-code text-sm text-gray-400 hover:text-neo-blue-100 transition-colors duration-300 flex items-center">
-                  <span className="text-neo-blue-100 mr-2">&gt;</span> AI & Machine Learning
+                <a href="#" className="text-sm text-gray-400 hover:text-neo-blue-100 transition-colors duration-300">
+                  AI & Machine Learning
                 </a>
               </li>
               <li>
-                <a href="#" className="font-code text-sm text-gray-400 hover:text-neo-blue-100 transition-colors duration-300 flex items-center">
-                  <span className="text-neo-blue-100 mr-2">&gt;</span> Cybersecurity Suite
+                <a href="#" className="text-sm text-gray-400 hover:text-neo-blue-100 transition-colors duration-300">
+                  Cybersecurity Suite
                 </a>
               </li>
               <li>
-                <a href="#" className="font-code text-sm text-gray-400 hover:text-neo-blue-100 transition-colors duration-300 flex items-center">
-                  <span className="text-neo-blue-100 mr-2">&gt;</span> Quantum Computing
+                <a href="#" className="text-sm text-gray-400 hover:text-neo-blue-100 transition-colors duration-300">
+                  Quantum Computing
                 </a>
               </li>
               <li>
-                <a href="#" className="font-code text-sm text-gray-400 hover:text-neo-blue-100 transition-colors duration-300 flex items-center">
-                  <span className="text-neo-blue-100 mr-2">&gt;</span> Blockchain Technology
+                <a href="#" className="text-sm text-gray-400 hover:text-neo-blue-100 transition-colors duration-300">
+                  Blockchain Technology
                 </a>
               </li>
               <li>
-                <a href="#" className="font-code text-sm text-gray-400 hover:text-neo-blue-100 transition-colors duration-300 flex items-center">
-                  <span className="text-neo-blue-100 mr-2">&gt;</span> IoT Security
+                <a href="#" className="text-sm text-gray-400 hover:text-neo-blue-100 transition-colors duration-300">
+                  IoT Security
                 </a>
               </li>
               <li>
-                <a href="#" className="font-code text-sm text-gray-400 hover:text-neo-blue-100 transition-colors duration-300 flex items-center">
-                  <span className="text-neo-blue-100 mr-2">&gt;</span> Custom Solutions
+                <a href="#" className="text-sm text-gray-400 hover:text-neo-blue-100 transition-colors duration-300">
+                  Custom Solutions
                 </a>
               </li>
             </ul>
           </div>
           
           <div className="col-span-1 lg:col-span-1">
-            <h3 className="font-vt323 text-lg text-white mb-6">Subscribe</h3>
-            <p className="font-code text-sm text-gray-400 mb-4">
+            <h3 className="font-semibold text-lg text-white mb-6">Subscribe</h3>
+            <p className="text-sm text-gray-400 mb-4">
               Stay updated with our latest innovations and research.
             </p>
             
@@ -144,35 +140,32 @@ const Footer = () => {
                 <input 
                   type="email" 
                   placeholder="Enter your email"
-                  className="w-full bg-neo-black border-0 focus:ring-0 focus:outline-none font-code text-gray-300 px-4 py-3 neon-border-purple hover:bg-neo-purple-100 hover:bg-opacity-5 focus:bg-neo-purple-100 focus:bg-opacity-5 transition-colors duration-300"
+                  className="w-full bg-neo-black border-0 focus:ring-0 focus:outline-none text-gray-300 px-4 py-3 neon-border-purple hover:bg-neo-purple-100 hover:bg-opacity-5 focus:bg-neo-purple-100 focus:bg-opacity-5 transition-colors duration-300 rounded-md"
                 />
               </div>
               <button 
                 type="submit"
-                className="w-full neon-border-purple px-4 py-2 font-vt323 text-neo-purple-100 hover:bg-neo-purple-100 hover:bg-opacity-10 transition-all duration-300"
+                className="w-full neon-border-purple px-4 py-2 font-semibold text-neo-purple-100 hover:bg-neo-purple-100 hover:bg-opacity-10 transition-all duration-300 rounded-md"
               >
-                &gt;_SUBSCRIBE
+                Subscribe
               </button>
             </form>
           </div>
         </div>
         
         <div className="pt-8 mt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between">
-          <div className="font-code text-xs text-gray-500 mb-4 md:mb-0">
-            <GlitchText 
-              text="© 2025 Macky's Tech. All rights reserved." 
-              intensity="low"
-            />
+          <div className="text-xs text-gray-500 mb-4 md:mb-0">
+            © 2025 Macky's Tech. All rights reserved.
           </div>
           
           <div className="flex items-center space-x-6">
-            <a href="#" className="font-code text-xs text-gray-500 hover:text-neo-green-100 transition-colors duration-300">
+            <a href="#" className="text-xs text-gray-500 hover:text-neo-green-100 transition-colors duration-300">
               Privacy Policy
             </a>
-            <a href="#" className="font-code text-xs text-gray-500 hover:text-neo-green-100 transition-colors duration-300">
+            <a href="#" className="text-xs text-gray-500 hover:text-neo-green-100 transition-colors duration-300">
               Terms of Service
             </a>
-            <a href="#" className="font-code text-xs text-gray-500 hover:text-neo-green-100 transition-colors duration-300">
+            <a href="#" className="text-xs text-gray-500 hover:text-neo-green-100 transition-colors duration-300">
               Cookies
             </a>
           </div>

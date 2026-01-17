@@ -84,21 +84,15 @@ const Gallery = () => {
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-block mb-2">
-            <code className="text-xs bg-neo-purple-100 bg-opacity-10 text-neo-purple-100 px-2 py-1 rounded-sm">
-              $ ./gallery --show-memories
-            </code>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-vt323 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <GlitchText 
-              text="OUR GALLERY" 
-              className="text-white text-shadow-neon-purple"
+              text="Our Gallery" 
+              className="text-white"
               intensity="low"
             />
           </h2>
           
-          <p className="max-w-2xl mx-auto text-gray-400 font-code">
+          <p className="max-w-2xl mx-auto text-gray-400">
             A glimpse into our company culture, events, and the amazing people behind our success.
           </p>
         </div>
@@ -122,7 +116,7 @@ const Gallery = () => {
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <div className="flex items-center">
                     <ImageIcon className="h-5 w-5 text-neo-purple-100 mr-2" />
-                    <h3 className="font-vt323 text-white text-lg">{image.title}</h3>
+                    <h3 className="font-semibold text-white text-lg">{image.title}</h3>
                   </div>
                 </div>
               </div>

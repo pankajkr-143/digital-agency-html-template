@@ -4,27 +4,27 @@ export default {
   theme: {
     extend: {
       colors: {
-        'neo-black': '#0A0A0A',
-        'neo-dark': '#121212',
+        'neo-black': '#0f172a',
+        'neo-dark': '#1e293b',
         'neo-green': {
-          100: '#00FF41',
-          200: '#00CC33',
-          300: '#009926',
+          100: '#3b82f6',
+          200: '#2563eb',
+          300: '#1d4ed8',
         },
         'neo-blue': {
-          100: '#0FF0FC',
-          200: '#0CC0E0',
-          300: '#0990B0',
+          100: '#60a5fa',
+          200: '#3b82f6',
+          300: '#2563eb',
         },
         'neo-purple': {
-          100: '#BA01FF',
-          200: '#9500CC',
-          300: '#7A00A8',
+          100: '#6366f1',
+          200: '#4f46e5',
+          300: '#4338ca',
         },
       },
       fontFamily: {
-        'vt323': ['"VT323"', 'monospace'],
-        'code': ['"Fira Code"', 'monospace'],
+        'vt323': ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+        'code': ['ui-monospace', 'SFMono-Regular', 'Monaco', 'Consolas', 'monospace'],
       },
       backgroundImage: {
         'grid-pattern': 'linear-gradient(to right, #132b2f 1px, transparent 1px), linear-gradient(to bottom, #132b2f 1px, transparent 1px)',

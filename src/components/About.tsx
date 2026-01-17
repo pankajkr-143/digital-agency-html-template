@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Terminal } from 'lucide-react';
 import GlitchText from './effects/GlitchText';
 import TypewriterEffect from './effects/TypewriterEffect';
 
@@ -49,21 +48,15 @@ const About = () => {
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-block mb-2">
-            <code className="text-xs bg-neo-blue-100 bg-opacity-10 text-neo-blue-100 px-2 py-1 rounded-sm">
-              $ ./about --show-history
-            </code>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-vt323 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <GlitchText 
-              text="OUR JOURNEY" 
-              className="text-white text-shadow-neon-blue"
+              text="Our Journey" 
+              className="text-white"
               intensity="low"
             />
           </h2>
           
-          <p className="max-w-2xl mx-auto text-gray-400 font-code">
+          <p className="max-w-2xl mx-auto text-gray-400">
             Since our inception, we've been at the forefront of technological innovation, 
             consistently breaking barriers and redefining what's possible.
           </p>
@@ -79,13 +72,12 @@ const About = () => {
           >
             <div className="bg-neo-dark p-8 rounded-sm neon-border-blue h-full">
               <div className="flex items-center mb-6">
-                <Terminal className="h-5 w-5 text-neo-blue-100 mr-2" />
-                <div className="font-vt323 text-neo-blue-100 text-lg">
-                  &gt; About Macky's Tech
-                </div>
+                <h3 className="font-semibold text-neo-blue-100 text-lg">
+                  About Macky's Tech
+                </h3>
               </div>
               
-              <div className="terminal-text font-code text-sm space-y-4 text-gray-300">
+              <div className="text-sm space-y-4 text-gray-300">
                 <p>
                   <TypewriterEffect 
                     strings={[
@@ -148,10 +140,10 @@ const About = () => {
                 >
                   <div className="bg-neo-dark p-4 rounded-sm hover:neon-border-green transition-all duration-300">
                     <div className="flex items-center mb-2">
-                      <span className="font-vt323 text-neo-green-100 text-xl mr-3">{event.year}</span>
-                      <h3 className="font-code text-white text-lg">{event.title}</h3>
+                      <span className="font-bold text-neo-green-100 text-xl mr-3">{event.year}</span>
+                      <h3 className="text-white text-lg font-semibold">{event.title}</h3>
                     </div>
-                    <p className="font-code text-gray-400 text-sm">{event.description}</p>
+                    <p className="text-gray-400 text-sm">{event.description}</p>
                   </div>
                 </motion.div>
               ))}

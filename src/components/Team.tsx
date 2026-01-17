@@ -223,21 +223,15 @@ const Team = () => {
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-block mb-2">
-            <code className="text-xs bg-neo-blue-100 bg-opacity-10 text-neo-blue-100 px-2 py-1 rounded-sm">
-              $ ./team --list-members
-            </code>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-vt323 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <GlitchText 
-              text="OUR TEAM" 
-              className="text-white text-shadow-neon-blue"
+              text="Our Team" 
+              className="text-white"
               intensity="low"
             />
           </h2>
           
-          <p className="max-w-2xl mx-auto text-gray-400 font-code">
+          <p className="max-w-2xl mx-auto text-gray-400">
             Meet our team of experienced developers and technology experts who make the magic happen.
           </p>
         </div>
@@ -262,9 +256,9 @@ const Team = () => {
               </div>
               
               <div className="p-6">
-                <h3 className="font-vt323 text-xl text-white mb-1">{member.name}</h3>
-                <div className="text-neo-blue-100 font-code text-sm mb-3">{member.role}</div>
-                <p className="text-gray-400 font-code text-sm mb-4">{member.bio}</p>
+                <h3 className="font-semibold text-xl text-white mb-1">{member.name}</h3>
+                <div className="text-neo-blue-100 text-sm mb-3 font-medium">{member.role}</div>
+                <p className="text-gray-400 text-sm mb-4">{member.bio}</p>
                 
                 <div className="flex space-x-4">
                   <a 

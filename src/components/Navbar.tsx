@@ -42,7 +42,7 @@ const Dropdown: React.FC<DropdownProps> = ({ items, isOpen, setIsOpen }) => {
         <Link
           key={item.name}
           to={item.href}
-          className="block px-4 py-2 text-sm font-code text-gray-300 hover:bg-neo-green-100 hover:bg-opacity-10 hover:text-neo-green-100"
+          className="block px-4 py-2 text-sm text-gray-300 hover:bg-neo-green-100 hover:bg-opacity-10 hover:text-neo-green-100"
           onClick={() => setIsOpen(false)}
         >
           {item.name}
@@ -93,7 +93,7 @@ const CertificateVerificationModal = ({ isOpen, onClose }: { isOpen: boolean; on
         exit={{ scale: 0.9, opacity: 0 }}
       >
         <div className="flex justify-between items-center mb-6">
-          <h2 className="font-vt323 text-xl text-white">Verify Certificate</h2>
+          <h2 className="font-semibold text-xl text-white">Verify Certificate</h2>
           <button 
             onClick={onClose}
             className="text-gray-400 hover:text-neo-green-100"
@@ -106,7 +106,7 @@ const CertificateVerificationModal = ({ isOpen, onClose }: { isOpen: boolean; on
           {!showHistory ? (
             <>
               <div>
-                <label className="block font-code text-sm text-gray-400 mb-1">
+                <label className="block text-sm text-gray-400 mb-1">
                   Certificate Number
                 </label>
                 <input
@@ -116,7 +116,7 @@ const CertificateVerificationModal = ({ isOpen, onClose }: { isOpen: boolean; on
                     setCertificateNumber(e.target.value);
                     setVerificationStatus('idle');
                   }}
-                  className="w-full bg-neo-black border-0 focus:ring-0 focus:outline-none font-code text-gray-300 px-4 py-3 neon-border-green"
+                  className="w-full bg-neo-black border-0 focus:ring-0 focus:outline-none text-gray-300 px-4 py-3 neon-border-green"
                   placeholder="Enter certificate number"
                 />
               </div>
@@ -125,7 +125,7 @@ const CertificateVerificationModal = ({ isOpen, onClose }: { isOpen: boolean; on
                 <button
                   onClick={handleVerify}
                   disabled={verificationStatus === 'verifying' || !certificateNumber}
-                  className="flex-1 neon-border-green px-4 py-3 font-vt323 text-neo-green-100 hover:bg-neo-green-100 hover:bg-opacity-10 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-1 neon-border-green px-4 py-3 font-semibold text-neo-green-100 hover:bg-neo-green-100 hover:bg-opacity-10 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {verificationStatus === 'verifying' ? (
                     <span className="flex items-center justify-center">
@@ -139,7 +139,7 @@ const CertificateVerificationModal = ({ isOpen, onClose }: { isOpen: boolean; on
                 
                 <button
                   onClick={() => setShowHistory(true)}
-                  className="neon-border-blue px-4 py-3 font-vt323 text-neo-blue-100 hover:bg-neo-blue-100 hover:bg-opacity-10 transition-all duration-300"
+                  className="neon-border-blue px-4 py-3 font-semibold text-neo-blue-100 hover:bg-neo-blue-100 hover:bg-opacity-10 transition-all duration-300"
                 >
                   HISTORY
                 </button>
@@ -149,9 +149,9 @@ const CertificateVerificationModal = ({ isOpen, onClose }: { isOpen: boolean; on
                 <div className="mt-6 p-4 bg-neo-black rounded-sm neon-border-green">
                   <div className="flex items-center mb-4">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse mr-2"></div>
-                    <span className="font-vt323 text-neo-green-100">Certificate Verified</span>
+                    <span className="font-semibold text-neo-green-100">Certificate Verified</span>
                   </div>
-                  <div className="space-y-2 font-code text-sm">
+                  <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="text-gray-400">Name:</span>
                       <span className="text-white">{certificateData.name}</span>
@@ -186,7 +186,7 @@ const CertificateVerificationModal = ({ isOpen, onClose }: { isOpen: boolean; on
 
               {verificationStatus === 'invalid' && (
                 <div className="mt-4 p-4 bg-red-900 bg-opacity-20 rounded-sm border border-red-500">
-                  <p className="text-red-400 font-code text-sm">
+                  <p className="text-red-400 text-sm">
                     Invalid certificate number. Please check and try again.
                   </p>
                 </div>
@@ -195,7 +195,7 @@ const CertificateVerificationModal = ({ isOpen, onClose }: { isOpen: boolean; on
           ) : (
             <div className="space-y-4">
               <div className="flex justify-between items-center mb-4">
-                <h3 className="font-vt323 text-lg text-white">Verification History</h3>
+                <h3 className="font-semibold text-lg text-white">Verification History</h3>
                 <button
                   onClick={() => setShowHistory(false)}
                   className="text-neo-blue-100 hover:text-neo-blue-200 transition-colors"
@@ -207,7 +207,7 @@ const CertificateVerificationModal = ({ isOpen, onClose }: { isOpen: boolean; on
               <div className="space-y-4 max-h-96 overflow-y-auto pr-2">
                 {verificationHistory.map((cert, index) => (
                   <div key={index} className="p-4 bg-neo-black rounded-sm neon-border-blue">
-                    <div className="space-y-2 font-code text-sm">
+                    <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
                         <span className="text-gray-400">Name:</span>
                         <span className="text-white">{cert.name}</span>
@@ -227,7 +227,7 @@ const CertificateVerificationModal = ({ isOpen, onClose }: { isOpen: boolean; on
                 ))}
                 
                 {verificationHistory.length === 0 && (
-                  <p className="text-gray-400 font-code text-sm text-center py-4">
+                  <p className="text-gray-400 text-sm text-center py-4">
                     No verification history found
                   </p>
                 )}
@@ -347,8 +347,8 @@ const Navbar = () => {
                   className="h-8 w-auto"
                 />
                 <div className="ml-3">
-                  <span className="text-xl font-vt323 text-neo-green-100">Macky's Tech</span>
-                  <span className="block text-xs font-code text-gray-400">TECHNOLOGY</span>
+                  <span className="text-xl font-bold text-neo-green-100">Macky's Tech</span>
+                  <span className="block text-xs text-gray-400">TECHNOLOGY</span>
                 </div>
               </Link>
             </div>
@@ -370,7 +370,7 @@ const Navbar = () => {
                     {link.dropdown ? (
                       <div className="relative">
                         <button
-                          className="group relative font-code text-sm hover:text-neo-green-100 text-gray-300 px-3 py-2 transition-colors duration-300 flex items-center"
+                          className="group relative text-sm hover:text-neo-green-100 text-gray-300 px-3 py-2 transition-colors duration-300 flex items-center"
                           onClick={() => {
                             if (link.name === 'Careers') {
                               setCareersDropdownOpen(!careersDropdownOpen);
@@ -394,7 +394,7 @@ const Navbar = () => {
                     ) : (
                       <Link
                         to={link.href}
-                        className="group relative font-code text-sm hover:text-neo-green-100 text-gray-300 px-3 py-2 transition-colors duration-300"
+                        className="group relative text-sm hover:text-neo-green-100 text-gray-300 px-3 py-2 transition-colors duration-300"
                       >
                         {link.name}
                         <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-neo-green-100 transition-all duration-300 group-hover:w-full"></div>
@@ -411,14 +411,14 @@ const Navbar = () => {
                   >
                     <Link
                       to="/profile"
-                      className="neon-border-purple px-4 py-1 rounded-sm font-vt323 text-neo-purple-100 hover:bg-neo-purple-100 hover:bg-opacity-10 transition-all duration-300 flex items-center"
+                      className="neon-border-purple px-4 py-1 rounded-sm font-semibold text-neo-purple-100 hover:bg-neo-purple-100 hover:bg-opacity-10 transition-all duration-300 flex items-center"
                     >
                       <User className="h-4 w-4 mr-2" />
                       {currentUser.name}
                     </Link>
                     <button
                       onClick={handleLogout}
-                      className="font-code text-sm text-gray-400 hover:text-neo-red-100"
+                      className="text-sm text-gray-400 hover:text-red-400"
                     >
                       Logout
                     </button>
@@ -437,7 +437,7 @@ const Navbar = () => {
                 
                 <motion.button
                   onClick={() => setIsVerifyModalOpen(true)}
-                  className="neon-border-blue px-4 py-1 rounded-full font-vt323 text-neo-blue-100 hover:bg-neo-blue-100 hover:bg-opacity-10 transition-all duration-300 flex items-center"
+                  className="neon-border-blue px-4 py-1 rounded-full font-semibold text-neo-blue-100 hover:bg-neo-blue-100 hover:bg-opacity-10 transition-all duration-300 flex items-center"
                   variants={itemVariants}
                   whileHover={{ scale: 1.05 }}
                 >
@@ -454,11 +454,11 @@ const Navbar = () => {
 
                 <motion.Link
                   to="/contact"
-                  className="neon-border-green px-4 py-1 rounded-sm font-vt323 text-neo-green-100 hover:bg-neo-green-100 hover:bg-opacity-10 transition-all duration-300"
+                  className="neon-border-green px-4 py-1 rounded-sm font-semibold text-neo-green-100 hover:bg-neo-green-100 hover:bg-opacity-10 transition-all duration-300"
                   variants={itemVariants}
                   whileHover={{ scale: 1.05 }}
                 >
-                  &gt;_CONNECT
+                  CONTACT US
                 </motion.Link>
               </motion.div>
             </div>
@@ -492,7 +492,7 @@ const Navbar = () => {
                   {link.dropdown ? (
                     <>
                       <button
-                        className="w-full flex items-center justify-between px-3 py-2 text-base font-code text-gray-300 hover:text-neo-green-100 border-l-2 border-transparent hover:border-neo-green-100 transition-all duration-300"
+                        className="w-full flex items-center justify-between px-3 py-2 text-base text-gray-300 hover:text-neo-green-100 border-l-2 border-transparent hover:border-neo-green-100 transition-all duration-300"
                         onClick={() => {
                           if (link.name === 'Careers') {
                             setCareersDropdownOpen(!careersDropdownOpen);
@@ -503,7 +503,7 @@ const Navbar = () => {
                           }
                         }}
                       >
-                        <span>&gt;_ {link.name}</span>
+                        <span>{link.name}</span>
                         <ChevronDown className="h-4 w-4" />
                       </button>
                       {((link.name === 'Careers' && careersDropdownOpen) ||
@@ -513,14 +513,14 @@ const Navbar = () => {
                             <Link
                               key={item.name}
                               to={item.href}
-                              className="block px-3 py-2 text-sm font-code text-gray-400 hover:text-neo-green-100 transition-all duration-300"
+                              className="block px-3 py-2 text-sm text-gray-400 hover:text-neo-green-100 transition-all duration-300"
                               onClick={() => {
                                 setIsOpen(false);
                                 setCareersDropdownOpen(false);
                                 setAboutDropdownOpen(false);
                               }}
                             >
-                              &gt;_ {item.name}
+                              {item.name}
                             </Link>
                           ))}
                         </div>
@@ -529,10 +529,10 @@ const Navbar = () => {
                   ) : (
                     <Link
                       to={link.href}
-                      className="block px-3 py-2 text-base font-code text-gray-300 hover:text-neo-green-100 border-l-2 border-transparent hover:border-neo-green-100 transition-all duration-300"
+                      className="block px-3 py-2 text-base text-gray-300 hover:text-neo-green-100 border-l-2 border-transparent hover:border-neo-green-100 transition-all duration-300"
                       onClick={() => setIsOpen(false)}
                     >
-                      &gt;_ {link.name}
+                      {link.name}
                     </Link>
                   )}
                 </div>
@@ -542,19 +542,19 @@ const Navbar = () => {
                 <>
                   <Link
                     to="/profile"
-                    className="block px-3 py-2 text-base font-code text-neo-purple-100 hover:text-neo-purple-200 border-l-2 border-transparent hover:border-neo-purple-100 transition-all duration-300"
+                    className="block px-3 py-2 text-base text-neo-purple-100 hover:text-neo-purple-200 border-l-2 border-transparent hover:border-neo-purple-100 transition-all duration-300"
                     onClick={() => setIsOpen(false)}
                   >
-                    &gt;_ Profile ({currentUser.name})
+                    Profile ({currentUser.name})
                   </Link>
                   <button
                     onClick={() => {
                       handleLogout();
                       setIsOpen(false);
                     }}
-                    className="block w-full text-left px-3 py-2 text-base font-code text-gray-400 hover:text-red-500 border-l-2 border-transparent hover:border-red-500 transition-all duration-300"
+                    className="block w-full text-left px-3 py-2 text-base text-gray-400 hover:text-red-500 border-l-2 border-transparent hover:border-red-500 transition-all duration-300"
                   >
-                    &gt;_ Logout
+                    Logout
                   </button>
                 </>
               ) : (
@@ -563,9 +563,9 @@ const Navbar = () => {
                     setIsOpen(false);
                     setIsLoginModalOpen(true);
                   }}
-                  className="block w-full text-left px-3 py-2 text-base font-code text-neo-purple-100 hover:text-neo-purple-200 border-l-2 border-transparent hover:border-neo-purple-100 transition-all duration-300"
+                  className="block w-full text-left px-3 py-2 text-base text-neo-purple-100 hover:text-neo-purple-200 border-l-2 border-transparent hover:border-neo-purple-100 transition-all duration-300"
                 >
-                  &gt;_ Login
+                  Login
                 </button>
               )}
 
@@ -574,20 +574,20 @@ const Navbar = () => {
                   setIsOpen(false);
                   setIsVerifyModalOpen(true);
                 }}
-                className="w-full px-3 py-2 text-base font-code text-neo-blue-100 hover:text-neo-blue-100 border-l-2 border-transparent hover:border-neo-blue-100 transition-all duration-300 flex items-center"
+                className="w-full px-3 py-2 text-base text-neo-blue-100 hover:text-neo-blue-100 border-l-2 border-transparent hover:border-neo-blue-100 transition-all duration-300 flex items-center"
               >
                 <Search className="h-4 w-4 mr-2" />
                 VERIFY CERTIFICATE
               </button>
               
               <div className="flex items-center justify-center px-3 py-2 mt-4">
-                <span className="text-sm font-code text-gray-400 mr-3">Theme:</span>
+                <span className="text-sm text-gray-400 mr-3">Theme:</span>
                 <ThemeToggle size="sm" />
               </div>
               
               <Link
                 to="/contact"
-                className="block px-4 py-2 mt-4 text-center neon-border-green font-vt323 text-neo-green-100 hover:bg-neo-green-100 hover:bg-opacity-10 transition-all duration-300"
+                className="block px-4 py-2 mt-4 text-center neon-border-green font-semibold text-neo-green-100 hover:bg-neo-green-100 hover:bg-opacity-10 transition-all duration-300"
                 onClick={() => setIsOpen(false)}
               >
                 &gt;_CONNECT

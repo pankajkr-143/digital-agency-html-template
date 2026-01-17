@@ -36,21 +36,15 @@ const Testimonials = () => {
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-block mb-2">
-            <code className="text-xs bg-neo-purple-100 bg-opacity-10 text-neo-purple-100 px-2 py-1 rounded-sm">
-              $ ./testimonials --show-feedback
-            </code>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-vt323 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <GlitchText 
-              text="CLIENT FEEDBACK" 
-              className="text-white text-shadow-neon-purple"
+              text="Client Feedback" 
+              className="text-white"
               intensity="low"
             />
           </h2>
           
-          <p className="max-w-2xl mx-auto text-gray-400 font-code">
+          <p className="max-w-2xl mx-auto text-gray-400">
             Don't just take our word for it. Here's what our clients have to say about our services.
           </p>
         </div>
@@ -75,7 +69,7 @@ const Testimonials = () => {
               </div>
               
               <blockquote className="mb-6">
-                <p className="text-gray-400 font-code text-sm italic">
+                <p className="text-gray-400 text-sm italic">
                   "{testimonial.content}"
                 </p>
               </blockquote>
@@ -87,9 +81,9 @@ const Testimonials = () => {
                   className="w-12 h-12 rounded-full object-cover mr-4"
                 />
                 <div>
-                  <div className="font-vt323 text-white">{testimonial.name}</div>
-                  <div className="text-neo-purple-100 font-code text-sm">{testimonial.role}</div>
-                  <div className="text-gray-500 font-code text-xs">{testimonial.company}</div>
+                  <div className="font-semibold text-white">{testimonial.name}</div>
+                  <div className="text-neo-purple-100 text-sm font-medium">{testimonial.role}</div>
+                  <div className="text-gray-500 text-xs">{testimonial.company}</div>
                 </div>
               </div>
             </motion.div>
