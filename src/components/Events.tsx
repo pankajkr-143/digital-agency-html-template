@@ -60,15 +60,9 @@ const Events = () => {
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-block mb-2">
-            <code className="text-xs bg-neo-blue-100 bg-opacity-10 text-neo-blue-100 px-2 py-1 rounded-sm">
-              $ ./events --list-upcoming
-            </code>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-vt323 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <GlitchText 
-              text="EVENTS & HACKATHONS" 
+              text="Events & Hackathons" 
               className="text-white text-shadow-neon-blue"
               intensity="low"
             />
@@ -102,7 +96,7 @@ const Events = () => {
               </div>
               
               <div className="p-6">
-                <h3 className="font-vt323 text-xl text-white mb-3">{event.title}</h3>
+                <h3 className="font-semibold text-xl text-white mb-3">{event.title}</h3>
                 
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center text-gray-400 font-code text-sm">
@@ -127,7 +121,7 @@ const Events = () => {
                   href={event.registrationLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-full neon-border-blue px-4 py-2 font-vt323 text-neo-blue-100 hover:bg-neo-blue-100 hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center group ${
+                  className={`w-full neon-border-blue px-4 py-2 font-semibold text-neo-blue-100 hover:bg-neo-blue-100 hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center group ${
                     event.status === 'Registration Closed' ? 'opacity-50 cursor-not-allowed' : ''
                   }`}
                   onClick={(e) => {

@@ -72,7 +72,7 @@ const RotatingCube = () => {
               size={48} 
               className={`text-neo-green-100 ${hovering ? 'animate-pulse-glow' : ''}`} 
             />
-            <span className="mt-2 font-vt323 text-neo-green-100 text-xl">{label}</span>
+            <span className="mt-2 font-semibold text-neo-green-100 text-xl">{label}</span>
           </div>
         ))}
       </div>

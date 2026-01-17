@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Terminal } from 'lucide-react';
+import { Send } from 'lucide-react';
 import GlitchText from './effects/GlitchText';
 import TypewriterEffect from './effects/TypewriterEffect';
 
@@ -75,23 +75,17 @@ const Contact = () => {
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-block mb-2">
-            <code className="text-xs bg-neo-green-100 bg-opacity-10 text-neo-green-100 px-2 py-1 rounded-sm">
-              $ ./connect --initialize-communication
-            </code>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-vt323 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <GlitchText 
-              text="ESTABLISH CONNECTION" 
-              className="text-white text-shadow-neon-green"
+              text="Get In Touch" 
+              className="text-white"
               intensity="low"
             />
           </h2>
           
-          <p className="max-w-2xl mx-auto text-gray-400 font-code">
-            Ready to explore how our technology can revolutionize your operations?
-            Initiate contact, and our team will respond within 24 hours.
+          <p className="max-w-2xl mx-auto text-gray-400">
+            Ready to explore how our technology can transform your business?
+            Contact us, and our team will respond within 24 hours.
           </p>
         </div>
         
@@ -105,15 +99,14 @@ const Contact = () => {
           >
             <div className="bg-neo-dark p-8 rounded-sm h-full">
               <div className="flex items-center mb-6">
-                <Terminal className="h-5 w-5 text-neo-green-100 mr-2" />
-                <div className="font-vt323 text-neo-green-100 text-lg">
-                  &gt; Connection Protocol
-                </div>
+                <h3 className="font-semibold text-neo-green-100 text-lg">
+                  Contact Form
+                </h3>
               </div>
               
               {isSubmitted ? (
                 <motion.div 
-                  className="terminal-text font-code text-sm space-y-4"
+                  className="text-sm space-y-4"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
@@ -145,8 +138,8 @@ const Contact = () => {
                   )}
                   
                   <div>
-                    <label htmlFor="name" className="font-code text-xs text-gray-400 mb-1 block">
-                      &gt; IDENTIFIER:
+                    <label htmlFor="name" className="text-xs text-gray-400 mb-1 block">
+                      Name:
                     </label>
                     <input
                       ref={nameInputRef}
@@ -162,8 +155,8 @@ const Contact = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="font-code text-xs text-gray-400 mb-1 block">
-                      &gt; COMM_CHANNEL:
+                    <label htmlFor="email" className="text-xs text-gray-400 mb-1 block">
+                      Email:
                     </label>
                     <input
                       type="email"
@@ -200,8 +193,8 @@ const Contact = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="font-code text-xs text-gray-400 mb-1 block">
-                      &gt; TRANSMISSION:
+                    <label htmlFor="message" className="text-xs text-gray-400 mb-1 block">
+                      Message:
                     </label>
                     <textarea
                       id="message"
@@ -218,7 +211,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full neon-border-green px-6 py-3 flex items-center justify-center font-vt323 text-neo-green-100 hover:bg-neo-green-100 hover:bg-opacity-10 transition-all duration-300 text-lg group"
+                    className="w-full neon-border-green px-6 py-3 flex items-center justify-center font-semibold text-neo-green-100 hover:bg-neo-green-100 hover:bg-opacity-10 transition-all duration-300 text-lg group"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center">
@@ -246,15 +239,14 @@ const Contact = () => {
           >
             <div className="bg-neo-dark p-8 rounded-sm h-full">
               <div className="flex items-center mb-6">
-                <Terminal className="h-5 w-5 text-neo-blue-100 mr-2" />
-                <div className="font-vt323 text-neo-blue-100 text-lg">
-                  &gt; Connection Nodes
-                </div>
+                <h3 className="font-semibold text-neo-blue-100 text-lg">
+                  Contact Information
+                </h3>
               </div>
               
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-vt323 text-xl text-white mb-2">Global Headquarters</h3>
+                  <h3 className="font-semibold text-xl text-white mb-2">Global Headquarters</h3>
                   <p className="font-code text-gray-400 text-sm">
                     20B Gupta Colony<br />
                     Anand Nagar, Bhopal, MP 462022<br />
@@ -263,7 +255,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <h3 className="font-vt323 text-xl text-white mb-2">Satellite Offices</h3>
+                  <h3 className="font-semibold text-xl text-white mb-2">Satellite Offices</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="font-code text-gray-400 text-sm">
                       <div className="text-neo-green-100 mb-1">India</div>
@@ -281,7 +273,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <h3 className="font-vt323 text-xl text-white mb-2">Direct Channels</h3>
+                  <h3 className="font-semibold text-xl text-white mb-2">Direct Channels</h3>
                   <div className="space-y-2 font-code text-sm">
                     <div className="flex items-center group">
                       <div className="w-24 text-gray-500">General:</div>
@@ -309,7 +301,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="pt-4 border-t border-gray-800">
-                  <h3 className="font-vt323 text-xl text-white mb-3">Response Time</h3>
+                  <h3 className="font-semibold text-xl text-white mb-3">Response Time</h3>
                   <div className="font-code text-sm text-gray-400">
                     <p>All inquiries receive a response within 24 hours during business days.</p>
                     <div className="flex items-center mt-2">

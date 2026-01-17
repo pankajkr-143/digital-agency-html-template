@@ -78,15 +78,9 @@ const TechStack = () => {
         
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-block mb-2">
-            <code className="text-xs bg-neo-blue-100 bg-opacity-10 text-neo-blue-100 px-2 py-1 rounded-sm">
-              $ ./tech --display-stack
-            </code>
-          </div>
-            
-          <h2 className="text-4xl md:text-5xl font-vt323 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <GlitchText 
-              text="TECH STACK" 
+              text="Tech Stack" 
               className="text-white text-shadow-neon-blue"
               intensity="low"
             />
@@ -119,7 +113,7 @@ const TechStack = () => {
           >
             <div className="flex items-center mb-4">
               <selectedTech.icon className={`h-6 w-6 text-${selectedTech.color} mr-3`} />
-              <h3 className="font-vt323 text-xl text-white">{selectedTech.title}</h3>
+              <h3 className="font-semibold text-xl text-white">{selectedTech.title}</h3>
             </div>
             
             <p className="text-gray-400 font-code text-sm mb-4">

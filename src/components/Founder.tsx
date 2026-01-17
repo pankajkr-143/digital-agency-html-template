@@ -9,13 +9,7 @@ const Founder = () => {
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-block mb-2">
-            <code className="text-xs bg-neo-green-100 bg-opacity-10 text-neo-green-100 px-2 py-1 rounded-sm">
-              $ ./about --show-founder
-            </code>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-vt323 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <GlitchText 
               text="MEET OUR FOUNDER" 
               className="text-white text-shadow-neon-green"
@@ -48,7 +42,7 @@ const Founder = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-vt323 text-3xl theme-text-primary mb-4">Pankaj Gupta (Macky)</h3>
+            <h3 className="font-bold text-3xl theme-text-primary mb-4">Pankaj Gupta (Macky)</h3>
             <div className="theme-accent-primary font-code text-lg mb-6">Founder & CEO</div>
             
             <div className="space-y-4 font-code theme-text-secondary">
@@ -120,7 +114,7 @@ const Founder = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="font-vt323 text-3xl theme-text-primary mb-4">Ayush K Singh</h3>
+              <h3 className="font-bold text-3xl theme-text-primary mb-4">Ayush K Singh</h3>
               <div className="theme-accent-primary font-code text-lg mb-6">Co-Founder</div>
               
               <div className="space-y-4 font-code theme-text-secondary">

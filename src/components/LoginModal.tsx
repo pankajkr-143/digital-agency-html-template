@@ -35,7 +35,7 @@ const LoginModal = ({ isOpen, onClose, onSuccess }: LoginModalProps) => {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-neo-dark p-6 rounded-sm neon-border-blue max-w-md w-full mx-4">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="font-vt323 text-xl text-white">Login</h2>
+          <h2 className="font-semibold text-xl text-white">Login</h2>
           <button 
             onClick={onClose}
             className="text-gray-400 hover:text-neo-blue-100"
@@ -79,7 +79,7 @@ const LoginModal = ({ isOpen, onClose, onSuccess }: LoginModalProps) => {
           
           <button
             type="submit"
-            className="w-full neon-border-blue px-4 py-3 font-vt323 text-neo-blue-100 hover:bg-neo-blue-100 hover:bg-opacity-10 transition-all duration-300"
+            className="w-full neon-border-blue px-4 py-3 font-semibold text-neo-blue-100 hover:bg-neo-blue-100 hover:bg-opacity-10 transition-all duration-300"
           >
             LOGIN
           </button>

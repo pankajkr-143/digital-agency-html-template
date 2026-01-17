@@ -426,7 +426,7 @@ const Navbar = () => {
                 ) : (
                   <motion.button
                     onClick={() => setIsLoginModalOpen(true)}
-                    className="neon-border-purple px-4 py-1 rounded-sm font-vt323 text-neo-purple-100 hover:bg-neo-purple-100 hover:bg-opacity-10 transition-all duration-300 flex items-center"
+                    className="neon-border-purple px-4 py-1 rounded-sm font-semibold text-neo-purple-100 hover:bg-neo-purple-100 hover:bg-opacity-10 transition-all duration-300 flex items-center"
                     variants={itemVariants}
                     whileHover={{ scale: 1.05 }}
                   >

@@ -83,15 +83,9 @@ const Projects = () => {
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-block mb-2">
-            <code className="text-xs bg-neo-green-100 bg-opacity-10 text-neo-green-100 px-2 py-1 rounded-sm">
-              $ ./projects --list-featured
-            </code>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-vt323 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <GlitchText 
-              text="FEATURED PROJECTS" 
+              text="Featured Projects" 
               className="text-white text-shadow-neon-green"
               intensity="low"
             />
@@ -122,7 +116,7 @@ const Projects = () => {
               </div>
               
               <div className="p-6">
-                <h3 className="font-vt323 text-xl text-white mb-2">{project.title}</h3>
+                <h3 className="font-semibold text-xl text-white mb-2">{project.title}</h3>
                 <p className="text-gray-400 font-code text-sm mb-4">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">

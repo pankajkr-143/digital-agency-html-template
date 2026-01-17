@@ -17,7 +17,7 @@ const ServiceCard = ({ icon: Icon, title, description, color, delay = 0 }) => {
       <div className={`text-${color} mb-4 transition-transform duration-300 group-hover:scale-110`}>
         <Icon className="h-8 w-8" />
       </div>
-      <h3 className="font-vt323 text-xl text-white mb-2">{title}</h3>
+      <h3 className="font-semibold text-xl text-white mb-2">{title}</h3>
       <p className="text-gray-400 font-code text-sm">{description}</p>
       <div className="mt-4">
         <button className={`text-${color} font-code text-sm group-hover:underline`}>
@@ -74,13 +74,7 @@ const Services = () => {
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-block mb-2">
-            <code className="text-xs bg-neo-green-100 bg-opacity-10 text-neo-green-100 px-2 py-1 rounded-sm">
-              $ ./services --list-all
-            </code>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-vt323 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <GlitchText 
               text="OUR SERV_CES" 
               className="text-white text-shadow-neon-green"

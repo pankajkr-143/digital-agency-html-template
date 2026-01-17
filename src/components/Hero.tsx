@@ -1,8 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Typed from 'typed.js';
-import { ChevronDown, Terminal, Shield, Cpu, Code, Lock } from 'lucide-react';
-import MatrixRain from './effects/MatrixRain';
+import { ChevronDown, Shield, Cpu, Code, Lock } from 'lucide-react';
 
 const Hero = () => {
   const el = useRef<HTMLSpanElement>(null);
@@ -12,18 +11,18 @@ const Hero = () => {
     if (el.current) {
       typedRef.current = new Typed(el.current, {
         strings: [
-          'Web/App Solution(Developer for Orgs.);',
-          'System.infiltrate("secure_network");',
-          'AI.analyze("neural_patterns");',
-          'Quantum.decrypt("encrypted_data");',
-          'Future.initialize("innovation");'
+          'Web & Mobile Application Development',
+          'Enterprise IT Solutions & Consulting',
+          'AI & Machine Learning Services',
+          'Cloud Infrastructure & DevOps',
+          'Innovative Technology Solutions'
         ],
         typeSpeed: 50,
         backSpeed: 30,
         backDelay: 1500,
         loop: true,
         showCursor: true,
-        cursorChar: '_'
+        cursorChar: '|'
       });
     }
     
@@ -43,18 +42,16 @@ const Hero = () => {
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neo-black">
-      <MatrixRain />
-      
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neo-black/50 to-neo-black"></div>
       
       <motion.div 
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.1 }}
+        animate={{ opacity: 0.15 }}
         transition={{ duration: 2 }}
         className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1624895/pexels-photo-1624895.jpeg')] bg-cover bg-center"
       ></motion.div>
       
-      <div className="absolute inset-0 bg-grid-pattern bg-[length:30px_30px] opacity-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 via-transparent to-blue-900/10"></div>
       
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
@@ -64,21 +61,21 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="mb-8 inline-flex items-center justify-center space-x-2 bg-neo-dark/80 backdrop-blur-sm px-4 py-2 rounded-full border border-neo-green-100/20"
           >
-            <Terminal className="h-4 w-4 text-neo-green-100" />
-            <code className="text-sm text-neo-green-100">
-              ./initialize_system --mode=quantum
-            </code>
+            <Code className="h-4 w-4 text-neo-green-100" />
+            <span className="text-sm text-neo-green-100">
+              Transforming Business Through Technology
+            </span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-6xl md:text-7xl font-vt323 mb-6 text-white text-shadow-neon-green"
+            className="text-4xl sm:text-6xl md:text-7xl font-bold mb-6 text-white"
           >
-            NEXT-GEN
-            <span className="text-neo-green-100"> IT/CYBER/Ai </span>
-            SOLUTIONS
+            Professional
+            <span className="text-neo-green-100"> IT Solutions </span>
+            & Services
           </motion.h1>
 
           <motion.div
@@ -88,7 +85,7 @@ const Hero = () => {
             className="mb-8"
           >
             <div className="bg-neo-dark/80 backdrop-blur-sm p-4 rounded-lg inline-block">
-              <span ref={el} className="text-lg sm:text-xl font-code text-neo-green-100"></span>
+              <span ref={el} className="text-lg sm:text-xl text-neo-green-100"></span>
             </div>
           </motion.div>
 
@@ -108,7 +105,7 @@ const Hero = () => {
               >
                 <div className="flex flex-col items-center space-y-2">
                   <div className="text-neo-green-100">{feature.icon}</div>
-                  <span className="text-sm font-code text-gray-400">{feature.text}</span>
+                  <span className="text-sm text-gray-400">{feature.text}</span>
                 </div>
               </motion.div>
             ))}
@@ -122,15 +119,15 @@ const Hero = () => {
           >
             <a 
               href="#services" 
-              className="neon-border-green px-8 py-3 rounded-sm font-vt323 text-neo-green-100 hover:bg-neo-green-100 hover:bg-opacity-10 transition-all duration-300 text-lg backdrop-blur-sm"
+              className="neon-border-green px-8 py-3 rounded-md font-semibold text-neo-green-100 hover:bg-neo-green-100 hover:bg-opacity-10 transition-all duration-300 text-lg backdrop-blur-sm"
             >
-              &gt;_INITIALIZE_SYSTEM
+              Our Services
             </a>
             <a 
               href="#about" 
-              className="px-8 py-3 font-vt323 text-white border border-white hover:border-neo-blue-100 hover:text-neo-blue-100 transition-all duration-300 text-lg group flex items-center backdrop-blur-sm"
+              className="px-8 py-3 font-semibold text-white border border-white hover:border-neo-blue-100 hover:text-neo-blue-100 transition-all duration-300 text-lg group flex items-center backdrop-blur-sm rounded-md"
             >
-              &gt;_ACCESS_DATA
+              Learn More
               <ChevronDown className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-y-1" />
             </a>
           </motion.div>
