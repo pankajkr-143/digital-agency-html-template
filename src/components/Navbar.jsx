@@ -136,8 +136,8 @@ const Navbar = () => {
                   exit={{ opacity: 0 }}
                   className="absolute top-10 left-0 w-56 bg-[#0b0f1a] border border-white/10 rounded-xl p-4 space-y-1 shadow-xl"
                 >
-                  <NavLink to="/" className={dropdownItem}>AWS</NavLink>
-                  <NavLink to="/" className={dropdownItem}>Traning</NavLink>
+                  <NavLink to="https://training.mackystech.in/aws-cloud" className={dropdownItem}>AWS</NavLink>
+                  <NavLink to="https://training.mackystech.in/" className={dropdownItem}>Traning</NavLink>
                 </motion.div>
               )}
             </AnimatePresence>

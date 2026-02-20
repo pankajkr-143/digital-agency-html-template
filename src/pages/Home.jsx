@@ -7,6 +7,8 @@ import Testimonials from "../components/Testimonials";
 import HeroSection from "../components/HeroSection";
 import SmoothScroll from "../components/SmoothScroll";
 import Spotlight from "../components/Spotlight";
+import MeetFounder from "../components/MeetFounder";
+import SEOContent from "../components/SEOContent";
 
 export default function Home({ setShowNavbar }) {
 
@@ -49,6 +51,8 @@ export default function Home({ setShowNavbar }) {
         <Process />
         <WhyChooseUs />
         <Testimonials />
+        <MeetFounder />
+        <SEOContent />
 
         {/* ✅ Spotlight only Desktop */}
         {isDesktop && <Spotlight />}
