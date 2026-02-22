@@ -2,20 +2,112 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "Home Service App",
+    desc:
+      "An on-demand home service platform for booking electricians, plumbers, cleaners, and other professionals.",
+    img:
+      "https://i.ibb.co/pHrvMgw/image.png",
+    tech: ["React Native", "Node.js", "MongoDB", "Firebase"],
+    link: "https://play.google.com/store/apps/details?id=com.smartersvision.home_services",
+  },
+  {
+    title: "Order Management System",
+    desc:
+      "A centralized order management system to track orders, inventory, invoices, and customer data efficiently.",
+    img:
+      "https://i.ibb.co/k60Ms5xt/image.png",
+    tech: ["Next.js", "Express.js", "MySQL", "AWS"],
+    link: "https://laundry.blarve.com/",
+  },
+  {
+    title: "Quick Delivery App",
+    desc:
+      "A hyperlocal quick delivery application for fast delivery of parcels and essentials within minutes.",
+    img:
+      "https://i.ibb.co/qMnMWFN0/image.png",
+    tech: ["Flutter", "Node.js", "MongoDB", "Google Maps API"],
+    link: "https://play.google.com/store/apps/details?id=com.divinetechs.dtbasket&client_id=329732617.1755090634&session_id=1771731931",
+  },
+  {
+    title: "E-Commerce App",
+    desc:
+      "A full-featured e-commerce platform with product listings, cart, payment gateway integration, and order tracking.",
+    img:
+      "https://i.ibb.co/gL9yyxYs/image.png",
+    tech: ["Next.js", "Laravel", "MySQL", "Stripe"],
+    link: "https://omnimart.geniusdevs.com/",
+  },
+  {
+    title: "Grocery App",
+    desc:
+      "An online grocery shopping app with real-time inventory, doorstep delivery, and digital payments.",
+    img:
+      "https://images.unsplash.com/photo-1542838132-92c53300491e",
+    tech: ["React Native", "Node.js", "MongoDB", "Razorpay"],
+    link: "https://play.google.com/store/apps/details?id=com.buildapponline.grocerystore",
+  },
+  {
+    title: "Food Delivery App",
+    desc:
+      "A food ordering and delivery app with restaurant listings, live tracking, and multiple payment options.",
+    img:
+      "https://i.ibb.co/jPzbLRw1/image.png",
+    tech: ["Flutter", "Django", "PostgreSQL", "Firebase"],
+    link: "https://drive.google.com/drive/folders/1cXsKn9Lv60zpOiGeCNJnEDfDqtuY3iUe",
+  },
+  {
+    title: "Taxi Booking App",
+    desc:
+      "A ride-hailing application with real-time driver tracking, fare calculation, and secure payment integration.",
+    img:
+      "https://i.ibb.co/Ps37MX54/image.png",
+    tech: ["React Native", "Node.js", "MongoDB", "Google Maps API"],
+    link: "https://play.google.com/store/apps/details?hl=en_IN&id=com.sizh.rideon.driver.taxiapp",
+  },
+  {
+    title: "Astrology App",
+    desc:
+      "An astrology consultation app offering horoscope readings, live chat with astrologers, and kundli generation.",
+    img:
+      "https://i.ibb.co/wrj7fDp4/image.png",
+    tech: ["Flutter", "Laravel", "MySQL", "Firebase"],
+    link: "https://astro.ftafat.in/",
+  },
+  {
+    title: "GYM App",
+    desc:
+      "Fitness Wellness Yoga Workout Meditation Mental Health Tracker Personal Training Coach Class Booking",
+    img:
+      "https://i.ibb.co/tMkCNKxW/image.pngs",
+    tech: ["Next.js", "Django", "PostgreSQL", "AWS"],
+    link: "https://example.com/coaching-app",
+  },
+  {
+    title: "School Management App",
+    desc:
+      "A comprehensive school management system with attendance tracking, fee management, results, and parent-teacher communication.",
+    img:
+      "https://i.ibb.co/PsmMmyxf/image.png",
+    tech: ["React", "Node.js", "MongoDB", "Firebase"],
+    link: "https://i.ibb.co/PsmMmyxf/image.png",
+  },
+  {
     title: "NGO Platform",
     desc:
       "A modern NGO platform that supports donations, volunteering, event management, and social impact tracking.",
     img:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200",
+      "https://i.ibb.co/FLvHrywG/image.png?q=80&w=1200",
     tech: ["React", "Node.js", "MongoDB"],
+    link: "https://arsdf.com/",
   },
   {
-    title: "CyberHex – Event Platform",
+    title: "CyberHex – Cyber Education Platform",
     desc:
       "An event organizing platform for hackathons, workshops, and tech events with real-time management.",
     img:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
+      "https://i.ibb.co/4ZQkFHRk/image.png?q=80&w=1200",
     tech: ["React", "Supabase", "Node.js", "TypeScript"],
+    link: "https://cyberhx.com/",
   },
   {
     title: "Stock Management System",
@@ -24,54 +116,34 @@ const projects = [
     img:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200",
     tech: ["Python", "Django", "SQLite"],
-  },
-  {
-    title: "AI Image Generator",
-    desc:
-      "Generate unique AI images using deep learning and modern AI algorithms.",
-    img:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200",
-    tech: ["Python", "TensorFlow", "React", "FastAPI"],
-  },
-  {
-    title: "Blockchain Voting System",
-    desc:
-      "A secure and transparent blockchain-based voting system ensuring trust and immutability.",
-    img:
-      "https://images.unsplash.com/photo-1622630998477-20aa696ecb05?q=80&w=1200",
-    tech: ["Solidity", "Web3.js", "React", "Node.js"],
-  },
-  {
-    title: "IoT Dashboard",
-    desc:
-      "Real-time monitoring and control dashboard for IoT devices using modern protocols.",
-    img:
-      "https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=1200",
-    tech: ["React", "Node.js", "MQTT", "Socket.io"],
+    link: "https://github.com/pankajkr-143/Stock-Management-System",
   },
   {
     title: "E-Learning Platform",
     desc:
       "An online learning platform with video courses, assessments, and certifications.",
     img:
-      "https://plus.unsplash.com/premium_photo-1663957870511-05aa0c159962?q=80&w=1123&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://s3.envato.com/files/384490216/01_preview_edumall.__large_preview.jpg?q=80&w=1123&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     tech: ["Next.js", "Django", "PostgreSQL", "AWS"],
+    link: "https://dtlearningweb.divinetechs.com/",
   },
   {
-    title: "Healthcare Management System",
+    title: "Multi Hospital - SaaS - AI Treatment",
     desc:
       "Digital healthcare solution for managing patients, appointments, and hospital operations.",
     img:
-      "https://plus.unsplash.com/premium_photo-1661378496270-58eecbf3ad27?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://i.ibb.co/3mWwWkDh/image.png?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     tech: ["React", "Node.js", "MongoDB", "Express"],
+    link: "https://democa.store/demo/multi-hms/?client_id=329732617.1755090634&session_id=1771731931",
   },
   {
     title: "Smart Home Automation",
     desc:
       "IoT-based smart home automation system with mobile and voice control.",
     img:
-      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1200",
+      "https://i.ibb.co/Rkt2R8Z2/image.png?q=80&w=1200",
     tech: ["React Native", "Node.js", "MQTT", "MongoDB"],
+    link: "https://drive.google.com/file/d/1JRg-g2VU4J0R0xSdt8nTTpMOpuxIRisq/view?client_id=329732617.1755090634&session_id=1771731931",
   },
 ];
 
@@ -148,16 +220,20 @@ export default function Projects() {
 
               {/* CTA */}
               <div className="mt-6">
-                <button
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="
                     text-sm font-medium text-blue-400
                     hover:text-white transition
                     flex items-center gap-1
+                    inline-block
                   "
                 >
                   View Project
                   <span className="text-lg">↗</span>
-                </button>
+                </a>
               </div>
             </div>
           </motion.div>
