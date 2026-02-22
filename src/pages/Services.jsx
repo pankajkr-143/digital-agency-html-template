@@ -6,57 +6,185 @@ import {
   Cloud,
   Globe,
   Shield,
+  Monitor,
+  Wifi,
+  Cpu,
+  HelpCircle,
+  TrendingUp,
+  Brain,
+  BarChart,
+  Search,
+  Users,
+  Lock,
+  Activity,
+  Settings,
+  Wrench,
+  Smartphone,
+  Package,
+  Zap,
+  Target,
+  FileText,
+  MessageSquare,
+  Phone,
+  Mail,
+  AlertTriangle,
+  CheckCircle,
+  RefreshCw,
+  ArrowRight,
 } from "lucide-react";
 
 /* ===================== DATA ===================== */
 const services = [
   {
-    id: "backend",
-    title: "Backend",
-    desc: "Robust server-side solutions using Node.js, Python, and scalable architectures.",
-    icon: Server,
-    implementation: "100%",
+    id: "software-development",
+    title: "Software Development Services",
+    desc: "Custom software solutions including web, mobile, and enterprise applications with modern technologies.",
+    icon: Code,
+    subServices: [
+      "Custom Software Development",
+      "Web Application Development",
+      "Mobile App Development (Android / iOS)",
+      "E-commerce Development",
+      "Enterprise Software Solutions (ERP / CRM)",
+      "SaaS Product Development",
+      "API Development & Integration",
+      "Software Maintenance & Upgrades"
+    ],
+    implementation: "98%",
     status: "Active",
   },
   {
-    id: "frontend",
-    title: "Frontend",
-    desc: "Modern UI/UX using React and responsive systems.",
-    icon: Code,
+    id: "cloud-computing",
+    title: "Cloud Computing Services",
+    desc: "Complete cloud solutions from migration to management with 24/7 monitoring and security.",
+    icon: Cloud,
+    subServices: [
+      "Cloud Consulting & Strategy",
+      "Cloud Migration",
+      "Cloud Deployment",
+      "Cloud Infrastructure Management",
+      "Backup & Disaster Recovery",
+      "Cloud Security",
+      "DevOps & CI/CD Implementation"
+    ],
     implementation: "95%",
     status: "Active",
   },
   {
-    id: "database",
-    title: "Database",
-    desc: "Secure databases using PostgreSQL, MongoDB, and MySQL.",
-    icon: Database,
-    implementation: "90%",
-    status: "Optimized",
-  },
-  {
-    id: "cloud",
-    title: "Cloud",
-    desc: "Scalable infrastructure on AWS, Azure, and GCP.",
-    icon: Cloud,
-    implementation: "92%",
-    status: "Stable",
-  },
-  {
-    id: "web",
-    title: "Web Services",
-    desc: "High-performance web apps with API integrations.",
-    icon: Globe,
-    implementation: "96%",
-    status: "Live",
-  },
-  {
-    id: "security",
-    title: "Security",
-    desc: "Enterprise security, authentication & audits.",
+    id: "cybersecurity",
+    title: "Cybersecurity & Ethical Hacking",
+    desc: "Comprehensive security services including penetration testing, threat monitoring, and incident response.",
     icon: Shield,
-    implementation: "88%",
+    subServices: [
+      "Network Security",
+      "Endpoint Security",
+      "Firewall & Antivirus Management",
+      "Vulnerability Assessment",
+      "Penetration Testing (Ethical Hacking)",
+      "Security Audits & Compliance",
+      "Threat Monitoring (24/7 SOC)",
+      "Data Encryption Services",
+      "Incident Response & Recovery"
+    ],
+    implementation: "96%",
     status: "Protected",
+  },
+  {
+    id: "networking",
+    title: "Networking Services",
+    desc: "Complete networking solutions from setup to monitoring with enterprise-grade security.",
+    icon: Wifi,
+    subServices: [
+      "LAN / WAN Setup",
+      "Router & Switch Configuration",
+      "WiFi Installation",
+      "Network Troubleshooting",
+      "VPN Setup",
+      "Network Monitoring",
+      "Structured Cabling"
+    ],
+    implementation: "94%",
+    status: "Active",
+  },
+  {
+    id: "hardware",
+    title: "Hardware & Infrastructure Services",
+    desc: "End-to-end hardware solutions from procurement to maintenance and asset management.",
+    icon: Monitor,
+    subServices: [
+      "Computer & Laptop Sales",
+      "Hardware Installation",
+      "Server Setup & Maintenance",
+      "Data Center Setup",
+      "Hardware Repair & Replacement",
+      "IT Asset Management"
+    ],
+    implementation: "92%",
+    status: "Active",
+  },
+  {
+    id: "it-support",
+    title: "IT Support & Managed Services",
+    desc: "24/7 IT support with multiple service models including AMC and dedicated support teams.",
+    icon: HelpCircle,
+    subServices: [
+      "Helpdesk Support (L1 / L2 / L3)",
+      "Remote & Onsite Support",
+      "Annual Maintenance Contract (AMC)",
+      "System Monitoring (24/7)",
+      "Software Updates & Patch Management",
+      "IT Outsourcing Services"
+    ],
+    implementation: "97%",
+    status: "Active",
+  },
+  {
+    id: "it-consulting",
+    title: "IT Consulting & Business Solutions",
+    desc: "Strategic IT consulting to drive digital transformation and business growth.",
+    icon: TrendingUp,
+    subServices: [
+      "IT Consulting",
+      "Digital Transformation",
+      "Business Process Automation",
+      "IT Project Management",
+      "Technology Roadmap Planning",
+      "Cost Optimization Strategy"
+    ],
+    implementation: "93%",
+    status: "Active",
+  },
+  {
+    id: "emerging-tech",
+    title: "Emerging Technology Services",
+    desc: "Cutting-edge solutions using AI, ML, Blockchain, IoT, and RPA technologies.",
+    icon: Brain,
+    subServices: [
+      "Artificial Intelligence (AI)",
+      "Machine Learning (ML)",
+      "Blockchain Development",
+      "Internet of Things (IoT)",
+      "Robotic Process Automation (RPA)",
+      "Data Analytics & Big Data"
+    ],
+    implementation: "89%",
+    status: "Innovation",
+  },
+  {
+    id: "digital-marketing",
+    title: "Digital Marketing & Online Services",
+    desc: "B2B digital marketing services to boost your online presence and generate leads.",
+    icon: Search,
+    subServices: [
+      "SEO Services",
+      "Social Media Marketing",
+      "Google Ads & PPC",
+      "Website Maintenance",
+      "Branding & Graphic Design",
+      "Lead Generation Services"
+    ],
+    implementation: "91%",
+    status: "Growing",
   },
 ];
 
@@ -139,7 +267,7 @@ export default function Services() {
       </div>
 
       {/* ACTIVE INFO */}
-      <div className="max-w-3xl mx-auto text-center">
+      <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-2xl font-semibold mb-3">
           {activeService.title}
         </h2>
@@ -147,6 +275,19 @@ export default function Services() {
         <p className="text-gray-400 mb-6">
           {activeService.desc}
         </p>
+
+        {/* SUB-SERVICES LIST */}
+        <div className="mb-8">
+          <h3 className="text-lg font-medium text-blue-400 mb-4">Services Include:</h3>
+          <div className="grid md:grid-cols-2 gap-3 text-left">
+            {activeService.subServices.map((subService, index) => (
+              <div key={index} className="flex items-start gap-2">
+                <CheckCircle size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-300 text-sm">{subService}</span>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <div className="flex justify-center gap-10 text-sm">
           <span>
