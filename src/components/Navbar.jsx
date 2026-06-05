@@ -136,25 +136,12 @@ const Navbar = () => {
                   exit={{ opacity: 0 }}
                   className="absolute top-10 left-0 w-56 bg-[#0b0f1a] border border-white/10 rounded-xl p-4 space-y-1 shadow-xl"
                 >
-                  <NavLink to="https://training.mackystech.in/aws-cloud" className={dropdownItem}>AWS</NavLink>
-                  <NavLink to="https://training.mackystech.in/" className={dropdownItem}>Traning</NavLink>
+                  <a href="https://training.mackystech.in/aws-cloud" target="_blank" rel="noopener noreferrer" className={dropdownItem}>AWS</a>
+                  <a href="https://training.mackystech.in/" target="_blank" rel="noopener noreferrer" className={dropdownItem}>Training</a>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
-
-          {/* CTA */}
-          <NavLink
-            to="/verify"
-            className="
-              px-6 py-2 rounded-full text-sm font-semibold
-              text-black
-              bg-gradient-to-r from-cyan-400 to-blue-500
-              hover:scale-105 transition
-            "
-          >
-            Verify Certificate
-          </NavLink>
 
           <NavLink to="/contact" className={navItem}>
             Contact
@@ -292,33 +279,28 @@ const Navbar = () => {
                       exit={{ opacity: 0, height: 0 }}
                       className="pl-6 space-y-1 overflow-hidden"
                     >
-                      <div
-                       
+                      <a
+                        href="https://training.mackystech.in/aws-cloud"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={() => setOpen(false)}
                         className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition"
                       >
                         AWS
-                      </div>
-                      <div
-                       
+                      </a>
+                      <a
+                        href="https://training.mackystech.in/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={() => setOpen(false)}
                         className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition"
                       >
                         Training
-                      </div>
+                      </a>
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
-
-              {/* CTA Button */}
-              <NavLink
-                to="/verify"
-                onClick={() => setOpen(false)}
-                className="block px-3 py-2 rounded-md text-sm font-semibold text-black bg-gradient-to-r from-cyan-400 to-blue-500 hover:scale-105 transition text-center"
-              >
-                Verify Certificate
-              </NavLink>
 
               {/* Contact */}
               <NavLink

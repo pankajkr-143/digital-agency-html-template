@@ -95,19 +95,25 @@ export default function Contact() {
 
               <div>
                 <p className="text-gray-400 text-sm">Location</p>
-                <p className="text-lg">
-                  India • Remote • Global Clients
+                <p className="text-lg leading-relaxed">
+                  44C, Indrapuri sector C, Bhopal, MP -462022, India
                 </p>
               </div>
             </div>
 
             {/* Map */}
-            <div className="mt-10 rounded-2xl overflow-hidden border border-white/10">
-              <img
-                src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1000&q=80"
-                alt="map"
-                className="w-full h-[220px] object-cover opacity-80"
-              />
+            <div className="mt-10 rounded-2xl overflow-hidden border border-white/10 h-[220px]">
+              <iframe
+                title="Google Map Location"
+                src="https://maps.google.com/maps?q=44C,%20Indrapuri%20sector%20C,%20Bhopal,%20MP%20-462022,%20India&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="opacity-80"
+              ></iframe>
             </div>
           </motion.div>
 

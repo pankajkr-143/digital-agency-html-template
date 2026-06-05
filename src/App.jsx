@@ -16,6 +16,12 @@ import Internship from "./pages/Internship";
 import Verify from "./pages/Verify";
 import Contact from "./pages/Contact";
 import InternshipForm from "./pages/InternshipForm";
+import Documentation from "./pages/Documentation";
+import Tutorials from "./pages/Tutorials";
+import Blog from "./pages/Blog";
+import Community from "./pages/Community";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -50,6 +56,12 @@ function App() {
         <Route path="/internship-form" element={<InternshipForm />} />
         <Route path="/verify" element={<Verify />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/documentation" element={<Documentation />} />
+        <Route path="/tutorials" element={<Tutorials />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/community" element={<Community />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
       </Routes>
 
       <Footer />

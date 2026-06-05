@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer className="relative bg-black text-gray-400">
@@ -12,9 +14,9 @@ export default function Footer() {
           {/* LEFT SECTION - CENTERED ON MOBILE */}
           <div className="max-w-sm w-full md:w-auto text-center md:text-left">
 
-            <h2 className="text-2xl font-bold text-white tracking-wide">
+            <Link to="/" className="text-2xl font-bold text-white tracking-wide hover:opacity-90 transition inline-block">
               Mackys<span className="text-blue-500">Tech</span>
-            </h2>
+            </Link>
 
             <p className="mt-6 text-sm leading-relaxed text-gray-500">
               We build scalable, secure and performance-driven digital
@@ -26,7 +28,9 @@ export default function Footer() {
 
               {/* Instagram */}
               <a
-                href="#"
+                href="https://www.instagram.com/mackystech"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full border border-white/10 
                 hover:border-pink-500 hover:shadow-[0_0_15px_rgba(236,72,153,0.5)]
                 transition"
@@ -41,7 +45,9 @@ export default function Footer() {
 
               {/* Facebook */}
               <a
-                href="#"
+                href="https://www.facebook.com/mackystech"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full border border-white/10 
                 hover:border-blue-500 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]
                 transition"
@@ -54,7 +60,9 @@ export default function Footer() {
 
               {/* X (Twitter) */}
               <a
-                href="#"
+                href="https://x.com/mackystech"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full border border-white/10 
                 hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.4)]
                 transition"
@@ -76,10 +84,10 @@ export default function Footer() {
                 Resources
               </h2>
               <ul className="space-y-3 text-sm">
-                <li><a href="#" className="hover:text-white transition">Documentation</a></li>
-                <li><a href="#" className="hover:text-white transition">Tutorials</a></li>
-                <li><a href="#" className="hover:text-white transition">Blog</a></li>
-                <li><a href="#" className="hover:text-white transition">Community</a></li>
+                <li><Link to="/documentation" className="hover:text-white transition">Documentation</Link></li>
+                <li><a href="https://training.mackystech.in/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Tutorials</a></li>
+                <li><Link to="/blog" className="hover:text-white transition">Blog</Link></li>
+                <li><Link to="/community" className="hover:text-white transition">Community</Link></li>
               </ul>
             </div>
 
@@ -88,10 +96,10 @@ export default function Footer() {
                 Company
               </h2>
               <ul className="space-y-3 text-sm">
-                <li><a href="#" className="hover:text-white transition">About</a></li>
-                <li><a href="#" className="hover:text-white transition">Careers</a></li>
-                <li><a href="#" className="hover:text-white transition">Privacy</a></li>
-                <li><a href="#" className="hover:text-white transition">Terms</a></li>
+                <li><Link to="/about" className="hover:text-white transition">About</Link></li>
+                <li><Link to="/jobs" className="hover:text-white transition">Careers</Link></li>
+                <li><Link to="/privacy" className="hover:text-white transition">Privacy</Link></li>
+                <li><Link to="/terms" className="hover:text-white transition">Terms</Link></li>
               </ul>
             </div>
 
