@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.mackystech.in/sitemap.xml
+
+# Block common non-content paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /*.json$
