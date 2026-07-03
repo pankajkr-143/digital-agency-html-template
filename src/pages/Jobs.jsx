@@ -83,6 +83,37 @@ export default function Jobs() {
     title: "IT Jobs in Bhopal | Software Developer, AI Engineer, DevOps | MackysTech Careers",
     description: "Join MackysTech team! Open positions for Full Stack Developer, AI/ML Engineer, Cloud Engineer, Security Engineer, DevOps Engineer in Bhopal. Apply now for IT jobs in Madhya Pradesh.",
     canonical: "https://www.mackystech.in/jobs",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "MackysTech Open Job Positions",
+      "itemListElement": jobs.map((job, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "item": {
+          "@type": "JobPosting",
+          "title": job.title,
+          "description": job.desc,
+          "datePosted": "2026-07-03",
+          "validThrough": "2026-12-31",
+          "employmentType": "FULL_TIME",
+          "hiringOrganization": {
+            "@type": "Organization",
+            "name": "MackysTech",
+            "sameAs": "https://www.mackystech.in"
+          },
+          "jobLocation": {
+            "@type": "Place",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Bhopal",
+              "addressRegion": "Madhya Pradesh",
+              "addressCountry": "IN"
+            }
+          }
+        }
+      }))
+    }
   });
 
   const [open, setOpen] = useState(false);

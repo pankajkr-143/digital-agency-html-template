@@ -198,13 +198,20 @@ export default function Services() {
     schema: {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": "MackysTech IT Services",
+      "name": "MackysTech IT Services List",
       "itemListElement": services.map((s, i) => ({
         "@type": "ListItem",
         "position": i + 1,
-        "name": s.title,
-        "description": s.desc,
-        "url": `https://www.mackystech.in/services#${s.id}`
+        "item": {
+          "@type": "Service",
+          "name": s.title,
+          "description": s.desc,
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "MackysTech",
+            "url": "https://www.mackystech.in"
+          }
+        }
       }))
     }
   });

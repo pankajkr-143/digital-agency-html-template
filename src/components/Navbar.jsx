@@ -168,7 +168,8 @@ const Navbar = () => {
         {/* MOBILE BTN */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-white text-2xl"
+          className="md:hidden text-white text-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md p-1"
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
         >
           {open ? "✕" : "☰"}
         </button>

@@ -2,13 +2,13 @@ import { useEffect } from "react";
 
 /**
  * ══════════════════════════════════════════════════════════════════
- *  useSEO — Phase 2 Production SEO Hook
+ *  useSEO — Phase 2 Production SEO Hook (Enhanced)
  *  MackysTech | mackystech.in
  * ══════════════════════════════════════════════════════════════════
  *
  * Per-route dynamic injection of:
  *  ✅ <title>
- *  ✅ meta description, robots, author
+ *  ✅ meta description, robots, author, keywords, theme-color
  *  ✅ Canonical URL
  *  ✅ Open Graph (og:*) — Facebook, LinkedIn, WhatsApp
  *  ✅ Twitter Cards (name="twitter:*") — correct attribute!
@@ -25,12 +25,16 @@ import { useEffect } from "react";
  * @param {string}  [options.robots]     - Robots directive (default: index/follow + max-snippet)
  * @param {Object}  [options.schema]     - Page-specific JSON-LD (overrides auto breadcrumb)
  * @param {Array}   [options.breadcrumbs]- Custom breadcrumb trail [{name, url}]
+ * @param {string}  [options.keywords]   - High-value targeted keywords (comma-separated, minimal)
+ * @param {string}  [options.author]     - Custom page author (default: Macky's Tech)
+ * @param {string}  [options.themeColor] - Custom page theme color (default: #06080f)
  */
 
 const SITE_NAME    = "Macky's Tech";
 const BASE_URL     = "https://www.mackystech.in";
 const DEFAULT_IMG  = `${BASE_URL}/assets/logo.jpeg`;
 const DEFAULT_ROBOTS = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
+const DEFAULT_THEME_COLOR = "#06080f";
 
 /* ── Label map for auto-breadcrumb generation ──────────────── */
 const ROUTE_LABELS = {
@@ -57,39 +61,41 @@ const ROUTE_LABELS = {
 
 /**
  * Auto-generate BreadcrumbList JSON-LD from a canonical URL.
- * e.g. "https://www.mackystech.in/about" →
- *   Home > About Us
  */
 function buildBreadcrumb(canonical, customTrail) {
-  const path      = new URL(canonical).pathname;         // "/about"
-  const segments  = path.split("/").filter(Boolean);     // ["about"]
+  try {
+    const path      = new URL(canonical).pathname;         // "/about"
+    const segments  = path.split("/").filter(Boolean);     // ["about"]
 
-  // Build trail array: always starts with Home
-  const trail = [{ name: "Home", url: BASE_URL + "/" }];
+    // Build trail array: always starts with Home
+    const trail = [{ name: "Home", url: BASE_URL + "/" }];
 
-  if (customTrail && customTrail.length) {
-    customTrail.forEach((item) => trail.push(item));
-  } else {
-    let accumulated = BASE_URL;
-    segments.forEach((seg) => {
-      accumulated += `/${seg}`;
-      trail.push({
-        name: ROUTE_LABELS[seg] || seg.charAt(0).toUpperCase() + seg.slice(1),
-        url:  accumulated,
+    if (customTrail && customTrail.length) {
+      customTrail.forEach((item) => trail.push(item));
+    } else {
+      let accumulated = BASE_URL;
+      segments.forEach((seg) => {
+        accumulated += `/${seg}`;
+        trail.push({
+          name: ROUTE_LABELS[seg] || seg.charAt(0).toUpperCase() + seg.slice(1),
+          url:  accumulated,
+        });
       });
-    });
-  }
+    }
 
-  return {
-    "@context": "https://schema.org",
-    "@type":    "BreadcrumbList",
-    itemListElement: trail.map((item, i) => ({
-      "@type":    "ListItem",
-      position:   i + 1,
-      name:       item.name,
-      item:       item.url,
-    })),
-  };
+    return {
+      "@context": "https://schema.org",
+      "@type":    "BreadcrumbList",
+      itemListElement: trail.map((item, i) => ({
+        "@type":    "ListItem",
+        position:   i + 1,
+        name:       item.name,
+        item:       item.url,
+      })),
+    };
+  } catch (e) {
+    return null;
+  }
 }
 
 export function useSEO({
@@ -100,15 +106,18 @@ export function useSEO({
   type        = "website",
   robots      = DEFAULT_ROBOTS,
   schema      = null,
-  breadcrumbs = null,   // optional custom trail [{name, url}]
+  breadcrumbs = null,
+  keywords,
+  author      = SITE_NAME,
+  themeColor  = DEFAULT_THEME_COLOR,
 }) {
   useEffect(() => {
-
     /* ── 1. <title> ──────────────────────────────────────── */
     document.title = title;
 
     /* ── 2. Helper: set / create <meta> ──────────────────── */
     const setMeta = (keyAttr, keyVal, content) => {
+      if (!content) return;
       let el = document.querySelector(`meta[${keyAttr}="${keyVal}"]`);
       if (!el) {
         el = document.createElement("meta");
@@ -120,6 +129,7 @@ export function useSEO({
 
     /* ── 3. Helper: set / create <link> ──────────────────── */
     const setLink = (rel, href) => {
+      if (!href) return;
       let el = document.querySelector(`link[rel="${rel}"]`);
       if (!el) {
         el = document.createElement("link");
@@ -133,7 +143,11 @@ export function useSEO({
     setMeta("name", "title",       title);
     setMeta("name", "description", description);
     setMeta("name", "robots",      robots);
-    setMeta("name", "author",      SITE_NAME);
+    setMeta("name", "author",      author);
+    setMeta("name", "theme-color", themeColor);
+    if (keywords) {
+      setMeta("name", "keywords",  keywords);
+    }
 
     /* ── 5. Canonical ────────────────────────────────────── */
     setLink("canonical", canonical);
@@ -149,7 +163,7 @@ export function useSEO({
     setMeta("property", "og:image:height", "630");
     setMeta("property", "og:locale",       "en_IN");
 
-    /* ── 7. Twitter Cards (name=, NOT property=) ─────────── */
+    /* ── 7. Twitter Cards ────────────────────────────────── */
     setMeta("name", "twitter:card",        "summary_large_image");
     setMeta("name", "twitter:site",        "@mackystech");
     setMeta("name", "twitter:creator",     "@mackystech");
@@ -176,10 +190,17 @@ export function useSEO({
     };
 
     // Breadcrumb (always inject on sub-pages, skip on homepage)
-    const isHome = new URL(canonical).pathname === "/";
-    if (!isHome) {
-      setSchema("breadcrumb-schema-ld", buildBreadcrumb(canonical, breadcrumbs));
-    } else {
+    try {
+      const isHome = new URL(canonical).pathname === "/";
+      if (!isHome) {
+        const breadcrumbData = buildBreadcrumb(canonical, breadcrumbs);
+        if (breadcrumbData) {
+          setSchema("breadcrumb-schema-ld", breadcrumbData);
+        }
+      } else {
+        removeSchema("breadcrumb-schema-ld");
+      }
+    } catch (e) {
       removeSchema("breadcrumb-schema-ld");
     }
 
@@ -199,5 +220,5 @@ export function useSEO({
       });
     }
 
-  }, [title, description, canonical, image, type, robots, schema, breadcrumbs]);
+  }, [title, description, canonical, image, type, robots, schema, breadcrumbs, keywords, author, themeColor]);
 }

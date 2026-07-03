@@ -20,9 +20,11 @@ export default function About() {
 
           <img
             className="max-w-md w-full object-cover rounded-2xl"
-            src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?q=80&w=451&h=451&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?q=80&w=451&h=451&auto=format&fit=crop&fm=webp"
             alt="MackysTech Team"
             loading="lazy"
+            width="451"
+            height="451"
           />
 
           {/* floating badge */}

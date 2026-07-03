@@ -55,6 +55,8 @@ export default function OurTeam() {
                   alt="Pankaj Kr Gupta - Founder & CEO"
                   className="relative w-full h-full rounded-full object-cover border-4 border-blue-400/30 shadow-[0_20px_40px_rgba(59,130,246,0.3)]"
                   loading="lazy"
+                  width="320"
+                  height="320"
                 />
                 <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-400 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
                   Founder & CEO

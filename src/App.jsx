@@ -1,32 +1,45 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-import Home from "./pages/Home";
-import Services from "./pages/Services";
-import Products from "./pages/Products";
-import Projects from "./pages/Projects";
-import About from "./pages/About";
-import OurTeam from "./pages/OurTeam";
-import Events from "./pages/Events";
-import Gallery from "./pages/Gallery";
-import Jobs from "./pages/Jobs";
-import Internship from "./pages/Internship";
-import Career from "./pages/Career";
-import Verify from "./pages/Verify";
-import Contact from "./pages/Contact";
-import InternshipForm from "./pages/InternshipForm";
-import Documentation from "./pages/Documentation";
-import Tutorials from "./pages/Tutorials";
-import Blog from "./pages/Blog";
-import Community from "./pages/Community";
-import Privacy from "./pages/Privacy";
-import Terms from "./pages/Terms";
-import FAQ from "./pages/FAQ";
+// Lazy-loaded routes for code-splitting & performance (Core Web Vitals)
+const Home = lazy(() => import("./pages/Home"));
+const Services = lazy(() => import("./pages/Services"));
+const Products = lazy(() => import("./pages/Products"));
+const Projects = lazy(() => import("./pages/Projects"));
+const About = lazy(() => import("./pages/About"));
+const OurTeam = lazy(() => import("./pages/OurTeam"));
+const Jobs = lazy(() => import("./pages/Jobs"));
+const Internship = lazy(() => import("./pages/Internship"));
+const Career = lazy(() => import("./pages/Career"));
+const Verify = lazy(() => import("./pages/Verify"));
+const Contact = lazy(() => import("./pages/Contact"));
+const InternshipForm = lazy(() => import("./pages/InternshipForm"));
+const Documentation = lazy(() => import("./pages/Documentation"));
+const Tutorials = lazy(() => import("./pages/Tutorials"));
+const Blog = lazy(() => import("./pages/Blog"));
+const Community = lazy(() => import("./pages/Community"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const Terms = lazy(() => import("./pages/Terms"));
+const FAQ = lazy(() => import("./pages/FAQ"));
+
+// Programmatic Local SEO landing page template
+const LocationLanding = lazy(() => import("./pages/LocationLanding"));
+
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+// Loading Skeleton for Suspense fallback
+const LoadingSkeleton = () => (
+  <div className="min-h-screen bg-[#060a12] flex items-center justify-center">
+    <div className="relative w-12 h-12">
+      <div className="absolute inset-0 border-4 border-blue-500/20 rounded-full"></div>
+      <div className="absolute inset-0 border-4 border-t-blue-500 rounded-full animate-spin"></div>
+    </div>
+  </div>
+);
 
 function App() {
   const location = useLocation();
@@ -54,33 +67,38 @@ function App() {
     <>
       {showNavbar && <Navbar />}
 
-      <Routes>
-        <Route
-          path="/"
-          element={<Home setShowNavbar={setShowNavbar} />}
-        />
-        <Route path="/services" element={<Services />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/team" element={<OurTeam />} />
-        {/* <Route path="/events" element={<Events />} />
-        <Route path="/gallery" element={<Gallery />} /> */}
-        <Route path="/jobs" element={<Jobs />} />
-        <Route path="/internship" element={<Internship />} />
-        <Route path="/career" element={<Career />} />
-        <Route path="/internship-form" element={<InternshipForm />} />
-        <Route path="/verify" element={<Verify />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/documentation" element={<Documentation />} />
-        <Route path="/tutorials" element={<Tutorials />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/community" element={<Community />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route path="/faq" element={<FAQ />} />
-      </Routes>
+      <Suspense fallback={<LoadingSkeleton />}>
+        <Routes>
+          <Route
+            path="/"
+            element={<Home setShowNavbar={setShowNavbar} />}
+          />
+          <Route path="/services" element={<Services />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/team" element={<OurTeam />} />
+          <Route path="/jobs" element={<Jobs />} />
+          <Route path="/internship" element={<Internship />} />
+          <Route path="/career" element={<Career />} />
+          <Route path="/internship-form" element={<InternshipForm />} />
+          <Route path="/verify" element={<Verify />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/documentation" element={<Documentation />} />
+          <Route path="/tutorials" element={<Tutorials />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/faq" element={<FAQ />} />
 
+          {/* Programmatic Local SEO landing pages */}
+          <Route path="/software-company-in-:city" element={<LocationLanding />} />
+          <Route path="/it-services-in-:city" element={<LocationLanding />} />
+        </Routes>
+      </Suspense>
+
+      {/* Footer is statically rendered below the suspense routes */}
       <Footer />
     </>
   );

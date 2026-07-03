@@ -1,17 +1,75 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Newspaper, Calendar, User, ArrowRight, ArrowLeft, Clock, Share2, MessageSquare } from "lucide-react";
 import { useSEO } from "../hooks/useSEO";
 
 
 export default function Blog() {
-  useSEO({
-    title: "Tech Blog | Software Dev, Cloud, AI, Security Articles | MackysTech",
-    description: "MackysTech blog: Expert articles on software development, React, Node.js, cloud computing, cybersecurity, AI/ML, DevOps and more. Written by our experienced developers.",
-    canonical: "https://www.mackystech.in/blog",
-  });
-
   const [selectedPost, setSelectedPost] = useState(null);
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = () => {
+    navigator.clipboard.writeText(`${window.location.origin}/blog#${selectedPost?.id}`);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const seoTitle = selectedPost 
+    ? `${selectedPost.title} | MackysTech Blog`
+    : "Tech Blog | Software Dev, Cloud, AI, Security Articles | MackysTech";
+    
+  const seoDesc = selectedPost
+    ? selectedPost.excerpt
+    : "MackysTech blog: Expert articles on software development, React, Node.js, cloud computing, cybersecurity, AI/ML, DevOps and more. Written by our experienced developers.";
+
+  const seoCanonical = selectedPost
+    ? `https://www.mackystech.in/blog#${selectedPost.id}`
+    : "https://www.mackystech.in/blog";
+
+  const seoSchema = selectedPost
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": selectedPost.title,
+        "description": selectedPost.excerpt,
+        "datePublished": selectedPost.date,
+        "author": {
+          "@type": "Person",
+          "name": selectedPost.author
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "MackysTech",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.mackystech.in/assets/logo.jpeg"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": seoCanonical
+        }
+      }
+    : {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "MackysTech Blog",
+        "description": "Expert tech articles on software development, web development, AWS, and AI.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "MackysTech"
+        }
+      };
+
+  useSEO({
+    title: seoTitle,
+    description: seoDesc,
+    canonical: seoCanonical,
+    schema: seoSchema,
+    keywords: selectedPost ? `${selectedPost.category || "tech"}, blog post, MackysTech` : "tech blog, software engineering, coding tutorials, AI ML blog",
+    author: selectedPost ? selectedPost.author : "MackysTech",
+  });
 
   const posts = [
     {
@@ -341,8 +399,17 @@ export default function Dashboard() {
                   </div>
 
                   <div className="flex items-center gap-3">
-                    <button className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition border border-white/10 cursor-pointer" title="Share">
+                    <button 
+                      onClick={handleShare}
+                      className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition border border-white/10 cursor-pointer relative" 
+                      title="Share"
+                    >
                       <Share2 className="w-4 h-4" />
+                      {copied && (
+                        <span className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-xs px-2.5 py-1 rounded-md whitespace-nowrap shadow-lg">
+                          Copied!
+                        </span>
+                      )}
                     </button>
                     <button className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition border border-white/10 cursor-pointer" title="Comment">
                       <MessageSquare className="w-4 h-4" />
@@ -360,18 +427,102 @@ export default function Dashboard() {
                 />
               </div>
 
+              {/* Table of Contents */}
+              <div className="bg-[#0d1221] border border-white/5 rounded-2xl p-6 mb-8">
+                <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-3">Table of Contents</h4>
+                <ul className="space-y-2 text-sm text-purple-400">
+                  {selectedPost.id === "featured" && (
+                    <>
+                      <li><a href="#edge-routing" className="hover:underline">1. Moving to Edge Routing</a></li>
+                      <li><a href="#db-rep" className="hover:underline">2. Serverless Database Replication</a></li>
+                      <li><a href="#conclusion" className="hover:underline">3. Conclusion</a></li>
+                    </>
+                  )}
+                  {selectedPost.id === "micro-frontends" && (
+                    <>
+                      <li><a href="#react-19" className="hover:underline">1. React 19 & Dynamic Import Native Bindings</a></li>
+                      <li><a href="#vite-7" className="hover:underline">2. Why Vite 7?</a></li>
+                    </>
+                  )}
+                  {selectedPost.id === "tailwindcss-v4" && (
+                    <>
+                      <li><a href="#v4-engine" className="hover:underline">1. The New Lightning Compiler Engine</a></li>
+                      <li><a href="#v4-css" className="hover:underline">2. CSS-First Configuration</a></li>
+                    </>
+                  )}
+                  {selectedPost.id === "aws-iam-pitfalls" && (
+                    <>
+                      <li><a href="#iam-least" className="hover:underline">1. Principle of Least Privilege</a></li>
+                      <li><a href="#iam-danger" className="hover:underline">2. The Dangers of Wildcard Policies</a></li>
+                    </>
+                  )}
+                </ul>
+              </div>
+
               {/* Content Body */}
               <div className="prose prose-invert max-w-none text-gray-300 space-y-6">
                 {selectedPost.content}
               </div>
 
+              {/* Dynamic FAQ Block */}
+              <div className="mt-12 p-6 rounded-2xl bg-[#0d1221] border border-white/5">
+                <h3 className="text-lg font-bold mb-4">Frequently Asked Questions</h3>
+                <div className="space-y-4 text-sm text-gray-400">
+                  <div>
+                    <h4 className="font-semibold text-white">How does MackysTech use this tech stack?</h4>
+                    <p className="mt-1">We implement these architectures directly across our enterprise client projects to ensure near-zero downtime and fast page loading.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white">Can we consult on custom micro-frontends/AWS setup?</h4>
+                    <p className="mt-1">Yes! We offer professional technical consulting and resource augmentation for enterprise teams. Contact us at info@mackystech.in.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Premium CTA Block */}
+              <div className="mt-8 p-8 rounded-2xl bg-gradient-to-r from-purple-900/40 to-blue-900/40 border border-purple-500/25 text-center">
+                <h3 className="text-xl font-bold mb-2">Build High-Performance Digital Products</h3>
+                <p className="text-sm text-gray-300 mb-6">Partner with MackysTech technical architects to deliver scalable software engineered for growth.</p>
+                <Link to="/contact" className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white font-semibold py-2.5 px-6 rounded-full transition shadow-[0_0_20px_rgba(168,85,247,0.3)] text-sm">
+                  Start Your Project <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+
+              {/* Related Articles */}
+              <div className="mt-12 border-t border-white/10 pt-10">
+                <h3 className="text-xl font-bold mb-6 text-white">Related Articles</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {posts
+                    .filter((p) => p.id !== selectedPost.id)
+                    .slice(0, 2)
+                    .map((relatedPost, rIdx) => (
+                      <div
+                        key={rIdx}
+                        onClick={() => {
+                          setSelectedPost(relatedPost);
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        }}
+                        className="p-5 rounded-2xl bg-[#0a0f1a] border border-white/5 hover:border-purple-500/20 transition cursor-pointer flex flex-col justify-between group"
+                      >
+                        <div>
+                          <span className="text-xs text-purple-400 font-semibold">{relatedPost.date}</span>
+                          <h4 className="font-bold text-white mt-1 group-hover:text-purple-400 transition-colors line-clamp-2 text-sm leading-snug">
+                            {relatedPost.title}
+                          </h4>
+                        </div>
+                        <span className="text-xs text-purple-400 font-semibold mt-4 flex items-center gap-1">
+                          Read Article <ArrowRight className="w-3.5 h-3.5" />
+                        </span>
+                      </div>
+                    ))}
+                </div>
+              </div>
+
               {/* Bottom Nav / CTA */}
-              <div className="border-t border-white/10 mt-16 pt-10 text-center">
-                <h4 className="text-white font-semibold mb-2">Enjoyed this article?</h4>
-                <p className="text-sm text-gray-500 mb-6">Stay up to date with new tutorials and case studies.</p>
+              <div className="border-t border-white/10 mt-12 pt-8 text-center">
                 <button
                   onClick={() => setSelectedPost(null)}
-                  className="bg-purple-600 hover:bg-purple-500 text-white font-semibold py-2.5 px-6 rounded-full transition duration-300 shadow-lg cursor-pointer"
+                  className="bg-purple-600 hover:bg-purple-500 text-white font-semibold py-2.5 px-6 rounded-full transition duration-300 shadow-lg cursor-pointer text-sm"
                 >
                   View Other Articles
                 </button>

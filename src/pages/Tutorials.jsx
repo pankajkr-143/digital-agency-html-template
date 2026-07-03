@@ -7,6 +7,55 @@ export default function Tutorials() {
     title: "IT Tutorials | AWS, React 19, TailwindCSS, Node.js | MackysTech Academy",
     description: "Free IT tutorials by MackysTech engineers: AWS Cloud Infrastructure, React 19 + Framer Motion, TailwindCSS, Node.js, DevOps, cybersecurity and more. Learn from professionals.",
     canonical: "https://www.mackystech.in/tutorials",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "MackysTech Academy Courses",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Course",
+            "name": "AWS Cloud Infrastructure from Scratch",
+            "description": "Learn VPC, EC2 autoscaling, RDS setup, and deploying React apps securely on AWS.",
+            "provider": {
+              "@type": "Organization",
+              "name": "MackysTech",
+              "sameAs": "https://www.mackystech.in"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Course",
+            "name": "Advanced TailwindCSS & Modern CSS layouts",
+            "description": "Master grid systems, custom animations, variables, and responsive design systems using TailwindCSS.",
+            "provider": {
+              "@type": "Organization",
+              "name": "MackysTech",
+              "sameAs": "https://www.mackystech.in"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Course",
+            "name": "React 19 & Framer Motion Masterclass",
+            "description": "Deep dive into React Server Actions, concurrent rendering, transitions, and micro-interactions with Framer Motion.",
+            "provider": {
+              "@type": "Organization",
+              "name": "MackysTech",
+              "sameAs": "https://www.mackystech.in"
+            }
+          }
+        }
+      ]
+    }
   });
 
   const tutorials = [

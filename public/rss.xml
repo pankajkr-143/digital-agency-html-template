@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MackysTech Blog</title>
+    <link>https://www.mackystech.in/blog</link>
+    <description>Expert articles on software development, cloud computing, React 19, and cybersecurity from the MackysTech engineering team.</description>
+    <language>en-in</language>
+    <lastBuildDate>Fri, 03 Jul 2026 12:00:00 +0530</lastBuildDate>
+    <atom:link href="https://www.mackystech.in/rss.xml" rel="self" type="application/rss+xml" />
+
+    <item>
+      <title>Architecting Enterprise SaaS for 10M+ Monthly Active Users</title>
+      <link>https://www.mackystech.in/blog#featured</link>
+      <guid>https://www.mackystech.in/blog#featured</guid>
+      <pubDate>Tue, 02 Jun 2026 10:00:00 +0530</pubDate>
+      <description>A detailed case study of how our development team built a globally distributed web application leveraging serverless databases, edge routing, and caching.</description>
+      <author>info@mackystech.in (Mack Mackey)</author>
+    </item>
+
+    <item>
+      <title>Building Micro-frontends with React 19 &amp; Vite 7</title>
+      <link>https://www.mackystech.in/blog#micro-frontends</link>
+      <guid>https://www.mackystech.in/blog#micro-frontends</guid>
+      <pubDate>Thu, 28 May 2026 10:00:00 +0530</pubDate>
+      <description>Discover how code splitting, server actions, and modern bundlers can speed up dashboard performance for enterprise applications.</description>
+      <author>info@mackystech.in (Alex Rivera)</author>
+    </item>
+
+    <item>
+      <title>Why We Switched to TailwindCSS V4 for Client Projects</title>
+      <link>https://www.mackystech.in/blog#tailwindcss-v4</link>
+      <guid>https://www.mackystech.in/blog#tailwindcss-v4</guid>
+      <pubDate>Sun, 24 May 2026 10:00:00 +0530</pubDate>
+      <description>An in-depth review of TailwindCSS version 4's new CSS-first configuration and lightning-fast compiler engine.</description>
+      <author>info@mackystech.in (Priya Sharma)</author>
+    </item>
+
+    <item>
+      <title>5 Common AWS IAM Pitfalls That Expose Startup Data</title>
+      <link>https://www.mackystech.in/blog#aws-iam-pitfalls</link>
+      <guid>https://www.mackystech.in/blog#aws-iam-pitfalls</guid>
+      <pubDate>Wed, 20 May 2026 10:00:00 +0530</pubDate>
+      <description>Avoid wildcard policies and over-privileged roles. Learn how to audit your AWS infrastructure with standard security tools.</description>
+      <author>info@mackystech.in (Rajesh Kumar)</author>
+    </item>
+  </channel>
+</rss>

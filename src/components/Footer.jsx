@@ -31,6 +31,7 @@ export default function Footer() {
                 href="https://www.instagram.com/mackystech"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Follow MackysTech on Instagram"
                 className="p-2 rounded-full border border-white/10 
                 hover:border-pink-500 hover:shadow-[0_0_15px_rgba(236,72,153,0.5)]
                 transition"
@@ -48,6 +49,7 @@ export default function Footer() {
                 href="https://www.facebook.com/mackystech"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Follow MackysTech on Facebook"
                 className="p-2 rounded-full border border-white/10 
                 hover:border-blue-500 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]
                 transition"
@@ -63,6 +65,7 @@ export default function Footer() {
                 href="https://x.com/mackystech"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Follow MackysTech on X (Twitter)"
                 className="p-2 rounded-full border border-white/10 
                 hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.4)]
                 transition"
