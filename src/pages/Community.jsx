@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
 import { Users, ArrowRight } from "lucide-react";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Community() {
+  useSEO({
+    title: "Developer Community | MackysTech WhatsApp Group | Join IT Community Bhopal",
+    description: "Join MackysTech developer community on WhatsApp! Connect with developers, designers and IT professionals from Bhopal and across India. Share projects, find collaborators, get mentorship.",
+    canonical: "https://www.mackystech.in/community",
+  });
+
   const channels = [
     {
       title: "Macky's Tech Official",

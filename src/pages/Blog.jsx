@@ -1,8 +1,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Newspaper, Calendar, User, ArrowRight, ArrowLeft, Clock, Share2, MessageSquare } from "lucide-react";
+import { useSEO } from "../hooks/useSEO";
+
 
 export default function Blog() {
+  useSEO({
+    title: "Tech Blog | Software Dev, Cloud, AI, Security Articles | MackysTech",
+    description: "MackysTech blog: Expert articles on software development, React, Node.js, cloud computing, cybersecurity, AI/ML, DevOps and more. Written by our experienced developers.",
+    canonical: "https://www.mackystech.in/blog",
+  });
+
   const [selectedPost, setSelectedPost] = useState(null);
 
   const posts = [

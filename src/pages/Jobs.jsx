@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import ApplyModal from "../components/ApplyModal";
+import { useSEO } from "../hooks/useSEO";
 
 const jobs = [
   {
@@ -78,6 +79,12 @@ const jobs = [
 ];
 
 export default function Jobs() {
+  useSEO({
+    title: "IT Jobs in Bhopal | Software Developer, AI Engineer, DevOps | MackysTech Careers",
+    description: "Join MackysTech team! Open positions for Full Stack Developer, AI/ML Engineer, Cloud Engineer, Security Engineer, DevOps Engineer in Bhopal. Apply now for IT jobs in Madhya Pradesh.",
+    canonical: "https://www.mackystech.in/jobs",
+  });
+
   const [open, setOpen] = useState(false);
   const [selectedJob, setSelectedJob] = useState("");
 

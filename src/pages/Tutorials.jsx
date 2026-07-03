@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Play, Clock, BarChart, ChevronRight } from "lucide-react";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Tutorials() {
+  useSEO({
+    title: "IT Tutorials | AWS, React 19, TailwindCSS, Node.js | MackysTech Academy",
+    description: "Free IT tutorials by MackysTech engineers: AWS Cloud Infrastructure, React 19 + Framer Motion, TailwindCSS, Node.js, DevOps, cybersecurity and more. Learn from professionals.",
+    canonical: "https://www.mackystech.in/tutorials",
+  });
+
   const tutorials = [
     {
       title: "AWS Cloud Infrastructure from Scratch",

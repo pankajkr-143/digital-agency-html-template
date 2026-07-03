@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
 import { BookOpen, Code, Terminal, Play, ArrowRight, ShieldCheck } from "lucide-react";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Documentation() {
+  useSEO({
+    title: "Documentation & Developer Guides | MackysTech API, SDK, CLI",
+    description: "MackysTech developer documentation: API reference, SDK quickstart, CLI tooling, and security guides. Everything you need to build and deploy with MackysTech ecosystem.",
+    canonical: "https://www.mackystech.in/documentation",
+  });
+
   const sections = [
     {
       title: "Getting Started",

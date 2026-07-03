@@ -1,6 +1,21 @@
 import { motion } from "framer-motion";
+import { useSEO } from "../hooks/useSEO";
 
 export default function OurTeam() {
+  useSEO({
+    title: "Meet Our Team | MackysTech - Founders & Developers | Bhopal IT Company",
+    description: "Meet the passionate team at MackysTech, Bhopal's leading IT company. Led by Pankaj Kr Gupta, our developers, designers and innovators build future-ready digital solutions.",
+    canonical: "https://www.mackystech.in/team",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Pankaj Kr Gupta",
+      "jobTitle": "Founder & CEO",
+      "worksFor": { "@type": "Organization", "name": "MackysTech" },
+      "url": "https://www.mackystech.in/team"
+    }
+  });
+
   return (
     <section className="min-h-screen bg-[#0b1220] py-20 px-6">
       

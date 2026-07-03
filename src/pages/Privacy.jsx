@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
 import { Shield, Lock, Eye, RefreshCw } from "lucide-react";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Privacy() {
+  useSEO({
+    title: "Privacy Policy | MackysTech - Data Protection & Security",
+    description: "MackysTech Privacy Policy: Learn how we collect, use and protect your data. We follow industry-standard security practices to keep your information safe.",
+    canonical: "https://www.mackystech.in/privacy",
+  });
+
   return (
     <section className="relative min-h-screen bg-black text-gray-300 py-28 px-6 md:px-16 overflow-hidden">
       {/* Glow */}

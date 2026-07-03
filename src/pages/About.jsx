@@ -1,4 +1,12 @@
+import { useSEO } from "../hooks/useSEO";
+
 export default function About() {
+  useSEO({
+    title: "About MackysTech | IT Company in Bhopal, Madhya Pradesh | Our Story & Mission",
+    description: "Learn about MackysTech - Bhopal's leading IT company. Our mission is to deliver reliable software development, app development, cloud computing and IT training solutions that empower businesses.",
+    canonical: "https://www.mackystech.in/about",
+  });
+
   return (
     <section className="relative bg-black py-28 px-6 md:px-16 overflow-hidden">
 

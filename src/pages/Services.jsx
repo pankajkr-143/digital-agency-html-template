@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSEO } from "../hooks/useSEO";
 import {
   Code,
   Server,
@@ -190,6 +191,24 @@ const services = [
 
 /* ===================== COMPONENT ===================== */
 export default function Services() {
+  useSEO({
+    title: "IT Services in Bhopal | Software, App, Cloud, Cybersecurity | MackysTech",
+    description: "MackysTech offers 9+ IT services in Bhopal: Software Development, Mobile App Development, Cloud Computing, Cybersecurity, AI/ML, Digital Marketing, IT Consulting, Networking and IT Support.",
+    canonical: "https://www.mackystech.in/services",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "MackysTech IT Services",
+      "itemListElement": services.map((s, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": s.title,
+        "description": s.desc,
+        "url": `https://www.mackystech.in/services#${s.id}`
+      }))
+    }
+  });
+
   const [activeService, setActiveService] = useState(services[0]);
 
   return (

@@ -51,41 +51,191 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.mackystech.in/" />
 
-    <!-- Structured Data for SEO -->
+    <!-- ═══ Schema 1: Organization ════════════════════════════════ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": "https://www.mackystech.in/#organization",
       "name": "MackysTech",
+      "legalName": "Macky's Tech",
       "url": "https://www.mackystech.in",
-      "logo": "https://www.mackystech.in/assets/logo.jpeg",
-      "description": "Best IT company in India, Madhya Pradesh and Bhopal offering complete IT solutions including website development, app development, software solutions, IT training, internships and job placement services.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.mackystech.in/assets/logo.jpeg",
+        "width": 512,
+        "height": 512
+      },
+      "description": "MackysTech is India's leading IT company in Bhopal, Madhya Pradesh offering software development, app development, cloud computing, cybersecurity, IT training and internship programs.",
+      "foundingDate": "2024",
+      "founder": {
+        "@type": "Person",
+        "name": "Macky"
+      },
       "address": {
         "@type": "PostalAddress",
-        "addressCountry": "IN",
+        "addressLocality": "Bhopal",
         "addressRegion": "Madhya Pradesh",
-        "addressLocality": "Bhopal"
+        "postalCode": "462001",
+        "addressCountry": "IN"
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-XXXXXXXXXX",
-        "contactType": "customer service",
-        "availableLanguage": ["English", "Hindi"]
-      },
-      "sameAs": [
-        "https://www.mackystech.in"
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "availableLanguage": ["English", "Hindi"],
+          "url": "https://www.mackystech.in/contact"
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "technical support",
+          "availableLanguage": ["English", "Hindi"],
+          "url": "https://www.mackystech.in/contact"
+        }
       ],
-      "services": [
-        "Website Development",
-        "App Development", 
-        "Software Development",
-        "IT Training",
-        "Internship Programs",
-        "Job Placement",
-        "Digital Solutions",
-        "Cloud Services",
-        "Cyber Security",
-        "AI/ML Solutions"
+      "sameAs": [
+        "https://www.mackystech.in",
+        "https://github.com/mackystech",
+        "https://linkedin.com/company/mackystech"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "IT Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Software Development" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile App Development" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Development" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cloud Computing Services" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cybersecurity Services" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI & ML Solutions" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Marketing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "IT Training & Internship" } }
+        ]
+      }
+    }
+    </script>
+
+    <!-- ═══ Schema 2: LocalBusiness ════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "ITService"],
+      "@id": "https://www.mackystech.in/#localbusiness",
+      "name": "MackysTech",
+      "image": "https://www.mackystech.in/assets/logo.jpeg",
+      "url": "https://www.mackystech.in",
+      "description": "MackysTech - Best IT company in Bhopal offering software development, app development, IT training and internship programs at affordable prices.",
+      "priceRange": "₹₹",
+      "currenciesAccepted": "INR",
+      "paymentAccepted": "Cash, Credit Card, UPI, Bank Transfer",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bhopal",
+        "addressRegion": "Madhya Pradesh",
+        "postalCode": "462001",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "23.2599",
+        "longitude": "77.4126"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Bhopal" },
+        { "@type": "State", "name": "Madhya Pradesh" },
+        { "@type": "Country", "name": "India" }
+      ],
+      "servesCuisine": null,
+      "hasMap": "https://maps.google.com/?q=Bhopal,Madhya+Pradesh,India",
+      "sameAs": "https://www.mackystech.in/#organization"
+    }
+    </script>
+
+    <!-- ═══ Schema 3: WebSite with SearchAction ════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://www.mackystech.in/#website",
+      "name": "MackysTech",
+      "alternateName": "Macky's Tech",
+      "url": "https://www.mackystech.in",
+      "description": "MackysTech - Complete IT solutions, software development, training and internship in Bhopal, Madhya Pradesh, India.",
+      "inLanguage": ["en-IN", "hi-IN"],
+      "publisher": {
+        "@id": "https://www.mackystech.in/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.mackystech.in/blog?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- ═══ Schema 4: FAQ (Common questions) ══════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What services does MackysTech offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MackysTech offers software development, mobile app development, website development, cloud computing, cybersecurity, AI/ML solutions, digital marketing, and IT training & internship programs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is MackysTech located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MackysTech is located in Bhopal, Madhya Pradesh, India. We serve clients across India and globally."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does MackysTech offer internships?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! MackysTech offers paid and unpaid internship programs for students in software development, web development, app development, digital marketing, and more. Visit mackystech.in/internship to apply."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does website development cost at MackysTech?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Website development cost at MackysTech starts from an affordable price depending on requirements. Contact us at mackystech.in/contact for a free quote."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does MackysTech offer IT training?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, MackysTech provides IT training in full-stack development, Python, AI/ML, cybersecurity, cloud computing, DevOps and more with live projects and certificate programs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can MackysTech develop mobile apps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, MackysTech develops Android and iOS mobile apps using React Native, Flutter, and native technologies for businesses of all sizes."
+          }
+        }
       ]
     }
     </script>

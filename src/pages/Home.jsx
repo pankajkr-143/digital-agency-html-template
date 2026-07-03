@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSEO } from "../hooks/useSEO";
 
 import Services from "../components/Services";
 import Process from "../components/Process";
@@ -11,6 +12,18 @@ import MeetFounder from "../components/MeetFounder";
 import SEOContent from "../components/SEOContent";
 
 export default function Home({ setShowNavbar }) {
+  useSEO({
+    title: "MackysTech - Best IT Company in Bhopal | Software Development | App Development",
+    description: "MackysTech is Bhopal's top IT company offering software development, mobile app development, website development, cloud computing, cybersecurity, AI/ML and IT training. Get a free quote today!",
+    canonical: "https://www.mackystech.in/",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.mackystech.in/" }
+      ]
+    }
+  });
 
   /* ================= RESPONSIVE CHECK ================= */
   const [isDesktop, setIsDesktop] = useState(

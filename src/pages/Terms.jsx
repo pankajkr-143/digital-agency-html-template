@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
 import { FileText, RefreshCw } from "lucide-react";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Terms() {
+  useSEO({
+    title: "Terms of Service | MackysTech - Legal Agreement",
+    description: "MackysTech Terms of Service. By using mackystech.in, you agree to our terms covering services, user obligations, and liability. Read the full agreement here.",
+    canonical: "https://www.mackystech.in/terms",
+  });
+
   return (
     <section className="relative min-h-screen bg-black text-gray-300 py-28 px-6 md:px-16 overflow-hidden">
       {/* Glow */}

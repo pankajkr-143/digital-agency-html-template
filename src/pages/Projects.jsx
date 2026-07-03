@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useSEO } from "../hooks/useSEO";
 
 const projects = [
   {
@@ -148,6 +149,12 @@ const projects = [
 ];
 
 export default function Projects() {
+  useSEO({
+    title: "Our Projects | Software & App Development Portfolio | MackysTech Bhopal",
+    description: "Explore MackysTech's portfolio of 16+ real-world projects: home service apps, e-commerce platforms, school management systems, healthcare SaaS, e-learning platforms and more.",
+    canonical: "https://www.mackystech.in/projects",
+  });
+
   return (
     <section className="min-h-screen bg-[#0b1220] py-20 px-6">
       {/* HEADER */}

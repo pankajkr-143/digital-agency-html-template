@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useSEO } from "../hooks/useSEO";
 
 const internships = [
   {
@@ -59,6 +60,12 @@ const internships = [
 ];
 
 export default function Internships() {
+  useSEO({
+    title: "IT Internship in Bhopal 2026 | Full Stack, Android, AI, DevOps | MackysTech",
+    description: "Apply for IT internship at MackysTech Bhopal! Opportunities in Full Stack Development, Android, AI Research, Cybersecurity, UI/UX Design, DevOps. Duration 2-6 months with certificate.",
+    canonical: "https://www.mackystech.in/internship",
+  });
+
   return (
     <section className="min-h-screen bg-[#0b1220] text-white px-6 py-20">
       <div className="max-w-7xl mx-auto">

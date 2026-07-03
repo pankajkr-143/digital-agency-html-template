@@ -1,7 +1,36 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useSEO } from "../hooks/useSEO";
+
 
 export default function Contact() {
+  useSEO({
+    title: "Contact MackysTech | Get Free Quote | IT Company Bhopal | +91 8235910315",
+    description: "Contact MackysTech for software development, app development, website development, IT training or internship. Call +91 8235910315 or email info@mackystech.in. Located in Bhopal, MP.",
+    canonical: "https://www.mackystech.in/contact",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact MackysTech",
+      "url": "https://www.mackystech.in/contact",
+      "description": "Contact MackysTech for IT services, software development, training and internship programs.",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "MackysTech",
+        "telephone": "+91-8235910315",
+        "email": "info@mackystech.in",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "44C, Indrapuri Sector C",
+          "addressLocality": "Bhopal",
+          "addressRegion": "Madhya Pradesh",
+          "postalCode": "462022",
+          "addressCountry": "IN"
+        }
+      }
+    }
+  });
+
   const [result, setResult] = useState("");
 
   /* ================= SUBMIT FUNCTION ================= */
