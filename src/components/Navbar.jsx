@@ -45,11 +45,12 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center gap-10">
 
           {["/", "/projects", "/services"].map((path, i) => {
-            const label =
-              path === "/"
-                ? "Home"
-                : path.replace("/", "").charAt(0).toUpperCase() +
-                  path.slice(2);
+            const labels = {
+              "/": "Home",
+              "/projects": "Projects",
+              "/services": "Services",
+            };
+            const label = labels[path];
 
             return (
               <NavLink key={i} to={path} className="group relative">
@@ -69,6 +70,20 @@ const Navbar = () => {
               </NavLink>
             );
           })}
+
+          {/* BLOG */}
+          <NavLink to="/blog" className="group relative">
+            {({ isActive }) => (
+              <>
+                <span className={navItem}>Blog</span>
+                <span
+                  className={`absolute -bottom-2 left-0 h-[2px] w-full bg-gradient-to-r from-cyan-400 to-blue-500 transition-transform duration-300 ${
+                    isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
+              </>
+            )}
+          </NavLink>
 
           {/* ABOUT */}
           <div
@@ -90,6 +105,7 @@ const Navbar = () => {
                 >
                   <NavLink to="/about" className={dropdownItem}>About Us</NavLink>
                   <NavLink to="/team" className={dropdownItem}>Our Team</NavLink>
+                  <NavLink to="/faq" className={dropdownItem}>FAQ</NavLink>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -113,6 +129,7 @@ const Navbar = () => {
                   exit={{ opacity: 0 }}
                   className="absolute top-10 left-0 w-56 bg-[#0b0f1a] border border-white/10 rounded-xl p-4 space-y-1 shadow-xl"
                 >
+                  <NavLink to="/career" className={dropdownItem}>Career</NavLink>
                   <NavLink to="/jobs" className={dropdownItem}>Job Openings</NavLink>
                   <NavLink to="/internship" className={dropdownItem}>Internship</NavLink>
                 </motion.div>
@@ -169,11 +186,12 @@ const Navbar = () => {
             <nav className="px-6 py-4 space-y-2">
               {/* Main Nav Links */}
               {["/", "/projects", "/services"].map((path, i) => {
-                const label =
-                  path === "/"
-                    ? "Home"
-                    : path.replace("/", "").charAt(0).toUpperCase() +
-                      path.slice(2);
+                const labels = {
+                  "/": "Home",
+                  "/projects": "Projects",
+                  "/services": "Services",
+                };
+                const label = labels[path];
 
                 return (
                   <NavLink
@@ -193,6 +211,21 @@ const Navbar = () => {
                 );
               })}
 
+              {/* Blog mobile */}
+              <NavLink
+                to="/blog"
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  `block px-3 py-2 rounded-md text-sm font-medium transition ${
+                    isActive
+                      ? "text-cyan-400 bg-white/5"
+                      : "text-white/80 hover:text-white hover:bg-white/5"
+                  }`
+                }
+              >
+                Blog
+              </NavLink>
+
               {/* About Dropdown */}
               <div>
                 <button
@@ -209,19 +242,14 @@ const Navbar = () => {
                       exit={{ opacity: 0, height: 0 }}
                       className="pl-6 space-y-1 overflow-hidden"
                     >
-                      <NavLink
-                        to="/about"
-                        onClick={() => setOpen(false)}
-                        className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition"
-                      >
+                      <NavLink to="/about" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition">
                         About Us
                       </NavLink>
-                      <NavLink
-                        to="/team"
-                        onClick={() => setOpen(false)}
-                        className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition"
-                      >
+                      <NavLink to="/team" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition">
                         Our Team
+                      </NavLink>
+                      <NavLink to="/faq" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition">
+                        FAQ
                       </NavLink>
                     </motion.div>
                   )}
@@ -244,18 +272,13 @@ const Navbar = () => {
                       exit={{ opacity: 0, height: 0 }}
                       className="pl-6 space-y-1 overflow-hidden"
                     >
-                      <NavLink
-                        to="/jobs"
-                        onClick={() => setOpen(false)}
-                        className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition"
-                      >
+                      <NavLink to="/career" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition">
+                        Career
+                      </NavLink>
+                      <NavLink to="/jobs" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition">
                         Job Openings
                       </NavLink>
-                      <NavLink
-                        to="/internship"
-                        onClick={() => setOpen(false)}
-                        className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition"
-                      >
+                      <NavLink to="/internship" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition">
                         Internship
                       </NavLink>
                     </motion.div>

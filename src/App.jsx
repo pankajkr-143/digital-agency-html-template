@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import Services from "./pages/Services";
+import Products from "./pages/Products";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import OurTeam from "./pages/OurTeam";
@@ -13,6 +14,7 @@ import Events from "./pages/Events";
 import Gallery from "./pages/Gallery";
 import Jobs from "./pages/Jobs";
 import Internship from "./pages/Internship";
+import Career from "./pages/Career";
 import Verify from "./pages/Verify";
 import Contact from "./pages/Contact";
 import InternshipForm from "./pages/InternshipForm";
@@ -22,6 +24,7 @@ import Blog from "./pages/Blog";
 import Community from "./pages/Community";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import FAQ from "./pages/FAQ";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -57,6 +60,7 @@ function App() {
           element={<Home setShowNavbar={setShowNavbar} />}
         />
         <Route path="/services" element={<Services />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
         <Route path="/team" element={<OurTeam />} />
@@ -64,6 +68,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} /> */}
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/internship" element={<Internship />} />
+        <Route path="/career" element={<Career />} />
         <Route path="/internship-form" element={<InternshipForm />} />
         <Route path="/verify" element={<Verify />} />
         <Route path="/contact" element={<Contact />} />
@@ -73,6 +78,7 @@ function App() {
         <Route path="/community" element={<Community />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
 
       <Footer />
