@@ -249,6 +249,7 @@ export default function Projects() {
                     src={project.img}
                     alt={project.title}
                     className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
                   />
                   {/* Category badge */}
                   <span className={`absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full border backdrop-blur-sm ${catColor[project.category]}`}>

@@ -28,9 +28,9 @@ export default function Process() {
         
         {/* Header - Simple & Clean */}
         <div className="mb-12 md:mb-16 text-center">
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight" style={{fontFamily: "'Outfit', sans-serif"}}>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight" style={{fontFamily: "'Outfit', sans-serif"}}>
             Selected Works
-          </h1>
+          </h2>
           <p className="mt-4 text-neutral-500 text-sm md:text-base max-w-lg mx-auto" style={{fontFamily: "'Outfit', sans-serif"}}>
             Minimalist designs crafted with precision. Hover to explore details.
           </p>

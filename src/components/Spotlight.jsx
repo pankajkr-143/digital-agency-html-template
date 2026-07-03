@@ -61,7 +61,7 @@ export default function SpotlightHero() {
         }}
       >
         {/* Base Text */}
-        <h1
+        <h2
           style={{
             fontSize: "clamp(60px, 12vw, 180px)",
             fontWeight: "900",
@@ -73,10 +73,10 @@ export default function SpotlightHero() {
           }}
         >
           MACKY'S TECH
-        </h1>
+        </h2>
 
         {/* Improved Smooth Spotlight */}
-        <h1
+        <h2
           style={{
             position: "absolute",
             inset: 0,
@@ -111,7 +111,7 @@ export default function SpotlightHero() {
           }}
         >
           MACKY'S TECH
-        </h1>
+        </h2>
       </div>
     </section>
   );

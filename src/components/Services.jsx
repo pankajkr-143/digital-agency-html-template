@@ -82,12 +82,12 @@ export default function Services() {
 
           {/* ================= LEFT SIDE ================= */}
           <div className="space-y-6 text-center lg:text-left">
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight">
+            <h2 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight">
               Crafted With <br />
               <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                 Precision & Code.
               </span>
-            </h1>
+            </h2>
 
             <p className="text-slate-300 text-sm sm:text-lg max-w-lg mx-auto lg:mx-0">
               We build scalable platforms and secure digital systems engineered
