@@ -36,6 +36,17 @@ function App() {
     }
   }, [location]);
 
+  // 📊 GA4 Page View Tracking — React Router SPA ke liye zaroori
+  useEffect(() => {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "page_view", {
+        page_path: location.pathname + location.search,
+        page_title: document.title,
+        page_location: window.location.href,
+      });
+    }
+  }, [location]);
+
   return (
     <>
       {showNavbar && <Navbar />}
