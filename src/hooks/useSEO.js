@@ -1,50 +1,124 @@
 import { useEffect } from "react";
 
 /**
- * useSEO — Dynamic SEO hook for every page
- * Updates: title, meta description, canonical, OG, Twitter, robots
+ * ══════════════════════════════════════════════════════════════════
+ *  useSEO — Phase 2 Production SEO Hook
+ *  MackysTech | mackystech.in
+ * ══════════════════════════════════════════════════════════════════
  *
- * @param {Object} seo
- * @param {string} seo.title          - Page title (shown in browser tab + Google)
- * @param {string} seo.description    - Meta description (shown in Google snippet)
- * @param {string} seo.canonical      - Canonical URL for this page
- * @param {string} [seo.image]        - OG/Twitter image URL
- * @param {string} [seo.type]         - OG type: "website" | "article" (default: website)
- * @param {string} [seo.robots]       - Robots directive (default: "index, follow")
- * @param {Object} [seo.schema]       - JSON-LD schema object (optional, page-specific)
+ * Per-route dynamic injection of:
+ *  ✅ <title>
+ *  ✅ meta description, robots, author
+ *  ✅ Canonical URL
+ *  ✅ Open Graph (og:*) — Facebook, LinkedIn, WhatsApp
+ *  ✅ Twitter Cards (name="twitter:*") — correct attribute!
+ *  ✅ BreadcrumbList JSON-LD (auto-generated from canonical)
+ *  ✅ Page-specific JSON-LD schema (optional override)
+ *  ✅ GA4 page_view event (SPA route tracking)
+ *
+ * @param {Object}  options
+ * @param {string}  options.title        - Page title for <title> + OG + Twitter
+ * @param {string}  options.description  - Meta description (max 155 chars)
+ * @param {string}  options.canonical    - Full canonical URL for this page
+ * @param {string}  [options.image]      - OG/Twitter image (1200×630 px ideal)
+ * @param {string}  [options.type]       - OG type: "website" | "article" (default: website)
+ * @param {string}  [options.robots]     - Robots directive (default: index/follow + max-snippet)
+ * @param {Object}  [options.schema]     - Page-specific JSON-LD (overrides auto breadcrumb)
+ * @param {Array}   [options.breadcrumbs]- Custom breadcrumb trail [{name, url}]
  */
-const BASE_URL = "https://www.mackystech.in";
-const DEFAULT_IMAGE = `${BASE_URL}/assets/logo.jpeg`;
+
+const SITE_NAME    = "Macky's Tech";
+const BASE_URL     = "https://www.mackystech.in";
+const DEFAULT_IMG  = `${BASE_URL}/assets/logo.jpeg`;
+const DEFAULT_ROBOTS = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
+
+/* ── Label map for auto-breadcrumb generation ──────────────── */
+const ROUTE_LABELS = {
+  "":              "Home",
+  services:        "Services",
+  products:        "Products",
+  projects:        "Projects",
+  about:           "About Us",
+  team:            "Our Team",
+  contact:         "Contact",
+  career:          "Career",
+  jobs:            "Job Openings",
+  internship:      "Internship",
+  blog:            "Blog",
+  tutorials:       "Tutorials",
+  documentation:   "Documentation",
+  community:       "Community",
+  privacy:         "Privacy Policy",
+  terms:           "Terms of Service",
+  faq:             "FAQ",
+  "internship-form": "Apply for Internship",
+  verify:          "Verify Certificate",
+};
+
+/**
+ * Auto-generate BreadcrumbList JSON-LD from a canonical URL.
+ * e.g. "https://www.mackystech.in/about" →
+ *   Home > About Us
+ */
+function buildBreadcrumb(canonical, customTrail) {
+  const path      = new URL(canonical).pathname;         // "/about"
+  const segments  = path.split("/").filter(Boolean);     // ["about"]
+
+  // Build trail array: always starts with Home
+  const trail = [{ name: "Home", url: BASE_URL + "/" }];
+
+  if (customTrail && customTrail.length) {
+    customTrail.forEach((item) => trail.push(item));
+  } else {
+    let accumulated = BASE_URL;
+    segments.forEach((seg) => {
+      accumulated += `/${seg}`;
+      trail.push({
+        name: ROUTE_LABELS[seg] || seg.charAt(0).toUpperCase() + seg.slice(1),
+        url:  accumulated,
+      });
+    });
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@type":    "BreadcrumbList",
+    itemListElement: trail.map((item, i) => ({
+      "@type":    "ListItem",
+      position:   i + 1,
+      name:       item.name,
+      item:       item.url,
+    })),
+  };
+}
 
 export function useSEO({
   title,
   description,
   canonical,
-  image = DEFAULT_IMAGE,
-  type = "website",
-  robots = "index, follow",
-  schema = null,
+  image       = DEFAULT_IMG,
+  type        = "website",
+  robots      = DEFAULT_ROBOTS,
+  schema      = null,
+  breadcrumbs = null,   // optional custom trail [{name, url}]
 }) {
   useEffect(() => {
-    // ── Title ──────────────────────────────────────────
+
+    /* ── 1. <title> ──────────────────────────────────────── */
     document.title = title;
 
-    // ── Helper: set or create meta tag ─────────────────
-    const setMeta = (selector, attr, value) => {
-      let el = document.querySelector(selector);
+    /* ── 2. Helper: set / create <meta> ──────────────────── */
+    const setMeta = (keyAttr, keyVal, content) => {
+      let el = document.querySelector(`meta[${keyAttr}="${keyVal}"]`);
       if (!el) {
         el = document.createElement("meta");
-        const [attrName, attrVal] = selector
-          .replace(/[\[\]]/g, "")
-          .split("=")
-          .map((s) => s.replace(/"/g, ""));
-        el.setAttribute(attrName, attrVal);
+        el.setAttribute(keyAttr, keyVal);
         document.head.appendChild(el);
       }
-      el.setAttribute(attr, value);
+      el.setAttribute("content", content);
     };
 
-    // ── Helper: set or create link tag ─────────────────
+    /* ── 3. Helper: set / create <link> ──────────────────── */
     const setLink = (rel, href) => {
       let el = document.querySelector(`link[rel="${rel}"]`);
       if (!el) {
@@ -55,51 +129,75 @@ export function useSEO({
       el.setAttribute("href", href);
     };
 
-    // ── Standard Meta Tags ─────────────────────────────
-    setMeta('meta[name="description"]', "content", description);
-    setMeta('meta[name="robots"]', "content", robots);
-    setMeta('meta[name="title"]', "content", title);
+    /* ── 4. Standard Meta Tags ───────────────────────────── */
+    setMeta("name", "title",       title);
+    setMeta("name", "description", description);
+    setMeta("name", "robots",      robots);
+    setMeta("name", "author",      SITE_NAME);
 
-    // ── Canonical URL ──────────────────────────────────
+    /* ── 5. Canonical ────────────────────────────────────── */
     setLink("canonical", canonical);
 
-    // ── Open Graph ─────────────────────────────────────
-    setMeta('meta[property="og:title"]', "content", title);
-    setMeta('meta[property="og:description"]', "content", description);
-    setMeta('meta[property="og:url"]', "content", canonical);
-    setMeta('meta[property="og:image"]', "content", image);
-    setMeta('meta[property="og:type"]', "content", type);
+    /* ── 6. Open Graph ───────────────────────────────────── */
+    setMeta("property", "og:type",         type);
+    setMeta("property", "og:site_name",    SITE_NAME);
+    setMeta("property", "og:title",        title);
+    setMeta("property", "og:description",  description);
+    setMeta("property", "og:url",          canonical);
+    setMeta("property", "og:image",        image);
+    setMeta("property", "og:image:width",  "1200");
+    setMeta("property", "og:image:height", "630");
+    setMeta("property", "og:locale",       "en_IN");
 
-    // ── Twitter Cards ──────────────────────────────────
-    setMeta('meta[property="twitter:title"]', "content", title);
-    setMeta('meta[property="twitter:description"]', "content", description);
-    setMeta('meta[property="twitter:url"]', "content", canonical);
-    setMeta('meta[property="twitter:image"]', "content", image);
+    /* ── 7. Twitter Cards (name=, NOT property=) ─────────── */
+    setMeta("name", "twitter:card",        "summary_large_image");
+    setMeta("name", "twitter:site",        "@mackystech");
+    setMeta("name", "twitter:creator",     "@mackystech");
+    setMeta("name", "twitter:title",       title);
+    setMeta("name", "twitter:description", description);
+    setMeta("name", "twitter:url",         canonical);
+    setMeta("name", "twitter:image",       image);
 
-    // ── Page-specific JSON-LD Schema ───────────────────
-    const schemaId = "page-schema-ld";
-    let schemaEl = document.getElementById(schemaId);
-
-    if (schema) {
-      if (!schemaEl) {
-        schemaEl = document.createElement("script");
-        schemaEl.id = schemaId;
-        schemaEl.type = "application/ld+json";
-        document.head.appendChild(schemaEl);
+    /* ── 8. JSON-LD: Breadcrumb + optional page schema ───── */
+    const setSchema = (id, data) => {
+      let el = document.getElementById(id);
+      if (!el) {
+        el = document.createElement("script");
+        el.id   = id;
+        el.type = "application/ld+json";
+        document.head.appendChild(el);
       }
-      schemaEl.textContent = JSON.stringify(schema, null, 2);
+      el.textContent = JSON.stringify(data, null, 2);
+    };
+
+    const removeSchema = (id) => {
+      const el = document.getElementById(id);
+      if (el) el.remove();
+    };
+
+    // Breadcrumb (always inject on sub-pages, skip on homepage)
+    const isHome = new URL(canonical).pathname === "/";
+    if (!isHome) {
+      setSchema("breadcrumb-schema-ld", buildBreadcrumb(canonical, breadcrumbs));
     } else {
-      // Remove page-specific schema if not needed
-      if (schemaEl) schemaEl.remove();
+      removeSchema("breadcrumb-schema-ld");
     }
 
-    // ── GA4: Update page title after meta update ───────
+    // Page-specific schema (optional — e.g. FAQPage, ContactPage, Person)
+    if (schema) {
+      setSchema("page-schema-ld", schema);
+    } else {
+      removeSchema("page-schema-ld");
+    }
+
+    /* ── 9. GA4 page_view (SPA route change tracking) ────── */
     if (typeof window.gtag === "function") {
       window.gtag("event", "page_view", {
-        page_title: title,
+        page_title:    title,
         page_location: canonical,
-        page_path: new URL(canonical).pathname,
+        page_path:     new URL(canonical).pathname,
       });
     }
-  }, [title, description, canonical, image, type, robots, schema]);
+
+  }, [title, description, canonical, image, type, robots, schema, breadcrumbs]);
 }

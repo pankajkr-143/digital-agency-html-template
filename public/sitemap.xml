@@ -4,7 +4,12 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Home - Highest Priority -->
+  <!-- ═══════════════════════════════════════════════════════
+       MackysTech Sitemap | mackystech.in
+       Total URLs: 19 | Last Updated: 2026-07-03
+       ═══════════════════════════════════════════════════════ -->
+
+  <!-- ── Priority 1.0 — Homepage ─────────────────────────── -->
   <url>
     <loc>https://www.mackystech.in/</loc>
     <lastmod>2026-07-03</lastmod>
@@ -12,33 +17,12 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Core Pages -->
+  <!-- ── Priority 0.9 — Core Business Pages ──────────────── -->
   <url>
     <loc>https://www.mackystech.in/services</loc>
     <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.mackystech.in/products</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.mackystech.in/career</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.mackystech.in/faq</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 
   <url>
@@ -48,6 +32,21 @@
     <priority>0.9</priority>
   </url>
 
+  <url>
+    <loc>https://www.mackystech.in/blog</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mackystech.in/contact</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ── Priority 0.8 — About & Team ─────────────────────── -->
   <url>
     <loc>https://www.mackystech.in/about</loc>
     <lastmod>2026-07-03</lastmod>
@@ -62,14 +61,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- ── Priority 0.8 — Career Pages ─────────────────────── -->
   <url>
-    <loc>https://www.mackystech.in/contact</loc>
+    <loc>https://www.mackystech.in/career</loc>
     <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Career Pages -->
   <url>
     <loc>https://www.mackystech.in/jobs</loc>
     <lastmod>2026-07-03</lastmod>
@@ -84,6 +83,36 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- ── Priority 0.8 — Learning & Community ─────────────── -->
+  <url>
+    <loc>https://www.mackystech.in/tutorials</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mackystech.in/faq</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mackystech.in/community</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mackystech.in/documentation</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ── Priority 0.6 — Application Forms ────────────────── -->
   <url>
     <loc>https://www.mackystech.in/internship-form</loc>
     <lastmod>2026-07-03</lastmod>
@@ -98,36 +127,7 @@
     <priority>0.5</priority>
   </url>
 
-  <!-- Learning & Community Pages -->
-  <url>
-    <loc>https://www.mackystech.in/blog</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.mackystech.in/tutorials</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.mackystech.in/documentation</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.mackystech.in/community</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Legal Pages -->
+  <!-- ── Priority 0.4 — Legal Pages ──────────────────────── -->
   <url>
     <loc>https://www.mackystech.in/privacy</loc>
     <lastmod>2026-07-03</lastmod>
