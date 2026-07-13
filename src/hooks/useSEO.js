@@ -57,6 +57,17 @@ const ROUTE_LABELS = {
   faq:             "FAQ",
   "internship-form": "Apply for Internship",
   verify:          "Verify Certificate",
+  "software-development": "Software Development",
+  "digital-marketing":    "Digital Marketing",
+  "robotics":             "Robotics",
+  "artificial-intelligence": "Artificial Intelligence",
+  "cyber-security":       "Cyber Security",
+  "stock-market":         "Stock Marketing",
+  "finance":              "Finance & FinTech",
+  "building-construction":"Building Construction",
+  "sales-marketing":      "Sales & Marketing",
+  "edtech":               "EdTech Solutions",
+  "book-consultation":    "Book Consultation",
 };
 
 /**

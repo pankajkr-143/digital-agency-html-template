@@ -6,6 +6,7 @@ import Process from "../components/Process";
 import WhyChooseUs from "../components/WhyChooseUs";
 import Testimonials from "../components/Testimonials";
 import HeroSection from "../components/HeroSection";
+import FeaturedServices from "../components/FeaturedServices";
 import SmoothScroll from "../components/SmoothScroll";
 import Spotlight from "../components/Spotlight";
 import MeetFounder from "../components/MeetFounder";
@@ -59,6 +60,7 @@ export default function Home({ setShowNavbar }) {
     <main>
       <SmoothScroll>
         <HeroSection />
+        <FeaturedServices />
 
         <Services />
         <Process />

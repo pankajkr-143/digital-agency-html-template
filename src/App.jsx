@@ -25,6 +25,11 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 
+// Multi-page Ecosystem service pages & utilities
+const ServiceDetail = lazy(() => import("./pages/ServiceDetail"));
+const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
+const BookConsultation = lazy(() => import("./pages/BookConsultation"));
+
 // Programmatic Local SEO landing page template
 const LocationLanding = lazy(() => import("./pages/LocationLanding"));
 
@@ -91,6 +96,20 @@ function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/faq" element={<FAQ />} />
+
+          {/* Technology Ecosystem 10 service routes */}
+          <Route path="/software-development" element={<ServiceDetail serviceId="software-development" />} />
+          <Route path="/digital-marketing" element={<ServiceDetail serviceId="digital-marketing" />} />
+          <Route path="/robotics" element={<ServiceDetail serviceId="robotics" />} />
+          <Route path="/artificial-intelligence" element={<ServiceDetail serviceId="artificial-intelligence" />} />
+          <Route path="/cyber-security" element={<ServiceDetail serviceId="cyber-security" />} />
+          <Route path="/stock-market" element={<ServiceDetail serviceId="stock-market" />} />
+          <Route path="/finance" element={<ServiceDetail serviceId="finance" />} />
+          <Route path="/building-construction" element={<ServiceDetail serviceId="building-construction" />} />
+          <Route path="/sales-marketing" element={<ServiceDetail serviceId="sales-marketing" />} />
+          <Route path="/edtech" element={<ServiceDetail serviceId="edtech" />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/book-consultation" element={<BookConsultation />} />
 
           {/* Programmatic Local SEO landing pages */}
           <Route path="/software-company-in-:city" element={<LocationLanding />} />

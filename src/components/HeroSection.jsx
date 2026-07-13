@@ -5,8 +5,22 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const letters = ["M","A","C","K","Y","'","S"," ","T","E","C","H"];
+
+const categories = [
+  { name: "Software Dev", path: "/software-development", icon: "💻", top: "22%", left: "6%", delay: 0.1 },
+  { name: "Digital Marketing", path: "/digital-marketing", icon: "📣", top: "12%", right: "8%", delay: 0.3 },
+  { name: "Robotics", path: "/robotics", icon: "🤖", top: "60%", left: "8%", delay: 0.5 },
+  { name: "AI Agent Tech", path: "/artificial-intelligence", icon: "🧠", top: "16%", left: "32%", delay: 0.2 },
+  { name: "Cyber Security", path: "/cyber-security", icon: "🛡️", top: "55%", right: "6%", delay: 0.7 },
+  { name: "Stock Market", path: "/stock-market", icon: "📈", top: "68%", left: "38%", delay: 0.4 },
+  { name: "FinTech", path: "/finance", icon: "💳", top: "70%", right: "26%", delay: 0.6 },
+  { name: "Construction", path: "/building-construction", icon: "🏗️", top: "32%", left: "14%", delay: 0.8 },
+  { name: "Sales & Marketing", path: "/sales-marketing", icon: "👥", top: "40%", right: "15%", delay: 0.9 },
+  { name: "EdTech & LMS", path: "/edtech", icon: "🎓", top: "28%", right: "35%", delay: 0.15 }
+];
 
 const containerAnim = {
   hidden: {},
@@ -171,7 +185,50 @@ export default function HeroSection() {
               </motion.span>
             ))}
           </motion.h1>
-        </motion.div>
+         </motion.div>
+ 
+        {/* Floating Category Stickers */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 4,
+            pointerEvents: "none"
+          }}
+        >
+          {categories.map((c, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                y: [-5, 5, -5],
+                rotate: [idx % 2 === 0 ? -1.5 : 1.5, idx % 2 === 0 ? 1.5 : -1.5, idx % 2 === 0 ? -1.5 : 1.5]
+              }}
+              transition={{
+                opacity: { duration: 0.8, delay: c.delay },
+                scale: { duration: 0.8, delay: c.delay },
+                y: { repeat: Infinity, duration: 4 + (idx % 3) * 0.7, ease: "easeInOut" },
+                rotate: { repeat: Infinity, duration: 5 + (idx % 2) * 1.1, ease: "easeInOut" }
+              }}
+              style={{
+                position: "absolute",
+                top: c.top,
+                ...(c.left ? { left: c.left } : { right: c.right }),
+                pointerEvents: "auto"
+              }}
+            >
+              <Link
+                to={c.path}
+                className="flex items-center gap-1.5 px-2 py-1.5 sm:px-4 sm:py-2 rounded-full bg-slate-950/65 border border-white/10 hover:border-cyan-500/40 text-slate-200 hover:text-cyan-300 text-[8px] sm:text-[11px] font-black uppercase tracking-wider shadow-2xl backdrop-blur-md transition-all duration-300 hover:shadow-cyan-500/10 hover:scale-[1.04]"
+              >
+                <span>{c.icon}</span>
+                <span>{c.name}</span>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
 
         {/* ===== SECOND SLIDE (UNCHANGED) ===== */}
         <motion.div

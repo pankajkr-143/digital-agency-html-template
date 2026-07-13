@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [careerOpen, setCareerOpen] = useState(false);
   const [academicsOpen, setAcademicsOpen] = useState(false);
@@ -14,6 +15,19 @@ const Navbar = () => {
   const dropdownItem =
     "block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition";
 
+  const ecosystemServices = [
+    { name: "Software Development", path: "/software-development" },
+    { name: "Digital Marketing", path: "/digital-marketing" },
+    { name: "Artificial Intelligence", path: "/artificial-intelligence" },
+    { name: "Robotics", path: "/robotics" },
+    { name: "Cyber Security", path: "/cyber-security" },
+    { name: "Stock Marketing", path: "/stock-market" },
+    { name: "Finance", path: "/finance" },
+    { name: "Building Construction", path: "/building-construction" },
+    { name: "Sales & Marketing", path: "/sales-marketing" },
+    { name: "EdTech", path: "/edtech" }
+  ];
+
   return (
     <motion.header
       initial={{ y: -40, opacity: 0 }}
@@ -21,34 +35,33 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className="
         sticky top-0 z-50
-        bg-transparent
-        border-b border-transparent
+        bg-slate-950/80 backdrop-blur-md
+        border-b border-white/5
       "
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-
-       <Link to="/" className="flex items-center">
-  <img
-    src="/assets/logo23.png"
-    alt="MackysTech Logo"
-    className="
-      h-30 w-auto
-      object-contain
-      transition duration-300
-      hover:scale-105
-    "
-  />
-</Link>
-
+        
+        <Link to="/" className="flex items-center">
+          <img
+            src="/assets/logo23.png"
+            alt="MackysTech Logo"
+            className="
+              h-30 w-auto
+              object-contain
+              transition duration-300
+              hover:scale-105
+            "
+          />
+        </Link>
 
         {/* DESKTOP NAV */}
         <nav className="hidden md:flex items-center gap-10">
-
-          {["/", "/projects", "/services"].map((path, i) => {
+          
+          {/* Home & Projects */}
+          {["/", "/projects"].map((path, i) => {
             const labels = {
               "/": "Home",
               "/projects": "Projects",
-              "/services": "Services",
             };
             const label = labels[path];
 
@@ -57,7 +70,6 @@ const Navbar = () => {
                 {({ isActive }) => (
                   <>
                     <span className={navItem}>{label}</span>
-
                     <span
                       className={`absolute -bottom-2 left-0 h-[2px] w-full bg-gradient-to-r from-cyan-400 to-blue-500 transition-transform duration-300 ${
                         isActive
@@ -70,6 +82,59 @@ const Navbar = () => {
               </NavLink>
             );
           })}
+
+          {/* SERVICES MEGAMENU */}
+          <div
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+            className="relative"
+          >
+            <span className={`${navItem} cursor-pointer`}>
+              Services ▾
+            </span>
+
+            <AnimatePresence>
+              {servicesOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  className="absolute top-10 left-1/2 -translate-x-1/2 w-[480px] bg-[#0b0f1a] border border-white/10 rounded-2xl p-6 shadow-2xl z-50"
+                >
+                  <div className="grid grid-cols-2 gap-4">
+                    {/* Left Column */}
+                    <div className="space-y-1">
+                      <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-widest block mb-2 px-3">Tech Suites</span>
+                      {ecosystemServices.slice(0, 5).map((service, idx) => (
+                        <NavLink key={idx} to={service.path} className={dropdownItem}>
+                          {service.name}
+                        </NavLink>
+                      ))}
+                    </div>
+
+                    {/* Right Column */}
+                    <div className="space-y-1">
+                      <span className="text-[10px] font-bold text-purple-400 uppercase tracking-widest block mb-2 px-3">Operations & Industry</span>
+                      {ecosystemServices.slice(5, 10).map((service, idx) => (
+                        <NavLink key={idx} to={service.path} className={dropdownItem}>
+                          {service.name}
+                        </NavLink>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Footer item inside megamenu */}
+                  <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-between px-3">
+                    <span className="text-xs text-slate-400">10 Dedicated Service Pages</span>
+                    <NavLink to="/services" className="text-xs text-cyan-400 hover:text-cyan-300 font-bold flex items-center gap-1">
+                      All Services
+                      <span className="text-sm">→</span>
+                    </NavLink>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
           {/* BLOG */}
           <NavLink to="/blog" className="group relative">
@@ -136,7 +201,9 @@ const Navbar = () => {
               )}
             </AnimatePresence>
           </div>
-         <div
+
+          {/* ACADEMICS */}
+          <div
             onMouseEnter={() => setAcademicsOpen(true)}
             onMouseLeave={() => setAcademicsOpen(false)}
             className="relative"
@@ -182,15 +249,15 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden bg-[#0b0f1a] border-t border-white/10"
+            className="md:hidden bg-[#0b0f1a] border-t border-white/10 max-h-[85vh] overflow-y-auto"
           >
             <nav className="px-6 py-4 space-y-2">
-              {/* Main Nav Links */}
-              {["/", "/projects", "/services"].map((path, i) => {
+              
+              {/* Home & Projects */}
+              {["/", "/projects"].map((path, i) => {
                 const labels = {
                   "/": "Home",
                   "/projects": "Projects",
-                  "/services": "Services",
                 };
                 const label = labels[path];
 
@@ -211,6 +278,40 @@ const Navbar = () => {
                   </NavLink>
                 );
               })}
+
+              {/* Services Accordion */}
+              <div>
+                <button
+                  onClick={() => setServicesOpen(!servicesOpen)}
+                  className="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-white/80 hover:text-white hover:bg-white/5 transition flex items-center justify-between animate-none"
+                >
+                  Services ▾
+                </button>
+                <AnimatePresence>
+                  {servicesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="pl-6 space-y-1 overflow-hidden"
+                    >
+                      <NavLink to="/services" onClick={() => setOpen(false)} className="block px-3 py-1.5 rounded-md text-xs text-cyan-400 font-bold">
+                        Services Overview
+                      </NavLink>
+                      {ecosystemServices.map((service, idx) => (
+                        <NavLink
+                          key={idx}
+                          to={service.path}
+                          onClick={() => setOpen(false)}
+                          className="block px-3 py-1.5 rounded-md text-xs text-white/70 hover:text-cyan-300 hover:bg-white/5 transition"
+                        >
+                          {service.name}
+                        </NavLink>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
 
               {/* Blog mobile */}
               <NavLink

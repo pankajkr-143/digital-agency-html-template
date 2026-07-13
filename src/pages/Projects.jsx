@@ -2,9 +2,22 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useSEO } from "../hooks/useSEO";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink, Search } from "lucide-react";
 
-const categories = ["All", "Enterprise", "Sales", "Education", "E-Commerce", "HR Tech", "Security"];
+const categories = [
+  "All", 
+  "Enterprise", 
+  "Sales", 
+  "Education", 
+  "E-Commerce", 
+  "HR Tech", 
+  "Security",
+  "Robotics",
+  "AI/ML",
+  "Trading Tech",
+  "FinTech",
+  "Construction"
+];
 
 const projects = [
   {
@@ -135,6 +148,48 @@ const projects = [
     tech: ["React Native", "Node.js", "MQTT", "MongoDB"],
     link: "https://drive.google.com/file/d/1JRg-g2VU4J0R0xSdt8nTTpMOpuxIRisq/view",
   },
+  
+  /* Newly added categories using generated illustrations */
+  {
+    title: "Autonomous Telepresence Rover",
+    category: "Robotics",
+    desc: "An IoT-enabled telepresence robot running on ROS and ESP32 with live WebRTC video feed mapping and lidar sweeps.",
+    img: "/assets/robotics_rover.png",
+    tech: ["ROS", "C++", "Python", "WebRTC", "ESP32"],
+    link: "https://example.com/robotics-rover",
+  },
+  {
+    title: "DeepSense AI Diagnostics",
+    category: "AI/ML",
+    desc: "Generative AI medical diagnostics platform built with Claude API, vector files searching, and automated patient data analysis.",
+    img: "/assets/ai_diagnostics.png",
+    tech: ["Python", "Gemini API", "Pinecone", "Next.js"],
+    link: "https://example.com/ai-diagnostics",
+  },
+  {
+    title: "AstroAlgo Strategy Suite",
+    category: "Trading Tech",
+    desc: "High-speed algorithmic trading signals processor executing EMA crossover trades via broker APIs.",
+    img: "/assets/algo_trading.png",
+    tech: ["Python", "Websockets", "Pandas", "PineScript"],
+    link: "https://example.com/algo-trading",
+  },
+  {
+    title: "LedgerPay double-entry portal",
+    category: "FinTech",
+    desc: "Enterprise double-entry ledger bookkeeping platform with automated Stripe invoice generation and Plaid feeds.",
+    img: "/assets/ledger_pay.png",
+    tech: ["React", "Go", "PostgreSQL", "Stripe API"],
+    link: "https://example.com/ledger-pay",
+  },
+  {
+    title: "SiteBuild 3D ERP Portal",
+    category: "Construction",
+    desc: "A civil engineering material tracker displaying 3D BIM models directly inside client dashboard drawers.",
+    img: "/assets/sitebuild_erp.png",
+    tech: ["Three.js", "React", "Node.js", "AWS S3"],
+    link: "https://example.com/sitebuild-erp",
+  }
 ];
 
 /* category badge colors */
@@ -145,165 +200,200 @@ const catColor = {
   "E-Commerce": "bg-orange-500/15 text-orange-400 border-orange-500/30",
   "HR Tech":    "bg-cyan-500/15 text-cyan-400 border-cyan-500/30",
   Security:     "bg-red-500/15 text-red-400 border-red-500/30",
+  Robotics:     "bg-amber-500/15 text-amber-400 border-amber-500/30",
+  "AI/ML":      "bg-indigo-500/15 text-indigo-400 border-indigo-500/30",
+  "Trading Tech":"bg-emerald-500/15 text-emerald-400 border-emerald-500/30",
+  FinTech:      "bg-violet-500/15 text-violet-400 border-violet-500/30",
+  Construction: "bg-yellow-500/15 text-yellow-400 border-yellow-500/30",
 };
 
 export default function Projects() {
   useSEO({
     title: "Our Projects | Software & App Development Portfolio | MackysTech Bhopal",
     description:
-      "Explore MackysTech's portfolio of 16+ real-world projects: home service apps, e-commerce platforms, school management systems, healthcare SaaS, e-learning platforms and more.",
+      "Explore MackysTech's portfolio of 21+ real-world projects including home service apps, robotics rover, AI medical diagnostics, algorithmic trading, construction ERP and more.",
     canonical: "https://www.mackystech.in/projects",
   });
 
   const [activeCategory, setActiveCategory] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const filtered =
-    activeCategory === "All"
-      ? projects
-      : projects.filter((p) => p.category === activeCategory);
+  const filtered = projects.filter((p) => {
+    const matchesCategory = activeCategory === "All" || p.category === activeCategory;
+    const matchesSearch =
+      p.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      p.desc.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      p.tech.some((t) => t.toLowerCase().includes(searchTerm.toLowerCase()));
+    return matchesCategory && matchesSearch;
+  });
 
   return (
-    <section className="min-h-screen bg-[#0b1220] py-20 px-6">
-
-      {/* ── HEADER ──────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto text-center mb-10">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-white"
-        >
-          Our <span className="text-blue-400">Projects</span>
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-4 text-gray-400 max-w-2xl mx-auto"
-        >
-          A showcase of real-world solutions we've built using modern technologies and innovative thinking.
-        </motion.p>
-
-        {/* ── CTA BUTTONS ─────────────────────────────── */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-4 mt-8"
-        >
-          <Link
-            to="/contact"
-            className="flex items-center gap-2 px-7 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all shadow-[0_0_25px_rgba(59,130,246,0.4)] hover:shadow-[0_0_40px_rgba(59,130,246,0.6)]"
-          >
-            Get a Demo <ArrowRight className="w-4 h-4" />
-          </Link>
-          <Link
-            to="/contact"
-            className="flex items-center gap-2 px-7 py-3 rounded-full border border-white/20 hover:border-blue-400/60 text-white/80 hover:text-white font-semibold text-sm transition-all"
-          >
-            Custom Development
-          </Link>
-        </motion.div>
+    <section className="min-h-screen bg-[#030712] py-24 px-6 relative overflow-hidden">
+      {/* Background glow spots */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute top-10 right-20 w-96 h-96 rounded-full bg-cyan-500/5 blur-[140px]" />
+        <div className="absolute bottom-20 left-10 w-96 h-96 rounded-full bg-purple-500/5 blur-[140px]" />
       </div>
 
-      {/* ── CATEGORY FILTER ─────────────────────────────── */}
-      <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-3 mb-12">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setActiveCategory(cat)}
-            className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-              activeCategory === cat
-                ? "bg-blue-600 text-white shadow-[0_0_18px_rgba(59,130,246,0.5)]"
-                : "border border-white/15 text-white/60 hover:border-blue-400/50 hover:text-white"
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
-
-      {/* ── PROJECTS GRID ───────────────────────────────── */}
-      <div className="max-w-7xl mx-auto">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeCategory}
-            initial={{ opacity: 0, y: 16 }}
+      <div className="relative z-10">
+        {/* ── HEADER ──────────────────────────────────────── */}
+        <div className="max-w-7xl mx-auto text-center mb-16">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl font-black text-white"
           >
-            {filtered.map((project, i) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.06 }}
-                whileHover={{ y: -10 }}
-                className="bg-[#111a2e] rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.4)] group"
-              >
-                {/* IMAGE */}
-                <div className="overflow-hidden relative">
-                  <img
-                    src={project.img.includes("unsplash.com") && !project.img.includes("fm=webp") ? `${project.img}&fm=webp&w=500&q=85` : project.img}
-                    alt={project.title}
-                    className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                    width="384"
-                    height="192"
-                  />
-                  {/* Category badge */}
-                  <span className={`absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full border backdrop-blur-sm ${catColor[project.category]}`}>
-                    {project.category}
-                  </span>
-                </div>
+            Our <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Projects</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mt-4 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed"
+          >
+            A showcase of real-world solutions we've built using modern technologies, robust architectures, and innovative thinking.
+          </motion.p>
 
-                {/* CONTENT */}
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white">{project.title}</h3>
-                  <p className="mt-3 text-sm text-gray-400 leading-relaxed">{project.desc}</p>
+          {/* ── CTA BUTTONS ─────────────────────────────── */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-wrap justify-center gap-4 mt-8"
+          >
+            <Link
+              to="/contact"
+              className="flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 hover:scale-[1.03] text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-lg shadow-cyan-500/25"
+            >
+              Get a Demo <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              to="/contact"
+              className="flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/10 hover:border-cyan-500/40 text-slate-300 hover:text-white font-bold text-xs uppercase tracking-wider bg-white/5 transition-all duration-300"
+            >
+              Custom Development
+            </Link>
+          </motion.div>
+        </div>
 
-                  {/* TECH STACK */}
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {project.tech.map((t, idx) => (
-                      <span
-                        key={idx}
-                        className="text-xs px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-400/20"
-                      >
-                        {t}
+        {/* ── SEARCH BAR ─────────────────────────────── */}
+        <div className="max-w-xl mx-auto mb-10 relative px-4">
+          <Search className="absolute left-8 top-3.5 w-5 h-5 text-slate-500 pointer-events-none" />
+          <input
+            type="text"
+            placeholder="Search projects by name, technology stack, or description..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-full py-3.5 pl-12 pr-6 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 transition-colors shadow-2xl"
+          />
+        </div>
+
+        {/* ── CATEGORY FILTER ─────────────────────────────── */}
+        <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-2.5 mb-14 px-4">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-350 ${
+                activeCategory === cat
+                  ? "bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20 font-extrabold scale-[1.04]"
+                  : "border border-white/10 bg-slate-950/40 text-slate-400 hover:border-cyan-500/30 hover:text-cyan-400"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* ── PROJECTS GRID ───────────────────────────────── */}
+        <div className="max-w-7xl mx-auto px-4">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCategory + searchTerm}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+            >
+              {filtered.map((project, i) => (
+                <motion.div
+                  key={project.title}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.04 }}
+                  whileHover={{ y: -8 }}
+                  className="bg-slate-950/80 rounded-2xl overflow-hidden border border-white/10 hover:border-cyan-500/30 shadow-2xl group flex flex-col justify-between h-full transition-all duration-300"
+                >
+                  {/* IMAGE */}
+                  <div>
+                    <div className="overflow-hidden relative">
+                      <img
+                        src={project.img.includes("unsplash.com") && !project.img.includes("fm=webp") ? `${project.img}&fm=webp&w=500&q=85` : project.img}
+                        alt={project.title}
+                        className="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-108"
+                        loading="lazy"
+                        width="384"
+                        height="208"
+                      />
+                      {/* Category badge */}
+                      <span className={`absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border backdrop-blur-md shadow-md ${catColor[project.category] || "bg-white/5 text-slate-300 border-white/10"}`}>
+                        {project.category}
                       </span>
-                    ))}
+                    </div>
+
+                    {/* CONTENT */}
+                    <div className="p-6 space-y-4">
+                      <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-slate-400 leading-relaxed line-clamp-3">
+                        {project.desc}
+                      </p>
+
+                      {/* TECH STACK */}
+                      <div className="flex flex-wrap gap-2.5 pt-1">
+                        {project.tech.map((t, idx) => (
+                          <span
+                            key={idx}
+                            className="text-[10px] font-semibold px-2.5 py-1 rounded-full bg-slate-900 border border-white/10 text-slate-300"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
 
                   {/* CTA */}
-                  <div className="mt-6">
+                  <div className="px-6 pb-6 pt-2">
                     <a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-400 hover:text-white transition group/link"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-cyan-400 hover:text-cyan-300 transition group/link"
                     >
-                      View Project
+                      View Live App
                       <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
                     </a>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
 
-        {/* Empty state */}
-        {filtered.length === 0 && (
-          <div className="text-center text-gray-500 py-20">
-            No projects in this category yet.{" "}
-            <Link to="/contact" className="text-blue-400 hover:underline">
-              Contact us
-            </Link>{" "}
-            to discuss.
-          </div>
-        )}
+          {/* Empty state */}
+          {filtered.length === 0 && (
+            <div className="text-center text-slate-500 py-24 font-bold">
+              No projects matched your search criteria.{" "}
+              <Link to="/contact" className="text-cyan-400 hover:underline">
+                Contact us
+              </Link>{" "}
+              to custom develop a solution.
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
