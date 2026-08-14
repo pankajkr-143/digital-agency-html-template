@@ -169,7 +169,6 @@ const Navbar = () => {
                   className="absolute top-10 left-0 w-64 bg-[#0b0f1a] border border-white/10 rounded-xl p-4 space-y-1 shadow-xl"
                 >
                   <NavLink to="/about" className={dropdownItem}>About Us</NavLink>
-                  <NavLink to="/team" className={dropdownItem}>Our Team</NavLink>
                   <NavLink to="/faq" className={dropdownItem}>FAQ</NavLink>
                 </motion.div>
               )}
@@ -346,9 +345,6 @@ const Navbar = () => {
                     >
                       <NavLink to="/about" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition">
                         About Us
-                      </NavLink>
-                      <NavLink to="/team" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition">
-                        Our Team
                       </NavLink>
                       <NavLink to="/faq" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition">
                         FAQ

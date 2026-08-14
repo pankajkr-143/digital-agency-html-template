@@ -122,13 +122,6 @@
     <priority>0.8</priority>
   </url>
 
-  <url>
-    <loc>https://www.mackystech.in/team</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <!-- ── Priority 0.8 — Career Pages ─────────────────────── -->
   <url>
     <loc>https://www.mackystech.in/career</loc>

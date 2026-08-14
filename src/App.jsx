@@ -10,7 +10,6 @@ const Services = lazy(() => import("./pages/Services"));
 const Products = lazy(() => import("./pages/Products"));
 const Projects = lazy(() => import("./pages/Projects"));
 const About = lazy(() => import("./pages/About"));
-const OurTeam = lazy(() => import("./pages/OurTeam"));
 const Jobs = lazy(() => import("./pages/Jobs"));
 const Internship = lazy(() => import("./pages/Internship"));
 const Career = lazy(() => import("./pages/Career"));
@@ -82,7 +81,6 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
-          <Route path="/team" element={<OurTeam />} />
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/internship" element={<Internship />} />
           <Route path="/career" element={<Career />} />
