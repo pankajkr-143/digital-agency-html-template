@@ -105,84 +105,52 @@ const TestimonialCard = ({ item }) => {
 export default function Testimonials() {
   const testimonials = [
     {
-      name: "Aarav Singhania",
-      role: "Co-founder, BharatTech",
-      location: "Bangalore, Karnataka",
+      name: "Rajesh Sharma",
+      role: "Founder & Managing Director",
+      location: "Apex Infra Solutions · Mumbai",
       rating: 5,
-      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200",
-      text: "The team at MackysTech delivered a flawless website design. Our customer conversion rate increased by 40% in the first month alone!",
+      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
+      text: "Macky's Tech completely transformed our lead generation funnel. Our sales team went from chasing cold contacts to closing high-intent real estate buyers consistently every month.",
     },
     {
-      name: "Diya Sharma",
-      role: "Product Manager, Swasthya.ai",
-      location: "Mumbai, Maharashtra",
+      name: "Priya Nair",
+      role: "Chief Technology Officer",
+      location: "EduSmart Learning · Bengaluru",
       rating: 5,
-      img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200&h=200",
-      text: "Stunning UI design and incredibly clean React code. They made our dashboard extremely responsive and easy to navigate for users.",
+      img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
+      text: "The custom LMS software built by Macky's Tech handles over 50,000 active students seamlessly. Their tech architecture and post-launch support have been world-class.",
     },
     {
-      name: "Rohan Deshmukh",
-      role: "Founder, KiranaFlow",
-      location: "Pune, Maharashtra",
+      name: "Amitabh Roy",
+      role: "VP of Growth & Marketing",
+      location: "QuickLogistics Tech · Delhi NCR",
       rating: 5,
-      img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200&h=200",
-      text: "They built our B2B ordering app with zero delays. The quality of components and smooth animations are simply world-class.",
+      img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400",
+      text: "Their performance marketing and targeted B2B lead generation campaigns reduced our customer acquisition cost by 42% while scaling our driver network nationwide.",
     },
     {
-      name: "Ananya Iyer",
-      role: "Creative Director, Kalakari Studio",
-      location: "Chennai, Tamil Nadu",
-      rating: 4,
-      img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200&h=200",
-      text: "Outstanding creative vision! They converted our complex branding guidelines into a beautiful, fluid digital experience.",
-    },
-    {
-      name: "Kabir Malhotra",
-      role: "CTO, FinAstra India",
-      location: "Delhi, NCR",
+      name: "Ananya Deshmukh",
+      role: "Operations Head",
+      location: "CarePlus Diagnostics · Pune",
       rating: 5,
-      img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=200&h=200",
-      text: "Our application's performance improved significantly after their optimization. Extremely clean codebase and wonderful collaboration.",
+      img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=400",
+      text: "WhatsApp automation and appointment booking CRM integrated by Macky's Tech cut our administrative manual work by half and elevated our patient experience.",
     },
     {
-      name: "Sneha Rao",
-      role: "Head of Marketing, Ziva Fashion",
-      location: "Hyderabad, Telangana",
+      name: "Vikramaditya Verma",
+      role: "Co-Founder & Product Lead",
+      location: "FinEdge Digital · Hyderabad",
       rating: 5,
-      img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200&h=200",
-      text: "Their SEO and performance tuning put us on the map. Organic traffic grew by 200%! Absolutely thrilled with the results.",
+      img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400",
+      text: "Extremely impressed with their UI/UX design standards and rapid full-stack engineering. They delivered our MVP ahead of schedule with top-tier security standards.",
     },
     {
-      name: "Vikram Sen",
-      role: "Executive Director, AgriGrowth",
-      location: "Kolkata, West Bengal",
-      rating: 4,
-      img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200&h=200",
-      text: "Very professional and structured workflow. They handled our project with utmost care and delivered exactly what we envisioned.",
-    },
-    {
-      name: "Kavita Joshi",
-      role: "Operations Lead, BloomCart",
-      location: "Ahmedabad, Gujarat",
+      name: "Sneha Gupta",
+      role: "Head of Business Development",
+      location: "UrbanBazaar E-Commerce · Jaipur",
       rating: 5,
-      img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200&h=200",
-      text: "Building our online marketplace was seamless. The code is modular, reusable, and easy for our internal team to maintain.",
-    },
-    {
-      name: "Amit Verma",
-      role: "Director of Sales, EduSpark",
-      location: "Jaipur, Rajasthan",
-      rating: 5,
-      img: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&q=80&w=200&h=200",
-      text: "The new UI is incredibly polished. We've seen a massive surge in course enrollments due to the improved checkout experience.",
-    },
-    {
-      name: "Meera Nair",
-      role: "UX Designer, IndieLab",
-      location: "Kochi, Kerala",
-      rating: 5,
-      img: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&q=80&w=200&h=200",
-      text: "MackysTech represents the pinnacle of modern web design. Responsive, fast, and gorgeous interfaces that stand out immediately.",
+      img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400",
+      text: "Our multi-vendor marketplace platform was built flawlessly. Sales pipelines, automated vendor payouts, and inventory management work seamlessly under heavy traffic.",
     },
   ];
 
@@ -201,7 +169,7 @@ export default function Testimonials() {
           className="text-3xl md:text-4xl lg:text-5xl font-semibold text-center text-white mb-16 tracking-tight"
           style={{ fontFamily: "'Outfit', sans-serif" }}
         >
-          What Our Clients Say
+          Businesses We've Helped Move Forward
         </h2>
 
         {/* Marquee Row (Only 1 row) */}

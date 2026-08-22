@@ -24,11 +24,22 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 
+// Core Solution Pages
+const GetCustomers = lazy(() => import("./pages/GetCustomers"));
+const BuildTechnology = lazy(() => import("./pages/BuildTechnology"));
+const ScaleYourBusiness = lazy(() => import("./pages/ScaleYourBusiness"));
+
 // Multi-page Ecosystem service pages & utilities
 const ServiceDetail = lazy(() => import("./pages/ServiceDetail"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 const BookConsultation = lazy(() => import("./pages/BookConsultation"));
-
+const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail"));
+const CategoryDetail = lazy(() => import("./pages/CategoryDetail"));
+const Packages = lazy(() => import("./pages/Packages"));
+const Solutions = lazy(() => import("./pages/Solutions"));
+const Industries = lazy(() => import("./pages/Industries"));
+const IndustryDetail = lazy(() => import("./pages/IndustryDetail"));
+const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 // Programmatic Local SEO landing page template
 const LocationLanding = lazy(() => import("./pages/LocationLanding"));
 
@@ -80,7 +91,6 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/products" element={<Products />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/about" element={<About />} />
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/internship" element={<Internship />} />
           <Route path="/career" element={<Career />} />
@@ -89,11 +99,23 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/documentation" element={<Documentation />} />
           <Route path="/tutorials" element={<Tutorials />} />
-          <Route path="/blog" element={<Blog />} />
           <Route path="/community" element={<Community />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/faq" element={<FAQ />} />
+
+          {/* Core Solution Routes */}
+          <Route path="/get-customers" element={<GetCustomers />} />
+          <Route path="/build-technology" element={<BuildTechnology />} />
+          <Route path="/scale-business" element={<ScaleYourBusiness />} />
+          <Route path="/scale-your-business" element={<ScaleYourBusiness />} />
+
+          {/* Solutions & Industries Architecture */}
+          <Route path="/solutions" element={<Solutions />} />
+          <Route path="/solutions/:slug" element={<CategoryDetail />} />
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/industries/:slug" element={<IndustryDetail />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
 
           {/* Technology Ecosystem 10 service routes */}
           <Route path="/software-development" element={<ServiceDetail serviceId="software-development" />} />
@@ -108,6 +130,11 @@ function App() {
           <Route path="/edtech" element={<ServiceDetail serviceId="edtech" />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/book-consultation" element={<BookConsultation />} />
+          <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
+          <Route path="/solutions/:slug" element={<CategoryDetail />} />
+          <Route path="/packages" element={<Packages />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/about" element={<About />} />
 
           {/* Programmatic Local SEO landing pages */}
           <Route path="/software-company-in-:city" element={<LocationLanding />} />

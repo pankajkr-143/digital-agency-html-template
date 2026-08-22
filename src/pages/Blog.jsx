@@ -1,536 +1,227 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import { Newspaper, Calendar, User, ArrowRight, ArrowLeft, Clock, Share2, MessageSquare } from "lucide-react";
-import { useSEO } from "../hooks/useSEO";
-
+import { motion } from "framer-motion";
+import { Search, Calendar, User, ArrowRight, Tag } from "lucide-react";
+import { blogPosts, blogCategories, blogTags } from "../data/blogData";
 
 export default function Blog() {
-  const [selectedPost, setSelectedPost] = useState(null);
-  const [copied, setCopied] = useState(false);
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const handleShare = () => {
-    navigator.clipboard.writeText(`${window.location.origin}/blog#${selectedPost?.id}`);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  const seoTitle = selectedPost 
-    ? `${selectedPost.title} | MackysTech Blog`
-    : "Tech Blog | Software Dev, Cloud, AI, Security Articles | MackysTech";
-    
-  const seoDesc = selectedPost
-    ? selectedPost.excerpt
-    : "MackysTech blog: Expert articles on software development, React, Node.js, cloud computing, cybersecurity, AI/ML, DevOps and more. Written by our experienced developers.";
-
-  const seoCanonical = selectedPost
-    ? `https://www.mackystech.in/blog#${selectedPost.id}`
-    : "https://www.mackystech.in/blog";
-
-  const seoSchema = selectedPost
-    ? {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": selectedPost.title,
-        "description": selectedPost.excerpt,
-        "datePublished": selectedPost.date,
-        "author": {
-          "@type": "Person",
-          "name": selectedPost.author
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "MackysTech",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.mackystech.in/assets/logo.jpeg"
-          }
-        },
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": seoCanonical
-        }
-      }
-    : {
-        "@context": "https://schema.org",
-        "@type": "Blog",
-        "name": "MackysTech Blog",
-        "description": "Expert tech articles on software development, web development, AWS, and AI.",
-        "publisher": {
-          "@type": "Organization",
-          "name": "MackysTech"
-        }
-      };
-
-  useSEO({
-    title: seoTitle,
-    description: seoDesc,
-    canonical: seoCanonical,
-    schema: seoSchema,
-    keywords: selectedPost ? `${selectedPost.category || "tech"}, blog post, MackysTech` : "tech blog, software engineering, coding tutorials, AI ML blog",
-    author: selectedPost ? selectedPost.author : "MackysTech",
+  const featuredPost = blogPosts.find(post => post.isFeatured);
+  
+  const filteredPosts = blogPosts.filter(post => {
+    const matchesCategory = activeCategory === "All" || post.category === activeCategory;
+    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch && !post.isFeatured;
   });
 
-  const posts = [
-    {
-      id: "featured",
-      title: "Architecting Enterprise SaaS for 10M+ Monthly Active Users",
-      excerpt: "A case study of how our development team built a globally distributed web application leveraging serverless databases, edge routing, and caching.",
-      author: "Mack Mackey",
-      date: "June 02, 2026",
-      readTime: "8 min read",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop",
-      content: (
-        <>
-          <p className="text-lg text-gray-300 leading-relaxed">
-            Scaling a software application to support over 10 million monthly active users is as much about architecture as it is about writing clean code. As modern SaaS systems grow, monolithic architectures quickly show bottlenecks in database connections, API latency, and regional network latency.
-          </p>
-          
-          <h3 className="text-2xl font-semibold text-white mt-8 mb-4">1. Moving to Edge Routing</h3>
-          <p className="text-gray-400 leading-relaxed mb-6">
-            In our legacy architecture, API requests from Europe and Asia had to travel all the way to our central database server in Virginia (us-east-1). This introduced an average network latency of 200ms before any database query even ran.
-          </p>
-          <p className="text-gray-400 leading-relaxed mb-6">
-            We solved this by implementing edge routing through Cloudflare Workers. Requests are now intercepted at the edge node closest to the user, validating authorization tokens and rendering static pages locally before hitting origin servers.
-          </p>
-
-          <div className="my-8 p-6 rounded-2xl bg-white/5 border border-white/10 font-mono text-xs text-cyan-300 overflow-x-auto">
-{`// Example Edge Router routing table
-export default {
-  async fetch(request) {
-    const url = new URL(request.url);
-    if (url.pathname.startsWith("/api/v2")) {
-      return fetch(\`https://api-origin.mackystech.in\${url.pathname}\`, request);
-    }
-    return fetch(\`https://static-pages.mackystech.in\${url.pathname}\`);
-  }
-}`}
-          </div>
-
-          <h3 className="text-2xl font-semibold text-white mt-8 mb-4">2. Serverless Database Replication</h3>
-          <p className="text-gray-400 leading-relaxed mb-6">
-            Connecting 10,000 parallel edge worker instances to a single PostgreSQL database would instantly exhaust connection pools. To support high concurrent writes, we integrated AWS DynamoDB Global Tables, syncing writes within sub-second thresholds across three target global regions.
-          </p>
-
-          <blockquote className="border-l-4 border-purple-500 pl-6 my-8 italic text-gray-300 text-lg">
-            "By caching 95% of read queries at the edge and utilizing global write replica databases, we successfully reduced average page load times from 2.4 seconds to under 400 milliseconds worldwide."
-          </blockquote>
-
-          <h3 className="text-2xl font-semibold text-white mt-8 mb-4">Conclusion</h3>
-          <p className="text-gray-400 leading-relaxed">
-            Scaling system reliability requires anticipating points of failure before they occur. Emphasizing decoupled infrastructure, edge routers, and globally distributed databases is the single best investment any fast-growing SaaS business can make.
-          </p>
-        </>
-      ),
-    },
-    {
-      id: "micro-frontends",
-      title: "Building Micro-frontends with React 19 & Vite 7",
-      excerpt: "Discover how code splitting, server actions, and modern bundlers can speed up dashboard performance for enterprises.",
-      author: "Alex Rivera",
-      date: "May 28, 2026",
-      readTime: "5 min read",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop",
-      content: (
-        <>
-          <p className="text-lg text-gray-300 leading-relaxed">
-            Micro-frontends are rapidly becoming the preferred approach for enterprise engineering teams. By breaking down large monolithic web apps into autonomous, deployable sub-applications, teams can ship features faster without step-dependency locks.
-          </p>
-
-          <h3 className="text-2xl font-semibold text-white mt-8 mb-4">React 19 & Dynamic Import Native Bindings</h3>
-          <p className="text-gray-400 leading-relaxed mb-6">
-            Historically, federating modules required complicated Webpack configs. With React 19 and Vite 7, native ESM imports allow us to pull remote bundles into runtime cleanly. React's Suspense component catches loading states seamlessly.
-          </p>
-
-          <div className="my-8 p-6 rounded-2xl bg-white/5 border border-white/10 font-mono text-xs text-cyan-300 overflow-x-auto">
-{`// Importing a federated module dynamically
-import React, { Suspense } from "react";
-
-const RemoteBillingModule = React.lazy(() => import("http://billing.macky.internal/assets/RemoteEntry.js"));
-
-export default function Dashboard() {
   return (
-    <div>
-      <h1>Dashboard View</h1>
-      <Suspense fallback={<div>Loading billing system...</div>}>
-        <RemoteBillingModule />
-      </Suspense>
-    </div>
-  );
-}`}
-          </div>
+    <div className="bg-[#060a12] min-h-screen pt-32 pb-24 font-sans text-gray-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Header */}
+        <div className="text-center mb-16">
+          <motion.h1 
+            initial={{ opacity: 0, y: -20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight"
+          >
+            Insights & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Resources</span>
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ delay: 0.1 }}
+            className="text-lg text-gray-400 max-w-2xl mx-auto"
+          >
+            Latest news, strategies, and case studies on scaling businesses with technology and marketing.
+          </motion.p>
+        </div>
 
-          <h3 className="text-2xl font-semibold text-white mt-8 mb-4">Why Vite 7?</h3>
-          <p className="text-gray-400 leading-relaxed">
-            Vite 7's updated build pipeline resolves chunks with near-zero overhead. Combined with React 19's Server Component capabilities, micro-frontends can serve pre-rendered components directly to client containers, resulting in lightning-fast initial load times.
-          </p>
-        </>
-      ),
-    },
-    {
-      id: "tailwindcss-v4",
-      title: "Why We Switched to TailwindCSS V4 for Client Projects",
-      excerpt: "An in-depth review of TailwindCSS version 4's new CSS-first configuration and lightning-fast compiler engine.",
-      author: "Sneha Patel",
-      date: "May 15, 2026",
-      readTime: "4 min read",
-      image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=600&auto=format&fit=crop",
-      content: (
-        <>
-          <p className="text-lg text-gray-300 leading-relaxed">
-            TailwindCSS version 4 is a ground-up rewrite of the framework. It replaces the classic JavaScript-based config (`tailwind.config.js`) with an elegant CSS-first design, processing directives straight in the CSS file.
-          </p>
-
-          <h3 className="text-2xl font-semibold text-white mt-8 mb-4">CSS-First Architecture</h3>
-          <p className="text-gray-400 leading-relaxed mb-6">
-            Instead of writing complex configuration objects, Tailwind v4 allows you to configure themes, screens, and custom colors directly inside `@import "tailwindcss";` using native CSS variables.
-          </p>
-
-          <div className="my-8 p-6 rounded-2xl bg-white/5 border border-white/10 font-mono text-xs text-cyan-300 overflow-x-auto">
-{`/* index.css with Tailwind CSS v4 */
-@import "tailwindcss";
-
-@theme {
-  --color-primary-brand: #06b6d4;
-  --font-display: "Outfit", sans-serif;
-}`}
-          </div>
-
-          <h3 className="text-2xl font-semibold text-white mt-8 mb-4">Incredible Compilation Speed</h3>
-          <p className="text-gray-400 leading-relaxed">
-            V4 uses a custom Rust-based compiler engine. It scans HTML and JS files up to 10x faster than previous node compilers, meaning dev servers boot instantaneously and live refreshes occur without lag.
-          </p>
-        </>
-      ),
-    },
-    {
-      id: "aws-iam-pitfalls",
-      title: "Securing AWS deployments: Top 5 common IAM pitfalls",
-      excerpt: "Avoid security leaks. We breakdown how configuring identity access management rules properly saves cost and headaches.",
-      author: "Mack Mackey",
-      date: "May 03, 2026",
-      readTime: "6 min read",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=600&auto=format&fit=crop",
-      content: (
-        <>
-          <p className="text-lg text-gray-300 leading-relaxed">
-            Security in the cloud operates on a shared responsibility model. While Amazon Web Services secures the server racks and hypervisors, you are responsible for defining access gates. IAM (Identity and Access Management) rules are the most critical layer of defense.
-          </p>
-
-          <h3 className="text-2xl font-semibold text-white mt-8 mb-4">Pitfall #1: Using Wildcards on Privileged Resources</h3>
-          <p className="text-gray-400 leading-relaxed mb-6">
-            Setting `"Resource": "*"` for operations like `s3:GetObject` or `dynamodb:PutItem` exposes all buckets or tables. Always restrict resources to specific Amazon Resource Names (ARNs).
-          </p>
-
-          <h3 className="text-2xl font-semibold text-white mt-8 mb-4">Pitfall #2: Hardcoded IAM Credentials in App Code</h3>
-          <p className="text-gray-400 leading-relaxed mb-6">
-            Storing AWS access keys in environment files risks leakages. Always use AWS IAM Roles attached to EC2 instances or ECS tasks to assign short-lived security tokens automatically.
-          </p>
-
-          <blockquote className="border-l-4 border-red-500 pl-6 my-8 italic text-gray-300">
-            "Always follow the Principle of Least Privilege (PoLP): assign only the permissions required to complete the specific task, and nothing more."
-          </blockquote>
-        </>
-      ),
-    },
-  ];
-
-  return (
-    <section className="relative min-h-screen bg-black text-gray-300 py-28 px-6 md:px-16 overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(139,92,246,0.1),transparent_70%)] pointer-events-none" />
-
-      <div className="relative max-w-6xl mx-auto">
-        <AnimatePresence mode="wait">
-          {!selectedPost ? (
-            <motion.div
-              key="list"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              {/* Heading */}
-              <div className="text-center max-w-3xl mx-auto">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-purple-400 font-semibold mb-6">
-                  <Newspaper className="w-3.5 h-3.5" /> Blog & Insights
-                </div>
-                <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight">
-                  The Mackys<span className="text-purple-400">Tech</span> Blog
-                </h1>
-                <p className="mt-6 text-lg text-gray-400 leading-relaxed">
-                  Stay ahead of the curve. Articles, deep dives, and tech news straight from our developers' workspace.
-                </p>
+        {/* Featured Post */}
+        {featuredPost && activeCategory === "All" && searchQuery === "" && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-20"
+          >
+            <div className="relative rounded-[2rem] overflow-hidden group bg-white/[0.02] border border-white/10 flex flex-col lg:flex-row h-auto lg:h-[450px]">
+              <div className="w-full lg:w-3/5 h-[300px] lg:h-full overflow-hidden relative">
+                <img 
+                  src={featuredPost.image} 
+                  alt={featuredPost.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#060a12] via-transparent to-transparent opacity-80" />
               </div>
-
-              {/* Featured Post */}
-              {posts.length > 0 && (
-                <motion.div
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="mt-16 bg-[#0a0f1a] border border-white/5 rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row hover:border-purple-500/25 transition-all duration-300"
-                >
-                  <div className="lg:w-1/2 aspect-video lg:aspect-auto">
-                    <img
-                      src={posts[0].image}
-                      alt={posts[0].title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-8 lg:p-12 lg:w-1/2 flex flex-col justify-between">
+              
+              <div className="w-full lg:w-2/5 p-8 lg:p-12 flex flex-col justify-center">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="px-3 py-1 bg-blue-600/20 text-cyan-400 text-xs font-bold uppercase tracking-wider rounded-full border border-blue-500/30">
+                    Featured
+                  </span>
+                  <span className="text-gray-500 text-xs font-semibold uppercase tracking-wider">{featuredPost.category}</span>
+                </div>
+                
+                <h2 className="text-2xl lg:text-3xl font-black text-white mb-4 leading-tight group-hover:text-blue-400 transition-colors">
+                  {featuredPost.title}
+                </h2>
+                
+                <p className="text-gray-400 mb-8 leading-relaxed line-clamp-3">
+                  {featuredPost.excerpt}
+                </p>
+                
+                <div className="mt-auto flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <img src={featuredPost.author.avatar} alt={featuredPost.author.name} className="w-10 h-10 rounded-full border-2 border-white/10" />
                     <div>
-                      <span className="text-xs font-semibold bg-purple-500/10 text-purple-400 px-3 py-1 rounded-full border border-purple-500/20">
-                        Featured
-                      </span>
-                      <h2 
-                        onClick={() => setSelectedPost(posts[0])}
-                        className="text-2xl md:text-3xl font-bold text-white mt-6 hover:text-purple-400 cursor-pointer transition-colors leading-tight"
-                      >
-                        {posts[0].title}
-                      </h2>
-                      <p className="mt-4 text-gray-400 text-sm md:text-base leading-relaxed">
-                        {posts[0].excerpt}
+                      <h4 className="text-sm font-bold text-gray-200">{featuredPost.author.name}</h4>
+                      <p className="text-xs text-gray-500 flex items-center gap-1">
+                        <Calendar className="w-3 h-3" /> {featuredPost.publishedDate}
                       </p>
                     </div>
-                    <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <span className="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-white text-xs font-bold font-mono">
-                          M
-                        </span>
-                        <span className="text-xs text-gray-400">{posts[0].author}</span>
-                      </div>
-                      <div 
-                        onClick={() => setSelectedPost(posts[0])}
-                        className="flex items-center gap-2 text-purple-400 text-sm font-semibold hover:underline cursor-pointer group"
-                      >
-                        Read Article <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                      </div>
-                    </div>
                   </div>
-                </motion.div>
-              )}
+                  <Link to={`/blog/${featuredPost.id}`} className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-500 transition-colors shadow-lg">
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
 
-              {/* Regular Posts Grid */}
-              <div className="grid md:grid-cols-3 gap-8 mt-12">
-                {posts.slice(1).map((post, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: idx * 0.1 }}
-                    className="group bg-[#0a0f1a] border border-white/5 rounded-2xl overflow-hidden shadow-xl hover:border-purple-500/25 transition-all duration-300 flex flex-col justify-between"
+        {/* Main Layout: Left Sidebar + Right Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          {/* Left Sidebar */}
+          <div className="lg:col-span-3 space-y-10 order-2 lg:order-1">
+            
+            {/* Search */}
+            <div className="relative">
+              <input 
+                type="text" 
+                placeholder="Search articles..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full bg-[#0a1224] border border-white/10 rounded-xl py-3 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
+              />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
+            </div>
+
+            {/* Categories */}
+            <div>
+              <h3 className="text-sm font-bold text-white uppercase tracking-widest mb-4 flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-cyan-400" /> Categories
+              </h3>
+              <div className="flex flex-col space-y-2">
+                {blogCategories.map(cat => (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveCategory(cat)}
+                    className={`text-left text-sm py-2 px-3 rounded-lg transition-all ${
+                      activeCategory === cat 
+                        ? 'bg-blue-600/10 text-cyan-400 border border-blue-500/30 font-semibold' 
+                        : 'text-gray-400 hover:bg-white/5 hover:text-gray-200'
+                    }`}
                   >
-                    <div>
-                      <div className="aspect-video overflow-hidden">
-                        <img
-                          src={post.image}
-                          alt={post.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                          loading="lazy"
-                        />
-                      </div>
-                      <div className="p-6">
-                        <div className="flex items-center gap-4 text-xs text-gray-500 mb-3 font-mono">
-                          <span className="flex items-center gap-1">
-                            <Calendar className="w-3.5 h-3.5" /> {post.date}
-                          </span>
-                          <span className="flex items-center gap-1">
-                            <User className="w-3.5 h-3.5" /> {post.author}
-                          </span>
-                        </div>
-                        <h3 
-                          onClick={() => setSelectedPost(post)}
-                          className="text-lg font-semibold text-white group-hover:text-purple-400 transition-colors leading-snug cursor-pointer"
-                        >
-                          {post.title}
-                        </h3>
-                        <p className="mt-3 text-gray-400 text-sm leading-relaxed line-clamp-2">
-                          {post.excerpt}
-                        </p>
+                    {cat}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Popular Tags */}
+            <div>
+              <h3 className="text-sm font-bold text-white uppercase tracking-widest mb-4 flex items-center gap-2">
+                <Tag className="w-4 h-4 text-cyan-400" /> Popular Tags
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {blogTags.map(tag => (
+                  <span key={tag} className="text-xs font-semibold bg-white/5 border border-white/10 text-gray-400 px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-white cursor-pointer transition-colors">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Newsletter CTA */}
+            <div className="bg-gradient-to-br from-blue-900/40 to-[#060a12] border border-blue-500/30 p-6 rounded-2xl">
+              <h3 className="text-lg font-bold text-white mb-2">Subscribe</h3>
+              <p className="text-sm text-gray-400 mb-4">Get the latest business growth strategies delivered to your inbox.</p>
+              <input type="email" placeholder="Email Address" className="w-full bg-white/5 border border-white/10 rounded-lg py-2 px-3 text-sm text-white mb-3 focus:outline-none focus:border-blue-500" />
+              <button className="w-full py-2 bg-blue-600 text-white rounded-lg text-sm font-bold hover:bg-blue-500 transition-colors">
+                Subscribe
+              </button>
+            </div>
+
+          </div>
+
+          {/* Right Content: Blog Grid */}
+          <div className="lg:col-span-9 order-1 lg:order-2">
+            <h3 className="text-2xl font-bold text-white mb-8 border-b border-white/10 pb-4">
+              {searchQuery ? `Search Results for "${searchQuery}"` : `${activeCategory} Articles`}
+            </h3>
+            
+            {filteredPosts.length === 0 ? (
+              <div className="text-center py-20 bg-white/[0.02] rounded-2xl border border-white/5">
+                <p className="text-gray-400 text-lg">No articles found matching your criteria.</p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {filteredPosts.map((post) => (
+                  <motion.div 
+                    key={post.id}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="group bg-white/[0.02] border border-white/10 rounded-2xl overflow-hidden hover:border-blue-500/40 hover:bg-white/[0.04] transition-all flex flex-col"
+                  >
+                    <div className="relative h-48 overflow-hidden">
+                      <img 
+                        src={post.image} 
+                        alt={post.title} 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute top-4 left-4 bg-[#060a12]/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-cyan-400 uppercase tracking-wider border border-white/10">
+                        {post.category}
                       </div>
                     </div>
-
-                    <div className="p-6 pt-0">
-                      <div 
-                        onClick={() => setSelectedPost(post)}
-                        className="pt-4 border-t border-white/5 flex items-center justify-between text-sm text-purple-400 font-semibold cursor-pointer group/btn"
-                      >
-                        <span>Read Article</span>
-                        <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                    
+                    <div className="p-6 flex flex-col flex-grow">
+                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors leading-snug">
+                        {post.title}
+                      </h3>
+                      <p className="text-sm text-gray-400 mb-6 line-clamp-3 leading-relaxed flex-grow">
+                        {post.excerpt}
+                      </p>
+                      
+                      <div className="mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <img src={post.author.avatar} alt={post.author.name} className="w-8 h-8 rounded-full" />
+                          <div className="flex flex-col">
+                            <span className="text-xs font-bold text-gray-300">{post.author.name}</span>
+                            <span className="text-[10px] text-gray-500">{post.publishedDate} • {post.readTime}</span>
+                          </div>
+                        </div>
+                        <Link to={`/blog/${post.id}`} className="text-cyan-400 font-semibold text-sm hover:text-cyan-300 flex items-center gap-1 group-hover:gap-2 transition-all">
+                          Read <ArrowRight className="w-4 h-4" />
+                        </Link>
                       </div>
                     </div>
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
-          ) : (
-            <motion.div
-              key="detail"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -30 }}
-              className="max-w-3xl mx-auto"
-            >
-              {/* Back Button */}
-              <button
-                onClick={() => setSelectedPost(null)}
-                className="flex items-center gap-2 text-sm text-purple-400 hover:text-white transition duration-300 mb-8 font-semibold bg-white/5 hover:bg-white/10 px-4 py-2 rounded-full border border-white/10 cursor-pointer"
-              >
-                <ArrowLeft className="w-4 h-4" /> Back to Articles
-              </button>
+            )}
+          </div>
 
-              {/* Title & Metadata */}
-              <div className="mb-8">
-                <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-6">
-                  {selectedPost.title}
-                </h1>
-                
-                <div className="flex flex-wrap items-center justify-between gap-6 border-y border-white/10 py-4">
-                  <div className="flex items-center gap-6 text-sm text-gray-400">
-                    <span className="flex items-center gap-2">
-                      <User className="w-4 h-4 text-purple-400" /> {selectedPost.author}
-                    </span>
-                    <span className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-purple-400" /> {selectedPost.date}
-                    </span>
-                    <span className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-purple-400" /> {selectedPost.readTime}
-                    </span>
-                  </div>
+        </div>
 
-                  <div className="flex items-center gap-3">
-                    <button 
-                      onClick={handleShare}
-                      className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition border border-white/10 cursor-pointer relative" 
-                      title="Share"
-                    >
-                      <Share2 className="w-4 h-4" />
-                      {copied && (
-                        <span className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-xs px-2.5 py-1 rounded-md whitespace-nowrap shadow-lg">
-                          Copied!
-                        </span>
-                      )}
-                    </button>
-                    <button className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition border border-white/10 cursor-pointer" title="Comment">
-                      <MessageSquare className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Main Image */}
-              <div className="aspect-video w-full rounded-2xl overflow-hidden mb-10 border border-white/10 shadow-2xl">
-                <img
-                  src={selectedPost.image}
-                  alt={selectedPost.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Table of Contents */}
-              <div className="bg-[#0d1221] border border-white/5 rounded-2xl p-6 mb-8">
-                <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-3">Table of Contents</h4>
-                <ul className="space-y-2 text-sm text-purple-400">
-                  {selectedPost.id === "featured" && (
-                    <>
-                      <li><a href="#edge-routing" className="hover:underline">1. Moving to Edge Routing</a></li>
-                      <li><a href="#db-rep" className="hover:underline">2. Serverless Database Replication</a></li>
-                      <li><a href="#conclusion" className="hover:underline">3. Conclusion</a></li>
-                    </>
-                  )}
-                  {selectedPost.id === "micro-frontends" && (
-                    <>
-                      <li><a href="#react-19" className="hover:underline">1. React 19 & Dynamic Import Native Bindings</a></li>
-                      <li><a href="#vite-7" className="hover:underline">2. Why Vite 7?</a></li>
-                    </>
-                  )}
-                  {selectedPost.id === "tailwindcss-v4" && (
-                    <>
-                      <li><a href="#v4-engine" className="hover:underline">1. The New Lightning Compiler Engine</a></li>
-                      <li><a href="#v4-css" className="hover:underline">2. CSS-First Configuration</a></li>
-                    </>
-                  )}
-                  {selectedPost.id === "aws-iam-pitfalls" && (
-                    <>
-                      <li><a href="#iam-least" className="hover:underline">1. Principle of Least Privilege</a></li>
-                      <li><a href="#iam-danger" className="hover:underline">2. The Dangers of Wildcard Policies</a></li>
-                    </>
-                  )}
-                </ul>
-              </div>
-
-              {/* Content Body */}
-              <div className="prose prose-invert max-w-none text-gray-300 space-y-6">
-                {selectedPost.content}
-              </div>
-
-              {/* Dynamic FAQ Block */}
-              <div className="mt-12 p-6 rounded-2xl bg-[#0d1221] border border-white/5">
-                <h3 className="text-lg font-bold mb-4">Frequently Asked Questions</h3>
-                <div className="space-y-4 text-sm text-gray-400">
-                  <div>
-                    <h4 className="font-semibold text-white">How does MackysTech use this tech stack?</h4>
-                    <p className="mt-1">We implement these architectures directly across our enterprise client projects to ensure near-zero downtime and fast page loading.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white">Can we consult on custom micro-frontends/AWS setup?</h4>
-                    <p className="mt-1">Yes! We offer professional technical consulting and resource augmentation for enterprise teams. Contact us at info@mackystech.in.</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Premium CTA Block */}
-              <div className="mt-8 p-8 rounded-2xl bg-gradient-to-r from-purple-900/40 to-blue-900/40 border border-purple-500/25 text-center">
-                <h3 className="text-xl font-bold mb-2">Build High-Performance Digital Products</h3>
-                <p className="text-sm text-gray-300 mb-6">Partner with MackysTech technical architects to deliver scalable software engineered for growth.</p>
-                <Link to="/contact" className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white font-semibold py-2.5 px-6 rounded-full transition shadow-[0_0_20px_rgba(168,85,247,0.3)] text-sm">
-                  Start Your Project <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-
-              {/* Related Articles */}
-              <div className="mt-12 border-t border-white/10 pt-10">
-                <h3 className="text-xl font-bold mb-6 text-white">Related Articles</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  {posts
-                    .filter((p) => p.id !== selectedPost.id)
-                    .slice(0, 2)
-                    .map((relatedPost, rIdx) => (
-                      <div
-                        key={rIdx}
-                        onClick={() => {
-                          setSelectedPost(relatedPost);
-                          window.scrollTo({ top: 0, behavior: "smooth" });
-                        }}
-                        className="p-5 rounded-2xl bg-[#0a0f1a] border border-white/5 hover:border-purple-500/20 transition cursor-pointer flex flex-col justify-between group"
-                      >
-                        <div>
-                          <span className="text-xs text-purple-400 font-semibold">{relatedPost.date}</span>
-                          <h4 className="font-bold text-white mt-1 group-hover:text-purple-400 transition-colors line-clamp-2 text-sm leading-snug">
-                            {relatedPost.title}
-                          </h4>
-                        </div>
-                        <span className="text-xs text-purple-400 font-semibold mt-4 flex items-center gap-1">
-                          Read Article <ArrowRight className="w-3.5 h-3.5" />
-                        </span>
-                      </div>
-                    ))}
-                </div>
-              </div>
-
-              {/* Bottom Nav / CTA */}
-              <div className="border-t border-white/10 mt-12 pt-8 text-center">
-                <button
-                  onClick={() => setSelectedPost(null)}
-                  className="bg-purple-600 hover:bg-purple-500 text-white font-semibold py-2.5 px-6 rounded-full transition duration-300 shadow-lg cursor-pointer text-sm"
-                >
-                  View Other Articles
-                </button>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
-    </section>
+    </div>
   );
 }

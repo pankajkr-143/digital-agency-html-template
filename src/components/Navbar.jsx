@@ -1,31 +1,37 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown, ArrowRight, Sun, Moon } from "lucide-react";
+import { useTheme } from "../context/ThemeContext";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false);
-  const [careerOpen, setCareerOpen] = useState(false);
-  const [academicsOpen, setAcademicsOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [growthOpen, setGrowthOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const navItem =
-    "relative text-sm font-medium text-white/80 hover:text-white transition duration-300";
+    "relative text-sm font-medium text-gray-300 hover:text-white transition duration-300 flex items-center gap-1";
 
   const dropdownItem =
-    "block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition";
+    "block px-4 py-2.5 rounded-md text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-all";
 
-  const ecosystemServices = [
-    { name: "Software Development", path: "/software-development" },
-    { name: "Digital Marketing", path: "/digital-marketing" },
-    { name: "Artificial Intelligence", path: "/artificial-intelligence" },
-    { name: "Robotics", path: "/robotics" },
-    { name: "Cyber Security", path: "/cyber-security" },
-    { name: "Stock Marketing", path: "/stock-market" },
-    { name: "Finance", path: "/finance" },
-    { name: "Building Construction", path: "/building-construction" },
-    { name: "Sales & Marketing", path: "/sales-marketing" },
-    { name: "EdTech", path: "/edtech" }
+  const solutions = [
+    { name: "IT Services & Consulting", path: "/solutions/it-services" },
+    { name: "Digital Marketing", path: "/solutions/digital-marketing" },
+    { name: "Building & Construction", path: "/solutions/construction" },
+    { name: "EdTech & LMS", path: "/solutions/edtech-lms" },
+    { name: "Cab & Mobility", path: "/solutions/cab-services" },
+    { name: "Payment Solutions", path: "/solutions/payment-gateway" },
+    { name: "WhatsApp API", path: "/solutions/whatsapp-api" }
+  ];
+
+  const businessGrowth = [
+    { name: "Get Leads", path: "/solutions/business-leads" },
+    { name: "Sales & Marketing", path: "/solutions/sales-marketing" },
+    { name: "AI & Automation", path: "/solutions/ai-automation" },
+    { name: "Performance Marketing", path: "/solutions/digital-marketing" },
+    { name: "IT Consulting", path: "/solutions/it-services" }
   ];
 
   return (
@@ -35,408 +41,211 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className="
         sticky top-0 z-50
-        bg-slate-950/80 backdrop-blur-md
-        border-b border-white/5
+        bg-gray-950/80 backdrop-blur-xl
+        border-b border-gray-800
       "
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
-        <Link to="/" className="flex items-center">
+        {/* LEFT: LOGO */}
+        <Link to="/" className="flex items-center flex-shrink-0">
           <img
             src="/assets/logo23.png"
             alt="MackysTech Logo"
-            className="
-              h-30 w-auto
-              object-contain
-              transition duration-300
-              hover:scale-105
-            "
+            className="h-20 md:h-28 w-auto object-contain transition duration-300 hover:scale-[1.6] mix-blend-screen scale-150 ml-4 md:ml-8"
           />
         </Link>
 
-        {/* DESKTOP NAV */}
-        <nav className="hidden md:flex items-center gap-10">
+        {/* CENTER: NAVIGATION */}
+        <nav className="hidden lg:flex items-center justify-center gap-8 flex-grow">
           
-          {/* Home & Projects */}
-          {["/", "/projects"].map((path, i) => {
-            const labels = {
-              "/": "Home",
-              "/projects": "Projects",
-            };
-            const label = labels[path];
+          <NavLink to="/" className={navItem}>Home</NavLink>
 
-            return (
-              <NavLink key={i} to={path} className="group relative">
-                {({ isActive }) => (
-                  <>
-                    <span className={navItem}>{label}</span>
-                    <span
-                      className={`absolute -bottom-2 left-0 h-[2px] w-full bg-gradient-to-r from-cyan-400 to-blue-500 transition-transform duration-300 ${
-                        isActive
-                          ? "scale-x-100"
-                          : "scale-x-0 group-hover:scale-x-100"
-                      }`}
-                    />
-                  </>
-                )}
-              </NavLink>
-            );
-          })}
-
-          {/* SERVICES MEGAMENU */}
+          {/* SOLUTIONS DROPDOWN */}
           <div
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
-            className="relative"
+            onMouseEnter={() => setSolutionsOpen(true)}
+            onMouseLeave={() => setSolutionsOpen(false)}
+            className="relative py-8"
           >
             <span className={`${navItem} cursor-pointer`}>
-              Services ▾
+              Solutions <ChevronDown size={14} className={`transition-transform duration-300 ${solutionsOpen ? 'rotate-180' : ''}`} />
             </span>
 
             <AnimatePresence>
-              {servicesOpen && (
+              {solutionsOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: 12 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0 }}
-                  className="absolute top-10 left-1/2 -translate-x-1/2 w-[480px] bg-[#0b0f1a] border border-white/10 rounded-2xl p-6 shadow-2xl z-50"
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-20 left-1/2 -translate-x-1/2 w-64 bg-gray-900 border border-gray-800 rounded-xl p-2 shadow-2xl z-50"
                 >
-                  <div className="grid grid-cols-2 gap-4">
-                    {/* Left Column */}
-                    <div className="space-y-1">
-                      <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-widest block mb-2 px-3">Tech Suites</span>
-                      {ecosystemServices.slice(0, 5).map((service, idx) => (
-                        <NavLink key={idx} to={service.path} className={dropdownItem}>
-                          {service.name}
-                        </NavLink>
-                      ))}
-                    </div>
-
-                    {/* Right Column */}
-                    <div className="space-y-1">
-                      <span className="text-[10px] font-bold text-purple-400 uppercase tracking-widest block mb-2 px-3">Operations & Industry</span>
-                      {ecosystemServices.slice(5, 10).map((service, idx) => (
-                        <NavLink key={idx} to={service.path} className={dropdownItem}>
-                          {service.name}
-                        </NavLink>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Footer item inside megamenu */}
-                  <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-between px-3">
-                    <span className="text-xs text-slate-400">10 Dedicated Service Pages</span>
-                    <NavLink to="/services" className="text-xs text-cyan-400 hover:text-cyan-300 font-bold flex items-center gap-1">
-                      All Services
-                      <span className="text-sm">→</span>
+                  {solutions.map((service, idx) => (
+                    <NavLink key={idx} to={service.path} className={dropdownItem}>
+                      {service.name}
                     </NavLink>
-                  </div>
+                  ))}
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
 
-          {/* BLOG */}
-          <NavLink to="/blog" className="group relative">
-            {({ isActive }) => (
-              <>
-                <span className={navItem}>Blog</span>
-                <span
-                  className={`absolute -bottom-2 left-0 h-[2px] w-full bg-gradient-to-r from-cyan-400 to-blue-500 transition-transform duration-300 ${
-                    isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                  }`}
-                />
-              </>
-            )}
-          </NavLink>
-
-          {/* ABOUT */}
+          {/* BUSINESS GROWTH DROPDOWN */}
           <div
-            onMouseEnter={() => setAboutOpen(true)}
-            onMouseLeave={() => setAboutOpen(false)}
-            className="relative"
+            onMouseEnter={() => setGrowthOpen(true)}
+            onMouseLeave={() => setGrowthOpen(false)}
+            className="relative py-8"
           >
             <span className={`${navItem} cursor-pointer`}>
-              About ▾
+              Business Growth <ChevronDown size={14} className={`transition-transform duration-300 ${growthOpen ? 'rotate-180' : ''}`} />
             </span>
 
             <AnimatePresence>
-              {aboutOpen && (
+              {growthOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: 12 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0 }}
-                  className="absolute top-10 left-0 w-64 bg-[#0b0f1a] border border-white/10 rounded-xl p-4 space-y-1 shadow-xl"
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-20 left-1/2 -translate-x-1/2 w-64 bg-gray-900 border border-gray-800 rounded-xl p-2 shadow-2xl z-50"
                 >
-                  <NavLink to="/about" className={dropdownItem}>About Us</NavLink>
-                  <NavLink to="/faq" className={dropdownItem}>FAQ</NavLink>
+                  {businessGrowth.map((item, idx) => (
+                    <NavLink key={idx} to={item.path} className={dropdownItem}>
+                      {item.name}
+                    </NavLink>
+                  ))}
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
 
-          {/* CAREERS */}
-          <div
-            onMouseEnter={() => setCareerOpen(true)}
-            onMouseLeave={() => setCareerOpen(false)}
-            className="relative"
-          >
-            <span className={`${navItem} cursor-pointer`}>
-              Careers ▾
-            </span>
+          <NavLink to="/packages" className={navItem}>Packages</NavLink>
+          <NavLink to="/projects" className={navItem}>Projects</NavLink>
+          <NavLink to="/blog" className={navItem}>Resources</NavLink>
+          <NavLink to="/about" className={navItem}>About</NavLink>
 
-            <AnimatePresence>
-              {careerOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0 }}
-                  className="absolute top-10 left-0 w-56 bg-[#0b0f1a] border border-white/10 rounded-xl p-4 space-y-1 shadow-xl"
-                >
-                  <NavLink to="/career" className={dropdownItem}>Career</NavLink>
-                  <NavLink to="/jobs" className={dropdownItem}>Job Openings</NavLink>
-                  <NavLink to="/internship" className={dropdownItem}>Internship</NavLink>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          {/* ACADEMICS */}
-          <div
-            onMouseEnter={() => setAcademicsOpen(true)}
-            onMouseLeave={() => setAcademicsOpen(false)}
-            className="relative"
-          >
-            <span className={`${navItem} cursor-pointer`}>
-              Academics ▾
-            </span>
-
-            <AnimatePresence>
-              {academicsOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0 }}
-                  className="absolute top-10 left-0 w-56 bg-[#0b0f1a] border border-white/10 rounded-xl p-4 space-y-1 shadow-xl"
-                >
-                  <a href="https://training.mackystech.in/aws-cloud" target="_blank" rel="noopener noreferrer" className={dropdownItem}>AWS</a>
-                  <a href="https://training.mackystech.in/" target="_blank" rel="noopener noreferrer" className={dropdownItem}>Training</a>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          <NavLink to="/contact" className={navItem}>
-            Contact
-          </NavLink>
         </nav>
 
-        {/* MOBILE BTN */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-white text-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md p-1"
-          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
-        >
-          {open ? "✕" : "☰"}
-        </button>
+        {/* RIGHT: CTA BUTTONS & THEME TOGGLE */}
+        <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
+          {/* Theme Toggle Button */}
+          <button
+            onClick={toggleTheme}
+            className="p-2.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white transition-all flex items-center justify-center gap-2 text-xs font-semibold"
+            title={theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            aria-label="Toggle Theme"
+          >
+            {theme === "dark" ? (
+              <>
+                <Sun size={18} className="text-amber-400" />
+                <span className="hidden xl:inline">Light</span>
+              </>
+            ) : (
+              <>
+                <Moon size={18} className="text-blue-400" />
+                <span className="hidden xl:inline">Dark</span>
+              </>
+            )}
+          </button>
+
+          <Link 
+            to="/contact" 
+            className="bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold py-2.5 px-5 rounded-full transition-all duration-300 flex items-center group shadow-lg shadow-blue-600/20 hover:shadow-blue-500/40"
+          >
+            Get Started <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+
+        {/* MOBILE MENU BTN */}
+        <div className="flex items-center gap-3 lg:hidden">
+          {/* Mobile Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full border border-white/10 bg-white/5 text-gray-300"
+            aria-label="Toggle Theme"
+          >
+            {theme === "dark" ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} className="text-blue-400" />}
+          </button>
+
+          <button
+            onClick={() => setOpen(!open)}
+            className="text-white p-2"
+          >
+            {open ? "✕" : "☰"}
+          </button>
+        </div>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE MENU FULL SCREEN */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden bg-[#0b0f1a] border-t border-white/10 max-h-[85vh] overflow-y-auto"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "100vh" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="lg:hidden fixed inset-0 top-20 bg-gray-950 z-40 overflow-y-auto pb-24"
           >
-            <nav className="px-6 py-4 space-y-2">
+            <nav className="flex flex-col p-6 space-y-4">
               
-              {/* Home & Projects */}
-              {["/", "/projects"].map((path, i) => {
-                const labels = {
-                  "/": "Home",
-                  "/projects": "Projects",
-                };
-                const label = labels[path];
-
-                return (
-                  <NavLink
-                    key={i}
-                    to={path}
-                    onClick={() => setOpen(false)}
-                    className={({ isActive }) =>
-                      `block px-3 py-2 rounded-md text-sm font-medium transition ${
-                        isActive
-                          ? "text-cyan-400 bg-white/5"
-                          : "text-white/80 hover:text-white hover:bg-white/5"
-                      }`
-                    }
-                  >
-                    {label}
-                  </NavLink>
-                );
-              })}
-
-              {/* Services Accordion */}
-              <div>
-                <button
-                  onClick={() => setServicesOpen(!servicesOpen)}
-                  className="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-white/80 hover:text-white hover:bg-white/5 transition flex items-center justify-between animate-none"
-                >
-                  Services ▾
+              <NavLink to="/" onClick={() => setOpen(false)} className="text-lg font-medium text-white border-b border-gray-800 pb-4">Home</NavLink>
+              
+              {/* Mobile Solutions */}
+              <div className="border-b border-gray-800 pb-4">
+                <button onClick={() => setSolutionsOpen(!solutionsOpen)} className="w-full text-left text-lg font-medium text-white flex justify-between items-center">
+                  Solutions <ChevronDown size={20} className={`transition-transform ${solutionsOpen ? 'rotate-180' : ''}`} />
                 </button>
                 <AnimatePresence>
-                  {servicesOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="pl-6 space-y-1 overflow-hidden"
-                    >
-                      <NavLink to="/services" onClick={() => setOpen(false)} className="block px-3 py-1.5 rounded-md text-xs text-cyan-400 font-bold">
-                        Services Overview
-                      </NavLink>
-                      {ecosystemServices.map((service, idx) => (
-                        <NavLink
-                          key={idx}
-                          to={service.path}
-                          onClick={() => setOpen(false)}
-                          className="block px-3 py-1.5 rounded-md text-xs text-white/70 hover:text-cyan-300 hover:bg-white/5 transition"
-                        >
-                          {service.name}
-                        </NavLink>
+                  {solutionsOpen && (
+                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="pl-4 mt-4 space-y-3 overflow-hidden">
+                      {solutions.map((s, idx) => (
+                        <NavLink key={idx} to={s.path} onClick={() => setOpen(false)} className="block text-gray-400 hover:text-white">{s.name}</NavLink>
                       ))}
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
 
-              {/* Blog mobile */}
-              <NavLink
-                to="/blog"
-                onClick={() => setOpen(false)}
-                className={({ isActive }) =>
-                  `block px-3 py-2 rounded-md text-sm font-medium transition ${
-                    isActive
-                      ? "text-cyan-400 bg-white/5"
-                      : "text-white/80 hover:text-white hover:bg-white/5"
-                  }`
-                }
-              >
-                Blog
-              </NavLink>
-
-              {/* About Dropdown */}
-              <div>
-                <button
-                  onClick={() => setAboutOpen(!aboutOpen)}
-                  className="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-white/80 hover:text-white hover:bg-white/5 transition flex items-center justify-between"
-                >
-                  About ▾
+              {/* Mobile Business Growth */}
+              <div className="border-b border-gray-800 pb-4">
+                <button onClick={() => setGrowthOpen(!growthOpen)} className="w-full text-left text-lg font-medium text-white flex justify-between items-center">
+                  Business Growth <ChevronDown size={20} className={`transition-transform ${growthOpen ? 'rotate-180' : ''}`} />
                 </button>
                 <AnimatePresence>
-                  {aboutOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="pl-6 space-y-1 overflow-hidden"
-                    >
-                      <NavLink to="/about" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition">
-                        About Us
-                      </NavLink>
-                      <NavLink to="/faq" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition">
-                        FAQ
-                      </NavLink>
+                  {growthOpen && (
+                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="pl-4 mt-4 space-y-3 overflow-hidden">
+                      {businessGrowth.map((g, idx) => (
+                        <NavLink key={idx} to={g.path} onClick={() => setOpen(false)} className="block text-gray-400 hover:text-white">{g.name}</NavLink>
+                      ))}
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
 
-              {/* Careers Dropdown */}
-              <div>
+              <NavLink to="/packages" onClick={() => setOpen(false)} className="text-lg font-medium text-white border-b border-gray-800 pb-4">Packages</NavLink>
+              <NavLink to="/projects" onClick={() => setOpen(false)} className="text-lg font-medium text-white border-b border-gray-800 pb-4">Projects</NavLink>
+              <NavLink to="/blog" onClick={() => setOpen(false)} className="text-lg font-medium text-white border-b border-gray-800 pb-4">Resources</NavLink>
+              <NavLink to="/about" onClick={() => setOpen(false)} className="text-lg font-medium text-white border-b border-gray-800 pb-4">About</NavLink>
+              
+              <div className="pt-6 flex flex-col gap-4">
                 <button
-                  onClick={() => setCareerOpen(!careerOpen)}
-                  className="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-white/80 hover:text-white hover:bg-white/5 transition flex items-center justify-between"
+                  onClick={toggleTheme}
+                  className="w-full py-3 rounded-full border border-gray-700 text-white font-medium flex items-center justify-center gap-2"
                 >
-                  Careers ▾
-                </button>
-                <AnimatePresence>
-                  {careerOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="pl-6 space-y-1 overflow-hidden"
-                    >
-                      <NavLink to="/career" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition">
-                        Career
-                      </NavLink>
-                      <NavLink to="/jobs" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition">
-                        Job Openings
-                      </NavLink>
-                      <NavLink to="/internship" onClick={() => setOpen(false)} className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition">
-                        Internship
-                      </NavLink>
-                    </motion.div>
+                  {theme === "dark" ? (
+                    <>
+                      <Sun size={18} className="text-amber-400" /> Switch to Light Mode
+                    </>
+                  ) : (
+                    <>
+                      <Moon size={18} className="text-blue-400" /> Switch to Dark Mode
+                    </>
                   )}
-                </AnimatePresence>
+                </button>
+                <Link to="/contact" onClick={() => setOpen(false)} className="w-full py-3 text-center rounded-full bg-blue-600 text-white font-medium hover:bg-blue-500 transition-colors flex items-center justify-center">
+                  Get Started <ArrowRight size={18} className="ml-2" />
+                </Link>
               </div>
 
-              {/* Academics Dropdown */}
-              <div>
-                <button
-                  onClick={() => setAcademicsOpen(!academicsOpen)}
-                  className="w-full text-left px-3 py-2 rounded-md text-sm font-medium text-white/80 hover:text-white hover:bg-white/5 transition flex items-center justify-between"
-                >
-                  Academics ▾
-                </button>
-                <AnimatePresence>
-                  {academicsOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="pl-6 space-y-1 overflow-hidden"
-                    >
-                      <a
-                        href="https://training.mackystech.in/aws-cloud"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => setOpen(false)}
-                        className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition"
-                      >
-                        AWS
-                      </a>
-                      <a
-                        href="https://training.mackystech.in/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => setOpen(false)}
-                        className="block px-3 py-2 rounded-md text-sm text-white/70 hover:text-cyan-300 hover:bg-white/5 transition"
-                      >
-                        Training
-                      </a>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
-              {/* Contact */}
-              <NavLink
-                to="/contact"
-                onClick={() => setOpen(false)}
-                className={({ isActive }) =>
-                  `block px-3 py-2 rounded-md text-sm font-medium transition ${
-                    isActive
-                      ? "text-cyan-400 bg-white/5"
-                      : "text-white/80 hover:text-white hover:bg-white/5"
-                  }`
-                }
-              >
-                Contact
-              </NavLink>
             </nav>
           </motion.div>
         )}

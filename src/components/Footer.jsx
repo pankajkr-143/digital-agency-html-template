@@ -1,116 +1,110 @@
 import { Link } from "react-router-dom";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-black text-gray-400">
+    <footer className="relative bg-[#050505] text-gray-400 border-t border-white/5 pt-20 overflow-hidden">
 
-      {/* Subtle Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(79,57,246,0.15),transparent_70%)] pointer-events-none" />
+      {/* Subtle Glow Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(16,185,129,0.05),transparent_70%)] pointer-events-none" />
 
-      <div className="relative px-6 md:px-16 lg:px-24 xl:px-32">
+      <div className="relative max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-white/10">
 
-        <div className="flex flex-col md:flex-row items-start justify-between gap-16 py-20 border-b border-white/10">
-
-          {/* LEFT SECTION - CENTERED ON MOBILE */}
-          <div className="max-w-sm w-full md:w-auto text-center md:text-left">
-
-            <Link to="/" className="text-2xl font-bold text-white tracking-wide hover:opacity-90 transition inline-block">
-              Mackys<span className="text-blue-500">Tech</span>
+          {/* LEFT COL: Brand & Contact (Span 4) */}
+          <div className="lg:col-span-4 flex flex-col items-start text-left">
+            <Link to="/" className="mb-2 -mt-6 block">
+              <img
+                src="/assets/logo23.png"
+                alt="MackysTech Logo"
+                className="h-20 md:h-24 w-auto object-contain mix-blend-screen hover:scale-110 transition-transform duration-300 origin-left"
+              />
             </Link>
-
-            <p className="mt-6 text-sm leading-relaxed text-gray-500">
-              We build scalable, secure and performance-driven digital
-              solutions designed to elevate modern businesses.
+            <p className="text-sm leading-relaxed text-gray-500 mb-8 max-w-sm">
+              We build scalable, secure and performance-driven digital solutions designed to elevate modern businesses.
             </p>
 
-            {/* SOCIAL ICONS - CENTERED */}
-            <div className="flex items-center justify-center md:justify-start gap-4 mt-6">
-
-              {/* Instagram */}
-              <a
-                href="https://www.instagram.com/mackystech"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Follow MackysTech on Instagram"
-                className="p-2 rounded-full border border-white/10 
-                hover:border-pink-500 hover:shadow-[0_0_15px_rgba(236,72,153,0.5)]
-                transition"
-              >
-                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5"
-                  viewBox="0 0 24 24" className="text-gray-400 hover:text-pink-500 transition">
-                  <rect x="3" y="3" width="18" height="18" rx="5" />
-                  <circle cx="12" cy="12" r="3.5" />
-                  <circle cx="17.5" cy="6.5" r="1" />
-                </svg>
-              </a>
-
-              {/* Facebook */}
-              <a
-                href="https://www.facebook.com/mackystech"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Follow MackysTech on Facebook"
-                className="p-2 rounded-full border border-white/10 
-                hover:border-blue-500 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]
-                transition"
-              >
-                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5"
-                  viewBox="0 0 24 24" className="text-gray-400 hover:text-blue-500 transition">
-                  <path d="M15 3h3v4h-3c-1.1 0-2 .9-2 2v3h5l-1 4h-4v7h-4v-7H6v-4h3V9c0-3 2-6 6-6z"/>
-                </svg>
-              </a>
-
-              {/* X (Twitter) */}
-              <a
-                href="https://x.com/mackystech"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Follow MackysTech on X (Twitter)"
-                className="p-2 rounded-full border border-white/10 
-                hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.4)]
-                transition"
-              >
-                <svg width="20" height="20" fill="currentColor"
-                  viewBox="0 0 24 24" className="text-gray-400 hover:text-white transition">
-                  <path d="M18.244 2H21.5l-7.59 8.676L23 22h-7.406l-5.8-7.584L3.5 22H.244l8.13-9.29L1 2h7.594l5.238 6.932L18.244 2z"/>
-                </svg>
-              </a>
-
+            <div className="space-y-3 text-sm text-gray-400">
+              <p className="flex items-center gap-3">
+                <MapPin size={16} className="text-green-500" /> Bhopal, Madhya Pradesh, India
+              </p>
+              <p className="flex items-center gap-3">
+                <Mail size={16} className="text-green-500" /> info@mackystech.in
+              </p>
+              <p className="flex items-center gap-3">
+                <Phone size={16} className="text-green-500" /> +91 8235910315
+              </p>
             </div>
           </div>
 
-          {/* RIGHT LINKS - CENTERED ON MOBILE */}
-          <div className="flex flex-col sm:flex-row gap-16 w-full md:w-auto justify-center">
-
-            <div className="text-center md:text-left">
-              <h2 className="font-semibold text-white mb-6 tracking-wide">
-                Resources
-              </h2>
-              <ul className="space-y-3 text-sm">
-                <li><Link to="/documentation" className="hover:text-white transition">Documentation</Link></li>
-                <li><a href="https://training.mackystech.in/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">Tutorials</a></li>
-                <li><Link to="/blog" className="hover:text-white transition">Blog</Link></li>
-                <li><Link to="/community" className="hover:text-white transition">Community</Link></li>
-              </ul>
-            </div>
-
-            <div className="text-center md:text-left">
-              <h2 className="font-semibold text-white mb-6 tracking-wide">
-                Company
-              </h2>
-              <ul className="space-y-3 text-sm">
-                <li><Link to="/about" className="hover:text-white transition">About</Link></li>
-                <li><Link to="/jobs" className="hover:text-white transition">Careers</Link></li>
-                <li><Link to="/privacy" className="hover:text-white transition">Privacy</Link></li>
-                <li><Link to="/terms" className="hover:text-white transition">Terms</Link></li>
-              </ul>
-            </div>
-
+          {/* COL 2: Solutions & Pillars (Span 3) */}
+          <div className="lg:col-span-3">
+            <h3 className="text-white font-bold tracking-wider uppercase text-sm mb-6">Growth Pillars & Solutions</h3>
+            <ul className="space-y-3 text-sm font-medium">
+              <li><Link to="/get-customers" className="hover:text-green-400 transition-colors">Get Customers / Leads</Link></li>
+              <li><Link to="/build-technology" className="hover:text-green-400 transition-colors">Build Technology Solutions</Link></li>
+              <li><Link to="/scale-business" className="hover:text-green-400 transition-colors">Scale Your Business</Link></li>
+              <li><Link to="/solutions" className="hover:text-green-400 transition-colors">All Solutions Catalog</Link></li>
+              <li><Link to="/industries" className="hover:text-green-400 transition-colors">Industry Solutions</Link></li>
+              <li><Link to="/packages" className="hover:text-green-400 transition-colors">Growth Packages</Link></li>
+            </ul>
           </div>
+
+          {/* COL 3: Company & Work (Span 2) */}
+          <div className="lg:col-span-2">
+            <h3 className="text-white font-bold tracking-wider uppercase text-sm mb-6">Company</h3>
+            <ul className="space-y-3 text-sm font-medium">
+              <li><Link to="/about" className="hover:text-blue-400 transition-colors">About Us</Link></li>
+              <li><Link to="/case-studies" className="hover:text-blue-400 transition-colors">Case Studies</Link></li>
+              <li><Link to="/projects" className="hover:text-blue-400 transition-colors">Portfolio</Link></li>
+              <li><Link to="/jobs" className="hover:text-blue-400 transition-colors">Careers</Link></li>
+              <li><Link to="/contact" className="hover:text-blue-400 transition-colors">Contact Us</Link></li>
+            </ul>
+          </div>
+
+          {/* COL 4: Resources & Knowledge (Span 3) */}
+          <div className="lg:col-span-3">
+            <h3 className="text-white font-bold tracking-wider uppercase text-sm mb-6">Resources</h3>
+            <ul className="space-y-3 text-sm font-medium">
+              <li><Link to="/blog" className="hover:text-purple-400 transition-colors">Blog & Insights</Link></li>
+              <li><Link to="/documentation" className="hover:text-purple-400 transition-colors">Documentation</Link></li>
+              <li><Link to="/tutorials" className="hover:text-purple-400 transition-colors">Tutorials</Link></li>
+              <li><Link to="/faq" className="hover:text-purple-400 transition-colors">Help Center (FAQ)</Link></li>
+              <li><Link to="/community" className="hover:text-purple-400 transition-colors">Community Forum</Link></li>
+            </ul>
+          </div>
+
         </div>
 
-        <div className="py-6 text-center text-xs md:text-sm text-gray-600">
-          © 2024 MackysTech. All rights reserved.
+        {/* BOTTOM ROW */}
+        <div className="py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          
+          <div className="text-xs md:text-sm text-gray-500 text-center md:text-left">
+            © {new Date().getFullYear()} Macky's Tech. All rights reserved.
+          </div>
+
+          {/* Social Links */}
+          <div className="flex items-center gap-4">
+            <a href="https://facebook.com/mackystech" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-blue-500 hover:border-blue-500 transition-all shadow-[0_0_0_transparent] hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+              <Facebook size={18} />
+            </a>
+            <a href="https://twitter.com/mackystech" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-all shadow-[0_0_0_transparent] hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+              <Twitter size={18} />
+            </a>
+            <a href="https://instagram.com/mackystech" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-pink-500 hover:border-pink-500 transition-all shadow-[0_0_0_transparent] hover:shadow-[0_0_15px_rgba(236,72,153,0.3)]">
+              <Instagram size={18} />
+            </a>
+            <a href="https://linkedin.com/company/mackystech" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-blue-400 hover:border-blue-400 transition-all shadow-[0_0_0_transparent] hover:shadow-[0_0_15px_rgba(96,165,250,0.3)]">
+              <Linkedin size={18} />
+            </a>
+          </div>
+
+          {/* Legal Links */}
+          <div className="flex items-center gap-6 text-xs text-gray-500">
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+          </div>
+
         </div>
 
       </div>

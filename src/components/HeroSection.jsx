@@ -3,24 +3,12 @@ import {
   useScroll,
   useTransform,
   useMotionValueEvent,
+  AnimatePresence
 } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const letters = ["M","A","C","K","Y","'","S"," ","T","E","C","H"];
-
-const categories = [
-  { name: "Software Dev", path: "/software-development", icon: "💻", top: "22%", left: "6%", delay: 0.1 },
-  { name: "Digital Marketing", path: "/digital-marketing", icon: "📣", top: "12%", right: "8%", delay: 0.3 },
-  { name: "Robotics", path: "/robotics", icon: "🤖", top: "60%", left: "8%", delay: 0.5 },
-  { name: "AI Agent Tech", path: "/artificial-intelligence", icon: "🧠", top: "16%", left: "32%", delay: 0.2 },
-  { name: "Cyber Security", path: "/cyber-security", icon: "🛡️", top: "55%", right: "6%", delay: 0.7 },
-  { name: "Stock Market", path: "/stock-market", icon: "📈", top: "68%", left: "38%", delay: 0.4 },
-  { name: "FinTech", path: "/finance", icon: "💳", top: "70%", right: "26%", delay: 0.6 },
-  { name: "Construction", path: "/building-construction", icon: "🏗️", top: "32%", left: "14%", delay: 0.8 },
-  { name: "Sales & Marketing", path: "/sales-marketing", icon: "👥", top: "40%", right: "15%", delay: 0.9 },
-  { name: "EdTech & LMS", path: "/edtech", icon: "🎓", top: "28%", right: "35%", delay: 0.15 }
-];
 
 const containerAnim = {
   hidden: {},
@@ -50,15 +38,29 @@ export default function HeroSection() {
   const containerRef = useRef(null);
   const videoRef = useRef(null);
   const [waveTrigger, setWaveTrigger] = useState(false);
+  const [currentHeroImage, setCurrentHeroImage] = useState(0);
 
-  // 🔥 Delay before wave starts
+  const heroImages = [
+    "/images/hero/hero_it.jpg",
+    "/images/hero/hero_marketing.jpg",
+    "/images/hero/hero_construction.jpg"
+  ];
+
+  // 🔥 Delay before wave starts & Image auto-slider
   useEffect(() => {
     const timer = setTimeout(() => {
       setWaveTrigger(true);
     }, 3500);
 
-    return () => clearTimeout(timer);
-  }, []);
+    const imageInterval = setInterval(() => {
+      setCurrentHeroImage((prev) => (prev + 1) % heroImages.length);
+    }, 4000); // Change image every 4 seconds
+
+    return () => {
+      clearTimeout(timer);
+      clearInterval(imageInterval);
+    };
+  }, [heroImages.length]);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -66,12 +68,13 @@ export default function HeroSection() {
   });
 
   const cardHeight = useTransform(scrollYProgress, [0, 1], ["30vh", "100vh"]);
-  const boxHeight = useTransform(scrollYProgress, [0, 0.8], ["200px", "60vh"]);
-  const boxWidth = useTransform(scrollYProgress, [0, 0.8], ["95%", "90%"]);
+  const boxHeight = useTransform(scrollYProgress, [0, 0.8], ["200px", "85vh"]);
+  const boxWidth = useTransform(scrollYProgress, [0, 0.8], ["95%", "95%"]);
   const boxRadius = useTransform(scrollYProgress, [0, 0.8], ["12px", "10px"]);
 
   const brightness = useTransform(scrollYProgress, [0, 0.6], [1, 0.4]);
-  const heroOpacity = useTransform(scrollYProgress, [0.6, 0.8], [1, 0]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+  const textY = useTransform(scrollYProgress, [0, 0.4], ["0%", "-150%"]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if (!videoRef.current) return;
@@ -129,6 +132,7 @@ export default function HeroSection() {
         <motion.div
           style={{
             opacity: heroOpacity,
+            y: textY,
             position: "absolute",
             inset: 0,
             display: "flex",
@@ -187,49 +191,6 @@ export default function HeroSection() {
           </motion.h1>
          </motion.div>
  
-        {/* Floating Category Stickers */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            zIndex: 4,
-            pointerEvents: "none"
-          }}
-        >
-          {categories.map((c, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-                y: [-5, 5, -5],
-                rotate: [idx % 2 === 0 ? -1.5 : 1.5, idx % 2 === 0 ? 1.5 : -1.5, idx % 2 === 0 ? -1.5 : 1.5]
-              }}
-              transition={{
-                opacity: { duration: 0.8, delay: c.delay },
-                scale: { duration: 0.8, delay: c.delay },
-                y: { repeat: Infinity, duration: 4 + (idx % 3) * 0.7, ease: "easeInOut" },
-                rotate: { repeat: Infinity, duration: 5 + (idx % 2) * 1.1, ease: "easeInOut" }
-              }}
-              style={{
-                position: "absolute",
-                top: c.top,
-                ...(c.left ? { left: c.left } : { right: c.right }),
-                pointerEvents: "auto"
-              }}
-            >
-              <Link
-                to={c.path}
-                className="flex items-center gap-1.5 px-2 py-1.5 sm:px-4 sm:py-2 rounded-full bg-slate-950/65 border border-white/10 hover:border-cyan-500/40 text-slate-200 hover:text-cyan-300 text-[8px] sm:text-[11px] font-black uppercase tracking-wider shadow-2xl backdrop-blur-md transition-all duration-300 hover:shadow-cyan-500/10 hover:scale-[1.04]"
-              >
-                <span>{c.icon}</span>
-                <span>{c.name}</span>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-
         {/* ===== SECOND SLIDE (UNCHANGED) ===== */}
         <motion.div
           style={{
@@ -245,19 +206,33 @@ export default function HeroSection() {
             color: "#fff",
           }}
         >
-          <h2
-            style={{
-              fontSize: "clamp(24px, 4vw, 48px)",
-              marginBottom: "clamp(30px, 6vw, 80px)",
-              fontWeight: "400",
-              letterSpacing: "1px",
-              padding: "0 16px",
-              textAlign: "center",
-              fontFamily: "'Outfit', sans-serif"
-            }}
-          >
-            Powering your digital tomorrow
-          </h2>
+          <div className="flex flex-col items-center justify-center text-center px-4 z-10 relative w-full max-w-4xl" style={{ marginBottom: "clamp(30px, 6vw, 60px)" }}>
+            <h2
+              style={{
+                fontSize: "clamp(28px, 4vw, 56px)",
+                fontWeight: "700",
+                letterSpacing: "-0.5px",
+                fontFamily: "'Outfit', sans-serif",
+                background: "linear-gradient(to right, #ffffff, #a5b4fc)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+              className="mb-4 leading-tight"
+            >
+              One Hub. Everything Your Business Needs to Grow.
+            </h2>
+            <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-3xl mb-8 font-medium leading-relaxed">
+              Get customers. Generate verified leads. Build powerful technology. Automate your business. Scale faster with Macky’s Tech.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <Link to="/contact" className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3.5 rounded-full font-semibold transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-1 flex items-center">
+                Start Growing <span className="ml-2 font-bold">&rarr;</span>
+              </Link>
+              <Link to="/services" className="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-8 py-3.5 rounded-full font-semibold transition-all duration-300 backdrop-blur-md hover:-translate-y-1">
+                Explore Solutions
+              </Link>
+            </div>
+          </div>
 
           <motion.div
             style={{
@@ -268,22 +243,36 @@ export default function HeroSection() {
               overflow: "hidden",
               boxShadow: "0 40px 120px rgba(0,0,0,0.6)",
               margin: "0 16px",
-              maxWidth: "calc(100vw - 32px)"
+              maxWidth: "calc(100vw - 32px)",
+              position: "relative"
             }}
           >
-            <video
-            loop
-              ref={videoRef}
-              src="/assets/final22.mp4"
-              muted
-              playsInline
-              preload="auto"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-              }}
-            />
+            <div className="w-full h-full p-2 md:p-4 grid grid-cols-2 md:grid-cols-4 grid-rows-3 md:grid-rows-2 gap-2 md:gap-4 bg-gray-950">
+              <div className="col-span-2 row-span-1 rounded-xl overflow-hidden relative group">
+                 <img src="/images/case-studies/web.png" alt="High-Traffic Marketplace" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+              </div>
+              <div className="col-span-1 row-span-1 rounded-xl overflow-hidden relative group">
+                 <img src="/images/case-studies/mobile.png" alt="Mobile Logistics" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+              </div>
+              <div className="col-span-1 row-span-1 rounded-xl overflow-hidden relative group hidden md:block">
+                 <img src="/images/case-studies/saas.png" alt="SaaS Dashboard" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+              </div>
+              <div className="col-span-1 row-span-1 rounded-xl overflow-hidden relative group hidden md:block">
+                 <img src="/images/case-studies/ai.png" alt="AI Interface" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+              </div>
+              <div className="col-span-1 row-span-1 rounded-xl overflow-hidden relative group">
+                 <img src="/images/case-studies/erp.png" alt="Enterprise ERP" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+              </div>
+              <div className="col-span-2 row-span-1 rounded-xl overflow-hidden relative group">
+                 <img src="/images/case-studies/marketing.png" alt="Marketing Analytics" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </div>

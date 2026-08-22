@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import { useSEO } from "../hooks/useSEO";
 
-import Services from "../components/Services";
-import Process from "../components/Process";
-import WhyChooseUs from "../components/WhyChooseUs";
-import Testimonials from "../components/Testimonials";
 import HeroSection from "../components/HeroSection";
-import FeaturedServices from "../components/FeaturedServices";
+import Categories from "../components/Categories";
+import BusinessNeeds from "../components/BusinessNeeds";
+import CoreGrowth from "../components/CoreGrowth";
+import GrowthPackages from "../components/GrowthPackages";
+import ProcessTimeline from "../components/ProcessTimeline";
+import CaseStudies from "../components/CaseStudies";
+import WhyMackysTech from "../components/WhyMackysTech";
+import Testimonials from "../components/Testimonials";
+import FinalCTA from "../components/FinalCTA";
 import SmoothScroll from "../components/SmoothScroll";
 import Spotlight from "../components/Spotlight";
-import SEOContent from "../components/SEOContent";
 
 export default function Home({ setShowNavbar }) {
   useSEO({
@@ -59,17 +62,18 @@ export default function Home({ setShowNavbar }) {
     <main>
       <SmoothScroll>
         <HeroSection />
-        <FeaturedServices />
-
-        <Services />
-        <Process />
-        <WhyChooseUs />
+        <Categories />
+        <BusinessNeeds />
+        <CoreGrowth />
+        <GrowthPackages />
+        <ProcessTimeline />
+        <CaseStudies />
+        <WhyMackysTech />
         <Testimonials />
-        <SEOContent />
+        <FinalCTA />
 
         {/* ✅ Spotlight only Desktop */}
         {isDesktop && <Spotlight />}
-
       </SmoothScroll>
     </main>
   );

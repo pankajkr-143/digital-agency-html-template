@@ -200,6 +200,62 @@ export function useSEO({
       if (el) el.remove();
     };
 
+    // Organization & LocalBusiness JSON-LD (auto-injected for site authority & Bhopal Local SEO)
+    const orgSchema = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      "name": SITE_NAME,
+      "url": BASE_URL,
+      "logo": DEFAULT_IMG,
+      "description": "Business Growth Hub — Helping businesses get customers, build technology, and scale operations.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bhopal",
+        "addressRegion": "Madhya Pradesh",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/mackystech",
+        "https://twitter.com/mackystech",
+        "https://www.facebook.com/mackystech"
+      ]
+    };
+
+    const localBusinessSchema = {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "@id": `${BASE_URL}/#localbusiness`,
+      "name": "Macky's Tech — Software & Digital Growth Agency Bhopal",
+      "image": DEFAULT_IMG,
+      "url": BASE_URL,
+      "telephone": "+91-9876543210",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "MP Nagar",
+        "addressLocality": "Bhopal",
+        "addressRegion": "Madhya Pradesh",
+        "postalCode": "462011",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 23.2599,
+        "longitude": 77.4126
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      "areaServed": ["Bhopal", "Indore", "Madhya Pradesh", "India"]
+    };
+
+    setSchema("org-schema-ld", orgSchema);
+    setSchema("localbusiness-schema-ld", localBusinessSchema);
+
     // Breadcrumb (always inject on sub-pages, skip on homepage)
     try {
       const isHome = new URL(canonical).pathname === "/";
@@ -215,7 +271,7 @@ export function useSEO({
       removeSchema("breadcrumb-schema-ld");
     }
 
-    // Page-specific schema (optional — e.g. FAQPage, ContactPage, Person)
+    // Page-specific schema (optional — e.g. FAQPage, Service, Article)
     if (schema) {
       setSchema("page-schema-ld", schema);
     } else {
