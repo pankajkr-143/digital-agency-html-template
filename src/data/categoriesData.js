@@ -51,9 +51,9 @@ export const categoriesData = {
       { title: "Custom Admin Panels", desc: "Powerful dashboards to manage your business data.", icon: "Sliders" }
     ],
     packages: [
-      { name: "STARTER", target: "For small businesses and beginners.", features: ["Essential services", "Basic setup", "Standard support", "Basic reporting"], cta: "Get Started →", price: "Starting From ₹25,000" },
-      { name: "GROWTH", isPopular: true, target: "For businesses actively growing.", features: ["Advanced services", "Growth tools", "Automation", "Analytics", "Priority support"], cta: "Choose Growth →", price: "Starting From ₹55,000" },
-      { name: "SCALE", target: "For growing companies.", features: ["Advanced solutions", "Customization", "Automation", "Advanced reporting", "Dedicated support"], cta: "Scale My Business →", price: "Starting From ₹1,20,000" },
+      { name: "STARTER", target: "For small businesses and beginners.", features: ["Essential services", "Basic setup", "Standard support", "Basic reporting"], cta: "Get Started →", price: "Starting From ₹9,999" },
+      { name: "GROWTH", isPopular: true, target: "For businesses actively growing.", features: ["Advanced services", "Growth tools", "Automation", "Analytics", "Priority support"], cta: "Choose Growth →", price: "Starting From ₹25,999" },
+      { name: "SCALE", target: "For growing companies.", features: ["Advanced solutions", "Customization", "Automation", "Advanced reporting", "Dedicated support"], cta: "Scale My Business →", price: "Starting From ₹49,999" },
       { name: "ENTERPRISE", target: "For large/custom requirements.", features: ["Custom solution", "Dedicated team", "Custom integrations", "Advanced security", "Enterprise support"], cta: "Talk to an Expert →", price: "Custom Quote" }
     ],
     faq: [
@@ -123,9 +123,9 @@ export const categoriesData = {
       { title: "ROI Focused", desc: "We optimize for revenue, not just clicks.", icon: "DollarSign" }
     ],
     packages: [
-      { name: "STARTER", target: "For local businesses getting started.", features: ["Basic SEO setup", "Local directory listings", "1 Social platform management", "Monthly reporting"], cta: "Get Started →", price: "Starting From ₹15,000/mo" },
-      { name: "GROWTH", isPopular: true, target: "For businesses wanting steady growth.", features: ["Advanced SEO", "Google & Meta Ads management", "3 Social platforms", "Content creation", "Bi-weekly reporting"], cta: "Choose Growth →", price: "Starting From ₹35,000/mo" },
-      { name: "SCALE", target: "For aggressive market expansion.", features: ["Aggressive SEO strategy", "Multi-channel ad campaigns", "Email marketing automation", "CRO optimization", "Weekly strategy calls"], cta: "Scale My Business →", price: "Starting From ₹75,000/mo" },
+      { name: "STARTER", target: "For local businesses getting started.", features: ["Basic SEO setup", "Local directory listings", "1 Social platform management", "Monthly reporting"], cta: "Get Started →", price: "Starting From ₹5,999/mo" },
+      { name: "GROWTH", isPopular: true, target: "For businesses wanting steady growth.", features: ["Advanced SEO", "Google & Meta Ads management", "3 Social platforms", "Content creation", "Bi-weekly reporting"], cta: "Choose Growth →", price: "Starting From ₹15,999/mo" },
+      { name: "SCALE", target: "For aggressive market expansion.", features: ["Aggressive SEO strategy", "Multi-channel ad campaigns", "Email marketing automation", "CRO optimization", "Weekly strategy calls"], cta: "Scale My Business →", price: "Starting From ₹25,999/mo" },
       { name: "ENTERPRISE", target: "For large brands and custom needs.", features: ["Dedicated marketing team", "Custom media buying", "Advanced analytics setup", "Brand consulting", "24/7 priority support"], cta: "Talk to an Expert →", price: "Custom Quote" }
     ],
     faq: [
@@ -195,9 +195,9 @@ export const categoriesData = {
       { title: "CRM Ready", desc: "Seamless integration with Salesforce, HubSpot, etc.", icon: "Database" }
     ],
     packages: [
-      { name: "STARTER", target: "For testing the waters.", features: ["100 Verified Leads", "Basic Targeting", "Email Delivery", "Standard Support"], cta: "Get Started →", price: "Starting From ₹10,000" },
-      { name: "GROWTH", isPopular: true, target: "For steady sales teams.", features: ["500 Verified Leads", "Advanced Targeting", "Real-time CRM Integration", "Dedicated Account Manager"], cta: "Choose Growth →", price: "Starting From ₹40,000" },
-      { name: "SCALE", target: "For aggressive sales teams.", features: ["2000+ Verified Leads", "Custom Funnel Creation", "Appointment Setting (20/mo)", "Weekly Strategy Calls"], cta: "Scale My Business →", price: "Starting From ₹1,00,000" },
+      { name: "STARTER", target: "For testing the waters.", features: ["100 Verified Leads", "Basic Targeting", "Email Delivery", "Standard Support"], cta: "Get Started →", price: "Starting From ₹6,999" },
+      { name: "GROWTH", isPopular: true, target: "For steady sales teams.", features: ["500 Verified Leads", "Advanced Targeting", "Real-time CRM Integration", "Dedicated Account Manager"], cta: "Choose Growth →", price: "Starting From ₹11,999" },
+      { name: "SCALE", target: "For aggressive sales teams.", features: ["2000+ Verified Leads", "Custom Funnel Creation", "Appointment Setting (20/mo)", "Weekly Strategy Calls"], cta: "Scale My Business →", price: "Starting From ₹20,999" },
       { name: "ENTERPRISE", target: "For large-scale operations.", features: ["Unlimited Scalability", "Dedicated Call Center Team", "Full Funnel Ownership", "24/7 Priority Support"], cta: "Talk to an Expert →", price: "Custom Quote" }
     ],
     faq: [
@@ -339,9 +339,9 @@ export const categoriesData = {
       { title: "Multi-Instructor", desc: "Allow multiple teachers to host their own courses.", icon: "Users" }
     ],
     packages: [
-      { name: "STARTER", target: "For independent course creators.", features: ["Basic LMS Setup", "Pre-recorded Video Hosting", "Payment Integration", "Basic Support"], cta: "Get Started →", price: "Starting From ₹40,000" },
-      { name: "GROWTH", isPopular: true, target: "For coaching institutes.", features: ["Custom LMS + App", "Live Classes Integration", "Advanced Quizzes", "Priority Support"], cta: "Choose Growth →", price: "Starting From ₹90,000" },
-      { name: "SCALE", target: "For large schools/colleges.", features: ["Full School ERP", "White-label Mobile Apps", "Parent Portal", "Dedicated Server"], cta: "Scale My Business →", price: "Starting From ₹2,00,000" },
+      { name: "STARTER", target: "For independent course creators.", features: ["Basic LMS Setup", "Pre-recorded Video Hosting", "Payment Integration", "Basic Support"], cta: "Get Started →", price: "Starting From ₹30,999" },
+      { name: "GROWTH", isPopular: true, target: "For coaching institutes.", features: ["Custom LMS + App", "Live Classes Integration", "Advanced Quizzes", "Priority Support"], cta: "Choose Growth →", price: "Starting From ₹60,999" },
+      { name: "SCALE", target: "For large schools/colleges.", features: ["Full School ERP", "White-label Mobile Apps", "Parent Portal", "Dedicated Server"], cta: "Scale My Business →", price: "Starting From ₹1,19,999" },
       { name: "ENTERPRISE", target: "For global EdTech startups.", features: ["Custom Architecture", "AI Proctoring Integration", "Advanced DRM", "24/7 SLA"], cta: "Talk to an Expert →", price: "Custom Quote" }
     ],
     faq: [
@@ -483,9 +483,9 @@ export const categoriesData = {
       { title: "Scalable Backend", desc: "Built on Node.js/Go to handle thousands of concurrent rides.", icon: "Database" }
     ],
     packages: [
-      { name: "STARTER", target: "For single-city startups.", features: ["Rider & Driver App", "Basic Admin Panel", "Cash Payments", "Standard Maps"], cta: "Get Started →", price: "Starting From ₹1,50,000" },
-      { name: "GROWTH", isPopular: true, target: "For growing regional fleets.", features: ["Advanced Dispatch", "Wallet & Card Payments", "Surge Pricing Engine", "Promo Code System"], cta: "Choose Growth →", price: "Starting From ₹3,50,000" },
-      { name: "SCALE", target: "For multi-city operations.", features: ["Corporate B2B Panel", "Advanced Analytics", "Custom Routing Algorithms", "Dedicated Servers"], cta: "Scale My Business →", price: "Starting From ₹7,00,000" },
+      { name: "STARTER", target: "For single-city startups.", features: ["Rider & Driver App", "Basic Admin Panel", "Cash Payments", "Standard Maps"], cta: "Get Started →", price: "Starting From ₹35,000" },
+      { name: "GROWTH", isPopular: true, target: "For growing regional fleets.", features: ["Advanced Dispatch", "Wallet & Card Payments", "Surge Pricing Engine", "Promo Code System"], cta: "Choose Growth →", price: "Starting From ₹50,000" },
+      { name: "SCALE", target: "For multi-city operations.", features: ["Corporate B2B Panel", "Advanced Analytics", "Custom Routing Algorithms", "Dedicated Servers"], cta: "Scale My Business →", price: "Starting From ₹70,000" },
       { name: "ENTERPRISE", target: "For national scale.", features: ["Full Source Code Customization", "Microservices Architecture", "On-site Deployment", "24/7 SLA"], cta: "Talk to an Expert →", price: "Custom Quote" }
     ],
     faq: [
@@ -555,9 +555,9 @@ export const categoriesData = {
       { title: "Analytics Dashboard", desc: "Track revenue, MRR, and churn rates.", icon: "BarChart" }
     ],
     packages: [
-      { name: "STANDARD", target: "Simple e-commerce checkouts.", features: ["1 Gateway Integration", "Standard Checkout UI", "Webhook Setup", "Basic Testing"], cta: "Get Started →", price: "Starting From ₹15,000" },
-      { name: "ADVANCED", isPopular: true, target: "SaaS & Subscriptions.", features: ["Recurring Billing Setup", "Multiple Payment Methods", "Custom Checkout UI", "Invoice Generation"], cta: "Choose Advanced →", price: "Starting From ₹35,000" },
-      { name: "MARKETPLACE", target: "Multi-vendor platforms.", features: ["Split Payments API", "Vendor Onboarding Flow", "Escrow Logistics", "Priority Support"], cta: "Scale My Business →", price: "Starting From ₹75,000" },
+      { name: "STANDARD", target: "Simple e-commerce checkouts.", features: ["1 Gateway Integration", "Standard Checkout UI", "Webhook Setup", "Basic Testing"], cta: "Get Started →", price: "Starting From ₹299" },
+      { name: "ADVANCED", isPopular: true, target: "SaaS & Subscriptions.", features: ["Recurring Billing Setup", "Multiple Payment Methods", "Custom Checkout UI", "Invoice Generation"], cta: "Choose Advanced →", price: "Starting From ₹599" },
+      { name: "MARKETPLACE", target: "Multi-vendor platforms.", features: ["Split Payments API", "Vendor Onboarding Flow", "Escrow Logistics", "Priority Support"], cta: "Scale My Business →", price: "Starting From ₹999" },
       { name: "ENTERPRISE", target: "High-volume custom flows.", features: ["Multiple Gateways (Smart Routing)", "In-app Custom Wallet", "Advanced Fraud Rules", "24/7 SLA"], cta: "Talk to an Expert →", price: "Custom Quote" }
     ],
     faq: [
@@ -627,9 +627,9 @@ export const categoriesData = {
       { title: "Analytics", desc: "Track sent, delivered, and read receipts.", icon: "BarChart" }
     ],
     packages: [
-      { name: "STARTER", target: "For basic alerts & notifications.", features: ["API Setup", "Transactional Alerts", "1 Template Creation", "Basic Dashboard"], cta: "Get Started →", price: "Starting From ₹15,000" },
-      { name: "GROWTH", isPopular: true, target: "For marketing & support.", features: ["Rule-based Chatbot", "Bulk Broadcasting Setup", "CRM Integration", "Green Tick Assistance"], cta: "Choose Growth →", price: "Starting From ₹35,000" },
-      { name: "SCALE", target: "For advanced AI automation.", features: ["AI NLP Chatbot", "Custom E-commerce Flows", "Multi-agent Dashboard Setup", "Priority Support"], cta: "Scale My Business →", price: "Starting From ₹75,000" },
+      { name: "STARTER", target: "For basic alerts & notifications.", features: ["API Setup", "Transactional Alerts", "1 Template Creation", "Basic Dashboard"], cta: "Get Started →", price: "Starting From ₹299" },
+      { name: "GROWTH", isPopular: true, target: "For marketing & support.", features: ["Rule-based Chatbot", "Bulk Broadcasting Setup", "CRM Integration", "Green Tick Assistance"], cta: "Choose Growth →", price: "Starting From ₹599" },
+      { name: "SCALE", target: "For advanced AI automation.", features: ["AI NLP Chatbot", "Custom E-commerce Flows", "Multi-agent Dashboard Setup", "Priority Support"], cta: "Scale My Business →", price: "Starting From ₹999" },
       { name: "ENTERPRISE", target: "For complex enterprise flows.", features: ["Custom Middleware", "Legacy ERP Integration", "Advanced Analytics", "24/7 SLA"], cta: "Talk to an Expert →", price: "Custom Quote" }
     ],
     faq: [

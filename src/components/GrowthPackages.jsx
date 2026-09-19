@@ -7,7 +7,7 @@ const packages = [
   {
     title: "STARTER",
     target: "For small businesses starting their digital journey.",
-    price: "Starting from ₹15,000",
+    price: "Starting from ₹5,999",
     features: ["Digital Presence", "Basic Marketing", "Business Setup", "Lead Support"],
     cta: "Get Started",
     popular: false,
@@ -16,7 +16,7 @@ const packages = [
   {
     title: "GROWTH",
     target: "For businesses actively looking for customers.",
-    price: "Starting from ₹35,000",
+    price: "Starting from ₹11,999",
     features: ["Website", "Digital Marketing", "Lead Generation", "WhatsApp Integration", "Basic CRM"],
     cta: "Choose Growth",
     popular: true,
@@ -25,7 +25,7 @@ const packages = [
   {
     title: "SCALE",
     target: "For growing businesses scaling operations.",
-    price: "Starting from ₹75,000",
+    price: "Starting from ₹20,999",
     features: ["Advanced Technology", "Marketing", "Qualified Leads", "Sales Support", "Automation", "Analytics"],
     cta: "Scale My Business",
     popular: false,
